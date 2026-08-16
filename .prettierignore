@@ -1,0 +1,10 @@
+dist/
+dev-dist/
+node_modules/
+coverage/
+design/
+content/
+docs/
+public/
+src/data/generated/
+package-lock.json

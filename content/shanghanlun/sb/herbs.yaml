@@ -1,0 +1,23 @@
+# 示例数据：桂枝汤相关药物，用于验证数据规范，正式内容需人工校对。
+herbs:
+  - id: SHL.SB.H.001
+    name: 桂枝
+    aliases:
+      - 桂
+    notes: 示例数据。
+  - id: SHL.SB.H.002
+    name: 芍药
+    aliases: []
+    notes: 示例数据。
+  - id: SHL.SB.H.003
+    name: 甘草
+    aliases: []
+    notes: 示例数据。
+  - id: SHL.SB.H.004
+    name: 生姜
+    aliases: []
+    notes: 示例数据。
+  - id: SHL.SB.H.005
+    name: 大枣
+    aliases: []
+    notes: 示例数据。

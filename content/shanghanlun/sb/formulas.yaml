@@ -1,0 +1,32 @@
+# 示例数据：桂枝汤，用于验证数据规范，正式内容需人工校对。
+formulas:
+  - id: SHL.SB.F.001
+    name: 桂枝汤
+    category: 桂枝汤类
+    composition:
+      - herb: SHL.SB.H.001
+        dose: 三两
+        note: 去皮
+      - herb: SHL.SB.H.002
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+    original_dose_text: 桂枝三两（去皮） 芍药三两 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上五味，㕮咀三味，以水七升，微火煮取三升，去滓，适寒温，服一升。
+    related_clauses:
+      - SHL.SB.TYS.012
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    # 以下字段缺省时由系统自动推导
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""

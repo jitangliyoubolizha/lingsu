@@ -1,0 +1,6 @@
+code: SHL
+name: 伤寒论
+description: 东汉张仲景著，中医经典著作
+editions:
+  - code: SB
+    name: 宋本

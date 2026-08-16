@@ -1,0 +1,62 @@
+# 示例数据：太阳病上篇前几条，用于验证数据规范，正式内容需人工校对。
+chapter:
+  code: TYS
+  name: 辨太阳病脉证并治上
+  order: 1
+  part: 1
+  part_total: 1
+clauses:
+  - id: SHL.SB.TYS.001
+    no: 1
+    text: 太阳之为病，脉浮，头项强痛而恶寒。
+    translation: 太阳病的提纲，表现为脉浮，头痛、颈项强直不舒，并且怕冷。
+    annotations:
+      - source: 示例注本（待校对）
+        author: 示例注家
+        text: 此条为太阳病提纲，以脉浮、头项强痛、恶寒为辨证要点。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.010
+    study_tags:
+      - 太阳病提纲
+    notes: 示例数据，译文与注解需人工校对。
+  - id: SHL.SB.TYS.002
+    no: 2
+    text: 太阳病，发热，汗出，恶风，脉缓者，名为中风。
+    translation: 太阳病见到发热、汗出、怕风、脉象缓的，称为中风。
+    annotations:
+      - source: 示例注本（待校对）
+        author: 示例注家
+        text: 此条为太阳中风提纲，以发热、汗出、恶风、脉缓为辨证要点。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.005
+      - SHL.SB.SYM.006
+    study_tags:
+      - 中风提纲
+    notes: 示例数据，译文与注解需人工校对。
+  - id: SHL.SB.TYS.012
+    no: 12
+    text: 太阳中风，阳浮而阴弱，阳浮者，热自发，阴弱者，汗自出，啬啬恶寒，淅淅恶风，翕翕发热，鼻鸣干呕者，桂枝汤主之。
+    translation: 太阳中风证，卫阳浮盛则发热，营阴弱则汗自出，表现为怕冷怕风、发热、鼻鸣干呕的，用桂枝汤治疗。
+    annotations:
+      - source: 示例注本（待校对）
+        author: 示例注家
+        text: 此条为桂枝汤证典型条文，阳浮阴弱概括其病机。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.005
+      - SHL.SB.SYM.007
+      - SHL.SB.SYM.008
+      - SHL.SB.SYM.009
+    study_tags:
+      - 桂枝汤证
+    notes: 示例数据，译文与注解需人工校对。

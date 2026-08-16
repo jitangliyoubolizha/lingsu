@@ -1,0 +1,14 @@
+# 示例数据：人工复核题，用于验证数据规范，正式内容需人工校对。
+questions:
+  - id: SHL.SB.Q.0001
+    type: fill_blank
+    clause: SHL.SB.TYS.001
+    prompt: 太阳之为病，脉浮，头项强痛而＿＿＿。
+    options:
+      - 恶寒
+      - 恶风
+      - 发热
+      - 汗出
+    answer_index: 0
+    rationale: 原文“太阳之为病，脉浮，头项强痛而恶寒。”
+    status: reviewed

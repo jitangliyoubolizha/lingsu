@@ -1,0 +1,44 @@
+# 示例数据：症状/脉象/病机术语，用于验证数据规范，正式内容需人工校对。
+terms:
+  - id: SHL.SB.SYM.001
+    name: 发热
+    category: 症状
+    aliases:
+      - 身热
+  - id: SHL.SB.SYM.002
+    name: 脉浮
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.003
+    name: 恶寒
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.004
+    name: 汗出
+    category: 症状
+    aliases:
+      - 自汗
+  - id: SHL.SB.SYM.005
+    name: 恶风
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.006
+    name: 脉缓
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.007
+    name: 鼻鸣
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.008
+    name: 干呕
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.009
+    name: 营卫不和
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.010
+    name: 头项强痛
+    category: 症状
+    aliases: []

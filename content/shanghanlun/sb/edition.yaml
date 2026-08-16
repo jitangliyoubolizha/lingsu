@@ -1,0 +1,10 @@
+code: SB
+book: SHL
+name: 宋本
+source: 明·赵开美复刻宋本系统
+chapters:
+  - code: TYS
+    name: 辨太阳病脉证并治上
+    order: 1
+    files:
+      - chapters/taiyang-shang.yaml
