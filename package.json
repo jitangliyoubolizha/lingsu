@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run",
-    "validate:content": "tsx scripts/validate-content.ts"
+    "validate:content": "tsx scripts/validate-content.ts",
+    "build:content": "tsx scripts/build-content.ts"
   },
   "dependencies": {
     "dexie": "4.4.5",
