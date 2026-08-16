@@ -1,0 +1,146 @@
+<script setup lang="ts">
+import { Star } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
+
+import AccordionPanel from '../components/AccordionPanel.vue'
+import AppHeader from '../components/AppHeader.vue'
+import ComplianceBanner from '../components/ComplianceBanner.vue'
+import EmptyState from '../components/EmptyState.vue'
+import TagPill from '../components/TagPill.vue'
+import { getClauseById } from '../mockData'
+
+const route = useRoute()
+const favorite = ref(false)
+
+const clause = computed(() => getClauseById(String(route.params.id)))
+
+function toggleFavorite() {
+  favorite.value = !favorite.value
+}
+</script>
+
+<template>
+  <div class="mx-auto max-w-2xl pb-16">
+    <AppHeader
+      :title="clause ? clause.title : '条文详情'"
+      show-back
+      back-to="/clauses"
+    >
+      <template #actions>
+        <button
+          v-if="clause"
+          type="button"
+          class="flex h-9 w-9 items-center justify-center rounded-full text-ink-secondary hover:bg-paper-deep"
+          :aria-label="favorite ? '取消收藏' : '收藏本条'"
+          @click="toggleFavorite"
+        >
+          <Star
+            class="h-5 w-5"
+            :class="favorite ? 'fill-gold text-gold' : ''"
+            aria-hidden="true"
+          />
+        </button>
+      </template>
+    </AppHeader>
+
+    <EmptyState
+      v-if="!clause"
+      title="未找到该条文"
+      description="请返回列表重新选择"
+    />
+
+    <template v-else>
+      <div class="flex flex-wrap gap-2">
+        <TagPill tone="muted">
+          太阳病篇
+        </TagPill>
+        <TagPill tone="muted">
+          汉 · 张仲景
+        </TagPill>
+      </div>
+
+      <section
+        class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-5 shadow-[0_8px_24px_rgba(34,26,16,.08)]"
+      >
+        <div
+          class="mb-4 h-1 w-10 rounded-full bg-cinnabar"
+          aria-hidden="true"
+        />
+        <p class="font-serif text-[27px] leading-[1.8] text-ink">
+          {{ clause.text }}
+        </p>
+      </section>
+
+      <section class="mt-4">
+        <h2 class="mb-2 text-sm font-semibold text-ink-secondary">
+          主症标签
+        </h2>
+        <div class="flex flex-wrap gap-2">
+          <TagPill
+            v-for="tag in clause.symptomTags"
+            :key="tag"
+            tone="default"
+          >
+            {{ tag }}
+          </TagPill>
+        </div>
+      </section>
+
+      <div class="mt-4 space-y-3">
+        <AccordionPanel
+          title="白话译文"
+          :default-open="true"
+        >
+          <p class="text-sm leading-relaxed text-ink-secondary">
+            {{ clause.translation }}
+          </p>
+        </AccordionPanel>
+
+        <AccordionPanel
+          v-for="annotation in clause.annotations"
+          :key="annotation.source"
+          :title="`名家注解 · ${annotation.author}`"
+          :source="annotation.source"
+        >
+          <p class="text-sm leading-relaxed text-ink-secondary">
+            {{ annotation.text }}
+          </p>
+        </AccordionPanel>
+      </div>
+
+      <div class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4">
+        <h2 class="text-sm font-semibold text-ink-secondary">
+          相关方剂
+        </h2>
+        <div class="mt-2 space-y-1">
+          <RouterLink
+            v-for="formula in ['桂枝汤', '桂枝加葛根汤', '麻黄汤']"
+            :key="formula"
+            to="/formulas"
+            class="flex min-h-10 items-center justify-between rounded-lg px-2 text-sm text-indigo hover:bg-paper-deep"
+          >
+            {{ formula }}
+          </RouterLink>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-between border-t border-border-paper pt-3">
+        <RouterLink
+          to="/clauses"
+          class="text-sm text-indigo"
+        >
+          上一条
+        </RouterLink>
+        <RouterLink
+          to="/clauses"
+          class="text-sm text-indigo"
+        >
+          下一条
+        </RouterLink>
+      </div>
+    </template>
+
+    <ComplianceBanner />
+  </div>
+</template>
