@@ -3,6 +3,8 @@ import { ChartColumn, FileText, House, User } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
+import sealUrl from '../../assets/svg/seal.svg'
+
 const route = useRoute()
 
 const items = [
@@ -55,12 +57,11 @@ const isBare = computed(() => Boolean(route.meta.bare))
     aria-label="桌面导航"
   >
     <div class="flex items-center gap-2.5 px-5 py-5">
-      <span
-        class="flex h-10 w-10 items-center justify-center rounded-md bg-cinnabar font-serif text-xl font-bold text-white shadow-[0_4px_10px_rgba(110,0,0,.15)]"
-        aria-hidden="true"
+      <img
+        :src="sealUrl"
+        class="h-10 w-10 rounded-md"
+        alt="灵素"
       >
-        灵
-      </span>
       <div>
         <p class="font-serif text-base font-bold leading-tight">
           灵素
