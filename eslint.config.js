@@ -15,6 +15,7 @@ export default tseslint.config(
       'docs/**',
       'public/**',
       'src/data/generated/**',
+      '.worktrees/**',
     ],
   },
   js.configs.recommended,
