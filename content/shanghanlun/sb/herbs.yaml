@@ -196,3 +196,50 @@ herbs:
     name: 虻虫
     aliases: []
     notes: AI 初稿待校对。
+  - id: SHL.SB.H.048
+    name: 芫花
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.049
+    name: 大戟
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.050
+    name: 旋覆花
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.051
+    name: 代赭
+    aliases:
+      - 代赭石
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.052
+    name: 赤石脂
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.053
+    name: 瓜蒂
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.054
+    name: 赤小豆
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.055
+    name: 生地黄
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.056
+    name: 阿胶
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.057
+    name: 麦门冬
+    aliases:
+      - 麦冬
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.058
+    name: 麻仁
+    aliases:
+      - 火麻仁
+    notes: AI 初稿待校对。

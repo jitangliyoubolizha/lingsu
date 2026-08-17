@@ -653,3 +653,144 @@ terms:
     name: 腹中急痛
     category: 症状
     aliases: []
+  - id: SHL.SB.SYM.152
+    name: 阳微结
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.153
+    name: 纯阴结
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.154
+    name: 心下痞
+    category: 症状
+    aliases:
+      - 痞
+  - id: SHL.SB.SYM.155
+    name: 气痞
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.156
+    name: 心下痞硬满
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.157
+    name: 干噫食臭
+    category: 症状
+    aliases:
+      - 嗳气食臭
+  - id: SHL.SB.SYM.158
+    name: 腹中雷鸣
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.159
+    name: 谷不化
+    category: 症状
+    aliases:
+      - 完谷不化
+  - id: SHL.SB.SYM.160
+    name: 噫气不除
+    category: 症状
+    aliases:
+      - 嗳气不止
+  - id: SHL.SB.SYM.161
+    name: 协热利
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.162
+    name: 胸中痞硬
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.163
+    name: 背微恶寒
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.164
+    name: 身体疼烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.165
+    name: 不能自转侧
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.166
+    name: 掣痛
+    category: 症状
+    aliases:
+      - 牵引疼痛
+  - id: SHL.SB.SYM.167
+    name: 身微肿
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.168
+    name: 心动悸
+    category: 症状
+    aliases:
+      - 心悸
+  - id: SHL.SB.SYM.169
+    name: 脉结代
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.170
+    name: 脉结
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.171
+    name: 脉代
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.172
+    name: 手足冷
+    category: 症状
+    aliases:
+      - 手足厥冷
+  - id: SHL.SB.SYM.173
+    name: 口不欲食
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.174
+    name: 水浆不下
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.175
+    name: 肤瞤
+    category: 症状
+    aliases:
+      - 皮肤跳动
+  - id: SHL.SB.SYM.176
+    name: 口燥烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.177
+    name: 气上冲咽喉
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.178
+    name: 经脉动惕
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.179
+    name: 痿
+    category: 病机
+    aliases:
+      - 痿证
+  - id: SHL.SB.SYM.180
+    name: 风湿相搏
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.181
+    name: 骨节疼烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.182
+    name: 胸中有热
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.183
+    name: 胃中有邪气
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.184
+    name: 脉浮虚而涩
+    category: 脉象
+    aliases: []

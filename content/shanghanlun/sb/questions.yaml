@@ -223,3 +223,40 @@ questions:
     answer_index: 0
     rationale: 蓄血重证用抵当汤。
     status: reviewed
+  - id: SHL.SB.Q.0019
+    type: fill_blank
+    clause: SHL.SB.TYX.154
+    prompt: 心下痞，按之濡，其脉关上浮者，＿＿＿主之。
+    options:
+      - 大黄黄连泻心汤
+      - 附子泻心汤
+      - 半夏泻心汤
+      - 甘草泻心汤
+    answer_index: 0
+    rationale: 热痞用大黄黄连泻心汤。
+    status: reviewed
+  - id: SHL.SB.Q.0020
+    type: formula_syndrome_match
+    clause: SHL.SB.TYX.177
+    formula: SHL.SB.F.075
+    prompt: 伤寒，脉结代，心动悸者，宜用何方？
+    options:
+      - 炙甘草汤
+      - 桂枝甘草汤
+      - 小建中汤
+      - 真武汤
+    answer_index: 0
+    rationale: 脉结代、心动悸用炙甘草汤。
+    status: reviewed
+  - id: SHL.SB.Q.0021
+    type: fill_blank
+    clause: SHL.SB.TYX.172
+    prompt: 太阳与少阳合病，自下利者，与＿＿＿；若呕者，黄芩加半夏生姜汤主之。
+    options:
+      - 黄芩汤
+      - 葛根汤
+      - 白头翁汤
+      - 理中汤
+    answer_index: 0
+    rationale: 太少合病下利用黄芩汤。
+    status: reviewed
