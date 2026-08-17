@@ -154,3 +154,16 @@ herbs:
     name: 牡蛎
     aliases: []
     notes: AI 初稿待校对。
+  - id: SHL.SB.H.038
+    name: 栀子
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.039
+    name: 淡豆豉
+    aliases:
+      - 香豉
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.040
+    name: 禹余粮
+    aliases: []
+    notes: AI 初稿待校对。

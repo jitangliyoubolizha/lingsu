@@ -369,3 +369,130 @@ terms:
     name: 脉浮滑
     category: 脉象
     aliases: []
+  - id: SHL.SB.SYM.086
+    name: 不得眠
+    category: 症状
+    aliases:
+      - 不得卧
+      - 失眠
+  - id: SHL.SB.SYM.087
+    name: 脉沉迟
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.088
+    name: 心下悸
+    category: 症状
+    aliases:
+      - 心悸
+  - id: SHL.SB.SYM.089
+    name: 脐下悸
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.090
+    name: 奔豚
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.091
+    name: 腹胀满
+    category: 症状
+    aliases:
+      - 腹满
+  - id: SHL.SB.SYM.092
+    name: 心下逆满
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.093
+    name: 头眩
+    category: 症状
+    aliases:
+      - 头晕
+  - id: SHL.SB.SYM.094
+    name: 身为振振摇
+    category: 症状
+    aliases:
+      - 身体振摇
+  - id: SHL.SB.SYM.095
+    name: 消渴
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.096
+    name: 水逆
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.097
+    name: 耳聋
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.098
+    name: 虚烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.099
+    name: 反复颠倒
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.100
+    name: 胸中窒
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.101
+    name: 心中结痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.102
+    name: 卧起不安
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.103
+    name: 身瞤动
+    category: 症状
+    aliases:
+      - 肌肉瞤动
+  - id: SHL.SB.SYM.104
+    name: 振振欲擗地
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.105
+    name: 咽喉干燥
+    category: 症状
+    aliases:
+      - 咽干
+  - id: SHL.SB.SYM.106
+    name: 便血
+    category: 症状
+    aliases:
+      - 尿血
+  - id: SHL.SB.SYM.107
+    name: 痉
+    category: 病机
+    aliases:
+      - 痉病
+  - id: SHL.SB.SYM.108
+    name: 直视不能眴
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.109
+    name: 寒栗而振
+    category: 症状
+    aliases:
+      - 寒战
+  - id: SHL.SB.SYM.110
+    name: 恍惚心乱
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.111
+    name: 小便已阴疼
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.112
+    name: 吐蛔
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.113
+    name: 胃中冷
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.114
+    name: 少气
+    category: 症状
+    aliases: []

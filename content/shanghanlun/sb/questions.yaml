@@ -149,3 +149,40 @@ questions:
     answer_index: 0
     rationale: 小结胸病用小陷胸汤。
     status: reviewed
+  - id: SHL.SB.Q.0013
+    type: fill_blank
+    clause: SHL.SB.TYZ.063
+    prompt: 发汗后，不可更行桂枝汤。汗出而喘，无大热者，可与＿＿＿。
+    options:
+      - 麻黄杏仁甘草石膏汤
+      - 麻黄汤
+      - 桂枝加厚朴杏子汤
+      - 小青龙汤
+    answer_index: 0
+    rationale: 汗后邪热壅肺，用麻杏石甘汤。
+    status: reviewed
+  - id: SHL.SB.Q.0014
+    type: formula_syndrome_match
+    clause: SHL.SB.TYZ.082
+    formula: SHL.SB.F.047
+    prompt: 太阳病发汗，汗出不解，其人仍发热，心下悸，头眩，身瞤动，振振欲擗地者，宜用何方？
+    options:
+      - 真武汤
+      - 苓桂术甘汤
+      - 茯苓四逆汤
+      - 五苓散
+    answer_index: 0
+    rationale: 阳虚水泛，用真武汤。
+    status: reviewed
+  - id: SHL.SB.Q.0015
+    type: fill_blank
+    clause: SHL.SB.TYZ.076
+    prompt: 发汗吐下后，虚烦不得眠，若剧者，必反复颠倒，心中懊憹，＿＿＿主之。
+    options:
+      - 栀子豉汤
+      - 栀子厚朴汤
+      - 栀子干姜汤
+      - 酸枣仁汤
+    answer_index: 0
+    rationale: 余热扰胸，用栀子豉汤。
+    status: reviewed

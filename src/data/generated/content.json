@@ -29,7 +29,8 @@
         "name": "辨太阳病脉证并治中",
         "order": 2,
         "files": [
-          "chapters/taiyang-zhong-1.yaml"
+          "chapters/taiyang-zhong-1.yaml",
+          "chapters/taiyang-zhong-2.yaml"
         ]
       },
       {
@@ -1516,6 +1517,723 @@
           "studyTags": [
             "误治",
             "虚证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.061",
+          "no": 61,
+          "text": "下之后，复发汗，昼日烦躁不得眠，夜而安静，不呕不渴，无表证，脉沉微，身无大热者，干姜附子汤主之。",
+          "translation": "泻下之后又发汗，白天烦躁不能安睡，夜里安静，不呕不渴，没有表证，脉沉微，身体没有明显发热的，用干姜附子汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗下后阳气暴虚，用干姜附子汤急救回阳。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.032"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.086",
+            "SHL.SB.SYM.054"
+          ],
+          "studyTags": [
+            "干姜附子汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.062",
+          "no": 62,
+          "text": "发汗后，身疼痛，脉沉迟者，桂枝加芍药生姜各一两人参三两新加汤主之。",
+          "translation": "发汗后身体疼痛，脉沉迟的，用桂枝加芍药生姜各一两人参三两新加汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后营血不足，身痛脉沉迟，益气养营兼和营卫。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.033"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.012",
+            "SHL.SB.SYM.087"
+          ],
+          "studyTags": [
+            "新加汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.063",
+          "no": 63,
+          "text": "发汗后，不可更行桂枝汤。汗出而喘，无大热者，可与麻黄杏仁甘草石膏汤。",
+          "translation": "发汗后，不可以再用桂枝汤。汗出而气喘，没有明显发热的，可以用麻黄杏仁甘草石膏汤。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后邪热壅肺，汗出而喘，用麻杏石甘汤清热宣肺。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.034"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.004",
+            "SHL.SB.SYM.018"
+          ],
+          "studyTags": [
+            "麻杏石甘汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.064",
+          "no": 64,
+          "text": "发汗过多，其人叉手自冒心，心下悸，欲得按者，桂枝甘草汤主之。",
+          "translation": "发汗过多，病人双手交叉按住心口，心下悸动，想要按着的，用桂枝甘草汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗多伤心阳，心阳不足而悸，桂枝甘草汤温补心阳。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.035"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.088"
+          ],
+          "studyTags": [
+            "桂枝甘草汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.065",
+          "no": 65,
+          "text": "发汗后，其人脐下悸者，欲作奔豚，茯苓桂枝甘草大枣汤主之。",
+          "translation": "发汗后，病人脐下悸动的，是奔豚将要发作，用茯苓桂枝甘草大枣汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后心阳不足、水饮上冲欲作奔豚，用苓桂甘枣汤培土制水。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.036"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.089",
+            "SHL.SB.SYM.090"
+          ],
+          "studyTags": [
+            "茯苓桂枝甘草大枣汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.066",
+          "no": 66,
+          "text": "发汗后，腹胀满者，厚朴生姜半夏甘草人参汤主之。",
+          "translation": "发汗后腹部胀满的，用厚朴生姜半夏甘草人参汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后脾虚气滞，腹胀满，用朴姜半甘参汤健脾宽中。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.037"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.091"
+          ],
+          "studyTags": [
+            "厚朴生姜半夏甘草人参汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.067",
+          "no": 67,
+          "text": "伤寒，若吐、若下后，心下逆满，气上冲胸，起则头眩，脉沉紧，发汗则动经，身为振振摇者，茯苓桂枝白术甘草汤主之。",
+          "translation": "伤寒，经过催吐或泻下后，心下气逆胀满，气上冲胸，起身就头晕，脉沉紧，发汗会伤动经脉，身体震颤摇动，用茯苓桂枝白术甘草汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "吐下伤阳、水饮上冲，用苓桂术甘汤温阳化饮。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.038"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.092",
+            "SHL.SB.SYM.017",
+            "SHL.SB.SYM.093",
+            "SHL.SB.SYM.094"
+          ],
+          "studyTags": [
+            "苓桂术甘汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.068",
+          "no": 68,
+          "text": "发汗病不解，反恶寒者，虚故也，芍药甘草附子汤主之。",
+          "translation": "发汗后病未解除，反而怕冷的，是虚的缘故，用芍药甘草附子汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后阴阳两虚，恶寒者以芍药甘草附子汤扶阳益阴。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.039"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.003"
+          ],
+          "studyTags": [
+            "芍药甘草附子汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.069",
+          "no": 69,
+          "text": "发汗，若下之，病仍不解，烦躁者，茯苓四逆汤主之。",
+          "translation": "发汗或泻下后，病仍不解除，出现烦躁的，用茯苓四逆汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗下后阴阳俱伤、虚阳外越而烦躁，用茯苓四逆汤回阳益阴。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.040"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.014"
+          ],
+          "studyTags": [
+            "茯苓四逆汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.070",
+          "no": 70,
+          "text": "发汗后，恶寒者，虚故也；不恶寒，但热者，实也，当和胃气，与调胃承气汤。",
+          "translation": "发汗后怕冷的，是虚的缘故；不怕冷只发热的，是实的缘故，应当调和胃气，给与调胃承气汤。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "以恶寒与否辨汗后虚实，实热用调胃承气汤和胃。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.014"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.003",
+            "SHL.SB.SYM.001"
+          ],
+          "studyTags": [
+            "虚实辨证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.071",
+          "no": 71,
+          "text": "太阳病，发汗后，大汗出，胃中干，烦躁不得眠，欲得饮水者，少少与饮之，令胃气和则愈；若脉浮，小便不利，微热消渴者，五苓散主之。",
+          "translation": "太阳病发汗后大汗出，胃中津液干少，烦躁不能安睡，想喝水的，少量给水喝，使胃气和就能痊愈；如果脉浮、小便不利、轻微发热而口渴饮水不解的，用五苓散主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后津伤胃干者少少与水；膀胱气化不利者用五苓散。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.028"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.086",
+            "SHL.SB.SYM.015",
+            "SHL.SB.SYM.028",
+            "SHL.SB.SYM.095"
+          ],
+          "studyTags": [
+            "五苓散证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.072",
+          "no": 72,
+          "text": "发汗已，脉浮数，烦渴者，五苓散主之。",
+          "translation": "发汗后，脉浮数，心烦口渴的，用五苓散主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后气化不利、水津不布，烦渴用五苓散化气行水。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.028"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.053",
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.015"
+          ],
+          "studyTags": [
+            "五苓散证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.073",
+          "no": 73,
+          "text": "伤寒，汗出而渴者，五苓散主之；不渴者，茯苓甘草汤主之。",
+          "translation": "伤寒，汗出而口渴的，用五苓散主治；不渴的，用茯苓甘草汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "以口渴与否辨水停部位，分别用五苓散与茯苓甘草汤。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.028",
+            "SHL.SB.F.041"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.004",
+            "SHL.SB.SYM.015"
+          ],
+          "studyTags": [
+            "五苓散证",
+            "茯苓甘草汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.074",
+          "no": 74,
+          "text": "中风发热，六七日不解而烦，有表里证，渴欲饮水，水入则吐者，名曰水逆，五苓散主之。",
+          "translation": "中风发热，六七天不解除而心烦，表里证都有，口渴想喝水，水喝进去就吐出的，叫水逆，用五苓散主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "水饮内停，水入即吐，五苓散化气利水。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.028"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.015",
+            "SHL.SB.SYM.096"
+          ],
+          "studyTags": [
+            "水逆",
+            "五苓散证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.075",
+          "no": 75,
+          "text": "未持脉时，病人手叉自冒心，师因教试令咳而不咳者，此必两耳聋无闻也。所以然者，以重发汗，虚故如此。发汗后，饮水多必喘，以水灌之亦喘。",
+          "translation": "还没有诊脉时，病人双手交叉按住心口，医生让他咳嗽却不咳，这必定是两耳聋听不见。这是因为重复发汗，正气虚的缘故。发汗后喝水多必定气喘，用水浇灌身体也会气喘。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "重发汗伤心阳而耳聋，水饮犯肺则喘。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.088",
+            "SHL.SB.SYM.097",
+            "SHL.SB.SYM.018"
+          ],
+          "studyTags": [
+            "发汗过度"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.076",
+          "no": 76,
+          "text": "发汗后，水药不得入口为逆，若更发汗，必吐下不止。发汗吐下后，虚烦不得眠，若剧者，必反复颠倒，心中懊憹，栀子豉汤主之；若少气者，栀子甘草豉汤主之；若呕者，栀子生姜豉汤主之。",
+          "translation": "发汗后，水和药都不能入口属于逆证，如果再发汗，必定呕吐下利不止。发汗吐下后，虚烦不能安睡，如果严重的，必定反复颠倒、心中懊憹，用栀子豉汤主治；如果少气的，用栀子甘草豉汤主治；如果呕吐的，用栀子生姜豉汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗吐下后余热扰胸，以栀子豉汤清宣郁热。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.042",
+            "SHL.SB.F.043",
+            "SHL.SB.F.044"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.098",
+            "SHL.SB.SYM.086",
+            "SHL.SB.SYM.099",
+            "SHL.SB.SYM.067"
+          ],
+          "studyTags": [
+            "栀子豉汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.077",
+          "no": 77,
+          "text": "发汗，若下之，而烦热胸中窒者，栀子豉汤主之。",
+          "translation": "发汗或泻下后，心烦发热、胸中窒塞不通的，用栀子豉汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "余热留扰胸膈，胸中窒，栀子豉汤宣透。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.042"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.100"
+          ],
+          "studyTags": [
+            "栀子豉汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.078",
+          "no": 78,
+          "text": "伤寒五六日，大下之后，身热不去，心中结痛者，未欲解也，栀子豉汤主之。",
+          "translation": "伤寒五六天，大泻下之后，身体发热不退，心中结聚疼痛的，是病未解除，用栀子豉汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "下后余热留结心中，栀子豉汤清宣。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.042"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.101"
+          ],
+          "studyTags": [
+            "栀子豉汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.079",
+          "no": 79,
+          "text": "伤寒下后，心烦腹满，卧起不安者，栀子厚朴汤主之。",
+          "translation": "伤寒泻下后，心烦腹满，躺下起来都不安适的，用栀子厚朴汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "下后热扰胸膈兼腹满，栀子厚朴汤清热宽中。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.045"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.091",
+            "SHL.SB.SYM.102"
+          ],
+          "studyTags": [
+            "栀子厚朴汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.080",
+          "no": 80,
+          "text": "伤寒，医以丸药大下之，身热不去，微烦者，栀子干姜汤主之。",
+          "translation": "伤寒，医生用丸药猛烈泻下，身体发热不退，轻微心烦的，用栀子干姜汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "下后上热下寒，栀子干姜汤清上温中。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.046"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.014"
+          ],
+          "studyTags": [
+            "栀子干姜汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.081",
+          "no": 81,
+          "text": "凡用栀子汤，病人旧微溏者，不可与服之。",
+          "translation": "凡用栀子汤，病人平素大便微溏的，不可服用。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "素体脾虚便溏者禁用栀子汤。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.042"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.039"
+          ],
+          "studyTags": [
+            "栀子汤禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.082",
+          "no": 82,
+          "text": "太阳病发汗，汗出不解，其人仍发热，心下悸，头眩，身瞤动，振振欲擗地者，真武汤主之。",
+          "translation": "太阳病发汗，汗出而病不解，病人仍然发热，心下悸动，头晕，身体肌肉跳动，身体震颤想要跌倒的，用真武汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗后阳虚水泛，真武汤温阳利水。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.047"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.088",
+            "SHL.SB.SYM.093",
+            "SHL.SB.SYM.103",
+            "SHL.SB.SYM.104"
+          ],
+          "studyTags": [
+            "真武汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.083",
+          "no": 83,
+          "text": "咽喉干燥者，不可发汗。",
+          "translation": "咽喉干燥的人，不可发汗。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "咽喉干燥提示阴液不足，禁汗。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.105"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.084",
+          "no": 84,
+          "text": "淋家，不可发汗，发汗必便血。",
+          "translation": "素有淋病的人，不可发汗，发汗必定尿血。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "淋家阴津不足，发汗伤阴动血。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.106"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.085",
+          "no": 85,
+          "text": "疮家，虽身疼痛，不可发汗，汗出则痉。",
+          "translation": "素有疮疡的人，虽然身体疼痛，也不可发汗，发汗后会出现痉病。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "疮家气血已伤，发汗更伤津液而致痉。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.012",
+            "SHL.SB.SYM.107"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.086",
+          "no": 86,
+          "text": "衄家，不可发汗，汗出必额上陷，脉急紧，直视不能眴，不得眠。",
+          "translation": "素有鼻出血的人，不可发汗，发汗后必定额上陷下，脉急紧，两眼直视不能转动，不能安睡。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "衄家阴血不足，发汗重伤阴血而致危候。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.056",
+            "SHL.SB.SYM.108",
+            "SHL.SB.SYM.086"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.087",
+          "no": 87,
+          "text": "亡血家，不可发汗，发汗则寒栗而振。",
+          "translation": "素有失血的人，不可发汗，发汗后会出现寒战发抖。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "亡血家气血两虚，发汗则阳气更伤。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.109"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.088",
+          "no": 88,
+          "text": "汗家，重发汗，必恍惚心乱，小便已阴疼，与禹余粮丸。",
+          "translation": "平素容易出汗的人，重复发汗，必定精神恍惚、心中烦乱，小便后阴部疼痛，给与禹余粮丸。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗家阳气津液本虚，重汗后心神失养。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.048"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.110",
+            "SHL.SB.SYM.111"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.089",
+          "no": 89,
+          "text": "病人有寒，复发汗，胃中冷，必吐蛔。",
+          "translation": "病人素有寒邪，又发汗，胃中寒冷，必定吐出蛔虫。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "中阳素虚，发汗更伤胃阳。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.112",
+            "SHL.SB.SYM.113"
+          ],
+          "studyTags": [
+            "发汗禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYZ.090",
+          "no": 90,
+          "text": "本发汗，而复下之，此为逆也；若先发汗，治不为逆。本先下之，而反汗之，为逆；若先下之，治不为逆。",
+          "translation": "应当先发汗却反而泻下，这是逆治；如果先发汗，就不算逆治。应当先泻下却反而发汗，是逆治；如果先泻下，就不算逆治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "强调表里先后治则。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [],
+          "studyTags": [
+            "治则",
+            "表里先后"
           ],
           "notes": "AI 初稿待校对。"
         }
@@ -4013,6 +4731,723 @@
         "虚证"
       ],
       "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.061",
+      "no": 61,
+      "text": "下之后，复发汗，昼日烦躁不得眠，夜而安静，不呕不渴，无表证，脉沉微，身无大热者，干姜附子汤主之。",
+      "translation": "泻下之后又发汗，白天烦躁不能安睡，夜里安静，不呕不渴，没有表证，脉沉微，身体没有明显发热的，用干姜附子汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗下后阳气暴虚，用干姜附子汤急救回阳。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.032"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.086",
+        "SHL.SB.SYM.054"
+      ],
+      "studyTags": [
+        "干姜附子汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.062",
+      "no": 62,
+      "text": "发汗后，身疼痛，脉沉迟者，桂枝加芍药生姜各一两人参三两新加汤主之。",
+      "translation": "发汗后身体疼痛，脉沉迟的，用桂枝加芍药生姜各一两人参三两新加汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后营血不足，身痛脉沉迟，益气养营兼和营卫。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.033"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.012",
+        "SHL.SB.SYM.087"
+      ],
+      "studyTags": [
+        "新加汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.063",
+      "no": 63,
+      "text": "发汗后，不可更行桂枝汤。汗出而喘，无大热者，可与麻黄杏仁甘草石膏汤。",
+      "translation": "发汗后，不可以再用桂枝汤。汗出而气喘，没有明显发热的，可以用麻黄杏仁甘草石膏汤。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后邪热壅肺，汗出而喘，用麻杏石甘汤清热宣肺。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.034"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.004",
+        "SHL.SB.SYM.018"
+      ],
+      "studyTags": [
+        "麻杏石甘汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.064",
+      "no": 64,
+      "text": "发汗过多，其人叉手自冒心，心下悸，欲得按者，桂枝甘草汤主之。",
+      "translation": "发汗过多，病人双手交叉按住心口，心下悸动，想要按着的，用桂枝甘草汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗多伤心阳，心阳不足而悸，桂枝甘草汤温补心阳。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.035"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.088"
+      ],
+      "studyTags": [
+        "桂枝甘草汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.065",
+      "no": 65,
+      "text": "发汗后，其人脐下悸者，欲作奔豚，茯苓桂枝甘草大枣汤主之。",
+      "translation": "发汗后，病人脐下悸动的，是奔豚将要发作，用茯苓桂枝甘草大枣汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后心阳不足、水饮上冲欲作奔豚，用苓桂甘枣汤培土制水。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.036"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.089",
+        "SHL.SB.SYM.090"
+      ],
+      "studyTags": [
+        "茯苓桂枝甘草大枣汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.066",
+      "no": 66,
+      "text": "发汗后，腹胀满者，厚朴生姜半夏甘草人参汤主之。",
+      "translation": "发汗后腹部胀满的，用厚朴生姜半夏甘草人参汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后脾虚气滞，腹胀满，用朴姜半甘参汤健脾宽中。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.037"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.091"
+      ],
+      "studyTags": [
+        "厚朴生姜半夏甘草人参汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.067",
+      "no": 67,
+      "text": "伤寒，若吐、若下后，心下逆满，气上冲胸，起则头眩，脉沉紧，发汗则动经，身为振振摇者，茯苓桂枝白术甘草汤主之。",
+      "translation": "伤寒，经过催吐或泻下后，心下气逆胀满，气上冲胸，起身就头晕，脉沉紧，发汗会伤动经脉，身体震颤摇动，用茯苓桂枝白术甘草汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "吐下伤阳、水饮上冲，用苓桂术甘汤温阳化饮。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.038"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.092",
+        "SHL.SB.SYM.017",
+        "SHL.SB.SYM.093",
+        "SHL.SB.SYM.094"
+      ],
+      "studyTags": [
+        "苓桂术甘汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.068",
+      "no": 68,
+      "text": "发汗病不解，反恶寒者，虚故也，芍药甘草附子汤主之。",
+      "translation": "发汗后病未解除，反而怕冷的，是虚的缘故，用芍药甘草附子汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后阴阳两虚，恶寒者以芍药甘草附子汤扶阳益阴。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.039"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.003"
+      ],
+      "studyTags": [
+        "芍药甘草附子汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.069",
+      "no": 69,
+      "text": "发汗，若下之，病仍不解，烦躁者，茯苓四逆汤主之。",
+      "translation": "发汗或泻下后，病仍不解除，出现烦躁的，用茯苓四逆汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗下后阴阳俱伤、虚阳外越而烦躁，用茯苓四逆汤回阳益阴。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.040"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.014"
+      ],
+      "studyTags": [
+        "茯苓四逆汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.070",
+      "no": 70,
+      "text": "发汗后，恶寒者，虚故也；不恶寒，但热者，实也，当和胃气，与调胃承气汤。",
+      "translation": "发汗后怕冷的，是虚的缘故；不怕冷只发热的，是实的缘故，应当调和胃气，给与调胃承气汤。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "以恶寒与否辨汗后虚实，实热用调胃承气汤和胃。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.014"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.003",
+        "SHL.SB.SYM.001"
+      ],
+      "studyTags": [
+        "虚实辨证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.071",
+      "no": 71,
+      "text": "太阳病，发汗后，大汗出，胃中干，烦躁不得眠，欲得饮水者，少少与饮之，令胃气和则愈；若脉浮，小便不利，微热消渴者，五苓散主之。",
+      "translation": "太阳病发汗后大汗出，胃中津液干少，烦躁不能安睡，想喝水的，少量给水喝，使胃气和就能痊愈；如果脉浮、小便不利、轻微发热而口渴饮水不解的，用五苓散主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后津伤胃干者少少与水；膀胱气化不利者用五苓散。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.028"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.086",
+        "SHL.SB.SYM.015",
+        "SHL.SB.SYM.028",
+        "SHL.SB.SYM.095"
+      ],
+      "studyTags": [
+        "五苓散证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.072",
+      "no": 72,
+      "text": "发汗已，脉浮数，烦渴者，五苓散主之。",
+      "translation": "发汗后，脉浮数，心烦口渴的，用五苓散主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后气化不利、水津不布，烦渴用五苓散化气行水。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.028"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.053",
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.015"
+      ],
+      "studyTags": [
+        "五苓散证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.073",
+      "no": 73,
+      "text": "伤寒，汗出而渴者，五苓散主之；不渴者，茯苓甘草汤主之。",
+      "translation": "伤寒，汗出而口渴的，用五苓散主治；不渴的，用茯苓甘草汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "以口渴与否辨水停部位，分别用五苓散与茯苓甘草汤。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.028",
+        "SHL.SB.F.041"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.004",
+        "SHL.SB.SYM.015"
+      ],
+      "studyTags": [
+        "五苓散证",
+        "茯苓甘草汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.074",
+      "no": 74,
+      "text": "中风发热，六七日不解而烦，有表里证，渴欲饮水，水入则吐者，名曰水逆，五苓散主之。",
+      "translation": "中风发热，六七天不解除而心烦，表里证都有，口渴想喝水，水喝进去就吐出的，叫水逆，用五苓散主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "水饮内停，水入即吐，五苓散化气利水。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.028"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.015",
+        "SHL.SB.SYM.096"
+      ],
+      "studyTags": [
+        "水逆",
+        "五苓散证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.075",
+      "no": 75,
+      "text": "未持脉时，病人手叉自冒心，师因教试令咳而不咳者，此必两耳聋无闻也。所以然者，以重发汗，虚故如此。发汗后，饮水多必喘，以水灌之亦喘。",
+      "translation": "还没有诊脉时，病人双手交叉按住心口，医生让他咳嗽却不咳，这必定是两耳聋听不见。这是因为重复发汗，正气虚的缘故。发汗后喝水多必定气喘，用水浇灌身体也会气喘。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "重发汗伤心阳而耳聋，水饮犯肺则喘。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.088",
+        "SHL.SB.SYM.097",
+        "SHL.SB.SYM.018"
+      ],
+      "studyTags": [
+        "发汗过度"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.076",
+      "no": 76,
+      "text": "发汗后，水药不得入口为逆，若更发汗，必吐下不止。发汗吐下后，虚烦不得眠，若剧者，必反复颠倒，心中懊憹，栀子豉汤主之；若少气者，栀子甘草豉汤主之；若呕者，栀子生姜豉汤主之。",
+      "translation": "发汗后，水和药都不能入口属于逆证，如果再发汗，必定呕吐下利不止。发汗吐下后，虚烦不能安睡，如果严重的，必定反复颠倒、心中懊憹，用栀子豉汤主治；如果少气的，用栀子甘草豉汤主治；如果呕吐的，用栀子生姜豉汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗吐下后余热扰胸，以栀子豉汤清宣郁热。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.042",
+        "SHL.SB.F.043",
+        "SHL.SB.F.044"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.098",
+        "SHL.SB.SYM.086",
+        "SHL.SB.SYM.099",
+        "SHL.SB.SYM.067"
+      ],
+      "studyTags": [
+        "栀子豉汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.077",
+      "no": 77,
+      "text": "发汗，若下之，而烦热胸中窒者，栀子豉汤主之。",
+      "translation": "发汗或泻下后，心烦发热、胸中窒塞不通的，用栀子豉汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "余热留扰胸膈，胸中窒，栀子豉汤宣透。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.042"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.100"
+      ],
+      "studyTags": [
+        "栀子豉汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.078",
+      "no": 78,
+      "text": "伤寒五六日，大下之后，身热不去，心中结痛者，未欲解也，栀子豉汤主之。",
+      "translation": "伤寒五六天，大泻下之后，身体发热不退，心中结聚疼痛的，是病未解除，用栀子豉汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "下后余热留结心中，栀子豉汤清宣。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.042"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.101"
+      ],
+      "studyTags": [
+        "栀子豉汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.079",
+      "no": 79,
+      "text": "伤寒下后，心烦腹满，卧起不安者，栀子厚朴汤主之。",
+      "translation": "伤寒泻下后，心烦腹满，躺下起来都不安适的，用栀子厚朴汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "下后热扰胸膈兼腹满，栀子厚朴汤清热宽中。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.045"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.091",
+        "SHL.SB.SYM.102"
+      ],
+      "studyTags": [
+        "栀子厚朴汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.080",
+      "no": 80,
+      "text": "伤寒，医以丸药大下之，身热不去，微烦者，栀子干姜汤主之。",
+      "translation": "伤寒，医生用丸药猛烈泻下，身体发热不退，轻微心烦的，用栀子干姜汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "下后上热下寒，栀子干姜汤清上温中。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.046"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.014"
+      ],
+      "studyTags": [
+        "栀子干姜汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.081",
+      "no": 81,
+      "text": "凡用栀子汤，病人旧微溏者，不可与服之。",
+      "translation": "凡用栀子汤，病人平素大便微溏的，不可服用。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "素体脾虚便溏者禁用栀子汤。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.042"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.039"
+      ],
+      "studyTags": [
+        "栀子汤禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.082",
+      "no": 82,
+      "text": "太阳病发汗，汗出不解，其人仍发热，心下悸，头眩，身瞤动，振振欲擗地者，真武汤主之。",
+      "translation": "太阳病发汗，汗出而病不解，病人仍然发热，心下悸动，头晕，身体肌肉跳动，身体震颤想要跌倒的，用真武汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗后阳虚水泛，真武汤温阳利水。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.047"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.088",
+        "SHL.SB.SYM.093",
+        "SHL.SB.SYM.103",
+        "SHL.SB.SYM.104"
+      ],
+      "studyTags": [
+        "真武汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.083",
+      "no": 83,
+      "text": "咽喉干燥者，不可发汗。",
+      "translation": "咽喉干燥的人，不可发汗。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "咽喉干燥提示阴液不足，禁汗。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.105"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.084",
+      "no": 84,
+      "text": "淋家，不可发汗，发汗必便血。",
+      "translation": "素有淋病的人，不可发汗，发汗必定尿血。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "淋家阴津不足，发汗伤阴动血。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.106"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.085",
+      "no": 85,
+      "text": "疮家，虽身疼痛，不可发汗，汗出则痉。",
+      "translation": "素有疮疡的人，虽然身体疼痛，也不可发汗，发汗后会出现痉病。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "疮家气血已伤，发汗更伤津液而致痉。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.012",
+        "SHL.SB.SYM.107"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.086",
+      "no": 86,
+      "text": "衄家，不可发汗，汗出必额上陷，脉急紧，直视不能眴，不得眠。",
+      "translation": "素有鼻出血的人，不可发汗，发汗后必定额上陷下，脉急紧，两眼直视不能转动，不能安睡。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "衄家阴血不足，发汗重伤阴血而致危候。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.056",
+        "SHL.SB.SYM.108",
+        "SHL.SB.SYM.086"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.087",
+      "no": 87,
+      "text": "亡血家，不可发汗，发汗则寒栗而振。",
+      "translation": "素有失血的人，不可发汗，发汗后会出现寒战发抖。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "亡血家气血两虚，发汗则阳气更伤。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.109"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.088",
+      "no": 88,
+      "text": "汗家，重发汗，必恍惚心乱，小便已阴疼，与禹余粮丸。",
+      "translation": "平素容易出汗的人，重复发汗，必定精神恍惚、心中烦乱，小便后阴部疼痛，给与禹余粮丸。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗家阳气津液本虚，重汗后心神失养。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.048"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.110",
+        "SHL.SB.SYM.111"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.089",
+      "no": 89,
+      "text": "病人有寒，复发汗，胃中冷，必吐蛔。",
+      "translation": "病人素有寒邪，又发汗，胃中寒冷，必定吐出蛔虫。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "中阳素虚，发汗更伤胃阳。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.112",
+        "SHL.SB.SYM.113"
+      ],
+      "studyTags": [
+        "发汗禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYZ.090",
+      "no": 90,
+      "text": "本发汗，而复下之，此为逆也；若先发汗，治不为逆。本先下之，而反汗之，为逆；若先下之，治不为逆。",
+      "translation": "应当先发汗却反而泻下，这是逆治；如果先发汗，就不算逆治。应当先泻下却反而发汗，是逆治；如果先泻下，就不算逆治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "强调表里先后治则。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [],
+      "studyTags": [
+        "治则",
+        "表里先后"
+      ],
+      "notes": "AI 初稿待校对。"
     }
   ],
   "formulas": [
@@ -5558,6 +6993,646 @@
       "mainSymptoms": [],
       "pulse": [],
       "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.032",
+      "name": "干姜附子汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "生用，去皮，切八片"
+        }
+      ],
+      "originalDoseText": "干姜一两 附子一枚（生用，去皮，切八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升，煮取一升，去滓，顿服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.061"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.033",
+      "name": "桂枝加芍药生姜各一两人参三两新加汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "四两",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 芍药四两 甘草二两（炙） 人参三两 大枣十二枚（擘） 生姜四两（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水一斗二升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.062"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加芍药生姜各一两人参三两"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.034",
+      "name": "麻黄杏仁甘草石膏汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "四两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "五十个",
+          "note": "去皮尖"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.011",
+          "dose": "半斤",
+          "note": "碎，绵裹"
+        }
+      ],
+      "originalDoseText": "麻黄四两（去节） 杏仁五十个（去皮尖） 甘草二两（炙） 石膏半斤（碎，绵裹）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水七升，煮麻黄，减二升，去上沫，内诸药，煮取二升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.063"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.019",
+          "note": "麻黄汤去桂枝加石膏"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.035",
+      "name": "桂枝甘草汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "桂枝四两（去皮） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升，煮取一升，去滓，顿服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.064"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.036",
+      "name": "茯苓桂枝甘草大枣汤",
+      "category": "温阳利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十五枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "茯苓半斤 桂枝四两（去皮） 甘草二两（炙） 大枣十五枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以甘澜水一斗，先煮茯苓，减二升，内诸药，煮取三升，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.065"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.037",
+      "name": "厚朴生姜半夏甘草人参汤",
+      "category": "健脾理气方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.007",
+          "dose": "半斤",
+          "note": "炙，去皮"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "半斤",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "厚朴半斤（炙，去皮） 生姜半斤（切） 半夏半升（洗） 甘草二两（炙） 人参一两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水一斗，煮取三升，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.066"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.038",
+      "name": "茯苓桂枝白术甘草汤",
+      "category": "温阳化饮方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "茯苓四两 桂枝三两（去皮） 白术二两 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水六升，煮取三升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.067"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.039",
+      "name": "芍药甘草附子汤",
+      "category": "扶阳益阴方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "芍药三两 甘草三两（炙） 附子一枚（炮，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水五升，煮取一升五合，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.068"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.040",
+      "name": "茯苓四逆汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "生用，去皮，破八片"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "一两半",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "茯苓四两 人参一两 附子一枚（生用，去皮，破八片） 甘草二两（炙） 干姜一两半",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水五升，煮取三升，去滓，温服七合，日二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.069"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.015",
+          "note": "四逆汤加茯苓、人参"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.041",
+      "name": "茯苓甘草汤",
+      "category": "温阳利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "茯苓二两 桂枝二两（去皮） 甘草一两（炙） 生姜三两（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水四升，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.073"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.042",
+      "name": "栀子豉汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.039",
+          "dose": "四合",
+          "note": "绵裹"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 香豉四合（绵裹）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水四升，先煮栀子，得二升半，内豉，煮取一升半，去滓，分为二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.076",
+        "SHL.SB.TYZ.077",
+        "SHL.SB.TYZ.078",
+        "SHL.SB.TYZ.081"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.043",
+          "note": "栀子甘草豉汤"
+        },
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.044",
+          "note": "栀子生姜豉汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.043",
+      "name": "栀子甘草豉汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.039",
+          "dose": "四合",
+          "note": "绵裹"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 香豉四合（绵裹） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水四升，先煮栀子、甘草，取二升半，内豉，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.076"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.042",
+          "note": "栀子豉汤加甘草"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.044",
+      "name": "栀子生姜豉汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.039",
+          "dose": "四合",
+          "note": "绵裹"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "五两",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 香豉四合（绵裹） 生姜五两（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水四升，先煮栀子、生姜，取二升半，内豉，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.076"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.042",
+          "note": "栀子豉汤加生姜"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.045",
+      "name": "栀子厚朴汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.007",
+          "dose": "四两",
+          "note": "炙，去皮"
+        },
+        {
+          "herb": "SHL.SB.H.028",
+          "dose": "四枚",
+          "note": "水浸，炙令黄"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 厚朴四两（炙，去皮） 枳实四枚（水浸，炙令黄）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水三升半，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.079"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.046",
+      "name": "栀子干姜汤",
+      "category": "清上温中方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "二两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 干姜二两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升半，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.080"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.047",
+      "name": "真武汤",
+      "category": "温阳利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "茯苓三两 芍药三两 白术二两 生姜三两（切） 附子一枚（炮，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水八升，煮取三升，去滓，温服七合，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.082"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.048",
+      "name": "禹余粮丸",
+      "category": "固涩方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.040",
+          "dose": "四两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "禹余粮四两（原方组成或有出入，待校勘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "原方煎服法待校勘。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.088"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
     }
   ],
   "herbs": [
@@ -5787,6 +7862,26 @@
     {
       "id": "SHL.SB.H.037",
       "name": "牡蛎",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.038",
+      "name": "栀子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.039",
+      "name": "淡豆豉",
+      "aliases": [
+        "香豉"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.040",
+      "name": "禹余粮",
       "aliases": [],
       "notes": "AI 初稿待校对。"
     }
@@ -6359,6 +8454,201 @@
       "name": "脉浮滑",
       "category": "脉象",
       "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.086",
+      "name": "不得眠",
+      "category": "症状",
+      "aliases": [
+        "不得卧",
+        "失眠"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.087",
+      "name": "脉沉迟",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.088",
+      "name": "心下悸",
+      "category": "症状",
+      "aliases": [
+        "心悸"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.089",
+      "name": "脐下悸",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.090",
+      "name": "奔豚",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.091",
+      "name": "腹胀满",
+      "category": "症状",
+      "aliases": [
+        "腹满"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.092",
+      "name": "心下逆满",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.093",
+      "name": "头眩",
+      "category": "症状",
+      "aliases": [
+        "头晕"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.094",
+      "name": "身为振振摇",
+      "category": "症状",
+      "aliases": [
+        "身体振摇"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.095",
+      "name": "消渴",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.096",
+      "name": "水逆",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.097",
+      "name": "耳聋",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.098",
+      "name": "虚烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.099",
+      "name": "反复颠倒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.100",
+      "name": "胸中窒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.101",
+      "name": "心中结痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.102",
+      "name": "卧起不安",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.103",
+      "name": "身瞤动",
+      "category": "症状",
+      "aliases": [
+        "肌肉瞤动"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.104",
+      "name": "振振欲擗地",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.105",
+      "name": "咽喉干燥",
+      "category": "症状",
+      "aliases": [
+        "咽干"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.106",
+      "name": "便血",
+      "category": "症状",
+      "aliases": [
+        "尿血"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.107",
+      "name": "痉",
+      "category": "病机",
+      "aliases": [
+        "痉病"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.108",
+      "name": "直视不能眴",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.109",
+      "name": "寒栗而振",
+      "category": "症状",
+      "aliases": [
+        "寒战"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.110",
+      "name": "恍惚心乱",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.111",
+      "name": "小便已阴疼",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.112",
+      "name": "吐蛔",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.113",
+      "name": "胃中冷",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.114",
+      "name": "少气",
+      "category": "症状",
+      "aliases": []
     }
   ],
   "questions": [
@@ -6544,6 +8834,52 @@
       ],
       "answerIndex": 0,
       "rationale": "小结胸病用小陷胸汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0013",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.063",
+      "prompt": "发汗后，不可更行桂枝汤。汗出而喘，无大热者，可与＿＿＿。",
+      "options": [
+        "麻黄杏仁甘草石膏汤",
+        "麻黄汤",
+        "桂枝加厚朴杏子汤",
+        "小青龙汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "汗后邪热壅肺，用麻杏石甘汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0014",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYZ.082",
+      "formula": "SHL.SB.F.047",
+      "prompt": "太阳病发汗，汗出不解，其人仍发热，心下悸，头眩，身瞤动，振振欲擗地者，宜用何方？",
+      "options": [
+        "真武汤",
+        "苓桂术甘汤",
+        "茯苓四逆汤",
+        "五苓散"
+      ],
+      "answerIndex": 0,
+      "rationale": "阳虚水泛，用真武汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0015",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.076",
+      "prompt": "发汗吐下后，虚烦不得眠，若剧者，必反复颠倒，心中懊憹，＿＿＿主之。",
+      "options": [
+        "栀子豉汤",
+        "栀子厚朴汤",
+        "栀子干姜汤",
+        "酸枣仁汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "余热扰胸，用栀子豉汤。",
       "status": "reviewed"
     }
   ]

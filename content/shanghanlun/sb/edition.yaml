@@ -13,6 +13,7 @@ chapters:
     order: 2
     files:
       - chapters/taiyang-zhong-1.yaml
+      - chapters/taiyang-zhong-2.yaml
   - code: TYX
     name: 辨太阳病脉证并治下
     order: 3
