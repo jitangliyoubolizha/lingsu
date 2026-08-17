@@ -103,3 +103,54 @@ herbs:
     name: 五味子
     aliases: []
     notes: AI 初稿待校对。
+  - id: SHL.SB.H.026
+    name: 甘遂
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.027
+    name: 葶苈子
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.028
+    name: 枳实
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.029
+    name: 瓜蒌实
+    aliases:
+      - 栝楼实
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.030
+    name: 文蛤
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.031
+    name: 猪苓
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.032
+    name: 泽泻
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.033
+    name: 桔梗
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.034
+    name: 贝母
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.035
+    name: 巴豆
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.036
+    name: 栝楼根
+    aliases:
+      - 瓜蒌根
+      - 天花粉
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.037
+    name: 牡蛎
+    aliases: []
+    notes: AI 初稿待校对。

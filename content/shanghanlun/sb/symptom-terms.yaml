@@ -269,3 +269,103 @@ terms:
     name: 脉微细
     category: 脉象
     aliases: []
+  - id: SHL.SB.SYM.063
+    name: 结胸
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.064
+    name: 藏结
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.065
+    name: 舌上白胎滑
+    category: 症状
+    aliases:
+      - 舌苔白滑
+  - id: SHL.SB.SYM.066
+    name: 心下硬
+    category: 症状
+    aliases:
+      - 心下硬满
+  - id: SHL.SB.SYM.067
+    name: 心中懊憹
+    category: 症状
+    aliases:
+      - 懊憹
+  - id: SHL.SB.SYM.068
+    name: 头汗出
+    category: 症状
+    aliases:
+      - 但头汗出
+  - id: SHL.SB.SYM.069
+    name: 身黄
+    category: 症状
+    aliases:
+      - 发黄
+  - id: SHL.SB.SYM.070
+    name: 心下痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.071
+    name: 潮热
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.072
+    name: 咽痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.073
+    name: 两胁拘急
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.074
+    name: 下血
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.075
+    name: 肉上粟起
+    category: 症状
+    aliases:
+      - 肤起粟
+  - id: SHL.SB.SYM.076
+    name: 眩冒
+    category: 症状
+    aliases:
+      - 头晕目眩
+  - id: SHL.SB.SYM.077
+    name: 心下痞硬
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.078
+    name: 支节烦疼
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.079
+    name: 心下支结
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.080
+    name: 往来寒热
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.081
+    name: 热入血室
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.082
+    name: 不能卧
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.083
+    name: 膈内拒痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.084
+    name: 项强
+    category: 症状
+    aliases:
+      - 颈项强
+  - id: SHL.SB.SYM.085
+    name: 脉浮滑
+    category: 脉象
+    aliases: []

@@ -31,6 +31,14 @@
         "files": [
           "chapters/taiyang-zhong-1.yaml"
         ]
+      },
+      {
+        "code": "TYX",
+        "name": "辨太阳病脉证并治下",
+        "order": 3,
+        "files": [
+          "chapters/taiyang-xia.yaml"
+        ]
       }
     ]
   },
@@ -1512,6 +1520,526 @@
           "notes": "AI 初稿待校对。"
         }
       ]
+    },
+    {
+      "code": "TYX",
+      "name": "辨太阳病脉证并治下",
+      "order": 3,
+      "part": 1,
+      "partTotal": 1,
+      "clauses": [
+        {
+          "id": "SHL.SB.TYX.128",
+          "no": 128,
+          "text": "问曰：病有结胸，有藏结，其状何如？答曰：按之痛，寸脉浮，关脉沉，名曰结胸也。何谓藏结？答曰：如结胸状，饮食如故，时时下利，寸脉浮，关脉小细沉紧，名曰藏结。舌上白胎滑者，难治。",
+          "translation": "问道：病有结胸和藏结，症状怎样区别？回答说：按压疼痛，寸脉浮、关脉沉的，叫结胸。什么叫藏结？回答说：像结胸的样子，但饮食照常，时时下利，寸脉浮、关脉小细沉紧的，叫藏结。舌上白滑苔的，难以处理。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "以按痛、脉象和饮食情况区分结胸与藏结。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.064",
+            "SHL.SB.SYM.065",
+            "SHL.SB.SYM.039"
+          ],
+          "studyTags": [
+            "结胸",
+            "藏结"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.129",
+          "no": 129,
+          "text": "藏结无阳证，不往来寒热，其人反静，舌上胎滑者，不可攻也。",
+          "translation": "藏结没有阳证表现，不出现往来寒热，病人反而安静，舌上苔滑的，不可用攻下法。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "藏结属阴结，禁用攻下。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.064",
+            "SHL.SB.SYM.065",
+            "SHL.SB.SYM.080"
+          ],
+          "studyTags": [
+            "藏结"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.130",
+          "no": 130,
+          "text": "病发于阳，而反下之，热入因作结胸；病发于阴，而反下之，因作痞也。所以成结胸者，以下之太早故也。",
+          "translation": "病发于阳，反而误用泻下，热邪内陷就形成结胸；病发于阴，反而误用泻下，就形成痞证。形成结胸的原因，是泻下太早。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "误下是结胸与痞证形成的重要原因。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.063"
+          ],
+          "studyTags": [
+            "误下",
+            "结胸"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.131",
+          "no": 131,
+          "text": "结胸者，项亦强，如柔痉状，下之则和，宜大陷胸丸。",
+          "translation": "结胸病人，颈项也强直，像柔痉一样，用攻下法可以缓和，适合用大陷胸丸。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "结胸见项强如柔痉，用大陷胸丸缓下。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.023"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.084"
+          ],
+          "studyTags": [
+            "大陷胸丸证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.132",
+          "no": 132,
+          "text": "结胸证，其脉浮大者，不可下，下之则死。",
+          "translation": "结胸证，如果脉浮大的，不可攻下，误下会危及生命。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "结胸脉浮大提示邪未完全内结，禁用攻下。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.063"
+          ],
+          "studyTags": [
+            "结胸禁忌"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.133",
+          "no": 133,
+          "text": "结胸证悉具，烦躁者亦死。",
+          "translation": "结胸症状全部具备，又见烦躁的，预后也差。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "结胸正虚邪实而烦躁，预后不良。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.014"
+          ],
+          "studyTags": [
+            "结胸"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.134",
+          "no": 134,
+          "text": "太阳病，脉浮而动数，浮则为风，数则为热，动则为痛，数则为虚，头痛发热，微盗汗出，而反恶寒者，表未解也。医反下之，动数变迟，膈内拒痛，胃中空虚，客气动膈，短气躁烦，心中懊憹，阳气内陷，心下因硬，则为结胸，大陷胸汤主之。若不结胸，但头汗出，余处无汗，剂颈而还，小便不利，身必发黄。",
+          "translation": "太阳病，脉浮而动数，浮主风，数主热，动主痛，数又主虚，头痛发热，轻微盗汗，反而怕冷，是表邪未解。医生反而泻下，动数脉变为迟，胸膈内拒按疼痛，胃中空虚，邪气扰动胸膈，出现短气烦躁，心中懊憹，阳气内陷，心下因而硬满，就成为结胸，用大陷胸汤主治。如果没有形成结胸，只头出汗，身体其他部位无汗，汗出到颈部为止，小便不利，身体必定发黄。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "详述误下成结胸的机理，并指出不结胸则湿热发黄。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.024"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.083",
+            "SHL.SB.SYM.059",
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.067",
+            "SHL.SB.SYM.066",
+            "SHL.SB.SYM.068",
+            "SHL.SB.SYM.028",
+            "SHL.SB.SYM.069"
+          ],
+          "studyTags": [
+            "大陷胸汤证",
+            "误下"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.135",
+          "no": 135,
+          "text": "伤寒六七日，结胸热实，脉沉而紧，心下痛，按之石硬者，大陷胸汤主之。",
+          "translation": "伤寒六七天，结胸热实，脉沉而紧，心下疼痛，按之像石头一样硬的，用大陷胸汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "热实结胸，以大陷胸汤泻热逐水。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.024"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.070",
+            "SHL.SB.SYM.066"
+          ],
+          "studyTags": [
+            "大陷胸汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.136",
+          "no": 136,
+          "text": "伤寒十余日，热结在里，复往来寒热者，与大柴胡汤；但结胸，无大热者，此为水结在胸胁也，但头微汗出者，大陷胸汤主之。",
+          "translation": "伤寒十多天，热邪结聚在里，又出现往来寒热的，给与大柴胡汤；如果只是结胸，没有明显大热，这是水饮结聚在胸胁，只有头部微微出汗的，用大陷胸汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "比较热结里实的少阳合并证与水结胸胁的结胸证。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.025",
+            "SHL.SB.F.024"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.080",
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.068"
+          ],
+          "studyTags": [
+            "大柴胡汤证",
+            "大陷胸汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.137",
+          "no": 137,
+          "text": "太阳病，重发汗而复下之，不大便五六日，舌上燥而渴，日晡所小有潮热，从心下至少腹硬满而痛不可近者，大陷胸汤主之。",
+          "translation": "太阳病，反复发汗又泻下，五六天不大便，舌上干燥而口渴，傍晚时轻微潮热，从心下到少腹硬满疼痛、不能触碰的，用大陷胸汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "津伤热结、水热互结范围广泛，大陷胸汤急下。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.024"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.015",
+            "SHL.SB.SYM.071",
+            "SHL.SB.SYM.066"
+          ],
+          "studyTags": [
+            "大陷胸汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.138",
+          "no": 138,
+          "text": "小结胸病，正在心下，按之则痛，脉浮滑者，小陷胸汤主之。",
+          "translation": "小结胸病，正在心下部位，按压则痛，脉浮滑的，用小陷胸汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "小结胸病位局限、热痰互结，用小陷胸汤清热化痰。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.026"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.070",
+            "SHL.SB.SYM.085"
+          ],
+          "studyTags": [
+            "小陷胸汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.139",
+          "no": 139,
+          "text": "太阳病，二三日，不能卧，但欲起，心下必结，脉微弱者，此本有寒分也。反下之，若利止，必作结胸；未止者，四日复下之，此作协热利也。",
+          "translation": "太阳病两三天，不能躺卧，只想起来，心下必定结聚，脉微弱的，这是本有寒饮。反而泻下，如果下利停止，必定形成结胸；下利未止，到第四天又泻下，就形成协热利。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "素体有寒而误下，可致结胸或协热利。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.082",
+            "SHL.SB.SYM.066",
+            "SHL.SB.SYM.023",
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.039"
+          ],
+          "studyTags": [
+            "误下",
+            "协热利"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.140",
+          "no": 140,
+          "text": "太阳病，下之，其脉促，不结胸者，此为欲解也；脉浮者，必结胸；脉紧者，必咽痛；脉弦者，必两胁拘急；脉细数者，头痛未止；脉沉紧者，必欲呕；脉沉滑者，协热利；脉浮滑者，必下血。",
+          "translation": "太阳病误下后，脉促而不结胸的，是将要解除；脉浮的，必定结胸；脉紧的，必定咽痛；脉弦的，必定两胁拘急；脉细数的，头痛未止；脉沉紧的，必定想呕；脉沉滑的，是协热利；脉浮滑的，必定下血。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "以误下后的不同脉象推断病情转归。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.021",
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.072",
+            "SHL.SB.SYM.073",
+            "SHL.SB.SYM.039",
+            "SHL.SB.SYM.074",
+            "SHL.SB.SYM.085"
+          ],
+          "studyTags": [
+            "脉证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.141",
+          "no": 141,
+          "text": "病在阳，应以汗解之，反以冷水潠之，若灌之，其热被劫不得去，弥更益烦，肉上粟起，意欲饮水，反不渴者，服文蛤散；若不差者，与五苓散。寒实结胸，无热证者，与三物小陷胸汤，白散亦可服。",
+          "translation": "病在阳，应当用汗法解除，反而用冷水喷洒或灌洗，热邪被遏不能外散，更加烦躁，皮肤起粟粒样，想喝水反而不渴的，服文蛤散；如果不愈，给与五苓散。寒实结胸，没有热证的，给与三物小陷胸汤，白散也可以服。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "水寒郁遏致烦，分别用文蛤散、五苓散；寒实结胸用白散。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.027",
+            "SHL.SB.F.028",
+            "SHL.SB.F.029"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.014",
+            "SHL.SB.SYM.075",
+            "SHL.SB.SYM.015",
+            "SHL.SB.SYM.063"
+          ],
+          "studyTags": [
+            "文蛤散证",
+            "五苓散证",
+            "白散证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.142",
+          "no": 142,
+          "text": "太阳与少阳并病，头项强痛，或眩冒，时如结胸，心下痞硬者，当刺大椎第一间、肺俞、肝俞，慎不可发汗；发汗则谵语，脉弦。五日谵语不止，当刺期门。",
+          "translation": "太阳与少阳并病，头项强痛，或头晕目眩，有时像结胸，心下痞硬的，应当针刺大椎第一间、肺俞、肝俞，谨慎不可发汗；发汗会谵语、脉弦。五天谵语不止，应当刺期门。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "太少并病宜针刺，不可发汗。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.084",
+            "SHL.SB.SYM.076",
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.077",
+            "SHL.SB.SYM.033"
+          ],
+          "studyTags": [
+            "并病",
+            "针刺"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.143",
+          "no": 143,
+          "text": "妇人中风，发热恶寒，经水适来，得之七八日，热除而脉迟身凉，胸胁下满如结胸状，谵语者，此为热入血室也，当刺期门，随其实而取之。",
+          "translation": "妇人中风，发热怕冷，月经正好来潮，病到七八天，热退脉迟身凉，胸胁下胀满像结胸一样，出现谵语的，这是热入血室，应当刺期门，随邪实所在而泻之。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "热入血室，针刺期门泄热。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.003",
+            "SHL.SB.SYM.022",
+            "SHL.SB.SYM.063",
+            "SHL.SB.SYM.033",
+            "SHL.SB.SYM.081"
+          ],
+          "studyTags": [
+            "热入血室",
+            "针刺"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.144",
+          "no": 144,
+          "text": "妇人中风，七八日续得寒热，发作有时，经水适断者，此为热入血室，其血必结，故使如疟状，发作有时，小柴胡汤主之。",
+          "translation": "妇人中风，七八天后续发寒热，定时发作，月经正好停止的，这是热入血室，其血必定瘀结，所以像疟疾一样定时发作，用小柴胡汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "热入血室而寒热如疟，小柴胡汤和解枢机。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.020"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.080",
+            "SHL.SB.SYM.081"
+          ],
+          "studyTags": [
+            "热入血室",
+            "小柴胡汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.145",
+          "no": 145,
+          "text": "妇人伤寒，发热，经水适来，昼日明了，暮则谵语，如见鬼状者，此为热入血室，无犯胃气及上二焦，必自愈。",
+          "translation": "妇人伤寒，发热，月经正好来潮，白天神志清楚，傍晚谵语，像见到鬼一样，这是热入血室，不要损伤胃气和上中二焦，必定自行痊愈。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "热入血室而月经来潮，热随血泄可自愈。"
+            }
+          ],
+          "formulas": [],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.033",
+            "SHL.SB.SYM.081"
+          ],
+          "studyTags": [
+            "热入血室"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.146",
+          "no": 146,
+          "text": "伤寒六七日，发热微恶寒，支节烦疼，微呕，心下支结，外证未去者，柴胡桂枝汤主之。",
+          "translation": "伤寒六七天，发热轻微怕冷，四肢关节烦痛，轻微呕吐，心下支撑结聚，表证未去的，用柴胡桂枝汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "太阳少阳并病轻证，柴胡桂枝汤和解兼解表。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.030"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.001",
+            "SHL.SB.SYM.003",
+            "SHL.SB.SYM.078",
+            "SHL.SB.SYM.013",
+            "SHL.SB.SYM.079"
+          ],
+          "studyTags": [
+            "柴胡桂枝汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        },
+        {
+          "id": "SHL.SB.TYX.147",
+          "no": 147,
+          "text": "伤寒五六日，已发汗而复下之，胸胁满微结，小便不利，渴而不呕，但头汗出，往来寒热，心烦者，此为未解也，柴胡桂枝干姜汤主之。",
+          "translation": "伤寒五六天，已经发汗又泻下，胸胁胀满微有结聚，小便不利，口渴而不呕，只有头部出汗，往来寒热，心烦的，这是病未解除，用柴胡桂枝干姜汤主治。",
+          "annotations": [
+            {
+              "source": "项目自编（待校对）",
+              "author": "灵素内容组",
+              "text": "汗下后津伤饮停、少阳枢机不利，柴胡桂枝干姜汤和解化饮。"
+            }
+          ],
+          "formulas": [
+            "SHL.SB.F.031"
+          ],
+          "symptomTags": [
+            "SHL.SB.SYM.022",
+            "SHL.SB.SYM.040",
+            "SHL.SB.SYM.028",
+            "SHL.SB.SYM.015",
+            "SHL.SB.SYM.068",
+            "SHL.SB.SYM.080",
+            "SHL.SB.SYM.014"
+          ],
+          "studyTags": [
+            "柴胡桂枝干姜汤证"
+          ],
+          "notes": "AI 初稿待校对。"
+        }
+      ]
     }
   ],
   "clauses": [
@@ -2235,6 +2763,517 @@
       "studyTags": [
         "阳旦",
         "救逆"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.128",
+      "no": 128,
+      "text": "问曰：病有结胸，有藏结，其状何如？答曰：按之痛，寸脉浮，关脉沉，名曰结胸也。何谓藏结？答曰：如结胸状，饮食如故，时时下利，寸脉浮，关脉小细沉紧，名曰藏结。舌上白胎滑者，难治。",
+      "translation": "问道：病有结胸和藏结，症状怎样区别？回答说：按压疼痛，寸脉浮、关脉沉的，叫结胸。什么叫藏结？回答说：像结胸的样子，但饮食照常，时时下利，寸脉浮、关脉小细沉紧的，叫藏结。舌上白滑苔的，难以处理。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "以按痛、脉象和饮食情况区分结胸与藏结。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.064",
+        "SHL.SB.SYM.065",
+        "SHL.SB.SYM.039"
+      ],
+      "studyTags": [
+        "结胸",
+        "藏结"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.129",
+      "no": 129,
+      "text": "藏结无阳证，不往来寒热，其人反静，舌上胎滑者，不可攻也。",
+      "translation": "藏结没有阳证表现，不出现往来寒热，病人反而安静，舌上苔滑的，不可用攻下法。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "藏结属阴结，禁用攻下。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.064",
+        "SHL.SB.SYM.065",
+        "SHL.SB.SYM.080"
+      ],
+      "studyTags": [
+        "藏结"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.130",
+      "no": 130,
+      "text": "病发于阳，而反下之，热入因作结胸；病发于阴，而反下之，因作痞也。所以成结胸者，以下之太早故也。",
+      "translation": "病发于阳，反而误用泻下，热邪内陷就形成结胸；病发于阴，反而误用泻下，就形成痞证。形成结胸的原因，是泻下太早。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "误下是结胸与痞证形成的重要原因。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.063"
+      ],
+      "studyTags": [
+        "误下",
+        "结胸"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.131",
+      "no": 131,
+      "text": "结胸者，项亦强，如柔痉状，下之则和，宜大陷胸丸。",
+      "translation": "结胸病人，颈项也强直，像柔痉一样，用攻下法可以缓和，适合用大陷胸丸。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "结胸见项强如柔痉，用大陷胸丸缓下。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.023"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.084"
+      ],
+      "studyTags": [
+        "大陷胸丸证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.132",
+      "no": 132,
+      "text": "结胸证，其脉浮大者，不可下，下之则死。",
+      "translation": "结胸证，如果脉浮大的，不可攻下，误下会危及生命。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "结胸脉浮大提示邪未完全内结，禁用攻下。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.063"
+      ],
+      "studyTags": [
+        "结胸禁忌"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.133",
+      "no": 133,
+      "text": "结胸证悉具，烦躁者亦死。",
+      "translation": "结胸症状全部具备，又见烦躁的，预后也差。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "结胸正虚邪实而烦躁，预后不良。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.014"
+      ],
+      "studyTags": [
+        "结胸"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.134",
+      "no": 134,
+      "text": "太阳病，脉浮而动数，浮则为风，数则为热，动则为痛，数则为虚，头痛发热，微盗汗出，而反恶寒者，表未解也。医反下之，动数变迟，膈内拒痛，胃中空虚，客气动膈，短气躁烦，心中懊憹，阳气内陷，心下因硬，则为结胸，大陷胸汤主之。若不结胸，但头汗出，余处无汗，剂颈而还，小便不利，身必发黄。",
+      "translation": "太阳病，脉浮而动数，浮主风，数主热，动主痛，数又主虚，头痛发热，轻微盗汗，反而怕冷，是表邪未解。医生反而泻下，动数脉变为迟，胸膈内拒按疼痛，胃中空虚，邪气扰动胸膈，出现短气烦躁，心中懊憹，阳气内陷，心下因而硬满，就成为结胸，用大陷胸汤主治。如果没有形成结胸，只头出汗，身体其他部位无汗，汗出到颈部为止，小便不利，身体必定发黄。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "详述误下成结胸的机理，并指出不结胸则湿热发黄。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.024"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.083",
+        "SHL.SB.SYM.059",
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.067",
+        "SHL.SB.SYM.066",
+        "SHL.SB.SYM.068",
+        "SHL.SB.SYM.028",
+        "SHL.SB.SYM.069"
+      ],
+      "studyTags": [
+        "大陷胸汤证",
+        "误下"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.135",
+      "no": 135,
+      "text": "伤寒六七日，结胸热实，脉沉而紧，心下痛，按之石硬者，大陷胸汤主之。",
+      "translation": "伤寒六七天，结胸热实，脉沉而紧，心下疼痛，按之像石头一样硬的，用大陷胸汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "热实结胸，以大陷胸汤泻热逐水。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.024"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.070",
+        "SHL.SB.SYM.066"
+      ],
+      "studyTags": [
+        "大陷胸汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.136",
+      "no": 136,
+      "text": "伤寒十余日，热结在里，复往来寒热者，与大柴胡汤；但结胸，无大热者，此为水结在胸胁也，但头微汗出者，大陷胸汤主之。",
+      "translation": "伤寒十多天，热邪结聚在里，又出现往来寒热的，给与大柴胡汤；如果只是结胸，没有明显大热，这是水饮结聚在胸胁，只有头部微微出汗的，用大陷胸汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "比较热结里实的少阳合并证与水结胸胁的结胸证。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.025",
+        "SHL.SB.F.024"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.080",
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.068"
+      ],
+      "studyTags": [
+        "大柴胡汤证",
+        "大陷胸汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.137",
+      "no": 137,
+      "text": "太阳病，重发汗而复下之，不大便五六日，舌上燥而渴，日晡所小有潮热，从心下至少腹硬满而痛不可近者，大陷胸汤主之。",
+      "translation": "太阳病，反复发汗又泻下，五六天不大便，舌上干燥而口渴，傍晚时轻微潮热，从心下到少腹硬满疼痛、不能触碰的，用大陷胸汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "津伤热结、水热互结范围广泛，大陷胸汤急下。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.024"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.015",
+        "SHL.SB.SYM.071",
+        "SHL.SB.SYM.066"
+      ],
+      "studyTags": [
+        "大陷胸汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.138",
+      "no": 138,
+      "text": "小结胸病，正在心下，按之则痛，脉浮滑者，小陷胸汤主之。",
+      "translation": "小结胸病，正在心下部位，按压则痛，脉浮滑的，用小陷胸汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "小结胸病位局限、热痰互结，用小陷胸汤清热化痰。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.026"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.070",
+        "SHL.SB.SYM.085"
+      ],
+      "studyTags": [
+        "小陷胸汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.139",
+      "no": 139,
+      "text": "太阳病，二三日，不能卧，但欲起，心下必结，脉微弱者，此本有寒分也。反下之，若利止，必作结胸；未止者，四日复下之，此作协热利也。",
+      "translation": "太阳病两三天，不能躺卧，只想起来，心下必定结聚，脉微弱的，这是本有寒饮。反而泻下，如果下利停止，必定形成结胸；下利未止，到第四天又泻下，就形成协热利。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "素体有寒而误下，可致结胸或协热利。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.082",
+        "SHL.SB.SYM.066",
+        "SHL.SB.SYM.023",
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.039"
+      ],
+      "studyTags": [
+        "误下",
+        "协热利"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.140",
+      "no": 140,
+      "text": "太阳病，下之，其脉促，不结胸者，此为欲解也；脉浮者，必结胸；脉紧者，必咽痛；脉弦者，必两胁拘急；脉细数者，头痛未止；脉沉紧者，必欲呕；脉沉滑者，协热利；脉浮滑者，必下血。",
+      "translation": "太阳病误下后，脉促而不结胸的，是将要解除；脉浮的，必定结胸；脉紧的，必定咽痛；脉弦的，必定两胁拘急；脉细数的，头痛未止；脉沉紧的，必定想呕；脉沉滑的，是协热利；脉浮滑的，必定下血。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "以误下后的不同脉象推断病情转归。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.021",
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.072",
+        "SHL.SB.SYM.073",
+        "SHL.SB.SYM.039",
+        "SHL.SB.SYM.074",
+        "SHL.SB.SYM.085"
+      ],
+      "studyTags": [
+        "脉证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.141",
+      "no": 141,
+      "text": "病在阳，应以汗解之，反以冷水潠之，若灌之，其热被劫不得去，弥更益烦，肉上粟起，意欲饮水，反不渴者，服文蛤散；若不差者，与五苓散。寒实结胸，无热证者，与三物小陷胸汤，白散亦可服。",
+      "translation": "病在阳，应当用汗法解除，反而用冷水喷洒或灌洗，热邪被遏不能外散，更加烦躁，皮肤起粟粒样，想喝水反而不渴的，服文蛤散；如果不愈，给与五苓散。寒实结胸，没有热证的，给与三物小陷胸汤，白散也可以服。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "水寒郁遏致烦，分别用文蛤散、五苓散；寒实结胸用白散。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.027",
+        "SHL.SB.F.028",
+        "SHL.SB.F.029"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.014",
+        "SHL.SB.SYM.075",
+        "SHL.SB.SYM.015",
+        "SHL.SB.SYM.063"
+      ],
+      "studyTags": [
+        "文蛤散证",
+        "五苓散证",
+        "白散证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.142",
+      "no": 142,
+      "text": "太阳与少阳并病，头项强痛，或眩冒，时如结胸，心下痞硬者，当刺大椎第一间、肺俞、肝俞，慎不可发汗；发汗则谵语，脉弦。五日谵语不止，当刺期门。",
+      "translation": "太阳与少阳并病，头项强痛，或头晕目眩，有时像结胸，心下痞硬的，应当针刺大椎第一间、肺俞、肝俞，谨慎不可发汗；发汗会谵语、脉弦。五天谵语不止，应当刺期门。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "太少并病宜针刺，不可发汗。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.084",
+        "SHL.SB.SYM.076",
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.077",
+        "SHL.SB.SYM.033"
+      ],
+      "studyTags": [
+        "并病",
+        "针刺"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.143",
+      "no": 143,
+      "text": "妇人中风，发热恶寒，经水适来，得之七八日，热除而脉迟身凉，胸胁下满如结胸状，谵语者，此为热入血室也，当刺期门，随其实而取之。",
+      "translation": "妇人中风，发热怕冷，月经正好来潮，病到七八天，热退脉迟身凉，胸胁下胀满像结胸一样，出现谵语的，这是热入血室，应当刺期门，随邪实所在而泻之。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "热入血室，针刺期门泄热。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.003",
+        "SHL.SB.SYM.022",
+        "SHL.SB.SYM.063",
+        "SHL.SB.SYM.033",
+        "SHL.SB.SYM.081"
+      ],
+      "studyTags": [
+        "热入血室",
+        "针刺"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.144",
+      "no": 144,
+      "text": "妇人中风，七八日续得寒热，发作有时，经水适断者，此为热入血室，其血必结，故使如疟状，发作有时，小柴胡汤主之。",
+      "translation": "妇人中风，七八天后续发寒热，定时发作，月经正好停止的，这是热入血室，其血必定瘀结，所以像疟疾一样定时发作，用小柴胡汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "热入血室而寒热如疟，小柴胡汤和解枢机。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.020"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.080",
+        "SHL.SB.SYM.081"
+      ],
+      "studyTags": [
+        "热入血室",
+        "小柴胡汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.145",
+      "no": 145,
+      "text": "妇人伤寒，发热，经水适来，昼日明了，暮则谵语，如见鬼状者，此为热入血室，无犯胃气及上二焦，必自愈。",
+      "translation": "妇人伤寒，发热，月经正好来潮，白天神志清楚，傍晚谵语，像见到鬼一样，这是热入血室，不要损伤胃气和上中二焦，必定自行痊愈。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "热入血室而月经来潮，热随血泄可自愈。"
+        }
+      ],
+      "formulas": [],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.033",
+        "SHL.SB.SYM.081"
+      ],
+      "studyTags": [
+        "热入血室"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.146",
+      "no": 146,
+      "text": "伤寒六七日，发热微恶寒，支节烦疼，微呕，心下支结，外证未去者，柴胡桂枝汤主之。",
+      "translation": "伤寒六七天，发热轻微怕冷，四肢关节烦痛，轻微呕吐，心下支撑结聚，表证未去的，用柴胡桂枝汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "太阳少阳并病轻证，柴胡桂枝汤和解兼解表。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.030"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.001",
+        "SHL.SB.SYM.003",
+        "SHL.SB.SYM.078",
+        "SHL.SB.SYM.013",
+        "SHL.SB.SYM.079"
+      ],
+      "studyTags": [
+        "柴胡桂枝汤证"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.TYX.147",
+      "no": 147,
+      "text": "伤寒五六日，已发汗而复下之，胸胁满微结，小便不利，渴而不呕，但头汗出，往来寒热，心烦者，此为未解也，柴胡桂枝干姜汤主之。",
+      "translation": "伤寒五六天，已经发汗又泻下，胸胁胀满微有结聚，小便不利，口渴而不呕，只有头部出汗，往来寒热，心烦的，这是病未解除，用柴胡桂枝干姜汤主治。",
+      "annotations": [
+        {
+          "source": "项目自编（待校对）",
+          "author": "灵素内容组",
+          "text": "汗下后津伤饮停、少阳枢机不利，柴胡桂枝干姜汤和解化饮。"
+        }
+      ],
+      "formulas": [
+        "SHL.SB.F.031"
+      ],
+      "symptomTags": [
+        "SHL.SB.SYM.022",
+        "SHL.SB.SYM.040",
+        "SHL.SB.SYM.028",
+        "SHL.SB.SYM.015",
+        "SHL.SB.SYM.068",
+        "SHL.SB.SYM.080",
+        "SHL.SB.SYM.014"
+      ],
+      "studyTags": [
+        "柴胡桂枝干姜汤证"
       ],
       "notes": "AI 初稿待校对。"
     },
@@ -4105,6 +5144,420 @@
       "mainSymptoms": [],
       "pulse": [],
       "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.023",
+      "name": "大陷胸丸",
+      "category": "攻下方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "半斤",
+          "note": "去皮，清酒洗"
+        },
+        {
+          "herb": "SHL.SB.H.027",
+          "dose": "半升",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "半升",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "半升",
+          "note": "去皮尖，熬黑"
+        },
+        {
+          "herb": "SHL.SB.H.026",
+          "dose": "一钱匕",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "大黄半斤 葶苈子半升（熬） 芒硝半升 杏仁半升（去皮尖，熬黑） 甘遂一钱匕 白蜜二合",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，捣筛二味，内杏仁、芒硝，合研如脂，和散，取如弹丸一枚，别捣甘遂末一钱匕，白蜜二合，水二升，煮取一升，温顿服之。",
+      "relatedClauses": [
+        "SHL.SB.TYX.131"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.024",
+          "note": "大陷胸丸与大陷胸汤同治结胸"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.024",
+      "name": "大陷胸汤",
+      "category": "攻下方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "六两",
+          "note": "去皮，清酒洗"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "一升",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.026",
+          "dose": "一钱匕",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "大黄六两（去皮，清酒洗） 芒硝一升 甘遂一钱匕",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水六升，先煮大黄，取二升，去滓，内芒硝，煮一两沸，内甘遂末，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYX.134",
+        "SHL.SB.TYX.135",
+        "SHL.SB.TYX.136",
+        "SHL.SB.TYX.137"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.023",
+          "note": "大陷胸丸缓下，大陷胸汤急下"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.025",
+      "name": "大柴胡汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "五两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.028",
+          "dose": "四枚",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "二两",
+          "note": "去皮，清酒洗"
+        }
+      ],
+      "originalDoseText": "柴胡半斤 黄芩三两 芍药三两 半夏半升（洗） 生姜五两（切） 枳实四枚（炙） 大枣十二枚（擘） 大黄二两（去皮，清酒洗）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上八味，以水一斗二升，煮取六升，去滓，再煎，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.136"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.020",
+          "note": "小柴胡汤去人参、甘草加枳实、大黄、芍药"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.026",
+      "name": "小陷胸汤",
+      "category": "清热化痰方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.029",
+          "dose": "大者一枚",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "黄连一两 半夏半升（洗） 瓜蒌实大者一枚",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水六升，先煮瓜蒌，取三升，去滓，内诸药，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.138"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.027",
+      "name": "文蛤散",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.030",
+          "dose": "五两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "文蛤五两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上一味，杵为散，以沸汤五合，和服方寸匕。",
+      "relatedClauses": [
+        "SHL.SB.TYX.141"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.028",
+      "name": "五苓散",
+      "category": "化气利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.031",
+          "dose": "十八铢",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.032",
+          "dose": "一两六铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "十八铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "十八铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "半两",
+          "note": "去皮"
+        }
+      ],
+      "originalDoseText": "猪苓十八铢（去皮） 泽泻一两六铢 白术十八铢 茯苓十八铢 桂枝半两（去皮）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，捣为散，以白饮和服方寸匕，日三服，多饮暖水，汗出愈。",
+      "relatedClauses": [
+        "SHL.SB.TYX.141"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.029",
+      "name": "三物白散",
+      "category": "温下散寒方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.033",
+          "dose": "三分",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.034",
+          "dose": "三分",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.035",
+          "dose": "一分",
+          "note": "去皮心，熬黑，研如脂"
+        }
+      ],
+      "originalDoseText": "桔梗三分 贝母三分 巴豆一分（去皮心，熬黑，研如脂）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味为散，内巴豆，更于臼中杵之，以白饮和服，强人半钱匕，羸者减之。",
+      "relatedClauses": [
+        "SHL.SB.TYX.141"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.030",
+      "name": "柴胡桂枝汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "一两半",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "二合半",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "六枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两半",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "四两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝一两半（去皮） 黄芩一两半 人参一两半 甘草一两（炙） 半夏二合半（洗） 芍药一两半 大枣六枚（擘） 生姜一两半（切） 柴胡四两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上九味，以水七升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYX.146"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤与柴胡汤合方"
+        },
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.020",
+          "note": "小柴胡汤与桂枝汤合方"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.031",
+      "name": "柴胡桂枝干姜汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.036",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.037",
+          "dose": "二两",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "柴胡半斤 桂枝三两（去皮） 干姜二两 栝楼根四两 黄芩三两 牡蛎二两（熬） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗二升，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.147"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
     }
   ],
   "herbs": [
@@ -4257,6 +5710,83 @@
     {
       "id": "SHL.SB.H.025",
       "name": "五味子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.026",
+      "name": "甘遂",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.027",
+      "name": "葶苈子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.028",
+      "name": "枳实",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.029",
+      "name": "瓜蒌实",
+      "aliases": [
+        "栝楼实"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.030",
+      "name": "文蛤",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.031",
+      "name": "猪苓",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.032",
+      "name": "泽泻",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.033",
+      "name": "桔梗",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.034",
+      "name": "贝母",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.035",
+      "name": "巴豆",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.036",
+      "name": "栝楼根",
+      "aliases": [
+        "瓜蒌根",
+        "天花粉"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.037",
+      "name": "牡蛎",
       "aliases": [],
       "notes": "AI 初稿待校对。"
     }
@@ -4675,6 +6205,160 @@
       "name": "脉微细",
       "category": "脉象",
       "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.063",
+      "name": "结胸",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.064",
+      "name": "藏结",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.065",
+      "name": "舌上白胎滑",
+      "category": "症状",
+      "aliases": [
+        "舌苔白滑"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.066",
+      "name": "心下硬",
+      "category": "症状",
+      "aliases": [
+        "心下硬满"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.067",
+      "name": "心中懊憹",
+      "category": "症状",
+      "aliases": [
+        "懊憹"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.068",
+      "name": "头汗出",
+      "category": "症状",
+      "aliases": [
+        "但头汗出"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.069",
+      "name": "身黄",
+      "category": "症状",
+      "aliases": [
+        "发黄"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.070",
+      "name": "心下痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.071",
+      "name": "潮热",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.072",
+      "name": "咽痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.073",
+      "name": "两胁拘急",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.074",
+      "name": "下血",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.075",
+      "name": "肉上粟起",
+      "category": "症状",
+      "aliases": [
+        "肤起粟"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.076",
+      "name": "眩冒",
+      "category": "症状",
+      "aliases": [
+        "头晕目眩"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.077",
+      "name": "心下痞硬",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.078",
+      "name": "支节烦疼",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.079",
+      "name": "心下支结",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.080",
+      "name": "往来寒热",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.081",
+      "name": "热入血室",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.082",
+      "name": "不能卧",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.083",
+      "name": "膈内拒痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.084",
+      "name": "项强",
+      "category": "症状",
+      "aliases": [
+        "颈项强"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.085",
+      "name": "脉浮滑",
+      "category": "脉象",
+      "aliases": []
     }
   ],
   "questions": [
@@ -4814,6 +6498,52 @@
       ],
       "answerIndex": 0,
       "rationale": "原文“病常自汗出者，此为荣气和。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0010",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.128",
+      "prompt": "按之痛，寸脉浮，关脉沉，名曰＿＿＿。",
+      "options": [
+        "结胸",
+        "藏结",
+        "痞证",
+        "蓄血"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“按之痛，寸脉浮，关脉沉，名曰结胸也。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0011",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYX.135",
+      "formula": "SHL.SB.F.024",
+      "prompt": "伤寒六七日，结胸热实，脉沉而紧，心下痛，按之石硬者，宜用何方？",
+      "options": [
+        "大陷胸汤",
+        "小陷胸汤",
+        "大陷胸丸",
+        "大柴胡汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "热实结胸，用大陷胸汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0012",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.138",
+      "prompt": "小结胸病，正在心下，按之则痛，脉浮滑者，＿＿＿主之。",
+      "options": [
+        "小陷胸汤",
+        "大陷胸汤",
+        "半夏泻心汤",
+        "甘草泻心汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "小结胸病用小陷胸汤。",
       "status": "reviewed"
     }
   ]
