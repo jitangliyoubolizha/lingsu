@@ -1,4 +1,5 @@
-# 示例数据：症状/脉象/病机术语，用于验证数据规范，正式内容需人工校对。
+# 太阳病上篇相关症状/脉象/病机术语
+# 状态：AI 初稿，待人工校对
 terms:
   - id: SHL.SB.SYM.001
     name: 发热
@@ -42,3 +43,122 @@ terms:
     name: 头项强痛
     category: 症状
     aliases: []
+  - id: SHL.SB.SYM.011
+    name: 脉紧
+    category: 脉象
+    aliases:
+      - 脉阴阳俱紧
+  - id: SHL.SB.SYM.012
+    name: 体痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.013
+    name: 呕逆
+    category: 症状
+    aliases:
+      - 呕吐
+  - id: SHL.SB.SYM.014
+    name: 烦躁
+    category: 症状
+    aliases:
+      - 躁烦
+  - id: SHL.SB.SYM.015
+    name: 口渴
+    category: 症状
+    aliases:
+      - 渴
+  - id: SHL.SB.SYM.016
+    name: 项背强几几
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.017
+    name: 气上冲
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.018
+    name: 喘
+    category: 症状
+    aliases:
+      - 气喘
+  - id: SHL.SB.SYM.019
+    name: 小便难
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.020
+    name: 四肢微急
+    category: 症状
+    aliases:
+      - 四肢拘急
+  - id: SHL.SB.SYM.021
+    name: 脉促
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.022
+    name: 胸满
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.023
+    name: 脉微
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.024
+    name: 无汗
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.025
+    name: 身痒
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.026
+    name: 脉洪大
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.027
+    name: 心下满
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.028
+    name: 小便不利
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.029
+    name: 心烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.030
+    name: 脚挛急
+    category: 症状
+    aliases:
+      - 脚急
+  - id: SHL.SB.SYM.031
+    name: 咽中干
+    category: 症状
+    aliases:
+      - 咽干
+  - id: SHL.SB.SYM.032
+    name: 厥逆
+    category: 症状
+    aliases:
+      - 手足厥冷
+  - id: SHL.SB.SYM.033
+    name: 谵语
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.034
+    name: 两胫拘急
+    category: 症状
+    aliases:
+      - 两脚挛急
+  - id: SHL.SB.SYM.035
+    name: 脉微弱
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.036
+    name: 脉数急
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.038
+    name: 身大热
+    category: 症状
+    aliases:
+      - 大热

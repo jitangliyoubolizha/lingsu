@@ -1,23 +1,81 @@
-# 示例数据：桂枝汤相关药物，用于验证数据规范，正式内容需人工校对。
+# 太阳病上篇相关药物
+# 状态：AI 初稿，待人工校对
+# 来源：宋本《伤寒论》药物组成
 herbs:
   - id: SHL.SB.H.001
     name: 桂枝
     aliases:
       - 桂
-    notes: 示例数据。
+    notes: AI 初稿待校对。
   - id: SHL.SB.H.002
     name: 芍药
     aliases: []
-    notes: 示例数据。
+    notes: AI 初稿待校对。
   - id: SHL.SB.H.003
     name: 甘草
     aliases: []
-    notes: 示例数据。
+    notes: AI 初稿待校对。
   - id: SHL.SB.H.004
     name: 生姜
     aliases: []
-    notes: 示例数据。
+    notes: AI 初稿待校对。
   - id: SHL.SB.H.005
     name: 大枣
     aliases: []
-    notes: 示例数据。
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.006
+    name: 葛根
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.007
+    name: 厚朴
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.008
+    name: 杏仁
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.009
+    name: 附子
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.010
+    name: 麻黄
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.011
+    name: 石膏
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.012
+    name: 知母
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.013
+    name: 人参
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.014
+    name: 粳米
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.015
+    name: 茯苓
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.016
+    name: 白术
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.017
+    name: 干姜
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.018
+    name: 大黄
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.019
+    name: 芒硝
+    aliases: []
+    notes: AI 初稿待校对。

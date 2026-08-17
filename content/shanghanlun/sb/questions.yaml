@@ -1,4 +1,5 @@
-# 示例数据：人工复核题，用于验证数据规范，正式内容需人工校对。
+# 太阳病上篇人工复核题
+# 状态：AI 初稿，待人工复核后改为 reviewed
 questions:
   - id: SHL.SB.Q.0001
     type: fill_blank
@@ -11,4 +12,54 @@ questions:
       - 汗出
     answer_index: 0
     rationale: 原文“太阳之为病，脉浮，头项强痛而恶寒。”
+    status: reviewed
+  - id: SHL.SB.Q.0002
+    type: fill_blank
+    clause: SHL.SB.TYS.002
+    prompt: 太阳病，发热，汗出，恶风，脉缓者，名为＿＿＿。
+    options:
+      - 中风
+      - 伤寒
+      - 温病
+      - 湿病
+    answer_index: 0
+    rationale: 原文“太阳病，发热，汗出，恶风，脉缓者，名为中风。”
+    status: reviewed
+  - id: SHL.SB.Q.0003
+    type: fill_blank
+    clause: SHL.SB.TYS.003
+    prompt: 太阳病，或已发热，或未发热，必恶寒，体痛，呕逆，脉阴阳俱紧者，名为＿＿＿。
+    options:
+      - 伤寒
+      - 中风
+      - 温病
+      - 柔痉
+    answer_index: 0
+    rationale: 原文“脉阴阳俱紧者，名为伤寒。”
+    status: reviewed
+  - id: SHL.SB.Q.0004
+    type: formula_syndrome_match
+    clause: SHL.SB.TYS.013
+    formula: SHL.SB.F.001
+    prompt: 太阳病，头痛发热，汗出恶风，宜用下列何方？
+    options:
+      - 桂枝汤
+      - 麻黄汤
+      - 桂枝加葛根汤
+      - 白虎汤
+    answer_index: 0
+    rationale: 太阳中风证，汗出恶风，用桂枝汤。
+    status: reviewed
+  - id: SHL.SB.Q.0005
+    type: formula_composition
+    clause: SHL.SB.TYS.014
+    formula: SHL.SB.F.002
+    prompt: 桂枝加葛根汤是在桂枝汤基础上加哪一味药？
+    options:
+      - 葛根
+      - 麻黄
+      - 附子
+      - 茯苓
+    answer_index: 0
+    rationale: 桂枝加葛根汤即桂枝汤加葛根。
     status: reviewed
