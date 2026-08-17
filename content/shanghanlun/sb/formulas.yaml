@@ -1459,3 +1459,314 @@ formulas:
     main_symptoms: []
     pulse: []
     pathomechanism: ""
+  - id: SHL.SB.F.049
+    name: 小建中汤
+    category: 温中方
+    composition:
+      - herb: SHL.SB.H.001
+        dose: 三两
+        note: 去皮
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+      - herb: SHL.SB.H.002
+        dose: 六两
+        note: ""
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.041
+        dose: 一升
+        note: ""
+    original_dose_text: 桂枝三两（去皮） 甘草二两（炙） 大枣十二枚（擘） 芍药六两 生姜三两（切） 胶饴一升
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上六味，以水七升，煮取三升，去滓，内饴，更上微火消解，温服一升，日三服。
+    related_clauses:
+      - SHL.SB.TYZ.100
+      - SHL.SB.TYZ.102
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.001
+        note: 桂枝汤加芍药、胶饴
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.050
+    name: 柴胡加芒硝汤
+    category: 柴胡汤类
+    composition:
+      - herb: SHL.SB.H.023
+        dose: 二两十六铢
+        note: ""
+      - herb: SHL.SB.H.021
+        dose: 一两
+        note: ""
+      - herb: SHL.SB.H.013
+        dose: 一两
+        note: ""
+      - herb: SHL.SB.H.003
+        dose: 一两
+        note: 炙
+      - herb: SHL.SB.H.004
+        dose: 一两
+        note: 切
+      - herb: SHL.SB.H.020
+        dose: 二十铢
+        note: 洗
+      - herb: SHL.SB.H.005
+        dose: 四枚
+        note: 擘
+      - herb: SHL.SB.H.019
+        dose: 二两
+        note: ""
+    original_dose_text: 柴胡二两十六铢 黄芩一两 人参一两 甘草一两（炙） 生姜一两（切） 半夏二十铢（洗） 大枣四枚（擘） 芒硝二两
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上八味，以水四升，煮取二升，去滓，内芒硝，更煮微沸，分温再服。
+    related_clauses:
+      - SHL.SB.TYZ.104
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.020
+        note: 小柴胡汤加芒硝
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.051
+    name: 桃核承气汤
+    category: 攻下方
+    composition:
+      - herb: SHL.SB.H.042
+        dose: 五十个
+        note: 去皮尖
+      - herb: SHL.SB.H.018
+        dose: 四两
+        note: ""
+      - herb: SHL.SB.H.001
+        dose: 二两
+        note: 去皮
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.019
+        dose: 二两
+        note: ""
+    original_dose_text: 桃仁五十个（去皮尖） 大黄四两 桂枝二两（去皮） 甘草二两（炙） 芒硝二两
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上五味，以水七升，煮取二升半，去滓，内芒硝，更上火微沸，先食温服五合，日三服，当微利。
+    related_clauses:
+      - SHL.SB.TYZ.106
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.052
+    name: 柴胡加龙骨牡蛎汤
+    category: 柴胡汤类
+    composition:
+      - herb: SHL.SB.H.023
+        dose: 四两
+        note: ""
+      - herb: SHL.SB.H.043
+        dose: 一两半
+        note: ""
+      - herb: SHL.SB.H.021
+        dose: 一两半
+        note: ""
+      - herb: SHL.SB.H.004
+        dose: 一两半
+        note: 切
+      - herb: SHL.SB.H.044
+        dose: 一两半
+        note: ""
+      - herb: SHL.SB.H.013
+        dose: 一两半
+        note: ""
+      - herb: SHL.SB.H.001
+        dose: 一两半
+        note: 去皮
+      - herb: SHL.SB.H.015
+        dose: 一两半
+        note: ""
+      - herb: SHL.SB.H.020
+        dose: 二合半
+        note: 洗
+      - herb: SHL.SB.H.018
+        dose: 二两
+        note: ""
+      - herb: SHL.SB.H.037
+        dose: 一两半
+        note: 熬
+      - herb: SHL.SB.H.005
+        dose: 六枚
+        note: 擘
+    original_dose_text: 柴胡四两 龙骨 黄芩 生姜（切） 铅丹 人参 桂枝（去皮） 茯苓 各一两半 半夏二合半（洗） 大黄二两 牡蛎一两半（熬） 大枣六枚（擘）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上十二味，以水八升，煮取四升，内大黄，切如棋子，更煮一两沸，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.107
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.053
+    name: 桂枝去芍药加蜀漆牡蛎龙骨救逆汤
+    category: 温阳镇惊方
+    composition:
+      - herb: SHL.SB.H.001
+        dose: 三两
+        note: 去皮
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+      - herb: SHL.SB.H.037
+        dose: 五两
+        note: 熬
+      - herb: SHL.SB.H.045
+        dose: 三两
+        note: 洗去腥
+      - herb: SHL.SB.H.043
+        dose: 四两
+        note: ""
+    original_dose_text: 桂枝三两（去皮） 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 牡蛎五两（熬） 蜀漆三两（洗去腥） 龙骨四两
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上七味，以水一斗二升，先煮蜀漆，减二升，内诸药，煮取三升，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.112
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.001
+        note: 桂枝汤去芍药加蜀漆、牡蛎、龙骨
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.054
+    name: 桂枝加桂汤
+    category: 桂枝汤类
+    composition:
+      - herb: SHL.SB.H.001
+        dose: 五两
+        note: 去皮
+      - herb: SHL.SB.H.002
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+    original_dose_text: 桂枝五两（去皮） 芍药三两 生姜三两（切） 甘草二两（炙） 大枣十二枚（擘）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上五味，以水七升，煮取三升，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.117
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.001
+        note: 桂枝汤加重桂枝
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.055
+    name: 桂枝甘草龙骨牡蛎汤
+    category: 温阳镇惊方
+    composition:
+      - herb: SHL.SB.H.001
+        dose: 一两
+        note: 去皮
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.037
+        dose: 二两
+        note: 熬
+      - herb: SHL.SB.H.043
+        dose: 二两
+        note: ""
+    original_dose_text: 桂枝一两（去皮） 甘草二两（炙） 牡蛎二两（熬） 龙骨二两
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上四味，以水五升，煮取二升半，去滓，温服八合，日三服。
+    related_clauses:
+      - SHL.SB.TYZ.118
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.056
+    name: 抵当汤
+    category: 破血逐瘀方
+    composition:
+      - herb: SHL.SB.H.046
+        dose: 三十个
+        note: 熬
+      - herb: SHL.SB.H.047
+        dose: 三十个
+        note: 去翅足，熬
+      - herb: SHL.SB.H.042
+        dose: 二十个
+        note: 去皮尖
+      - herb: SHL.SB.H.018
+        dose: 三两
+        note: 酒洗
+    original_dose_text: 水蛭三十个（熬） 虻虫三十个（去翅足，熬） 桃仁二十个（去皮尖） 大黄三两（酒洗）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上四味，以水五升，煮取三升，去滓，温服一升，不下更服。
+    related_clauses:
+      - SHL.SB.TYZ.124
+      - SHL.SB.TYZ.125
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.057
+        note: 抵当丸药力较缓
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.057
+    name: 抵当丸
+    category: 破血逐瘀方
+    composition:
+      - herb: SHL.SB.H.046
+        dose: 二十个
+        note: 熬
+      - herb: SHL.SB.H.047
+        dose: 二十个
+        note: 熬，去翅足
+      - herb: SHL.SB.H.042
+        dose: 二十五个
+        note: 去皮尖
+      - herb: SHL.SB.H.018
+        dose: 三两
+        note: ""
+    original_dose_text: 水蛭二十个（熬） 虻虫二十个（熬，去翅足） 桃仁二十五个（去皮尖） 大黄三两
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上四味，捣分四丸，以水一升煮一丸，取七合服之。
+    related_clauses:
+      - SHL.SB.TYZ.126
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.056
+        note: 抵当汤改丸缓攻
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""

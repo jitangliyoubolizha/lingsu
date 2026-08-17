@@ -167,3 +167,32 @@ herbs:
     name: 禹余粮
     aliases: []
     notes: AI 初稿待校对。
+  - id: SHL.SB.H.041
+    name: 胶饴
+    aliases:
+      - 饴糖
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.042
+    name: 桃仁
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.043
+    name: 龙骨
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.044
+    name: 铅丹
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.045
+    name: 蜀漆
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.046
+    name: 水蛭
+    aliases: []
+    notes: AI 初稿待校对。
+  - id: SHL.SB.H.047
+    name: 虻虫
+    aliases: []
+    notes: AI 初稿待校对。

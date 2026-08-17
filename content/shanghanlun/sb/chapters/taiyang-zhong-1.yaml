@@ -7,7 +7,7 @@ chapter:
   name: 辨太阳病脉证并治中
   order: 2
   part: 1
-  part_total: 1
+  part_total: 3
 clauses:
   - id: SHL.SB.TYZ.031
     no: 31

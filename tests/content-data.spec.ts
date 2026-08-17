@@ -16,11 +16,11 @@ describe('内容数据层', () => {
 
     expect(content.book.code).toBe('SHL')
     expect(content.edition.code).toBe('SB')
-    expect(content.clauses).toHaveLength(110)
-    expect(content.formulas).toHaveLength(48)
-    expect(content.herbs).toHaveLength(40)
-    expect(content.symptomTerms).toHaveLength(113)
-    expect(content.questions).toHaveLength(15)
+    expect(content.clauses).toHaveLength(147)
+    expect(content.formulas).toHaveLength(57)
+    expect(content.herbs).toHaveLength(47)
+    expect(content.symptomTerms).toHaveLength(150)
+    expect(content.questions).toHaveLength(18)
 
     const firstClause = content.clauses[0]
     expect(firstClause.id).toBe('SHL.SB.TYS.001')

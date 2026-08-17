@@ -186,3 +186,40 @@ questions:
     answer_index: 0
     rationale: 余热扰胸，用栀子豉汤。
     status: reviewed
+  - id: SHL.SB.Q.0016
+    type: fill_blank
+    clause: SHL.SB.TYZ.091
+    prompt: 伤寒，医下之，续得下利清谷不止，身疼痛者，急当救里，救里宜＿＿＿。
+    options:
+      - 四逆汤
+      - 桂枝汤
+      - 理中汤
+      - 真武汤
+    answer_index: 0
+    rationale: 里虚急迫，救里宜四逆汤。
+    status: reviewed
+  - id: SHL.SB.Q.0017
+    type: formula_syndrome_match
+    clause: SHL.SB.TYZ.106
+    formula: SHL.SB.F.051
+    prompt: 太阳病不解，热结膀胱，其人如狂，外解已，但少腹急结者，宜用何方？
+    options:
+      - 桃核承气汤
+      - 抵当汤
+      - 五苓散
+      - 大承气汤
+    answer_index: 0
+    rationale: 蓄血轻证用桃核承气汤。
+    status: reviewed
+  - id: SHL.SB.Q.0018
+    type: fill_blank
+    clause: SHL.SB.TYZ.124
+    prompt: 太阳病，表证仍在，脉微而沉，反不结胸，其人发狂，少腹硬满，小便自利者，＿＿＿主之。
+    options:
+      - 抵当汤
+      - 桃核承气汤
+      - 大陷胸汤
+      - 五苓散
+    answer_index: 0
+    rationale: 蓄血重证用抵当汤。
+    status: reviewed

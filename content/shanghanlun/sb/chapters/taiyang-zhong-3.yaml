@@ -1,0 +1,638 @@
+# 太阳病中篇（宋本条文 91–127）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: TYZ
+  name: 辨太阳病脉证并治中
+  order: 2
+  part: 3
+  part_total: 3
+clauses:
+  - id: SHL.SB.TYZ.091
+    no: 91
+    text: 伤寒，医下之，续得下利清谷不止，身疼痛者，急当救里；后身疼痛，清便自调者，急当救表。救里宜四逆汤，救表宜桂枝汤。
+    translation: 伤寒，医生误用泻下，接连出现完谷不化的腹泻不止，身体疼痛的，应当先救里；之后身体仍疼痛，但大小便已经正常的，应当再救表。救里宜用四逆汤，救表宜用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 表里同病而里虚急迫，先救里后救表。
+    formulas:
+      - SHL.SB.F.015
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.115
+      - SHL.SB.SYM.012
+    study_tags:
+      - 表里先后
+    notes: 原文据宋本，AI 初稿待校对。
+  - id: SHL.SB.TYZ.092
+    no: 92
+    text: 病发热，头痛，脉反沉，若不差，身体疼痛，当救其里，宜四逆汤。
+    translation: 病人发热头痛，脉反而沉，如果病不见好转，身体疼痛，应当救治其里，宜用四逆汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 表证见沉脉，提示里阳不足，当先救里。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.010
+      - SHL.SB.SYM.054
+    study_tags:
+      - 四逆汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.093
+    no: 93
+    text: 太阳病，先下而不愈，因复发汗，以此表里俱虚，其人因致冒，冒家汗出自愈。所以然者，汗出表和故也。里未和，然后复下之。
+    translation: 太阳病，先用泻下不愈，又发汗，因此表里都虚，病人因而眩晕昏冒，冒证病人出汗就会自愈。这是因为汗出后表气调和。如果里气未和，然后再泻下。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 汗下失序致冒，汗出表和则愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.116
+    study_tags:
+      - 误治
+      - 冒
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.094
+    no: 94
+    text: 太阳病未解，脉阴阳俱停，必先振栗汗出而解。但阳脉微者，先汗出而解；但阴脉微者，下之而解。若欲下之，宜调胃承气汤。
+    translation: 太阳病未解除，寸关尺脉都隐伏不显，必定先战栗出汗而解。如果只有阳脉微弱的，先汗出而解；如果只有阴脉微弱的，用下法而解。若要泻下，宜用调胃承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 以脉象判断病解途径，或汗或下。
+    formulas:
+      - SHL.SB.F.014
+    symptom_tags:
+      - SHL.SB.SYM.117
+      - SHL.SB.SYM.118
+    study_tags:
+      - 脉证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.095
+    no: 95
+    text: 太阳病，发热汗出者，此为荣弱卫强，故使汗出。欲救邪风者，宜桂枝汤。
+    translation: 太阳病发热汗出的，这是营弱卫强，所以汗出。要解除风邪的，宜用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 营弱卫强是桂枝汤证的重要病机。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.009
+    study_tags:
+      - 桂枝汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.096
+    no: 96
+    text: 伤寒五六日，中风，往来寒热，胸胁苦满，嘿嘿不欲饮食，心烦喜呕；或胸中烦而不呕，或渴，或腹中痛，或胁下痞硬，或心下悸、小便不利，或不渴、身有微热，或咳者，小柴胡汤主之。
+    translation: 伤寒五六天，又感受风邪，往来寒热，胸胁部满闷不适，沉默不语、不想饮食，心烦容易呕吐；或者胸中烦而不呕，或者口渴，或者腹中痛，或者胁下痞硬，或者心下悸、小便不利，或者不渴、身体微热，或者咳嗽的，用小柴胡汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阳病主证及或然证，小柴胡汤和解枢机。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.080
+      - SHL.SB.SYM.119
+      - SHL.SB.SYM.120
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.121
+      - SHL.SB.SYM.088
+      - SHL.SB.SYM.028
+    study_tags:
+      - 小柴胡汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.097
+    no: 97
+    text: 血弱气尽，腠理开，邪气因入，与正气相搏，结于胁下。正邪分争，往来寒热，休作有时，嘿嘿不欲饮食，脏腑相连，其痛必下，邪高痛下，故使呕也，小柴胡汤主之。服柴胡汤已，渴者，属阳明，以法治之。
+    translation: 血气虚弱，腠理开泄，邪气因而侵入，与正气相搏，结聚在胁下。正邪交争，往来寒热，发作有时，沉默不想饮食。脏腑相连，疼痛必然向下，邪高痛下，所以导致呕吐，用小柴胡汤主治。服柴胡汤后口渴的，属于阳明病，按阳明病的方法处理。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 解释少阳病往来寒热、默默不欲饮食的机理。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.080
+      - SHL.SB.SYM.120
+      - SHL.SB.SYM.013
+    study_tags:
+      - 小柴胡汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.098
+    no: 98
+    text: 得病六七日，脉迟浮弱，恶风寒，手足温，医二三下之，不能食而胁下满痛，面目及身黄，颈项强，小便难者，与柴胡汤，后必下重。本渴，饮水而呕者，柴胡汤不中与也，食谷者哕。
+    translation: 得病六七天，脉迟浮弱，怕风怕冷，手足温暖，医生多次泻下，不能进食而胁下胀满疼痛，面目和身体发黄，颈项强，小便困难的，给柴胡汤后必定下重。本来口渴，喝水就呕的，不可以用柴胡汤，进食后会出现哕逆。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 里虚湿停者不可轻投柴胡汤。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.149
+      - SHL.SB.SYM.069
+      - SHL.SB.SYM.084
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.150
+    study_tags:
+      - 柴胡汤禁忌
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.099
+    no: 99
+    text: 伤寒四五日，身热、恶风、颈项强、胁下满、手足温而渴者，小柴胡汤主之。
+    translation: 伤寒四五天，身体发热、怕风、颈项强、胁下胀满、手足温暖而口渴的，用小柴胡汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 三阳证见而偏于少阳，小柴胡汤和解。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.005
+      - SHL.SB.SYM.084
+      - SHL.SB.SYM.149
+      - SHL.SB.SYM.015
+    study_tags:
+      - 小柴胡汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.100
+    no: 100
+    text: 伤寒，阳脉涩，阴脉弦，法当腹中急痛，先与小建中汤；不差者，小柴胡汤主之。
+    translation: 伤寒，阳脉涩、阴脉弦，按规律应当腹中拘急疼痛，先给小建中汤；如果不好，用小柴胡汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 中焦虚寒腹痛先用小建中汤，不愈再和小柴胡。
+    formulas:
+      - SHL.SB.F.049
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.151
+    study_tags:
+      - 小建中汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.101
+    no: 101
+    text: 伤寒中风，有柴胡证，但见一证便是，不必悉具。凡柴胡汤病证而下之，若柴胡证不罢者，复与柴胡汤，必蒸蒸而振，却复发热，汗出而解。
+    translation: 伤寒或中风，有柴胡证，只要见到一个主症就可以用，不必全部具备。凡是柴胡汤证误用泻下，如果柴胡证没有消失的，再给柴胡汤，必定蒸蒸发热而战振，然后发热汗出而解。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 柴胡证不必悉具，误下后柴胡证仍在仍可用柴胡汤。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags: []
+    study_tags:
+      - 柴胡证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.102
+    no: 102
+    text: 伤寒二三日，心中悸而烦者，小建中汤主之。
+    translation: 伤寒两三天，心中悸动而心烦的，用小建中汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 中焦不足、心失所养，小建中汤建中益气。
+    formulas:
+      - SHL.SB.F.049
+    symptom_tags:
+      - SHL.SB.SYM.088
+      - SHL.SB.SYM.014
+    study_tags:
+      - 小建中汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.103
+    no: 103
+    text: 太阳病，过经十余日，反二三下之，后四五日，柴胡证仍在者，先与小柴胡。呕不止、心下急，郁郁微烦者，为未解也，与大柴胡汤，下之则愈。
+    translation: 太阳病，病程超过十余天，反而两三次泻下，之后四五天，柴胡证仍然存在的，先给小柴胡汤。呕吐不止、心下拘急，郁郁微烦的，是病未解除，给大柴胡汤，泻下就会痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阳兼里实，大柴胡汤和解攻里。
+    formulas:
+      - SHL.SB.F.020
+      - SHL.SB.F.025
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.121
+      - SHL.SB.SYM.122
+    study_tags:
+      - 大柴胡汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.104
+    no: 104
+    text: 伤寒十三日不解，胸胁满而呕，日晡所发潮热，已而微利。此本柴胡证，下之以不得利；今反利者，知医以丸药下之，此非其治也，潮热者，实也。先宜服小柴胡汤以解外，后以柴胡加芒硝汤主之。
+    translation: 伤寒十三天不解除，胸胁胀满而呕吐，傍晚发生潮热，随后轻微下利。这本来是柴胡证，用泻下本不应下利；现在反而下利，知道医生用丸药泻下，这不是正确治法。潮热是里实的表现。先宜服小柴胡汤解外，后用柴胡加芒硝汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阳兼潮热里实，先用小柴胡，后用柴胡加芒硝汤。
+    formulas:
+      - SHL.SB.F.020
+      - SHL.SB.F.050
+    symptom_tags:
+      - SHL.SB.SYM.022
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.039
+    study_tags:
+      - 柴胡加芒硝汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.105
+    no: 105
+    text: 伤寒十三日，过经谵语者，以有热也，当以汤下之。若小便利者，大便当硬，而反下利，脉调和者，知医以丸药下之，非其治也。若自下利者，脉当微厥，今反和者，此为内实也，调胃承气汤主之。
+    translation: 伤寒十三天，病过经而谵语的，是因为有热，应当用汤药泻下。如果小便通利，大便应当硬，反而下利，脉调和，知道医生用丸药泻下，不是正确治法。如果自行下利，脉应当微弱厥冷，现在反而调和，这是里实，用调胃承气汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 以脉证判断误下与内实，调胃承气汤和胃泻热。
+    formulas:
+      - SHL.SB.F.014
+    symptom_tags:
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.039
+    study_tags:
+      - 调胃承气汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.106
+    no: 106
+    text: 太阳病不解，热结膀胱，其人如狂，血自下，下者愈。其外不解者，尚未可攻，当先解其外；外解已，但少腹急结者，乃可攻之，宜桃核承气汤。
+    translation: 太阳病不解除，热邪结在膀胱，病人像发狂一样，血自行从下而出，血下后就会痊愈。如果表证未解，还不能攻下，应当先解表；表解后，只有少腹拘急结聚的，才可以攻下，宜用桃核承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 蓄血轻证，表解后方可攻下。
+    formulas:
+      - SHL.SB.F.051
+    symptom_tags:
+      - SHL.SB.SYM.123
+      - SHL.SB.SYM.124
+      - SHL.SB.SYM.074
+    study_tags:
+      - 桃核承气汤证
+      - 蓄血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.107
+    no: 107
+    text: 伤寒八九日，下之，胸满，烦惊，小便不利，谵语，一身尽重，不可转侧者，柴胡加龙骨牡蛎汤主之。
+    translation: 伤寒八九天，泻下后，胸部胀满，心烦惊惕，小便不利，谵语，全身沉重，不能转侧的，用柴胡加龙骨牡蛎汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 误下邪陷，表里俱病，柴胡加龙骨牡蛎汤和解镇惊。
+    formulas:
+      - SHL.SB.F.052
+    symptom_tags:
+      - SHL.SB.SYM.022
+      - SHL.SB.SYM.125
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.126
+    study_tags:
+      - 柴胡加龙骨牡蛎汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.108
+    no: 108
+    text: 伤寒，腹满谵语，寸口脉浮而紧，此肝乘脾也，名曰纵，刺期门。
+    translation: 伤寒，腹部胀满、谵语，寸口脉浮而紧，这是肝木乘脾土，名叫纵，刺期门。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 肝乘脾所致腹满谵语，刺期门泻肝。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.033
+    study_tags:
+      - 刺期门
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.109
+    no: 109
+    text: 伤寒，发热，啬啬恶寒，大渴欲饮水，其腹必满；自汗出，小便利，其病欲解。此肝乘肺也，名曰横，刺期门。
+    translation: 伤寒发热，阵阵怕冷，非常口渴想喝水，腹部必定胀满；如果自行汗出、小便通利，病将解除。这是肝木乘肺金，名叫横，刺期门。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 肝乘肺致渴与腹满，刺期门。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.127
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.004
+    study_tags:
+      - 刺期门
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.110
+    no: 110
+    text: 太阳病二日，反躁，凡熨其背而大汗出，大热入胃，胃中水竭，躁烦，必发谵语；十余日振栗，自下利者，此为欲解也。故其汗从腰以下不得汗，欲小便不得，反呕，欲失溲，足下恶风，大便硬，小便当数，而反不数及不多。大便已，头卓然而痛，其人足心必热，谷气下流故也。
+    translation: 太阳病第二天，反而躁动，用火熨其背而大汗出，热邪进入胃中，胃中津液枯竭，躁烦，必定发谵语；十多天后战栗，自行下利的，是将要解除。所以汗从腰部以下不能得出，想小便而不得，反而呕吐，想要失禁，足下怕风，大便硬，小便应当频数，反而不频数也不多。大便后，头部突然疼痛，病人足心必定发热，是因为谷气向下流。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 火逆伤津，后期正复自愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.117
+      - SHL.SB.SYM.039
+    study_tags:
+      - 火逆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.111
+    no: 111
+    text: 太阳病中风，以火劫发汗，邪风被火热，血气流失，失其常度。两阳相熏灼，其身发黄。阳盛则欲衄，阴虚小便难。阴阳俱虚竭，身体则枯燥，但头汗出，剂颈而还，腹满微喘，口干咽烂，或不大便，久则谵语，甚者至哕，手足躁扰，捻衣摸床；小便利者，其人可治。
+    translation: 太阳中风，用火劫发汗，风邪被火热逼迫，气血运行失去常度。风火两阳相互熏灼，身体发黄。阳热盛就想鼻出血，阴津虚则小便困难。阴阳都虚竭，身体就枯燥，只有头部出汗，到颈部为止，腹部胀满轻微气喘，口干咽烂，或者不大便，久了谵语，严重的呃逆，手足躁扰，捻衣摸床；小便通利的，病人还可以救治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 火逆危候，以小便利否判断预后。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.069
+      - SHL.SB.SYM.056
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.068
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.128
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.129
+      - SHL.SB.SYM.130
+    study_tags:
+      - 火逆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.112
+    no: 112
+    text: 伤寒，脉浮，医以火迫劫之，亡阳，必惊狂，卧起不安者，桂枝去芍药加蜀漆牡蛎龙骨救逆汤主之。
+    translation: 伤寒脉浮，医生用火法强迫发汗，亡失心阳，必定惊狂、卧床起身都不安定的，用桂枝去芍药加蜀漆牡蛎龙骨救逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 火劫亡阳致惊狂，救逆汤镇惊安神。
+    formulas:
+      - SHL.SB.F.053
+    symptom_tags:
+      - SHL.SB.SYM.131
+      - SHL.SB.SYM.102
+    study_tags:
+      - 救逆汤证
+      - 火逆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.113
+    no: 113
+    text: 形作伤寒，其脉不弦紧而弱者，弱者必渴。被火必谵语。弱者，发热，脉浮，解之当汗出愈。
+    translation: 病象类似伤寒，但脉不弦紧而弱的，脉弱的人必定口渴。被火法治疗必定谵语。脉弱的人发热、脉浮，解表应当汗出而愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉弱非伤寒表实，误火会伤津致谵语。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.015
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.002
+    study_tags:
+      - 火逆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.114
+    no: 114
+    text: 太阳病，以火熏之，不得汗，其人必躁，到经不解，必清血，名为火邪。
+    translation: 太阳病，用火熏的方法，不能出汗，病人必定躁动，到经期病仍不解，必定便血，这叫火邪。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 火邪内迫，伤及阴络则便血。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.074
+    study_tags:
+      - 火邪
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.115
+    no: 115
+    text: 脉浮，热甚，而反灸之，此为实，实以虚治，因火而动，必咽燥、吐血。
+    translation: 脉浮、热盛，反而用艾灸，这是实证却按虚证处理，因火而血动，必定咽喉干燥、吐血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 实热误灸，火动血溢。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.132
+      - SHL.SB.SYM.133
+    study_tags:
+      - 火逆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.116
+    no: 116
+    text: 微数之脉，慎不可灸，因火为邪，则为烦逆。追虚逐实，血散脉中，火气虽微，内攻有力，焦骨伤筋，血难复也。脉浮，宜以汗解，用火灸之，邪无从出，因火而盛，病从腰以下，必重而痹，名火逆也。欲自解者，必当先烦，烦乃有汗而解。何以知之？脉浮，故知汗出解。
+    translation: 微弱而数的脉，务必谨慎不可艾灸，因火成为邪气，就会烦逆。追虚逐实，血散在脉中，火气虽然微弱，内攻却有力，能使筋骨焦伤，血难以恢复。脉浮适合用汗解，用火灸后，邪气无从外出，因火而更盛，病从腰部以下必定沉重而麻痹，叫火逆。要自行解除的，必定先心烦，心烦后才出汗而解。怎么知道？脉浮，所以知道汗出而解。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 详述火逆禁忌与自愈机理。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.134
+    study_tags:
+      - 火逆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.117
+    no: 117
+    text: 烧针令其汗，针处被寒，核起而赤者，必发奔豚。气从少腹上冲心者，灸其核上各一壮，与桂枝加桂汤，更加桂二两也。
+    translation: 用烧针让病人出汗，针处受寒，肿起发红的，必定发作奔豚。气从少腹上冲心口的，在肿核上各灸一壮，并给桂枝加桂汤，加重桂枝二两。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 烧针后寒凝针处，奔豚气上冲，桂枝加桂汤平冲。
+    formulas:
+      - SHL.SB.F.054
+    symptom_tags:
+      - SHL.SB.SYM.090
+      - SHL.SB.SYM.017
+    study_tags:
+      - 桂枝加桂汤证
+      - 奔豚
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.118
+    no: 118
+    text: 火逆，下之，因烧针烦躁者，桂枝甘草龙骨牡蛎汤主之。
+    translation: 火逆后误用泻下，又因烧针而烦躁的，用桂枝甘草龙骨牡蛎汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 火逆伤阳，心神浮越而烦躁，镇潜安神。
+    formulas:
+      - SHL.SB.F.055
+    symptom_tags:
+      - SHL.SB.SYM.014
+    study_tags:
+      - 桂枝甘草龙骨牡蛎汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.119
+    no: 119
+    text: 太阳伤寒者，加温针必惊也。
+    translation: 太阳伤寒，用温针必定出现惊惕。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 伤寒表实忌温针，误用则惊。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.125
+    study_tags:
+      - 温针禁忌
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.120
+    no: 120
+    text: 太阳病，当恶寒、发热，今自汗出，反不恶寒发热，关上脉细数者，以医吐之过也。一二日吐之者，腹中饥、口不能食；三四日吐之者，不喜糜粥，欲食冷食，朝食暮吐，以医吐之所致也，此为小逆。
+    translation: 太阳病应当怕冷发热，现在自汗出，反而不怕冷发热，关上脉细数的，是医生误用催吐的过错。一两天催吐的，腹中饥饿但不能进食；三四天催吐的，不喜欢稀粥，想吃冷食，早上吃晚上吐，是医生催吐所致，这是小逆。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 误吐伤胃，出现饥不能食或朝食暮吐。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.135
+    study_tags:
+      - 误吐
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.121
+    no: 121
+    text: 太阳病，吐之，但太阳病当恶寒，今反不恶寒，不欲近衣，此为吐之内烦也。
+    translation: 太阳病误用催吐，太阳病应当怕冷，现在反而不怕冷，不想靠近衣服，这是催吐导致的内烦。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 误吐伤津化热，内烦而不恶寒。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.136
+    study_tags:
+      - 误吐
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.122
+    no: 122
+    text: 病人脉数，数为热，当消谷引食，而反吐者，此以发汗，令阳气微，膈气虚，脉乃数也。数为客热，不能消谷，以胃中虚冷，故吐也。
+    translation: 病人脉数，数主热，应当消化食物、想吃东西，反而呕吐的，这是因为发汗使阳气微弱、膈气虚弱，所以脉数。这是客热，不能消化食物，因为胃中虚冷，所以呕吐。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉数未必皆实热，胃中虚冷亦可致吐。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.137
+      - SHL.SB.SYM.113
+    study_tags:
+      - 脉证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.123
+    no: 123
+    text: 太阳病，过经十余日，心下温温欲吐，而胸中痛，大便反溏，腹微满，郁郁微烦。先此时自极吐下者，与调胃承气汤，若不尔者，不可与。但欲呕、胸中痛、微溏者，此非柴胡汤证，以呕故知极吐下也，调胃承气汤。
+    translation: 太阳病，病程超过十余天，心下温温欲吐，胸中疼痛，大便反而稀溏，腹部微满，郁郁微烦。在这之前自行剧烈吐下的，给调胃承气汤；如果不是这样，不能给。只想呕、胸中痛、轻微溏泻的，这不是柴胡汤证，因为呕吐可知是剧烈吐下所致，用调胃承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 极吐下后胃气不和，用调胃承气汤和胃。
+    formulas:
+      - SHL.SB.F.014
+    symptom_tags:
+      - SHL.SB.SYM.138
+      - SHL.SB.SYM.139
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.122
+    study_tags:
+      - 调胃承气汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.124
+    no: 124
+    text: 太阳病，六七日，表证仍在，脉微而沉，反不结胸，其人发狂者，以热在下焦，少腹当硬满，小便自利者，下血乃愈。所以然者，以太阳随经瘀热在里故也，抵当汤主之。
+    translation: 太阳病六七天，表证仍在，脉微而沉，反而不结胸，病人发狂的，因为热在下焦，少腹应当硬满，小便通畅的，瘀血下行才会痊愈。这是因为太阳经之邪随经入里，瘀热在里的缘故，用抵当汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 蓄血重证，少腹硬满、其人如狂，用抵当汤破血逐瘀。
+    formulas:
+      - SHL.SB.F.056
+    symptom_tags:
+      - SHL.SB.SYM.123
+      - SHL.SB.SYM.142
+      - SHL.SB.SYM.143
+    study_tags:
+      - 抵当汤证
+      - 蓄血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.125
+    no: 125
+    text: 太阳病，身黄，脉沉结，少腹硬，小便不利者，为无血也；小便自利，其人如狂者，血证谛也，抵当汤主之。
+    translation: 太阳病，身体发黄，脉沉结，少腹硬，小便不利的，是没有瘀血；小便通畅，病人像发狂的，是瘀血证的明证，用抵当汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 以小便利否区别蓄水与蓄血。
+    formulas:
+      - SHL.SB.F.056
+    symptom_tags:
+      - SHL.SB.SYM.069
+      - SHL.SB.SYM.142
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.123
+      - SHL.SB.SYM.143
+    study_tags:
+      - 抵当汤证
+      - 蓄血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.126
+    no: 126
+    text: 伤寒，有热，少腹满，应小便不利，今反利者，为有血也，当下之，不可余药，宜抵当丸。
+    translation: 伤寒有热，少腹胀满，应当小便不利，现在反而通畅，是有瘀血，应当攻下，不可用其他药，宜用抵当丸。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 蓄血较轻，用抵当丸缓攻。
+    formulas:
+      - SHL.SB.F.057
+    symptom_tags:
+      - SHL.SB.SYM.049
+      - SHL.SB.SYM.143
+    study_tags:
+      - 抵当丸证
+      - 蓄血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.127
+    no: 127
+    text: 太阳病，小便利者，以饮水多，必心下悸；小便少者，必苦里急也。
+    translation: 太阳病，小便通畅的，因为喝水多，必定心下悸动；小便少的，必定感到小腹里急。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 饮水多而气化不利，水停部位不同。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.088
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.141
+    study_tags:
+      - 水饮
+    notes: AI 初稿待校对。

@@ -496,3 +496,160 @@ terms:
     name: 少气
     category: 症状
     aliases: []
+  - id: SHL.SB.SYM.115
+    name: 下利清谷
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.116
+    name: 冒
+    category: 症状
+    aliases:
+      - 昏冒
+  - id: SHL.SB.SYM.117
+    name: 振栗
+    category: 症状
+    aliases:
+      - 战栗
+  - id: SHL.SB.SYM.118
+    name: 脉阴阳俱停
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.119
+    name: 胸胁苦满
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.120
+    name: 嘿嘿不欲饮食
+    category: 症状
+    aliases:
+      - 默默不欲饮食
+  - id: SHL.SB.SYM.121
+    name: 心下急
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.122
+    name: 郁郁微烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.123
+    name: 如狂
+    category: 症状
+    aliases:
+      - 发狂
+  - id: SHL.SB.SYM.124
+    name: 少腹急结
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.125
+    name: 烦惊
+    category: 症状
+    aliases:
+      - 惊惕
+  - id: SHL.SB.SYM.126
+    name: 一身尽重
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.127
+    name: 大渴
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.128
+    name: 口干咽烂
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.129
+    name: 手足躁扰
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.130
+    name: 捻衣摸床
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.131
+    name: 惊狂
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.132
+    name: 咽燥
+    category: 症状
+    aliases:
+      - 咽喉干燥
+  - id: SHL.SB.SYM.133
+    name: 吐血
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.134
+    name: 火逆
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.135
+    name: 朝食暮吐
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.136
+    name: 内烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.137
+    name: 客热
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.138
+    name: 心下温温欲吐
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.139
+    name: 胸中痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.140
+    name: 血证
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.141
+    name: 苦里急
+    category: 症状
+    aliases:
+      - 里急
+  - id: SHL.SB.SYM.142
+    name: 少腹硬满
+    category: 症状
+    aliases:
+      - 少腹硬
+  - id: SHL.SB.SYM.143
+    name: 小便自利
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.144
+    name: 脉微而沉
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.145
+    name: 脉沉结
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.146
+    name: 脉阴阳俱微
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.147
+    name: 脉迟浮弱
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.148
+    name: 不能食
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.149
+    name: 胁下满痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.150
+    name: 食谷者哕
+    category: 症状
+    aliases:
+      - 哕
+  - id: SHL.SB.SYM.151
+    name: 腹中急痛
+    category: 症状
+    aliases: []
