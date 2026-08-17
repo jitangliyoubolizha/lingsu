@@ -76,7 +76,8 @@ onMounted(load)
 <template>
   <div class="mx-auto max-w-2xl">
     <AppHeader
-      title="辨太阳病脉证并治上"
+      title="全部条文"
+      subtitle="太阳病上/中/下篇 · 共 178 条"
       show-back
       back-to="/"
     />

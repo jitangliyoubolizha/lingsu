@@ -27,10 +27,32 @@ const streakDays = ref(0)
 const loading = ref(true)
 const chapterProgress = ref<Array<{ code: string; name: string; done: number; total: number }>>([])
 const learningStats = ref({ mastered: 0, learning: 0, dueReviews: 0 })
+const dailyLogs = ref<
+  Array<{ date: string; requiredCount: number; completedCount: number }>
+>([])
 
 const taskTotal = computed(() => queue.value.dueCards.length + queue.value.newClauses.length)
 
 const todayKey = new Date().toISOString().slice(0, 10)
+
+/** 本周（周一起）某下标对应的日期字符串 */
+function weekDayDate(weekIndex: number): string {
+  const now = new Date()
+  const mondayOffset = now.getDay() === 0 ? -6 : 1 - now.getDay()
+  const monday = new Date(now)
+  monday.setDate(now.getDate() + mondayOffset)
+  const target = new Date(monday)
+  target.setDate(monday.getDate() + weekIndex)
+  return target.toISOString().slice(0, 10)
+}
+
+/** 本周一至周日是否完成过打卡（基于真实 dailyLogs） */
+const weekCompleted = computed(() =>
+  ['一', '二', '三', '四', '五', '六', '日'].map((_, index) => {
+    const key = weekDayDate(index)
+    return dailyLogs.value.some((log) => log.date === key && log.completedCount > 0)
+  })
+)
 
 async function loadHome() {
   try {
@@ -38,7 +60,7 @@ async function loadHome() {
     content.value = data
     await ensureDefaultStudyPlan()
 
-    const [plans, cards, states, dailyLogs, todayLog] = await Promise.all([
+    const [plans, cards, states, dailyLogRecords, todayLog] = await Promise.all([
       getActiveStudyPlans(),
       getAllCards(),
       getClauseStates(),
@@ -51,7 +73,8 @@ async function loadHome() {
     )
     queue.value = getTodayQueue(cards, plans, data.clauses, learnedIds, 20, new Date())
     taskDone.value = todayLog?.completedCount ?? 0
-    streakDays.value = computeStreakDays(dailyLogs)
+    dailyLogs.value = dailyLogRecords
+    streakDays.value = computeStreakDays(dailyLogRecords)
     chapterProgress.value = computeChapterProgress(data, learnedIds)
     learningStats.value = computeLearningStats(cards)
   } finally {
@@ -182,8 +205,8 @@ onMounted(loadHome)
         >
           <div
             class="h-8 w-full rounded-md"
-            :class="index < 5 ? 'bg-cinnabar' : 'bg-paper-deep'"
-            :aria-label="`周${day}${index < 5 ? '已打卡' : '未打卡'}`"
+            :class="weekCompleted[index] ? 'bg-cinnabar' : 'bg-paper-deep'"
+            :aria-label="`周${day}${weekCompleted[index] ? '已打卡' : '未打卡'}`"
           />
           <span class="text-[10px] text-ink-muted">{{ day }}</span>
         </div>

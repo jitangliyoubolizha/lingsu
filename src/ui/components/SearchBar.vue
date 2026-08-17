@@ -49,8 +49,10 @@ function clear() {
       aria-hidden="true"
     />
     <input
+      id="search-input"
       ref="inputRef"
       v-model="model"
+      name="q"
       type="search"
       class="h-full min-w-0 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink-muted"
       :placeholder="props.placeholder"
