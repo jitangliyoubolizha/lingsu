@@ -162,3 +162,110 @@ terms:
     category: 症状
     aliases:
       - 大热
+  - id: SHL.SB.SYM.039
+    name: 下利
+    category: 症状
+    aliases:
+      - 腹泻
+  - id: SHL.SB.SYM.040
+    name: 胁痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.041
+    name: 嗜卧
+    category: 症状
+    aliases:
+      - 嗜睡
+  - id: SHL.SB.SYM.042
+    name: 腰痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.043
+    name: 骨节疼痛
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.044
+    name: 筋惕肉瞤
+    category: 症状
+    aliases:
+      - 筋肉跳动
+  - id: SHL.SB.SYM.045
+    name: 身重
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.046
+    name: 心悸
+    category: 症状
+    aliases:
+      - 心动悸
+  - id: SHL.SB.SYM.047
+    name: 咳
+    category: 症状
+    aliases:
+      - 咳嗽
+  - id: SHL.SB.SYM.048
+    name: 噎
+    category: 症状
+    aliases:
+      - 噎塞
+  - id: SHL.SB.SYM.049
+    name: 少腹满
+    category: 症状
+    aliases:
+      - 小腹胀满
+  - id: SHL.SB.SYM.050
+    name: 脉浮缓
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.051
+    name: 脉浮弱
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.052
+    name: 脉浮细
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.053
+    name: 脉浮数
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.054
+    name: 脉沉细
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.055
+    name: 脉涩
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.056
+    name: 衄
+    category: 症状
+    aliases:
+      - 鼻出血
+  - id: SHL.SB.SYM.057
+    name: 目瞑
+    category: 症状
+    aliases:
+      - 闭目
+  - id: SHL.SB.SYM.058
+    name: 面色赤
+    category: 症状
+    aliases:
+      - 面赤
+  - id: SHL.SB.SYM.059
+    name: 短气
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.060
+    name: 振寒
+    category: 症状
+    aliases:
+      - 恶寒战栗
+  - id: SHL.SB.SYM.061
+    name: 小便清
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.062
+    name: 脉微细
+    category: 脉象
+    aliases: []

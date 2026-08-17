@@ -8,3 +8,8 @@ chapters:
     order: 1
     files:
       - chapters/taiyang-shang.yaml
+  - code: TYZ
+    name: 辨太阳病脉证并治中
+    order: 2
+    files:
+      - chapters/taiyang-zhong-1.yaml

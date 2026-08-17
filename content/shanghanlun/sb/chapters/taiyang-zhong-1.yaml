@@ -1,0 +1,517 @@
+# 太阳病中篇（宋本条文 31–60）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: TYZ
+  name: 辨太阳病脉证并治中
+  order: 2
+  part: 1
+  part_total: 1
+clauses:
+  - id: SHL.SB.TYZ.031
+    no: 31
+    text: 太阳病，项背强几几，无汗恶风，葛根汤主之。
+    translation: 太阳病，颈项背部僵硬拘急不舒，无汗怕风的，用葛根汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 太阳表实兼项背强几几，用葛根汤发汗解肌、升津舒筋。
+    formulas:
+      - SHL.SB.F.016
+    symptom_tags:
+      - SHL.SB.SYM.016
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.005
+    study_tags:
+      - 葛根汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.032
+    no: 32
+    text: 太阳与阳明合病者，必自下利，葛根汤主之。
+    translation: 太阳与阳明同时发病的，必定自行下利，用葛根汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 二阳合病下利，重在解表，表解里自和。
+    formulas:
+      - SHL.SB.F.016
+    symptom_tags:
+      - SHL.SB.SYM.039
+    study_tags:
+      - 合病
+      - 葛根汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.033
+    no: 33
+    text: 太阳与阳明合病，不下利，但呕者，葛根加半夏汤主之。
+    translation: 太阳与阳明合病，不下利，只有呕吐的，用葛根加半夏汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 合病不下利而呕，加半夏降逆止呕。
+    formulas:
+      - SHL.SB.F.017
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.039
+    study_tags:
+      - 合病
+      - 葛根加半夏汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.034
+    no: 34
+    text: 太阳病，桂枝证，医反下之，利遂不止，脉促者，表未解也；喘而汗出者，葛根黄芩黄连汤主之。
+    translation: 太阳病本属桂枝汤证，医生反而用泻下药，腹泻持续不止，脉促的，是表邪未解；气喘而汗出的，用葛根黄芩黄连汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 误下后表邪内陷化热，湿热下利，用葛根芩连汤清热止利。
+    formulas:
+      - SHL.SB.F.018
+    symptom_tags:
+      - SHL.SB.SYM.021
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.039
+    study_tags:
+      - 葛根黄芩黄连汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.035
+    no: 35
+    text: 太阳病，头痛发热，身疼腰痛，骨节疼痛，恶风，无汗而喘者，麻黄汤主之。
+    translation: 太阳病，头痛发热，身体疼痛、腰痛、骨节疼痛，怕风，无汗而气喘的，用麻黄汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 太阳伤寒表实证，以麻黄汤发汗解表、宣肺平喘。
+    formulas:
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.005
+      - SHL.SB.SYM.012
+      - SHL.SB.SYM.042
+      - SHL.SB.SYM.043
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.018
+    study_tags:
+      - 麻黄汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.036
+    no: 36
+    text: 太阳与阳明合病，喘而胸满者，不可下，宜麻黄汤。
+    translation: 太阳与阳明合病，气喘而胸部胀满的，不可用泻下法，适合用麻黄汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 喘而胸满病位偏表，宜发汗不宜攻下。
+    formulas:
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.022
+    study_tags:
+      - 合病
+      - 麻黄汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.037
+    no: 37
+    text: 太阳病，十日以去，脉浮细而嗜卧者，外已解也；设胸满胁痛者，与小柴胡汤；脉但浮者，与麻黄汤。
+    translation: 太阳病超过十天，脉浮细而喜欢躺卧的，是表邪已经解除；如果胸部胀满、胁部疼痛，给与小柴胡汤；如果脉只是浮的，给与麻黄汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 病程较长时根据脉证判断表解、少阳或表证未尽。
+    formulas:
+      - SHL.SB.F.020
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.052
+      - SHL.SB.SYM.041
+      - SHL.SB.SYM.022
+      - SHL.SB.SYM.040
+    study_tags:
+      - 小柴胡汤证
+      - 麻黄汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.038
+    no: 38
+    text: 太阳中风，脉浮紧，发热恶寒，身疼痛，不汗出而烦躁者，大青龙汤主之。脉浮弱者，不可服之，服之则厥逆，筋惕肉瞤，此为逆也。
+    translation: 太阳中风，脉浮紧，发热怕冷，身体疼痛，不出汗而烦躁的，用大青龙汤主治。脉浮弱的，不可服用；服后会出现手足厥冷、筋肉跳动，这是误治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 表寒里热，用大青龙汤外散表寒、内清里热；脉弱禁用。
+    formulas:
+      - SHL.SB.F.021
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.012
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.044
+    study_tags:
+      - 大青龙汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.039
+    no: 39
+    text: 伤寒脉浮缓，身不疼，但重，乍有轻时，无少阴证者，大青龙汤发之。
+    translation: 伤寒脉浮缓，身体不痛，只觉沉重，时轻时重，没有少阴证候的，用大青龙汤发散。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 寒邪郁表、湿滞肌腠，用大青龙汤发越郁阳。
+    formulas:
+      - SHL.SB.F.021
+    symptom_tags:
+      - SHL.SB.SYM.050
+      - SHL.SB.SYM.045
+    study_tags:
+      - 大青龙汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.040
+    no: 40
+    text: 伤寒表不解，心下有水气，干呕发热而咳，或渴，或利，或噎，或小便不利、少腹满，或喘者，小青龙汤主之。
+    translation: 伤寒表邪未解，心下又有水饮，出现干呕、发热、咳嗽，或口渴，或腹泻，或噎塞，或小便不利、小腹胀满，或气喘的，用小青龙汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 外寒内饮，用小青龙汤解表散寒、温化水饮。
+    formulas:
+      - SHL.SB.F.022
+    symptom_tags:
+      - SHL.SB.SYM.008
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.015
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.048
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.049
+      - SHL.SB.SYM.018
+    study_tags:
+      - 小青龙汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.041
+    no: 41
+    text: 伤寒心下有水气，咳而微喘，发热不渴。服汤已渴者，此寒去欲解也。小青龙汤主之。
+    translation: 伤寒心下有水饮，咳嗽而轻微气喘，发热但不口渴。服小青龙汤后口渴的，是寒饮将去、病欲解除。小青龙汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 服汤后口渴提示寒饮消散，津液未复。
+    formulas:
+      - SHL.SB.F.022
+    symptom_tags:
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.001
+    study_tags:
+      - 小青龙汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.042
+    no: 42
+    text: 太阳病，外证未解，脉浮弱者，当以汗解，宜桂枝汤。
+    translation: 太阳病，表证未解，脉浮弱的，应当用汗法解除，适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮弱提示营卫不和，用桂枝汤调和营卫。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.051
+    study_tags:
+      - 桂枝汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.043
+    no: 43
+    text: 太阳病，下之微喘者，表未解故也，桂枝加厚朴杏子汤主之。
+    translation: 太阳病误用泻下后出现轻微气喘的，是表邪未解所致，用桂枝加厚朴杏子汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 误下后表邪未解而肺气上逆，以桂枝汤解肌加厚朴杏仁降气。
+    formulas:
+      - SHL.SB.F.003
+    symptom_tags:
+      - SHL.SB.SYM.018
+    study_tags:
+      - 桂枝加厚朴杏子汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.044
+    no: 44
+    text: 太阳病，外证未解，不可下也，下之为逆。欲解外者，宜桂枝汤。
+    translation: 太阳病，表证未解，不可用泻下法，误下属于逆治。要解除表邪的，适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 强调表证当先解表，不可误下。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags: []
+    study_tags:
+      - 汗法
+      - 禁忌
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.045
+    no: 45
+    text: 太阳病，先发汗不解，而复下之，脉浮者不愈。浮为在外，而反下之，故令不愈。今脉浮，故在外，当须解外则愈，宜桂枝汤。
+    translation: 太阳病，先发汗未解，又用泻下，脉浮的仍不愈。浮主病在外，反而泻下，所以不愈。现在脉浮，说明病仍在表，应当解表则愈，适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 以脉浮判断邪仍在表，治当解外。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.002
+    study_tags:
+      - 桂枝汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.046
+    no: 46
+    text: 太阳病，脉浮紧，无汗，发热，身疼痛，八九日不解，表证仍在，此当发其汗。服药已微除，其人发烦目瞑，剧者必衄，衄乃解。所以然者，阳气重故也。麻黄汤主之。
+    translation: 太阳病，脉浮紧，无汗，发热，身体疼痛，八九天不解除，表证仍在，应当发汗。服药后病邪略微减轻，但病人出现心烦、闭目，严重的必定鼻出血，鼻出血后病就解除，这是因为阳气郁闭较重的缘故。麻黄汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 表寒郁闭日久，服麻黄汤后衄解是邪从血分而解。
+    formulas:
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.012
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.057
+      - SHL.SB.SYM.056
+    study_tags:
+      - 麻黄汤证
+      - 衄解
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.047
+    no: 47
+    text: 太阳病，脉浮紧，发热，身无汗，自衄者愈。
+    translation: 太阳病，脉浮紧，发热，身体无汗，自行鼻出血的会痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 衄血有助宣泄郁闭之邪，故自衄可愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.056
+    study_tags:
+      - 衄解
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.048
+    no: 48
+    text: 二阳并病，太阳初得病时，发其汗，汗先出不彻，因转属阳明，续自微汗出，不恶寒。若太阳病证不罢者，不可下，下之为逆，如此可小发汗。设面色缘缘正赤者，阳气怫郁在表，当解之熏之。若发汗不彻，不足言，阳气怫郁不得越，当汗不汗，其人躁烦，不知痛处，乍在腹中，乍在四肢，按之不可得，其人短气但坐，以汗出不彻故也，更发汗则愈。何以知汗出不彻？以脉涩故知也。
+    translation: 太阳阳明并病，太阳病初起时发汗，汗出不透彻，因而转属阳明，继续微微汗出，不怕冷。如果太阳证不罢，不可泻下，误下是逆治，这时可以稍稍发汗。如果面色红赤，是阳气郁闭在表，应当用解表熏蒸的方法。如果发汗不透彻，阳气郁闭不能外越，应当出汗而没有出汗，病人烦躁，不知道痛处，时而在腹中，时而在四肢，按不到具体痛点，病人短气只能坐着，这是因为汗出不透彻，再发汗就会痊愈。怎么知道汗出不透彻？因为脉涩。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 详论汗出不彻的成因、表现与处理。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.058
+      - SHL.SB.SYM.059
+      - SHL.SB.SYM.055
+    study_tags:
+      - 二阳并病
+      - 汗出不彻
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.049
+    no: 49
+    text: 脉浮数者，法当汗出而愈。若下之，身重心悸者，不可发汗，当自汗出乃解。所以然者，尺中脉微，此里虚，须表里实，津液自和，便自汗出愈。
+    translation: 脉浮数的，按常规应当出汗而愈。如果误用泻下，出现身体沉重、心中悸动，不可再用发汗，应当等自行出汗而解。这是因为尺中脉微，属于里虚，必须表里之气充实、津液自和，才能自行出汗痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 误下后里虚，不可再汗，待正复津回自愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.053
+      - SHL.SB.SYM.045
+      - SHL.SB.SYM.046
+    study_tags:
+      - 误下
+      - 里虚
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.050
+    no: 50
+    text: 脉浮紧者，法当身疼痛，宜以汗解之。假令尺中迟者，不可发汗。何以知然？以荣气不足，血少故也。
+    translation: 脉浮紧的，按常规应当身体疼痛，适合用汗法解除。假如尺中脉迟，不可发汗。怎么知道呢？因为营气不足、血液偏少的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 尺中迟提示血虚，虽有表证亦不可单纯发汗。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.012
+    study_tags:
+      - 发汗禁忌
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.051
+    no: 51
+    text: 脉浮者，病在表，可发汗，宜麻黄汤。
+    translation: 脉浮的，病在表，可以发汗，适合用麻黄汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮主表，表实可发汗。
+    formulas:
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.002
+    study_tags:
+      - 麻黄汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.052
+    no: 52
+    text: 脉浮而数者，可发汗，宜麻黄汤。
+    translation: 脉浮而数的，可以发汗，适合用麻黄汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 浮数为表热，表实仍可发汗。
+    formulas:
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.053
+    study_tags:
+      - 麻黄汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.053
+    no: 53
+    text: 病常自汗出者，此为荣气和。荣气和者，外不谐，以卫气不共荣气谐和故尔。以荣行脉中，卫行脉外。复发其汗，荣卫和则愈。宜桂枝汤。
+    translation: 病人经常自汗出的，这是营气尚和。营气虽和，但卫外功能不协调，因为卫气不能与营气谐和。营行脉中，卫行脉外。再发其汗，营卫调和就会痊愈。适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 自汗因营卫不和，用桂枝汤调和营卫。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.004
+    study_tags:
+      - 营卫不和
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.054
+    no: 54
+    text: 病人脏无他病，时发热自汗出而不愈者，此卫气不和也。先其时发汗则愈，宜桂枝汤。
+    translation: 病人脏腑没有其他疾病，定时发热自汗出而不愈的，这是卫气不和。在发热出汗前发汗就会痊愈，适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 定时发热自汗为卫气不和，先其时用药调和。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+    study_tags:
+      - 营卫不和
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.055
+    no: 55
+    text: 伤寒脉浮紧，不发汗，因致衄者，麻黄汤主之。
+    translation: 伤寒脉浮紧，没有发汗，因而导致鼻出血的，用麻黄汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 衄后表邪未解，仍可用麻黄汤发汗解表。
+    formulas:
+      - SHL.SB.F.019
+    symptom_tags:
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.056
+    study_tags:
+      - 麻黄汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.056
+    no: 56
+    text: 伤寒不大便六七日，头痛有热者，与承气汤。其小便清者，知不在里，仍在表也，当须发汗。若头痛者必衄。宜桂枝汤。
+    translation: 伤寒六七天不大便，头痛发热的，给与承气汤。如果小便清，说明病不在里，仍在表，应当发汗。如果头痛的，必定会鼻出血。适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 以小便清否辨别表里，表证未解仍当解表。
+    formulas:
+      - SHL.SB.F.014
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.061
+      - SHL.SB.SYM.056
+    study_tags:
+      - 表里辨证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.057
+    no: 57
+    text: 伤寒发汗已解，半日许复烦，脉浮数者，可更发汗，宜桂枝汤。
+    translation: 伤寒发汗后已经解除，半天左右又出现心烦、脉浮数的，可以再次发汗，适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 汗后余邪复聚，脉浮数宜桂枝汤解肌。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.053
+    study_tags:
+      - 桂枝汤证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.058
+    no: 58
+    text: 凡病，若发汗、若吐、若下、若亡血、亡津液，阴阳自和者，必自愈。
+    translation: 任何疾病，经过发汗、催吐、泻下，或失血、伤津液之后，只要阴阳能够自趋调和，必定自行痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 强调人体阴阳自和的自愈能力。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 自愈
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.059
+    no: 59
+    text: 大下之后，复发汗，小便不利者，亡津液故也。勿治之，得小便利，必自愈。
+    translation: 大泻之后又发汗，小便不利的，是津液耗伤的缘故。不要专门治疗，等小便通利，必定自行痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 津伤则尿少，待津液恢复自愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.028
+    study_tags:
+      - 津伤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.TYZ.060
+    no: 60
+    text: 下之后，复发汗，必振寒，脉微细。所以然者，以内外俱虚故也。
+    translation: 泻下之后又发汗，必定畏寒战栗，脉微细。这是因为内外都虚的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 汗下失序，阳气阴血两伤。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.060
+      - SHL.SB.SYM.062
+    study_tags:
+      - 误治
+      - 虚证
+    notes: AI 初稿待校对。

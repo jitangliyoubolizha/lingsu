@@ -493,3 +493,257 @@ formulas:
     main_symptoms: []
     pulse: []
     pathomechanism: ""
+  - id: SHL.SB.F.016
+    name: 葛根汤
+    category: 麻黄汤类
+    composition:
+      - herb: SHL.SB.H.006
+        dose: 四两
+        note: ""
+      - herb: SHL.SB.H.010
+        dose: 三两
+        note: 去节
+      - herb: SHL.SB.H.001
+        dose: 二两
+        note: 去皮
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.002
+        dose: 二两
+        note: ""
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+    original_dose_text: 葛根四两 麻黄三两（去节） 桂枝二两（去皮） 生姜三两（切） 甘草二两（炙） 芍药二两 大枣十二枚（擘）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上七味，以水一斗，先煮麻黄、葛根，减二升，去白沫，内诸药，煮取三升，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.031
+      - SHL.SB.TYZ.032
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.017
+        note: 葛根加半夏汤
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.017
+    name: 葛根加半夏汤
+    category: 麻黄汤类
+    composition:
+      - herb: SHL.SB.H.006
+        dose: 四两
+        note: ""
+      - herb: SHL.SB.H.010
+        dose: 三两
+        note: 去节
+      - herb: SHL.SB.H.001
+        dose: 二两
+        note: 去皮
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.002
+        dose: 二两
+        note: ""
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+      - herb: SHL.SB.H.020
+        dose: 半升
+        note: 洗
+    original_dose_text: 葛根四两 麻黄三两（去节） 桂枝二两（去皮） 生姜三两（切） 甘草二两（炙） 芍药二两 大枣十二枚（擘） 半夏半升（洗）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上八味，以水一斗，先煮葛根、麻黄，减二升，去白沫，内诸药，煮取三升，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.033
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.016
+        note: 葛根汤加半夏
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.018
+    name: 葛根黄芩黄连汤
+    category: 清热方
+    composition:
+      - herb: SHL.SB.H.006
+        dose: 半斤
+        note: ""
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.021
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.022
+        dose: 三两
+        note: ""
+    original_dose_text: 葛根半斤 甘草二两（炙） 黄芩三两 黄连三两
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上四味，以水八升，先煮葛根，减二升，内诸药，煮取二升，去滓，分温再服。
+    related_clauses:
+      - SHL.SB.TYZ.034
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.019
+    name: 麻黄汤
+    category: 麻黄汤类
+    composition:
+      - herb: SHL.SB.H.010
+        dose: 三两
+        note: 去节
+      - herb: SHL.SB.H.001
+        dose: 二两
+        note: 去皮
+      - herb: SHL.SB.H.003
+        dose: 一两
+        note: 炙
+      - herb: SHL.SB.H.008
+        dose: 七十个
+        note: 去皮尖
+    original_dose_text: 麻黄三两（去节） 桂枝二两（去皮） 甘草一两（炙） 杏仁七十个（去皮尖）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上四味，以水九升，先煮麻黄，减二升，去上沫，内诸药，煮取二升半，去滓，温服八合。
+    related_clauses:
+      - SHL.SB.TYZ.035
+      - SHL.SB.TYZ.036
+      - SHL.SB.TYZ.037
+      - SHL.SB.TYZ.046
+      - SHL.SB.TYZ.051
+      - SHL.SB.TYZ.052
+      - SHL.SB.TYZ.055
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.001
+        note: 麻黄汤与桂枝汤同为解表方
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.020
+    name: 小柴胡汤
+    category: 柴胡汤类
+    composition:
+      - herb: SHL.SB.H.023
+        dose: 半斤
+        note: ""
+      - herb: SHL.SB.H.021
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.013
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.020
+        dose: 半升
+        note: 洗
+      - herb: SHL.SB.H.003
+        dose: 三两
+        note: 炙
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.005
+        dose: 十二枚
+        note: 擘
+    original_dose_text: 柴胡半斤 黄芩三两 人参三两 半夏半升（洗） 甘草三两（炙） 生姜三两（切） 大枣十二枚（擘）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上七味，以水一斗二升，煮取六升，去滓，再煎取三升，温服一升，日三服。
+    related_clauses:
+      - SHL.SB.TYZ.037
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.021
+    name: 大青龙汤
+    category: 麻黄汤类
+    composition:
+      - herb: SHL.SB.H.010
+        dose: 六两
+        note: 去节
+      - herb: SHL.SB.H.001
+        dose: 二两
+        note: 去皮
+      - herb: SHL.SB.H.003
+        dose: 二两
+        note: 炙
+      - herb: SHL.SB.H.008
+        dose: 四十枚
+        note: 去皮尖
+      - herb: SHL.SB.H.004
+        dose: 三两
+        note: 切
+      - herb: SHL.SB.H.005
+        dose: 十枚
+        note: 擘
+      - herb: SHL.SB.H.011
+        dose: 鸡子大
+        note: 碎
+    original_dose_text: 麻黄六两（去节） 桂枝二两（去皮） 甘草二两（炙） 杏仁四十枚（去皮尖） 生姜三两（切） 大枣十枚（擘） 石膏如鸡子大（碎）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上七味，以水九升，先煮麻黄，减二升，去上沫，内诸药，煮取三升，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.038
+      - SHL.SB.TYZ.039
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.019
+        note: 大青龙汤由麻黄汤加石膏、生姜、大枣
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""
+  - id: SHL.SB.F.022
+    name: 小青龙汤
+    category: 温化水饮方
+    composition:
+      - herb: SHL.SB.H.010
+        dose: 三两
+        note: 去节
+      - herb: SHL.SB.H.002
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.024
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.017
+        dose: 三两
+        note: ""
+      - herb: SHL.SB.H.003
+        dose: 三两
+        note: 炙
+      - herb: SHL.SB.H.001
+        dose: 三两
+        note: 去皮
+      - herb: SHL.SB.H.025
+        dose: 半升
+        note: ""
+      - herb: SHL.SB.H.020
+        dose: 半升
+        note: 洗
+    original_dose_text: 麻黄三两（去节） 芍药三两 细辛三两 干姜三两 甘草三两（炙） 桂枝三两（去皮） 五味子半升 半夏半升（洗）
+    dose_reference: 教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。
+    decoction: 上八味，以水一斗，先煮麻黄，减二升，去上沫，内诸药，煮取三升，去滓，温服一升。
+    related_clauses:
+      - SHL.SB.TYZ.040
+      - SHL.SB.TYZ.041
+    related_formulas: []
+    safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
+    main_symptoms: []
+    pulse: []
+    pathomechanism: ""

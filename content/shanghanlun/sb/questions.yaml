@@ -63,3 +63,52 @@ questions:
     answer_index: 0
     rationale: 桂枝加葛根汤即桂枝汤加葛根。
     status: reviewed
+  - id: SHL.SB.Q.0006
+    type: fill_blank
+    clause: SHL.SB.TYZ.035
+    prompt: 太阳病，头痛发热，身疼腰痛，骨节疼痛，恶风，无汗而喘者，＿＿＿主之。
+    options:
+      - 麻黄汤
+      - 桂枝汤
+      - 大青龙汤
+      - 葛根汤
+    answer_index: 0
+    rationale: 太阳伤寒表实，以麻黄汤主治。
+    status: reviewed
+  - id: SHL.SB.Q.0007
+    type: fill_blank
+    clause: SHL.SB.TYZ.038
+    prompt: 太阳中风，脉浮紧，发热恶寒，身疼痛，不汗出而烦躁者，＿＿＿主之。
+    options:
+      - 大青龙汤
+      - 小青龙汤
+      - 麻黄汤
+      - 桂枝汤
+    answer_index: 0
+    rationale: 表寒里热，用大青龙汤。
+    status: reviewed
+  - id: SHL.SB.Q.0008
+    type: formula_syndrome_match
+    clause: SHL.SB.TYZ.040
+    formula: SHL.SB.F.022
+    prompt: 伤寒表不解，心下有水气，干呕发热而咳者，宜用何方？
+    options:
+      - 小青龙汤
+      - 大青龙汤
+      - 麻黄汤
+      - 五苓散
+    answer_index: 0
+    rationale: 外寒内饮，用小青龙汤。
+    status: reviewed
+  - id: SHL.SB.Q.0009
+    type: fill_blank
+    clause: SHL.SB.TYZ.053
+    prompt: 病常自汗出者，此为＿＿＿和。宜桂枝汤。
+    options:
+      - 荣气
+      - 卫气
+      - 宗气
+      - 元气
+    answer_index: 0
+    rationale: 原文“病常自汗出者，此为荣气和。”
+    status: reviewed
