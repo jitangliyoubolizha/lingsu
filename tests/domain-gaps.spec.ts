@@ -54,7 +54,7 @@ describe('memory/queue 缺口用例', () => {
       id: 'a',
       name: '上篇',
       scope: { book: 'SHL', edition: 'SB', chapters: ['TYS'] },
-      dailyNew: 1,
+      dailyNew: 5,
       startDate: '2026-08-17',
       status: 'active',
     }
@@ -62,7 +62,7 @@ describe('memory/queue 缺口用例', () => {
       id: 'b',
       name: '中篇',
       scope: { book: 'SHL', edition: 'SB', chapters: ['TYZ'] },
-      dailyNew: 1,
+      dailyNew: 5,
       startDate: '2026-08-17',
       status: 'active',
     }
@@ -104,7 +104,7 @@ describe('memory/queue 缺口用例', () => {
       id: 'a',
       name: '上篇',
       scope: { book: 'SHL', edition: 'SB', chapters: ['TYS'] },
-      dailyNew: 2,
+      dailyNew: 5,
       startDate: '2026-08-17',
       status: 'active',
     }
@@ -112,7 +112,7 @@ describe('memory/queue 缺口用例', () => {
       id: 'b',
       name: '完成计划',
       scope: { book: 'SHL', edition: 'SB', chapters: ['TYZ'] },
-      dailyNew: 2,
+      dailyNew: 5,
       startDate: '2026-08-17',
       status: 'completed',
     }
