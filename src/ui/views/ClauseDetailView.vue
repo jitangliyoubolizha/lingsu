@@ -1,29 +1,75 @@
 <script setup lang="ts">
 import { Star } from 'lucide-vue-next'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
+import type { Clause, ContentData } from '../../data/types'
+import { loadContent } from '../../data'
+import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
 import AppHeader from '../components/AppHeader.vue'
 import ComplianceBanner from '../components/ComplianceBanner.vue'
 import EmptyState from '../components/EmptyState.vue'
 import TagPill from '../components/TagPill.vue'
-import { getClauseById } from '../mockData'
 
 const route = useRoute()
+const content = ref<ContentData>()
+const clause = ref<Clause>()
 const favorite = ref(false)
+const loaded = ref(false)
 
-const clause = computed(() => getClauseById(String(route.params.id)))
+const clauseId = computed(() => String(route.params.id))
+const clauseIndex = computed(() => {
+  if (!content.value) return -1
+  return content.value.clauses.findIndex((item) => item.id === clauseId.value)
+})
+const prevClause = computed(() => {
+  const index = clauseIndex.value
+  return index > 0 ? content.value?.clauses[index - 1] : undefined
+})
+const nextClause = computed(() => {
+  const index = clauseIndex.value
+  return index >= 0 && content.value && index < content.value.clauses.length - 1
+    ? content.value.clauses[index + 1]
+    : undefined
+})
+const chapterName = computed(() => {
+  const id = clauseId.value.split('.')
+  return id.length >= 3 ? `第 ${id[2]} 篇` : '条文详情'
+})
 
-function toggleFavorite() {
-  favorite.value = !favorite.value
+function termName(id: string): string {
+  return content.value?.symptomTerms.find((term) => term.id === id)?.name ?? id
 }
+
+async function load() {
+  const data = loadContent()
+  content.value = data
+  clause.value = data.clauses.find((item) => item.id === clauseId.value)
+  if (clause.value) {
+    favorite.value = await isFavorite('clause', clause.value.id)
+  }
+  loaded.value = true
+}
+
+async function toggleFavorite() {
+  if (!clause.value) return
+  if (favorite.value) {
+    await removeFavorite('clause', clause.value.id)
+    favorite.value = false
+  } else {
+    await addFavorite('clause', clause.value.id)
+    favorite.value = true
+  }
+}
+
+onMounted(load)
 </script>
 
 <template>
   <div class="mx-auto max-w-2xl pb-16">
     <AppHeader
-      :title="clause ? clause.title : '条文详情'"
+      :title="clause ? `太阳·第 ${clause.no} 条` : '条文详情'"
       show-back
       back-to="/clauses"
     >
@@ -45,15 +91,15 @@ function toggleFavorite() {
     </AppHeader>
 
     <EmptyState
-      v-if="!clause"
+      v-if="loaded && !clause"
       title="未找到该条文"
       description="请返回列表重新选择"
     />
 
-    <template v-else>
+    <template v-else-if="clause && content">
       <div class="flex flex-wrap gap-2">
         <TagPill tone="muted">
-          太阳病篇
+          {{ chapterName }}
         </TagPill>
         <TagPill tone="muted">
           汉 · 张仲景
@@ -82,7 +128,7 @@ function toggleFavorite() {
             :key="tag"
             tone="default"
           >
-            {{ tag }}
+            {{ termName(tag) }}
           </TagPill>
         </div>
       </section>
@@ -109,31 +155,37 @@ function toggleFavorite() {
         </AccordionPanel>
       </div>
 
-      <div class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4">
+      <div
+        v-if="clause.formulas.length"
+        class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4"
+      >
         <h2 class="text-sm font-semibold text-ink-secondary">
           相关方剂
         </h2>
         <div class="mt-2 space-y-1">
           <RouterLink
-            v-for="formula in ['桂枝汤', '桂枝加葛根汤', '麻黄汤']"
-            :key="formula"
-            to="/formulas"
+            v-for="formulaId in clause.formulas"
+            :key="formulaId"
+            :to="`/formulas/${formulaId}`"
             class="flex min-h-10 items-center justify-between rounded-lg px-2 text-sm text-indigo hover:bg-paper-deep"
           >
-            {{ formula }}
+            {{ content.formulas.find((formula) => formula.id === formulaId)?.name ?? formulaId }}
           </RouterLink>
         </div>
       </div>
 
       <div class="mt-6 flex justify-between border-t border-border-paper pt-3">
         <RouterLink
-          to="/clauses"
+          v-if="prevClause"
+          :to="`/clauses/${prevClause.id}`"
           class="text-sm text-indigo"
         >
           上一条
         </RouterLink>
+        <span v-else />
         <RouterLink
-          to="/clauses"
+          v-if="nextClause"
+          :to="`/clauses/${nextClause.id}`"
           class="text-sm text-indigo"
         >
           下一条

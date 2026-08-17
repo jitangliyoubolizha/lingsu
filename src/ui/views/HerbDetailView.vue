@@ -1,14 +1,32 @@
 <script setup lang="ts">
 import { ChevronRight } from 'lucide-vue-next'
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
+import type { ContentData } from '../../data/types'
+import { loadContent } from '../../data'
+import { getHerbFormulaIds } from '../../domain'
 import AppHeader from '../components/AppHeader.vue'
 import EmptyState from '../components/EmptyState.vue'
-import { getHerbById } from '../mockData'
 
 const route = useRoute()
-const herb = computed(() => getHerbById(String(route.params.id)))
+const content = ref<ContentData>()
+const loaded = ref(false)
+
+const herbId = computed(() => String(route.params.id))
+const herb = computed(() => content.value?.herbs.find((item) => item.id === herbId.value))
+const formulaIds = computed(() =>
+  content.value ? getHerbFormulaIds(herbId.value, content.value) : []
+)
+
+function formulaName(id: string): string {
+  return content.value?.formulas.find((formula) => formula.id === id)?.name ?? id
+}
+
+onMounted(() => {
+  content.value = loadContent()
+  loaded.value = true
+})
 </script>
 
 <template>
@@ -20,12 +38,12 @@ const herb = computed(() => getHerbById(String(route.params.id)))
     />
 
     <EmptyState
-      v-if="!herb"
+      v-if="loaded && !herb"
       title="未找到该药物"
       description="请返回搜索页重新选择"
     />
 
-    <template v-else>
+    <template v-else-if="herb">
       <h1 class="font-serif text-3xl font-bold text-ink">
         {{ herb.name }}
       </h1>
@@ -44,12 +62,12 @@ const herb = computed(() => getHerbById(String(route.params.id)))
         </h2>
         <div class="divide-y divide-border-paper">
           <RouterLink
-            v-for="formulaName in herb.formulas"
-            :key="formulaName"
-            to="/formulas"
+            v-for="formulaId in formulaIds"
+            :key="formulaId"
+            :to="`/formulas/${formulaId}`"
             class="flex min-h-12 items-center justify-between rounded-lg px-2 text-[15px] text-ink hover:bg-paper-deep"
           >
-            <span class="font-serif">{{ formulaName }}</span>
+            <span class="font-serif">{{ formulaName(formulaId) }}</span>
             <ChevronRight
               class="h-4 w-4 text-ink-muted"
               aria-hidden="true"

@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
+import type { Clause } from '../../data/types'
+import { loadContent } from '../../data'
+import { getClauseStudyStatus } from '../../domain'
+import type { MemoryCard } from '../../domain/memory'
+import { getAllCards, getFavorites } from '../../store'
 import AppHeader from '../components/AppHeader.vue'
 import ClauseListItem from '../components/ClauseListItem.vue'
 import EmptyState from '../components/EmptyState.vue'
+import LoadingState from '../components/LoadingState.vue'
 import TagPill from '../components/TagPill.vue'
-import { clauses } from '../mockData'
 
 type FilterKey = 'all' | 'unlearned' | 'learning' | 'mastered' | 'favorite'
 
@@ -18,23 +23,54 @@ const filters: Array<{ key: FilterKey; label: string }> = [
 ]
 
 const activeFilter = ref<FilterKey>('all')
+const loading = ref(true)
+const clauses = ref<Clause[]>([])
+const cardByClause = ref<Map<string, MemoryCard>>(new Map())
+const favoriteIds = ref<Set<string>>(new Set())
+
+function statusOf(clause: Clause): 'unlearned' | 'learning' | 'mastered' {
+  return getClauseStudyStatus(cardByClause.value.get(clause.id))
+}
 
 const filtered = computed(() => {
-  switch (activeFilter.value) {
-    case 'unlearned':
-      return clauses.filter((item) => item.status === 'unlearned')
-    case 'learning':
-      return clauses.filter((item) => item.status === 'learning')
-    case 'mastered':
-      return clauses.filter((item) => item.status === 'mastered')
-    case 'favorite':
-      return clauses.filter((item) => item.favorite)
-    default:
-      return clauses
-  }
+  return clauses.value.filter((clause) => {
+    const status = statusOf(clause)
+    switch (activeFilter.value) {
+      case 'unlearned':
+        return status === 'unlearned'
+      case 'learning':
+        return status === 'learning'
+      case 'mastered':
+        return status === 'mastered'
+      case 'favorite':
+        return favoriteIds.value.has(clause.id)
+      default:
+        return true
+    }
+  })
 })
 
-const learningCount = computed(() => clauses.filter((item) => item.status === 'learning').length)
+const learningCount = computed(
+  () => clauses.value.filter((clause) => statusOf(clause) === 'learning').length
+)
+
+async function load() {
+  try {
+    const data = loadContent()
+    clauses.value = data.clauses
+    const [cards, favorites] = await Promise.all([getAllCards(), getFavorites()])
+    cardByClause.value = new Map(cards.map((card) => [card.clauseId, card]))
+    favoriteIds.value = new Set(
+      favorites
+        .filter((favorite) => favorite.type === 'clause')
+        .map((favorite) => favorite.targetId)
+    )
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(load)
 </script>
 
 <template>
@@ -62,15 +98,21 @@ const learningCount = computed(() => clauses.filter((item) => item.status === 'l
     <p class="mt-3 text-xs text-ink-muted">
       共 {{ filtered.length }} 条 · 学习中 {{ learningCount }} 条
     </p>
-    <div class="mt-3 space-y-3">
+    <LoadingState v-if="loading" />
+    <div
+      v-else
+      class="mt-3 space-y-3"
+    >
       <ClauseListItem
         v-for="clause in filtered"
         :key="clause.id"
         :clause="clause"
+        :status="statusOf(clause)"
+        :favorite="favoriteIds.has(clause.id)"
       />
     </div>
     <EmptyState
-      v-if="filtered.length === 0"
+      v-if="!loading && filtered.length === 0"
       title="暂无相关条文"
       description="换个筛选条件试试"
     />

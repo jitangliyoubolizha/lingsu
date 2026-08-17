@@ -1,16 +1,25 @@
 <script setup lang="ts">
 import { Plus } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
+import type { ContentData, Formula } from '../../data/types'
+import { loadContent } from '../../data'
+import { deriveFormulaFields } from '../../domain'
 import AppHeader from '../components/AppHeader.vue'
 import TagPill from '../components/TagPill.vue'
-import { compareFormulas, type CompareFormulaPreview } from '../mockData'
 
-const selected = ref<CompareFormulaPreview[]>([...compareFormulas])
-
-function removeFormula(id: string) {
-  selected.value = selected.value.filter((item) => item.id !== id)
+interface CompareRow {
+  formula: Formula
+  composition: string[]
+  mainSymptoms: string[]
+  pulse: string[]
+  pathomechanism: string
+  relatedClauses: string[]
 }
+
+const content = ref<ContentData>()
+const selectedIds = ref<string[]>([])
+const rows = ref<CompareRow[]>([])
 
 const dimensions = [
   { key: 'composition', label: '组成' },
@@ -20,13 +29,49 @@ const dimensions = [
   { key: 'relatedClauses', label: '相关条文' },
 ] as const
 
-function cellValue(
-  formula: CompareFormulaPreview,
-  key: (typeof dimensions)[number]['key']
-): string {
-  const value = formula[key]
+function herbName(id: string): string {
+  return content.value?.herbs.find((herb) => herb.id === id)?.name ?? id
+}
+
+function symptomName(id: string): string {
+  return content.value?.symptomTerms.find((term) => term.id === id)?.name ?? id
+}
+
+function buildRows() {
+  if (!content.value) return
+  rows.value = selectedIds.value
+    .map((id) => content.value?.formulas.find((formula) => formula.id === id))
+    .filter((formula): formula is Formula => Boolean(formula))
+    .map((formula) => {
+      const derived = deriveFormulaFields(formula, content.value!)
+      return {
+        formula,
+        composition: formula.composition.map((item) => herbName(item.herb)),
+        mainSymptoms: derived.mainSymptoms.map(symptomName),
+        pulse: derived.pulse.map(symptomName),
+        pathomechanism: derived.pathomechanism || '待补充',
+        relatedClauses: formula.relatedClauses,
+      }
+    })
+}
+
+function removeFormula(id: string) {
+  selectedIds.value = selectedIds.value.filter((item) => item !== id)
+  buildRows()
+}
+
+function cellValue(row: CompareRow, key: (typeof dimensions)[number]['key']): string {
+  const value = row[key]
   return Array.isArray(value) ? value.join('、') : String(value)
 }
+
+onMounted(() => {
+  content.value = loadContent()
+  selectedIds.value = loadContent()
+    .formulas.slice(0, 2)
+    .map((formula) => formula.id)
+  buildRows()
+})
 </script>
 
 <template>
@@ -39,16 +84,16 @@ function cellValue(
 
     <div class="flex flex-wrap items-center gap-2">
       <TagPill
-        v-for="formula in selected"
-        :key="formula.id"
+        v-for="row in rows"
+        :key="row.formula.id"
         tone="cinnabar"
       >
-        {{ formula.name }}
+        {{ row.formula.name }}
         <button
           type="button"
           class="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-white/30 text-xs leading-none"
-          :aria-label="`移除${formula.name}`"
-          @click="removeFormula(formula.id)"
+          :aria-label="`移除${row.formula.name}`"
+          @click="removeFormula(row.formula.id)"
         >
           ×
         </button>
@@ -77,11 +122,11 @@ function cellValue(
               维度
             </th>
             <th
-              v-for="formula in selected"
-              :key="formula.id"
+              v-for="row in rows"
+              :key="row.formula.id"
               class="px-3 py-3 font-serif text-[15px] text-ink"
             >
-              {{ formula.name }}
+              {{ row.formula.name }}
             </th>
           </tr>
         </thead>
@@ -97,15 +142,15 @@ function cellValue(
               {{ dimension.label }}
             </th>
             <td
-              v-for="formula in selected"
-              :key="formula.id"
+              v-for="row in rows"
+              :key="row.formula.id"
               class="px-3 py-3 align-top text-[13px] leading-relaxed text-ink-secondary"
             >
               <span
                 class="inline-block rounded-md px-2 py-1"
                 :class="dimension.key === 'relatedClauses' ? 'text-indigo' : 'bg-paper-deep'"
               >
-                {{ cellValue(formula, dimension.key) }}
+                {{ cellValue(row, dimension.key) }}
               </span>
             </td>
           </tr>

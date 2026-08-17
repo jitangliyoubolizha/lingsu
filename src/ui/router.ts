@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
+import { hasAgreed } from '../store'
 import AgreementView from './views/AgreementView.vue'
 import ClauseDetailView from './views/ClauseDetailView.vue'
 import ClauseListView from './views/ClauseListView.vue'
@@ -89,6 +90,17 @@ const router = createRouter({
       meta: { navKey: 'profile', bottomNav: true },
     },
   ],
+})
+
+router.beforeEach(async (to) => {
+  if (to.name === 'agreement') {
+    return true
+  }
+  const agreed = await hasAgreed()
+  if (!agreed) {
+    return { name: 'agreement' }
+  }
+  return true
 })
 
 export default router

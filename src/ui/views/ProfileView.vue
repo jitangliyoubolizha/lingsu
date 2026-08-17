@@ -1,9 +1,24 @@
 <script setup lang="ts">
 import { ChevronRight, Download, FileX, Settings, Star, Upload, User } from 'lucide-vue-next'
+import { onMounted, ref } from 'vue'
 
+import { loadContent } from '../../data'
+import {
+  exportData,
+  getClauseStates,
+  getSetting,
+  importData,
+  serializeBackup,
+  setSetting,
+} from '../../store'
 import AppHeader from '../components/AppHeader.vue'
 import ProgressBar from '../components/ProgressBar.vue'
-import { dailyStats } from '../mockData'
+
+const progress = ref(0)
+const dailyNew = ref(3)
+const fontSize = ref<'小' | '中' | '大'>('中')
+const voiceEnabled = ref(true)
+const fileInput = ref<{ click: () => void } | null>(null)
 
 const groups = [
   {
@@ -14,13 +29,6 @@ const groups = [
     ],
   },
   {
-    title: '数据管理',
-    items: [
-      { label: '导出备份', icon: Download, to: '/profile' },
-      { label: '导入恢复', icon: Upload, to: '/profile' },
-    ],
-  },
-  {
     title: '关于',
     items: [
       { label: '免责声明', icon: Settings, to: '/agreement' },
@@ -28,6 +36,55 @@ const groups = [
     ],
   },
 ]
+
+async function load() {
+  const data = loadContent()
+  const states = await getClauseStates()
+  const learned = states.filter((state) => state.firstLearnedAt).length
+  progress.value = data.clauses.length === 0 ? 0 : Math.round((learned / data.clauses.length) * 100)
+  dailyNew.value = await getSetting<number>('dailyNew', 3)
+  fontSize.value = await getSetting<'小' | '中' | '大'>('fontSize', '中')
+  voiceEnabled.value = await getSetting<boolean>('voiceEnabled', true)
+}
+
+async function changeDailyNew(value: number) {
+  dailyNew.value = value
+  await setSetting('dailyNew', value)
+}
+
+async function changeFontSize(value: '小' | '中' | '大') {
+  fontSize.value = value
+  await setSetting('fontSize', value)
+}
+
+async function toggleVoice() {
+  voiceEnabled.value = !voiceEnabled.value
+  await setSetting('voiceEnabled', voiceEnabled.value)
+}
+
+async function downloadBackup() {
+  const backup = await exportData()
+  const blob = new Blob([serializeBackup(backup)], { type: 'application/json' })
+  const url = URL.createObjectURL(blob)
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = `lingsu-backup-${new Date().toISOString().slice(0, 10)}.json`
+  anchor.click()
+  URL.revokeObjectURL(url)
+}
+
+async function onImportFile(event: Event) {
+  const input = event.target as unknown as { files?: Array<{ text: () => Promise<string> }> | null }
+  const file = input.files?.[0]
+  if (!file) return
+  const text = await file.text()
+  await importData(text)
+  await load()
+  const element = event.target as unknown as { value?: string }
+  element.value = ''
+}
+
+onMounted(load)
 </script>
 
 <template>
@@ -71,9 +128,9 @@ const groups = [
       <div class="mt-4">
         <div class="mb-1 flex justify-between text-xs text-ink-muted">
           <span>总体进度</span>
-          <span>{{ dailyStats.mastered }}%</span>
+          <span>{{ progress }}%</span>
         </div>
-        <ProgressBar :value="dailyStats.mastered" />
+        <ProgressBar :value="progress" />
       </div>
     </section>
 
@@ -109,24 +166,97 @@ const groups = [
     </section>
 
     <section class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4">
+      <h2 class="mb-3 text-sm font-semibold text-ink-secondary">
+        学习设置
+      </h2>
       <div class="flex items-center justify-between">
         <span class="text-sm text-ink-secondary">每日新学数量</span>
-        <span class="text-sm text-ink">3 条/日</span>
+        <select
+          :value="dailyNew"
+          class="h-9 rounded-lg border border-border-paper bg-paper-card px-2 text-sm text-ink"
+          @change="changeDailyNew(Number(($event.target as unknown as { value: string }).value))"
+        >
+          <option :value="3">
+            3 条/日
+          </option>
+          <option :value="5">
+            5 条/日
+          </option>
+          <option :value="10">
+            10 条/日
+          </option>
+        </select>
       </div>
       <div class="mt-3 flex items-center justify-between">
         <span class="text-sm text-ink-secondary">字号大小</span>
-        <span class="text-sm text-ink">中</span>
+        <div class="flex gap-1">
+          <button
+            v-for="size in ['小', '中', '大'] as const"
+            :key="size"
+            type="button"
+            class="h-9 rounded-lg px-3 text-sm"
+            :class="
+              fontSize === size ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'
+            "
+            @click="changeFontSize(size)"
+          >
+            {{ size }}
+          </button>
+        </div>
       </div>
       <div class="mt-3 flex items-center justify-between">
         <span class="text-sm text-ink-secondary">朗读语音</span>
-        <span
-          class="relative inline-flex h-6 w-11 items-center rounded-full bg-cinnabar"
+        <button
+          type="button"
+          class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors"
+          :class="voiceEnabled ? 'bg-cinnabar' : 'bg-paper-deep'"
           role="switch"
-          aria-checked="true"
+          :aria-checked="voiceEnabled"
           aria-label="朗读语音开关"
+          @click="toggleVoice"
         >
-          <span class="ml-auto mr-0.5 h-5 w-5 rounded-full bg-white shadow" />
-        </span>
+          <span
+            class="inline-block h-5 w-5 rounded-full bg-white shadow transition-transform"
+            :class="voiceEnabled ? 'translate-x-5' : 'translate-x-0.5'"
+          />
+        </button>
+      </div>
+    </section>
+
+    <section class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4">
+      <h2 class="mb-3 text-sm font-semibold text-ink-secondary">
+        数据管理
+      </h2>
+      <div class="space-y-2">
+        <button
+          type="button"
+          class="flex min-h-11 w-full items-center gap-3 rounded-lg px-2 text-[15px] text-ink hover:bg-paper-deep"
+          @click="downloadBackup"
+        >
+          <Download
+            class="h-5 w-5 text-ink-muted"
+            aria-hidden="true"
+          />
+          导出备份
+        </button>
+        <button
+          type="button"
+          class="flex min-h-11 w-full items-center gap-3 rounded-lg px-2 text-[15px] text-ink hover:bg-paper-deep"
+          @click="fileInput?.click()"
+        >
+          <Upload
+            class="h-5 w-5 text-ink-muted"
+            aria-hidden="true"
+          />
+          导入恢复
+        </button>
+        <input
+          ref="fileInput"
+          type="file"
+          accept="application/json,.json"
+          class="hidden"
+          @change="onImportFile"
+        >
       </div>
     </section>
 

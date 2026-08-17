@@ -22,6 +22,7 @@ export { addFavorite, getFavorites, isFavorite, removeFavorite } from './favorit
 export {
   addQuizLog,
   addWrongQuestion,
+  getAllDailyLogs,
   getDailyLog,
   getQuizLogs,
   getWrongQuestions,
@@ -30,4 +31,10 @@ export {
 } from './logs'
 export { CURRENT_SCHEMA_VERSION, migrations, runMigrations } from './migrations'
 export { getSetting, hasAgreed, markAgreed, setSetting } from './settings'
-export { deleteStudyPlan, getAllStudyPlans, getActiveStudyPlans, saveStudyPlan } from './studyPlans'
+export {
+  deleteStudyPlan,
+  ensureDefaultStudyPlan,
+  getAllStudyPlans,
+  getActiveStudyPlans,
+  saveStudyPlan,
+} from './studyPlans'

@@ -25,6 +25,15 @@ export async function getDailyLog(
 }
 
 /**
+ * 获取全部每日记录。
+ */
+export async function getAllDailyLogs(): Promise<
+  Array<{ date: string; requiredCount: number; completedCount: number }>
+> {
+  return db.dailyLogs.toArray()
+}
+
+/**
  * 写入刷题记录。
  */
 export async function addQuizLog(log: Omit<QuizLogRecord, 'id'>): Promise<number> {

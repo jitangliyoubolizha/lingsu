@@ -2,13 +2,15 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import { markAgreed } from '../../store'
 import BaseButton from '../components/BaseButton.vue'
 
 const router = useRouter()
 const agreed = ref(false)
 
-function start() {
+async function start() {
   if (agreed.value) {
+    await markAgreed()
     void router.push('/')
   }
 }

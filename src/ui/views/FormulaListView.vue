@@ -1,29 +1,35 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
+import type { Formula } from '../../data/types'
+import { loadContent } from '../../data'
 import AppHeader from '../components/AppHeader.vue'
 import EmptyState from '../components/EmptyState.vue'
 import FormulaListItem from '../components/FormulaListItem.vue'
 import SearchBar from '../components/SearchBar.vue'
-import { formulas } from '../mockData'
 
 const keyword = ref('')
+const formulas = ref<Formula[]>([])
 
 const groups = computed(() => {
   const keywordTrimmed = keyword.value.trim()
   const list = keywordTrimmed
-    ? formulas.filter(
+    ? formulas.value.filter(
         (item) => item.name.includes(keywordTrimmed) || item.category.includes(keywordTrimmed)
       )
-    : formulas
+    : formulas.value
 
-  const map = new Map<string, typeof list>()
+  const map = new Map<string, Formula[]>()
   for (const formula of list) {
     const items = map.get(formula.category) ?? []
     items.push(formula)
     map.set(formula.category, items)
   }
   return Array.from(map.entries()).map(([category, items]) => ({ category, items }))
+})
+
+onMounted(() => {
+  formulas.value = loadContent().formulas
 })
 </script>
 
