@@ -31,6 +31,16 @@ export interface BackupData {
   }
 }
 
+let lastPreImportBackup: string | null = null
+
+/**
+ * 获取最近一次导入前的自动备份（JSON 字符串），未导入过则为 null。
+ * 内存级备份，用于“导入前自动备份当前数据”的保留；后续可改为持久化存储。
+ */
+export function getLastPreImportBackup(): string | null {
+  return lastPreImportBackup
+}
+
 function reviveDates(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map(reviveDates)
@@ -39,7 +49,12 @@ function reviveDates(value: unknown): unknown {
     const record = value as Record<string, unknown>
     const result: Record<string, unknown> = {}
     for (const [key, item] of Object.entries(record)) {
-      if (typeof item === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(item)) {
+      // exportedAt 是备份时间字符串，保持字符串类型；其余符合 ISO 时间的字段还原为 Date
+      if (
+        key !== 'exportedAt' &&
+        typeof item === 'string' &&
+        /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(item)
+      ) {
         result[key] = new Date(item)
       } else {
         result[key] = reviveDates(item)
@@ -163,6 +178,9 @@ export async function importData(json: string): Promise<void> {
   if (issues.length > 0) {
     throw new Error(`备份数据无效：${issues.join('；')}`)
   }
+
+  // 导入前自动备份当前数据，供误导入时恢复
+  lastPreImportBackup = serializeBackup(await exportData())
 
   await db.transaction('rw', db.tables, async () => {
     await Promise.all(db.tables.map((table) => table.clear()))
