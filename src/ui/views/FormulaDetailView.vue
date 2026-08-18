@@ -11,6 +11,7 @@ import AccordionPanel from '../components/AccordionPanel.vue'
 import AppHeader from '../components/AppHeader.vue'
 import EmptyState from '../components/EmptyState.vue'
 import TagPill from '../components/TagPill.vue'
+import { formatClauseRef } from '../formatters'
 
 const route = useRoute()
 const content = ref<ContentData>()
@@ -28,7 +29,9 @@ function herbName(id: string): string {
 }
 
 function clauseTitle(id: string): string {
-  return content.value?.clauses.find((clause) => clause.id === id) ? `条文 ${id}` : id
+  return content.value?.clauses.some((clause) => clause.id === id)
+    ? `条文 ${formatClauseRef(id)}`
+    : id
 }
 
 function formulaName(id: string): string {

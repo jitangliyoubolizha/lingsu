@@ -11,6 +11,7 @@ import AppHeader from '../components/AppHeader.vue'
 import ComplianceBanner from '../components/ComplianceBanner.vue'
 import EmptyState from '../components/EmptyState.vue'
 import TagPill from '../components/TagPill.vue'
+import { formatChapterCode } from '../formatters'
 
 const route = useRoute()
 const content = ref<ContentData>()
@@ -35,7 +36,7 @@ const nextClause = computed(() => {
 })
 const chapterName = computed(() => {
   const id = clauseId.value.split('.')
-  return id.length >= 3 ? `第 ${id[2]} 篇` : '条文详情'
+  return id.length >= 3 ? formatChapterCode(id[2]) : '条文详情'
 })
 
 function termName(id: string): string {

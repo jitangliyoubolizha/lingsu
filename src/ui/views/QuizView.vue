@@ -11,6 +11,7 @@ import BaseButton from '../components/BaseButton.vue'
 import EmptyState from '../components/EmptyState.vue'
 import LoadingState from '../components/LoadingState.vue'
 import ProgressBar from '../components/ProgressBar.vue'
+import { formatClauseRef, formatQuizType } from '../formatters'
 
 type QuizItem = Pick<
   Question,
@@ -96,7 +97,7 @@ onMounted(() => {
     <template v-else>
       <div class="flex items-center justify-between text-xs text-ink-muted">
         <span>第 {{ currentIndex + 1 }} 题 / 共 {{ total }} 题</span>
-        <span>{{ current?.type }}</span>
+        <span>{{ formatQuizType(current?.type ?? '') }}</span>
       </div>
       <ProgressBar
         class="mt-2"
@@ -161,7 +162,7 @@ onMounted(() => {
             {{ current?.rationale }}
           </p>
           <p class="mt-1 text-xs text-ink-muted">
-            条文：{{ current?.clause }}
+            来源：{{ formatClauseRef(current?.clause ?? '') }}
           </p>
         </div>
 

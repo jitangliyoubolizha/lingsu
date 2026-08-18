@@ -20,6 +20,7 @@ import {
 } from '../../store'
 import BaseButton from '../components/BaseButton.vue'
 import ProgressBar from '../components/ProgressBar.vue'
+import { formatClauseRef } from '../formatters'
 
 type TaskItem =
   { kind: 'new'; clause: Clause } | { kind: 'review'; card: MemoryCard; clause: Clause | undefined }
@@ -186,7 +187,7 @@ onMounted(loadQueue)
         class="flex min-h-[360px] flex-col rounded-2xl border border-border-paper bg-paper-card p-6 shadow-[0_8px_24px_rgba(34,26,16,.10)]"
       >
         <p class="text-xs text-ink-muted">
-          新学 · {{ current.clause.id }}
+          新学 · {{ formatClauseRef(current.clause.id) }}
         </p>
         <div class="mt-6 flex flex-1 items-center justify-center">
           <p class="text-center font-serif text-[26px] leading-[1.8] text-ink">
@@ -219,11 +220,11 @@ onMounted(loadQueue)
             class="absolute inset-0 flex flex-col rounded-2xl border border-border-paper bg-paper-card p-6 shadow-[0_8px_24px_rgba(34,26,16,.10)] [backface-visibility:hidden]"
           >
             <p class="text-xs text-ink-muted">
-              复习 · {{ current.clause?.id ?? current.card.clauseId }}
+              复习 · {{ formatClauseRef(current.clause?.id ?? current.card.clauseId) }}
             </p>
             <div class="mt-6 flex flex-1 items-center justify-center">
               <p class="text-center font-serif text-[26px] leading-[1.8] text-ink">
-                {{ current.clause?.text ?? current.card.clauseId }}
+                {{ current.clause?.text ?? formatClauseRef(current.card.clauseId) }}
               </p>
             </div>
             <div class="mt-6 text-center">

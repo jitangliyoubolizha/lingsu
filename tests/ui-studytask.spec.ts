@@ -108,7 +108,7 @@ describe('ui/StudyTaskView 每日任务', () => {
     const wrapper = mount(StudyTaskView)
     await flushPromises()
 
-    expect(wrapper.text()).toContain('复习 · SHL.SB.TYS.001')
+    expect(wrapper.text()).toContain('复习 · 太阳病上篇 · 第 1 条')
 
     // 未翻面时的动作按钮：点击查看原文
     await wrapper
@@ -124,7 +124,7 @@ describe('ui/StudyTaskView 每日任务', () => {
     await flushPromises()
 
     // 进入新学条文
-    expect(wrapper.text()).toContain('新学 · SHL.SB.TYS.002')
+    expect(wrapper.text()).toContain('新学 · 太阳病上篇 · 第 2 条')
   })
 
   it('新学完成后写打卡日志并显示完成', async () => {
@@ -137,7 +137,7 @@ describe('ui/StudyTaskView 每日任务', () => {
     await wrapper.findAll('button').find((b) => b.text().includes('下一项'))!.trigger('click')
     await flushPromises()
 
-    expect(wrapper.text()).toContain('新学 · SHL.SB.TYS.002')
+    expect(wrapper.text()).toContain('新学 · 太阳病上篇 · 第 2 条')
     await wrapper.findAll('button').find((b) => b.text().includes('学会了'))!.trigger('click')
     await flushPromises()
 
