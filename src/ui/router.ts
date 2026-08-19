@@ -14,6 +14,7 @@ import QuizView from './views/QuizView.vue'
 import SearchView from './views/SearchView.vue'
 import StatsView from './views/StatsView.vue'
 import StudyTaskView from './views/StudyTaskView.vue'
+import WrongBookView from './views/WrongBookView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -76,6 +77,12 @@ const router = createRouter({
       name: 'quiz',
       component: QuizView,
       meta: { navKey: 'quiz', bottomNav: true },
+    },
+    {
+      path: '/wrong-book',
+      name: 'wrong-book',
+      component: WrongBookView,
+      meta: { navKey: 'profile' },
     },
     {
       path: '/stats',

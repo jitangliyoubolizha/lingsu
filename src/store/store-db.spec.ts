@@ -12,6 +12,11 @@ import {
   type BackupData,
 } from './backup'
 import { db } from './db'
+import {
+  addWrongQuestion,
+  getWrongQuestions,
+  resolveWrongQuestion,
+} from './logs'
 import { CURRENT_SCHEMA_VERSION } from './migrations'
 
 function baseData(): BackupData['data'] {
@@ -125,5 +130,44 @@ describe('store/db 真库', () => {
     await expect(importData(serializeBackup(incoming))).rejects.toThrow()
     const rows = await db.settings.toArray()
     expect(rows).toEqual([{ key: 'keep', value: 'origin' }])
+  })
+})
+
+describe('store/logs 错题本', () => {
+  beforeEach(async () => {
+    await db.delete().catch(() => undefined)
+    await db.open()
+  })
+
+  afterEach(async () => {
+    await db.delete().catch(() => undefined)
+  })
+
+  it('首次答错创建错题记录，重复答错累计次数并重置 resolved', async () => {
+    const first = new Date('2026-08-17T08:00:00+08:00')
+    const second = new Date('2026-08-18T08:00:00+08:00')
+
+    await addWrongQuestion('Q.1', first)
+    await addWrongQuestion('Q.1', second)
+
+    const records = await getWrongQuestions()
+    expect(records).toHaveLength(1)
+    expect(records[0]).toMatchObject({ questionId: 'Q.1', wrongCount: 2, resolved: false })
+    expect(records[0].lastWrongAt).toEqual(second)
+  })
+
+  it('答对标记 resolved=true 且保留错题历史', async () => {
+    await addWrongQuestion('Q.1', new Date('2026-08-17T08:00:00+08:00'))
+    await resolveWrongQuestion('Q.1')
+
+    const records = await getWrongQuestions()
+    expect(records).toHaveLength(1)
+    expect(records[0].resolved).toBe(true)
+    expect(records[0].wrongCount).toBe(1)
+  })
+
+  it('对不存在的错题 resolve 是幂等无副作用操作', async () => {
+    await expect(resolveWrongQuestion('Q.NONE')).resolves.toBeUndefined()
+    expect(await getWrongQuestions()).toEqual([])
   })
 })

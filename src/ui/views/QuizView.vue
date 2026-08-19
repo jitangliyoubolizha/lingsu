@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { BookOpen, Check, X } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 import type { Question } from '../../data/types'
 import { loadContent } from '../../data'
-import { generateAutoQuestions } from '../../domain'
-import { addQuizLog, addWrongQuestion } from '../../store'
+import { buildQuizDeck } from '../../domain'
+import { addQuizLog, addWrongQuestion, getWrongQuestions, resolveWrongQuestion } from '../../store'
 import AppHeader from '../components/AppHeader.vue'
 import BaseButton from '../components/BaseButton.vue'
 import EmptyState from '../components/EmptyState.vue'
@@ -18,19 +19,33 @@ type QuizItem = Pick<
   'id' | 'type' | 'clause' | 'formula' | 'prompt' | 'options' | 'answerIndex' | 'rationale'
 >
 
+const route = useRoute()
 const questions = ref<QuizItem[]>([])
 const currentIndex = ref(0)
 const selected = ref<number | null>(null)
 const submitted = ref(false)
 const loading = ref(true)
+const lastCorrect = ref(false)
 
+const wrongMode = computed(() => route.query.wrong === '1')
+const pageTitle = computed(() => (wrongMode.value ? '错题重做' : '刷题'))
 const current = computed<QuizItem | undefined>(() => questions.value[currentIndex.value])
 const total = computed(() => questions.value.length)
+const nextLabel = computed(() => {
+  if (wrongMode.value && lastCorrect.value && currentIndex.value === total.value - 1) {
+    return '完成'
+  }
+  if (currentIndex.value === total.value - 1) {
+    return '重新开始'
+  }
+  return '下一题'
+})
 
 async function submit() {
   if (selected.value === null || !current.value) return
   submitted.value = true
   const correct = selected.value === current.value.answerIndex
+  lastCorrect.value = correct
   await addQuizLog({
     questionId: current.value.id,
     type: current.value.type,
@@ -39,19 +54,32 @@ async function submit() {
   })
   if (!correct) {
     await addWrongQuestion(current.value.id, new Date())
+  } else {
+    await resolveWrongQuestion(current.value.id)
   }
 }
 
 function next() {
-  if (currentIndex.value < questions.value.length - 1) {
+  if (wrongMode.value && lastCorrect.value) {
+    questions.value.splice(currentIndex.value, 1)
+    if (questions.value.length === 0) {
+      currentIndex.value = 0
+      selected.value = null
+      submitted.value = false
+      lastCorrect.value = false
+      return
+    }
+    if (currentIndex.value >= questions.value.length) {
+      currentIndex.value = questions.value.length - 1
+    }
+  } else if (currentIndex.value < questions.value.length - 1) {
     currentIndex.value += 1
-    selected.value = null
-    submitted.value = false
   } else {
     currentIndex.value = 0
-    selected.value = null
-    submitted.value = false
   }
+  selected.value = null
+  submitted.value = false
+  lastCorrect.value = false
 }
 
 function optionClass(index: number) {
@@ -65,16 +93,15 @@ function optionClass(index: number) {
   return 'border-border-paper bg-paper-card opacity-60'
 }
 
-onMounted(() => {
+onMounted(async () => {
   const data = loadContent()
-  const reviewed: QuizItem[] = data.questions
-  const auto: QuizItem[] = generateAutoQuestions(data)
-  const seen = new Set<string>()
-  questions.value = [...reviewed, ...auto].filter((question) => {
-    if (seen.has(question.id)) return false
-    seen.add(question.id)
-    return true
-  })
+  let deck: QuizItem[] = buildQuizDeck(data)
+  if (wrongMode.value) {
+    const wrongs = await getWrongQuestions()
+    const wrongIds = new Set(wrongs.filter((item) => !item.resolved).map((item) => item.questionId))
+    deck = deck.filter((question) => wrongIds.has(question.id))
+  }
+  questions.value = deck
   loading.value = false
 })
 </script>
@@ -82,7 +109,7 @@ onMounted(() => {
 <template>
   <div class="mx-auto max-w-2xl">
     <AppHeader
-      title="刷题"
+      :title="pageTitle"
       show-back
       back-to="/"
     />
@@ -90,8 +117,8 @@ onMounted(() => {
     <LoadingState v-if="loading" />
     <EmptyState
       v-else-if="questions.length === 0"
-      title="暂无可刷题目"
-      description="请先完成内容录入或稍后再试"
+      :title="wrongMode ? '错题已清空' : '暂无可刷题目'"
+      :description="wrongMode ? '错题重做正确后已移出错题本' : '请先完成内容录入或稍后再试'"
     />
 
     <template v-else>
@@ -181,7 +208,7 @@ onMounted(() => {
           size="lg"
           @click="next"
         >
-          {{ currentIndex === total - 1 ? '重新开始' : '下一题' }}
+          {{ nextLabel }}
         </BaseButton>
       </section>
     </template>

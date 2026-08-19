@@ -1,5 +1,6 @@
 export { createAutoQuestionId, fnv1a } from './hash'
 export {
+  buildQuizDeck,
   generateAutoQuestions,
   generateClauseChain,
   generateFillBlank,
