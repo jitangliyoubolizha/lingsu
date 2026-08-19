@@ -23,7 +23,7 @@ const { goBack } = useRouterBack(props.backTo)
 
 <template>
   <header
-    class="sticky top-0 z-30 -mx-5 mb-4 flex min-h-12 items-center gap-2 bg-paper/90 px-5 backdrop-blur"
+    class="sticky top-0 z-30 -mx-5 mb-4 flex min-h-12 items-center gap-2 border-b border-cinnabar/15 bg-paper/90 px-5 backdrop-blur"
   >
     <button
       v-if="showBack"
@@ -40,9 +40,15 @@ const { goBack } = useRouterBack(props.backTo)
     <div class="min-w-0 flex-1">
       <h1
         v-if="title"
-        class="truncate font-serif text-lg font-bold leading-tight"
+        class="flex min-w-0 items-center gap-2 font-serif text-lg font-bold leading-tight"
       >
-        {{ title }}
+        <span
+          class="inline-flex h-5 w-5 shrink-0 rotate-6 items-center justify-center rounded-[4px] bg-cinnabar font-serif text-[11px] leading-none text-white"
+          aria-hidden="true"
+        >
+          灵
+        </span>
+        <span class="truncate">{{ title }}</span>
       </h1>
       <p
         v-if="subtitle"

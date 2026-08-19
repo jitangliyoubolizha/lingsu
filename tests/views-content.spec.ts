@@ -6,16 +6,25 @@ import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import FormulaDetailView from '../src/ui/views/FormulaDetailView.vue'
+import ClauseDetailView from '../src/ui/views/ClauseDetailView.vue'
 import StatCard from '../src/ui/components/StatCard.vue'
 import StatsView from '../src/ui/views/StatsView.vue'
 
 const RouterLinkStub = {
   props: ['to'],
-  template: '<a :href="to"><slot /></a>',
+  methods: {
+    href(to: string | { path?: string; query?: Record<string, string> }) {
+      if (typeof to === 'string') return to
+      const query = new URLSearchParams(to.query ?? {}).toString()
+      return query ? `${to.path ?? ''}?${query}` : (to.path ?? '')
+    },
+  },
+  template: '<a :href="href(to)"><slot /></a>',
 }
 
 const routerMocks = vi.hoisted(() => ({
   routeParams: {} as Record<string, string>,
+  fullPath: '/',
   push: vi.fn(),
   back: vi.fn(),
 }))
@@ -25,7 +34,10 @@ vi.mock('vue-router', () => ({
     back: routerMocks.back,
     options: { history: { state: { back: null } } },
   }),
-  useRoute: () => ({ params: routerMocks.routeParams }),
+  useRoute: () => ({
+    params: routerMocks.routeParams,
+    fullPath: routerMocks.fullPath,
+  }),
 }))
 
 const storeMocks = vi.hoisted(() => ({
@@ -122,5 +134,22 @@ describe('ui 方剂详情页专项', () => {
     expect(wrapper.text()).toContain('相关条文')
     expect(wrapper.text()).toContain('类方关系')
     expect(wrapper.find('a[href="/clauses/SHL.SB.TYS.012"]').exists()).toBe(true)
+  })
+
+  it('条文详情页提供预填当前条文的纠错入口', async () => {
+    routerMocks.routeParams = { id: 'SHL.SB.TYS.001' }
+    routerMocks.fullPath = '/clauses/SHL.SB.TYS.001'
+    storeMocks.isFavorite.mockResolvedValue(false)
+
+    const wrapper = mount(ClauseDetailView, {
+      global: { stubs: { RouterLink: RouterLinkStub } },
+    })
+    await flushPromises()
+
+    const link = wrapper.find('a[href*="/feedback"]')
+    expect(link.exists()).toBe(true)
+    expect(link.text()).toContain('纠错')
+    expect(link.attributes('href')).toContain('type=clause')
+    expect(link.attributes('href')).toContain('location=')
   })
 })

@@ -1,10 +1,10 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-paper: #f6f1e7;
-  --color-paper-card: #fbf7ee;
-  --color-paper-deep: #ede4d2;
-  --color-border-paper: #ddd0b8;
+  --color-paper: #f5efe2;
+  --color-paper-card: #faf4e7;
+  --color-paper-deep: #e9ddc6;
+  --color-border-paper: #d8c7ac;
   --color-ink: #2b2720;
   --color-ink-secondary: #5c564a;
   --color-ink-muted: #8a8272;
@@ -34,6 +34,16 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  background-color: var(--color-paper);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 0%, rgba(201, 162, 39, 0.07), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(139, 0, 0, 0.045), transparent 60%);
+  background-attachment: fixed;
+  background-size:
+    180px 180px,
+    100% 100%,
+    100% 100%;
 }
 
 button,
@@ -48,7 +58,7 @@ select {
   outline-offset: 2px;
 }
 
-/* 页面切换动效：默认淡入 + 轻微水平滑动，减少动效时仅透明度 */
+/* 页面切换动效：像轻轻翻过一页纸 */
 .page-enter-active,
 .page-leave-active {
   transition:
@@ -58,12 +68,46 @@ select {
 
 .page-enter-from {
   opacity: 0;
-  transform: translateX(12px);
+  transform: translateX(14px) rotate(0.4deg);
 }
 
 .page-leave-to {
   opacity: 0;
-  transform: translateX(-12px);
+  transform: translateX(-14px) rotate(-0.4deg);
+}
+
+/* 打卡成功：朱砂印章盖章动画 */
+@keyframes seal-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(1.7) rotate(-14deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(-4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-6deg);
+  }
+}
+
+.seal-stamp {
+  animation: seal-stamp 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
+}
+
+/* 古籍页眉：朱丝栏细线 */
+.zhusi-rule {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(139, 0, 0, 0.16) 0,
+    rgba(139, 0, 0, 0.16) 1px,
+    transparent 1px,
+    transparent 3px,
+    rgba(139, 0, 0, 0.08) 3px,
+    rgba(139, 0, 0, 0.08) 4px,
+    transparent 4px
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

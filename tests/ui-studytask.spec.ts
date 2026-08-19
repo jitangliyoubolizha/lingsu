@@ -25,6 +25,7 @@ const mocks = vi.hoisted(() => ({
 
 vi.mock('vue-router', () => ({
   useRouter: () => ({ push: mocks.push }),
+  useRoute: () => ({ query: {}, fullPath: '/study' }),
 }))
 vi.mock('../src/data', () => ({
   loadContent: mocks.loadContent,
@@ -79,6 +80,22 @@ const reviewCard: MemoryCard = {
   lapses: 0,
 }
 
+const RouterLinkStub = {
+  props: ['to'],
+  methods: {
+    href(to: string | { path?: string; query?: Record<string, string> }) {
+      if (typeof to === 'string') return to
+      const query = new URLSearchParams(to.query ?? {}).toString()
+      return query ? `${to.path ?? ''}?${query}` : (to.path ?? '')
+    },
+  },
+  template: '<a :href="href(to)"><slot /></a>',
+}
+
+const mountOptions = {
+  global: { stubs: { RouterLink: RouterLinkStub } },
+}
+
 describe('ui/StudyTaskView 每日任务', () => {
   beforeEach(() => {
     vi.clearAllMocks()
@@ -105,7 +122,7 @@ describe('ui/StudyTaskView 每日任务', () => {
   })
 
   it('先复习：翻面、三自评后进入下一项', async () => {
-    const wrapper = mount(StudyTaskView)
+    const wrapper = mount(StudyTaskView, mountOptions)
     await flushPromises()
 
     expect(wrapper.text()).toContain('复习 · 太阳病上篇 · 第 1 条')
@@ -127,8 +144,18 @@ describe('ui/StudyTaskView 每日任务', () => {
     expect(wrapper.text()).toContain('新学 · 太阳病上篇 · 第 2 条')
   })
 
+  it('学习页提供预填当前条文的纠错入口', async () => {
+    const wrapper = mount(StudyTaskView, mountOptions)
+    await flushPromises()
+
+    const link = wrapper.find('a[href*="/feedback"]')
+    expect(link.exists()).toBe(true)
+    expect(link.attributes('href')).toContain('type=clause')
+    expect(link.attributes('href')).toContain('location=')
+  })
+
   it('新学完成后写打卡日志并显示完成', async () => {
-    const wrapper = mount(StudyTaskView)
+    const wrapper = mount(StudyTaskView, mountOptions)
     await flushPromises()
 
     // 第一项是复习，第二项是新学；先完成复习

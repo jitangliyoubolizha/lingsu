@@ -13,6 +13,28 @@ interface OptionSet {
 }
 
 /**
+ * 洗牌选项并重新计算 answerIndex，避免正确选项固定出现在同一位置。
+ * @param question 题目
+ * @param random 随机数源（测试可注入）
+ */
+export function shuffleQuestionOptions<T extends { options: string[]; answerIndex: number }>(
+  question: T,
+  random: () => number = Math.random
+): T {
+  const correct = question.options[question.answerIndex]
+  const options = [...question.options]
+  for (let index = options.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(random() * (index + 1))
+    ;[options[index], options[target]] = [options[target], options[index]]
+  }
+  return {
+    ...question,
+    options,
+    answerIndex: options.indexOf(correct),
+  }
+}
+
+/**
  * 生成 4 个不重复选项，并用 seed 做确定性轮转。
  */
 function buildOptions(correct: string, distractors: string[], seed: string): OptionSet | null {
@@ -259,13 +281,13 @@ export function buildQuizDeck(content: ContentData): Question[] {
   for (const question of content.questions) {
     if (seen.has(question.id)) continue
     seen.add(question.id)
-    deck.push(question)
+    deck.push(shuffleQuestionOptions(question))
   }
 
   for (const question of generateAutoQuestions(content)) {
     if (seen.has(question.id)) continue
     seen.add(question.id)
-    deck.push(question)
+    deck.push(shuffleQuestionOptions(question))
   }
 
   return deck

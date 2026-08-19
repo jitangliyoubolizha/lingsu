@@ -22,6 +22,7 @@ vi.mock('../src/ui/feedback', () => ({
 }))
 
 const routerMocks = vi.hoisted(() => ({
+  query: {} as Record<string, string | string[]>,
   push: vi.fn(),
   back: vi.fn(),
 }))
@@ -31,10 +32,12 @@ vi.mock('vue-router', () => ({
     back: routerMocks.back,
     options: { history: { state: { back: null } } },
   }),
+  useRoute: () => ({ query: routerMocks.query }),
 }))
 
 describe('ui 反馈表单', () => {
   beforeEach(() => {
+    routerMocks.query = {}
     feedbackMocks.build.mockReset()
     feedbackMocks.submit.mockReset()
     feedbackMocks.build.mockReturnValue({
@@ -91,5 +94,22 @@ describe('ui 反馈表单', () => {
 
     expect(feedbackMocks.submit).not.toHaveBeenCalled()
     expect(wrapper.text()).toContain('位置或条号不能超过 100 字')
+  })
+
+  it('从条文页带上下文进入时自动预填类型与位置', async () => {
+    routerMocks.query = { type: 'clause', location: '太阳病上篇 · 第 12 条' }
+    const wrapper = mount(FeedbackView)
+    await wrapper.get('textarea').setValue('译文不对')
+
+    expect((wrapper.get('select').element as HTMLSelectElement).value).toBe('clause')
+    expect((wrapper.get('#feedback-location').element as HTMLInputElement).value).toBe(
+      '太阳病上篇 · 第 12 条'
+    )
+
+    await wrapper.get('form').trigger('submit')
+    expect(feedbackMocks.build.mock.calls[0][0]).toMatchObject({
+      type: 'clause',
+      location: '太阳病上篇 · 第 12 条',
+    })
   })
 })

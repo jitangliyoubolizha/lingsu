@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Star } from 'lucide-vue-next'
+import { PenLine, Star } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -20,6 +20,18 @@ const favorite = ref(false)
 const loaded = ref(false)
 
 const clauseId = computed(() => String(route.params.id))
+const feedbackTo = computed(() =>
+  clause.value
+    ? {
+        path: '/feedback',
+        query: {
+          type: 'clause',
+          location: `太阳·第 ${clause.value.no} 条`,
+          from: route.fullPath,
+        },
+      }
+    : { path: '/feedback' }
+)
 const clauseIndex = computed(() => {
   if (!content.value) return -1
   return content.value.clauses.findIndex((item) => item.id === clauseId.value)
@@ -75,6 +87,18 @@ onMounted(load)
       back-to="/clauses"
     >
       <template #actions>
+        <RouterLink
+          v-if="clause"
+          :to="feedbackTo"
+          class="flex h-9 items-center gap-1 rounded-full px-2.5 text-xs font-semibold text-ink-secondary hover:bg-paper-deep hover:text-ink"
+          aria-label="纠错"
+        >
+          <PenLine
+            class="h-4 w-4"
+            aria-hidden="true"
+          />
+          纠错
+        </RouterLink>
         <button
           v-if="clause"
           type="button"
@@ -108,7 +132,7 @@ onMounted(load)
       </div>
 
       <section
-        class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-5 shadow-[0_8px_24px_rgba(34,26,16,.08)]"
+        class="zhusi-rule mt-4 rounded-2xl border border-border-paper bg-paper-card p-5 shadow-[0_8px_24px_rgba(34,26,16,.08)]"
       >
         <div
           class="mb-4 h-1 w-10 rounded-full bg-cinnabar"

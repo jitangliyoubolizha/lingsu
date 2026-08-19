@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { MailCheck } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 import {
   buildFeedbackMailto,
@@ -11,8 +12,15 @@ import {
 } from '../feedback'
 import AppHeader from '../components/AppHeader.vue'
 
-const type = ref<FeedbackType>('clause')
-const location = ref('')
+const route = useRoute()
+
+function feedbackTypeFromQuery(value: unknown): FeedbackType {
+  return value === 'formula' || value === 'feature' || value === 'other' ? value : 'clause'
+}
+
+const type = ref<FeedbackType>(feedbackTypeFromQuery(route.query.type))
+const location = ref(typeof route.query.location === 'string' ? route.query.location : '')
+const fromPage = typeof route.query.from === 'string' ? route.query.from : ''
 const description = ref('')
 const contact = ref('')
 const error = ref('')
@@ -28,7 +36,7 @@ function submit() {
     location: location.value,
     description: description.value,
     contact: contact.value,
-    pageUrl: window.location.href,
+    pageUrl: fromPage || window.location.href,
   })
   if (!result.ok) {
     error.value = result.error

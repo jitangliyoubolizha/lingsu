@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Check, RotateCcw, X } from 'lucide-vue-next'
+import { Check, PenLine, RotateCcw, X } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 import type { Clause } from '../../data/types'
 import { loadContent } from '../../data'
@@ -26,6 +26,7 @@ type TaskItem =
   { kind: 'new'; clause: Clause } | { kind: 'review'; card: MemoryCard; clause: Clause | undefined }
 
 const router = useRouter()
+const route = useRoute()
 
 const items = ref<TaskItem[]>([])
 const currentIndex = ref(0)
@@ -37,6 +38,19 @@ const selfRating = ref<'forgot' | 'fuzzy' | 'remember' | null>(null)
 
 const todayKey = new Date().toISOString().slice(0, 10)
 const current = computed(() => items.value[currentIndex.value])
+
+const feedbackTo = computed(() => {
+  const item = current.value
+  if (!item) return { path: '/feedback' }
+  const location =
+    item.kind === 'new'
+      ? formatClauseRef(item.clause.id)
+      : (item.clause ? formatClauseRef(item.clause.id) : formatClauseRef(item.card.clauseId))
+  return {
+    path: '/feedback',
+    query: { type: 'clause', location, from: route.fullPath },
+  }
+})
 
 const total = computed(() => items.value.length)
 const progress = computed(() =>
@@ -135,7 +149,19 @@ onMounted(loadQueue)
           finished ? '已完成' : loading ? '加载中' : `第 ${currentIndex + 1} 项 / 共 ${total} 项`
         }}
       </span>
+      <RouterLink
+        v-if="current"
+        :to="feedbackTo"
+        class="flex h-9 w-9 items-center justify-center rounded-full text-ink-secondary hover:bg-paper-deep hover:text-ink"
+        aria-label="纠错"
+      >
+        <PenLine
+          class="h-4 w-4"
+          aria-hidden="true"
+        />
+      </RouterLink>
       <span
+        v-else
         class="w-9"
         aria-hidden="true"
       />
@@ -156,9 +182,14 @@ onMounted(loadQueue)
       v-else-if="finished"
       class="mt-16 flex flex-col items-center text-center"
     >
-      <div class="flex h-16 w-16 items-center justify-center rounded-full bg-green-soft text-green">
+      <div class="relative">
+        <div
+          class="seal-stamp flex h-20 w-20 items-center justify-center rounded-lg border-2 border-cinnabar bg-cinnabar-soft/70 font-serif text-2xl font-bold text-cinnabar"
+        >
+          学成
+        </div>
         <Check
-          class="h-8 w-8"
+          class="absolute -right-1.5 -top-1.5 h-6 w-6 rounded-full bg-green p-1 text-white"
           aria-hidden="true"
         />
       </div>

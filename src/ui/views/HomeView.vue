@@ -122,8 +122,16 @@ onMounted(loadHome)
     </div>
 
     <section
-      class="mt-5 rounded-2xl border border-border-paper bg-paper-card px-5 py-4 text-center shadow-[0_4px_12px_rgba(34,26,16,.05)]"
+      class="zhusi-rule relative mt-5 rounded-2xl border border-border-paper bg-paper-card px-5 py-4 text-center shadow-[0_4px_12px_rgba(34,26,16,.05)]"
     >
+      <span
+        class="absolute left-3 top-2 h-3 w-3 rounded-tl-sm border-l-2 border-t-2 border-cinnabar/40"
+        aria-hidden="true"
+      />
+      <span
+        class="absolute bottom-2 right-3 h-3 w-3 rounded-br-sm border-b-2 border-r-2 border-cinnabar/40"
+        aria-hidden="true"
+      />
       <p class="font-serif text-base leading-relaxed text-ink-secondary">
         「太阳之为病，脉浮，头项强痛而恶寒。」
       </p>
