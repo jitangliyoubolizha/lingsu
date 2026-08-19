@@ -14,7 +14,9 @@ import {
 import { db } from './db'
 import {
   addWrongQuestion,
+  getDueWrongQuestions,
   getWrongQuestions,
+  markWrongCorrect,
   resolveWrongQuestion,
 } from './logs'
 import { CURRENT_SCHEMA_VERSION } from './migrations'
@@ -88,6 +90,28 @@ describe('store/db 真库', () => {
     v2.delete()
   })
 
+  it('错题表 v1→v2 升级补齐 dueAt 与 correctStreak', async () => {
+    db.close()
+    await db.delete()
+
+    const legacy = new Dexie('lingsu')
+    legacy.version(1).stores({ wrongQuestions: 'questionId, lastWrongAt, wrongCount' })
+    await legacy.open()
+    const wrongDate = new Date('2026-08-17T08:00:00+08:00')
+    await legacy.table('wrongQuestions').put({
+      questionId: 'Q.LEGACY',
+      lastWrongAt: wrongDate,
+      wrongCount: 2,
+      resolved: false,
+    })
+    legacy.close()
+
+    await db.open()
+    const record = await db.wrongQuestions.get('Q.LEGACY')
+    expect(record?.dueAt).toEqual(wrongDate)
+    expect(record?.correctStreak).toBe(0)
+  })
+
   it('导出可序列化并再次导入恢复数据', async () => {
     await db.settings.put({ key: 'name', value: '灵素' })
     const backup = await exportData()
@@ -154,9 +178,38 @@ describe('store/logs 错题本', () => {
     expect(records).toHaveLength(1)
     expect(records[0]).toMatchObject({ questionId: 'Q.1', wrongCount: 2, resolved: false })
     expect(records[0].lastWrongAt).toEqual(second)
+    expect(records[0].correctStreak).toBe(0)
+    expect(records[0].dueAt).toEqual(new Date(2026, 7, 19, 8, 0, 0))
   })
 
-  it('答对标记 resolved=true 且保留错题历史', async () => {
+  it('答对一次进入 3 天后复测，连续答对两次标记已掌握', async () => {
+    const firstCorrect = new Date('2026-08-18T08:00:00+08:00')
+    const secondCorrect = new Date('2026-08-21T08:00:00+08:00')
+    await addWrongQuestion('Q.1', new Date('2026-08-17T08:00:00+08:00'))
+
+    await markWrongCorrect('Q.1', firstCorrect)
+    let records = await getWrongQuestions()
+    expect(records[0]).toMatchObject({ correctStreak: 1, resolved: false })
+    expect(records[0].dueAt).toEqual(new Date(2026, 7, 21, 8, 0, 0))
+
+    await markWrongCorrect('Q.1', secondCorrect)
+    records = await getWrongQuestions()
+    expect(records[0]).toMatchObject({ correctStreak: 2, resolved: true })
+  })
+
+  it('到期队列只返回未解决且到期的错题，最多 10 条', async () => {
+    const now = new Date('2026-08-18T12:00:00+08:00')
+    for (let index = 0; index < 12; index += 1) {
+      await addWrongQuestion(
+        `Q.${index}`,
+        new Date(now.getTime() - 24 * 60 * 60 * 1000 - (index + 1) * 60_000)
+      )
+    }
+    const due = await getDueWrongQuestions(now)
+    expect(due).toHaveLength(10)
+  })
+
+  it('手动移出仍可一次标记已掌握', async () => {
     await addWrongQuestion('Q.1', new Date('2026-08-17T08:00:00+08:00'))
     await resolveWrongQuestion('Q.1')
 

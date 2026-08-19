@@ -6,7 +6,12 @@ import { useRoute } from 'vue-router'
 import type { Question } from '../../data/types'
 import { loadContent } from '../../data'
 import { buildQuizDeck } from '../../domain'
-import { addQuizLog, addWrongQuestion, getWrongQuestions, resolveWrongQuestion } from '../../store'
+import {
+  addQuizLog,
+  addWrongQuestion,
+  getDueWrongQuestions,
+  markWrongCorrect,
+} from '../../store'
 import AppHeader from '../components/AppHeader.vue'
 import BaseButton from '../components/BaseButton.vue'
 import EmptyState from '../components/EmptyState.vue'
@@ -55,7 +60,7 @@ async function submit() {
   if (!correct) {
     await addWrongQuestion(current.value.id, new Date())
   } else {
-    await resolveWrongQuestion(current.value.id)
+    await markWrongCorrect(current.value.id, new Date())
   }
 }
 
@@ -97,8 +102,8 @@ onMounted(async () => {
   const data = loadContent()
   let deck: QuizItem[] = buildQuizDeck(data)
   if (wrongMode.value) {
-    const wrongs = await getWrongQuestions()
-    const wrongIds = new Set(wrongs.filter((item) => !item.resolved).map((item) => item.questionId))
+    const wrongs = await getDueWrongQuestions()
+    const wrongIds = new Set(wrongs.map((item) => item.questionId))
     deck = deck.filter((question) => wrongIds.has(question.id))
   }
   questions.value = deck

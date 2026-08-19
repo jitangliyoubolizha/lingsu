@@ -3,27 +3,33 @@ import { Check, PenLine, RotateCcw, X } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import type { Clause } from '../../data/types'
+import type { Clause, Question } from '../../data/types'
 import { loadContent } from '../../data'
-import { createCard, getTodayQueue, reviewCard } from '../../domain'
+import { buildQuizDeck, createCard, getTodayQueue, reviewCard } from '../../domain'
 import type { MemoryCard } from '../../domain/memory'
 import {
+  addQuizLog,
+  addWrongQuestion,
   ensureDefaultStudyPlan,
   getActiveStudyPlans,
   getAllCards,
   getClauseStates,
   getDailyLog,
+  getDueWrongQuestions,
   markClauseLearned,
+  markWrongCorrect,
   saveCard,
   saveDailyLog,
   saveReviewLog,
 } from '../../store'
 import BaseButton from '../components/BaseButton.vue'
 import ProgressBar from '../components/ProgressBar.vue'
-import { formatClauseRef } from '../formatters'
+import { formatClauseRef, formatQuizType } from '../formatters'
 
 type TaskItem =
-  { kind: 'new'; clause: Clause } | { kind: 'review'; card: MemoryCard; clause: Clause | undefined }
+  | { kind: 'new'; clause: Clause }
+  | { kind: 'review'; card: MemoryCard; clause: Clause | undefined }
+  | { kind: 'wrong'; question: Question }
 
 const router = useRouter()
 const route = useRoute()
@@ -35,6 +41,9 @@ const finished = ref(false)
 const loading = ref(true)
 const flipped = ref(false)
 const selfRating = ref<'forgot' | 'fuzzy' | 'remember' | null>(null)
+const wrongSelected = ref<number | null>(null)
+const wrongSubmitted = ref(false)
+const wrongCorrect = ref(false)
 
 const todayKey = new Date().toISOString().slice(0, 10)
 const current = computed(() => items.value[currentIndex.value])
@@ -42,13 +51,15 @@ const current = computed(() => items.value[currentIndex.value])
 const feedbackTo = computed(() => {
   const item = current.value
   if (!item) return { path: '/feedback' }
-  const location =
+  const clauseId =
     item.kind === 'new'
-      ? formatClauseRef(item.clause.id)
-      : (item.clause ? formatClauseRef(item.clause.id) : formatClauseRef(item.card.clauseId))
+      ? item.clause.id
+      : item.kind === 'review'
+        ? item.card.clauseId
+        : item.question.clause
   return {
     path: '/feedback',
-    query: { type: 'clause', location, from: route.fullPath },
+    query: { type: 'clause', location: formatClauseRef(clauseId), from: route.fullPath },
   }
 })
 
@@ -62,16 +73,22 @@ async function loadQueue() {
     const data = loadContent()
     await ensureDefaultStudyPlan()
 
-    const [plans, cards, states] = await Promise.all([
+    const [plans, cards, states, dueWrongs] = await Promise.all([
       getActiveStudyPlans(),
       getAllCards(),
       getClauseStates(),
+      getDueWrongQuestions(),
     ])
     const learnedIds = new Set(
       states.filter((state) => state.firstLearnedAt).map((state) => state.clauseId)
     )
     const queue = getTodayQueue(cards, plans, data.clauses, learnedIds, 20, new Date())
     const clauseById = new Map(data.clauses.map((clause) => [clause.id, clause]))
+    const deckById = new Map(buildQuizDeck(data).map((question) => [question.id, question]))
+    const wrongItems: TaskItem[] = dueWrongs.flatMap((record) => {
+      const question = deckById.get(record.questionId)
+      return question ? [{ kind: 'wrong' as const, question }] : []
+    })
 
     items.value = [
       ...queue.dueCards.map((card) => ({
@@ -79,8 +96,9 @@ async function loadQueue() {
         card,
         clause: clauseById.get(card.clauseId),
       })),
+      ...wrongItems,
       ...queue.newClauses.map((clause) => ({ kind: 'new' as const, clause })),
-    ]
+    ].slice(0, 20)
 
     const todayLog = await getDailyLog(todayKey)
     if (todayLog && todayLog.completedCount >= todayLog.requiredCount) {
@@ -97,6 +115,40 @@ function ratingNumber(rating: 'forgot' | 'fuzzy' | 'remember'): 1 | 2 | 3 {
   return 3
 }
 
+async function submitWrongAnswer() {
+  const item = current.value
+  if (!item || item.kind !== 'wrong' || wrongSelected.value === null || wrongSubmitted.value) {
+    return
+  }
+  wrongSubmitted.value = true
+  wrongCorrect.value = wrongSelected.value === item.question.answerIndex
+  const answeredAt = new Date()
+  await addQuizLog({
+    questionId: item.question.id,
+    type: item.question.type,
+    correct: wrongCorrect.value,
+    answeredAt,
+  })
+  if (wrongCorrect.value) {
+    await markWrongCorrect(item.question.id, answeredAt)
+  } else {
+    await addWrongQuestion(item.question.id, answeredAt)
+  }
+}
+
+function wrongOptionClass(index: number) {
+  const item = current.value
+  if (!item || item.kind !== 'wrong') return 'border-border-paper bg-paper-card'
+  if (!wrongSubmitted.value) {
+    return wrongSelected.value === index
+      ? 'border-cinnabar bg-cinnabar-soft'
+      : 'border-border-paper bg-paper-card'
+  }
+  if (index === item.question.answerIndex) return 'border-green bg-green-soft'
+  if (index === wrongSelected.value) return 'border-red bg-cinnabar-soft'
+  return 'border-border-paper bg-paper-card opacity-60'
+}
+
 async function completeCurrent() {
   const item = current.value
   if (!item) return
@@ -109,11 +161,16 @@ async function completeCurrent() {
     const result = reviewCard(item.card, ratingNumber(selfRating.value), new Date())
     await saveCard(result.card)
     await saveReviewLog(result.log)
+  } else if (item.kind === 'wrong' && !wrongSubmitted.value) {
+    return
   }
 
   completedCount.value += 1
   selfRating.value = null
   flipped.value = false
+  wrongSelected.value = null
+  wrongSubmitted.value = false
+  wrongCorrect.value = false
 
   if (currentIndex.value < items.value.length - 1) {
     currentIndex.value += 1
@@ -234,6 +291,86 @@ onMounted(loadQueue)
           @click="completeCurrent"
         >
           学会了，进入下一项
+        </BaseButton>
+      </div>
+
+      <!-- 错题巩固 -->
+      <div
+        v-else-if="current.kind === 'wrong'"
+        class="flex min-h-[360px] flex-col rounded-2xl border border-border-paper bg-paper-card p-6 shadow-[0_8px_24px_rgba(34,26,16,.10)]"
+      >
+        <p class="text-xs text-ink-muted">
+          错题巩固 · {{ formatQuizType(current.question.type) }} ·
+          {{ formatClauseRef(current.question.clause) }}
+        </p>
+        <p class="mt-6 font-serif text-[22px] leading-relaxed text-ink">
+          {{ current.question.prompt }}
+        </p>
+
+        <div class="mt-5 space-y-3">
+          <button
+            v-for="(option, index) in current.question.options"
+            :key="index"
+            type="button"
+            class="flex min-h-14 w-full items-center gap-3 rounded-xl border px-4 text-left text-[15px] transition-colors duration-200"
+            :class="wrongOptionClass(index)"
+            :disabled="wrongSubmitted"
+            @click="wrongSelected = index"
+          >
+            <span
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-paper-deep text-sm font-semibold text-ink-secondary"
+              :class="
+                wrongSubmitted && index === current.question.answerIndex
+                  ? 'bg-green text-white'
+                  : wrongSubmitted && index === wrongSelected
+                    ? 'bg-red text-white'
+                    : ''
+              "
+            >
+              {{ String.fromCharCode(65 + index) }}
+            </span>
+            <span class="flex-1">{{ option }}</span>
+            <Check
+              v-if="wrongSubmitted && index === current.question.answerIndex"
+              class="h-5 w-5 text-green"
+              aria-hidden="true"
+            />
+            <X
+              v-else-if="wrongSubmitted && index === wrongSelected && index !== current.question.answerIndex"
+              class="h-5 w-5 text-red"
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+
+        <div
+          v-if="wrongSubmitted"
+          class="mt-4 rounded-xl border border-border-paper bg-paper-deep p-4"
+        >
+          <p class="text-sm font-semibold text-indigo">
+            解析 · 原文依据
+          </p>
+          <p class="mt-2 text-sm leading-relaxed text-ink-secondary">
+            {{ current.question.rationale }}
+          </p>
+        </div>
+
+        <BaseButton
+          v-if="!wrongSubmitted"
+          class="mt-4 w-full"
+          size="lg"
+          :disabled="wrongSelected === null"
+          @click="submitWrongAnswer"
+        >
+          提交答案
+        </BaseButton>
+        <BaseButton
+          v-else
+          class="mt-4 w-full"
+          size="lg"
+          @click="completeCurrent"
+        >
+          下一项
         </BaseButton>
       </div>
 

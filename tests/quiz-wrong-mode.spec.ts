@@ -9,8 +9,8 @@ import QuizView from '../src/ui/views/QuizView.vue'
 const route = { query: {} as Record<string, string | string[]> }
 
 const mocks = vi.hoisted(() => ({
-  resolveWrongQuestion: vi.fn().mockResolvedValue(undefined),
-  getWrongQuestions: vi.fn().mockResolvedValue([]),
+  markWrongCorrect: vi.fn().mockResolvedValue(undefined),
+  getDueWrongQuestions: vi.fn().mockResolvedValue([]),
   addQuizLog: vi.fn().mockResolvedValue(1),
   addWrongQuestion: vi.fn().mockResolvedValue(undefined),
 }))
@@ -31,8 +31,8 @@ vi.mock('../src/data', () => ({
 vi.mock('../src/store', () => ({
   addQuizLog: mocks.addQuizLog,
   addWrongQuestion: mocks.addWrongQuestion,
-  getWrongQuestions: mocks.getWrongQuestions,
-  resolveWrongQuestion: mocks.resolveWrongQuestion,
+  getDueWrongQuestions: mocks.getDueWrongQuestions,
+  markWrongCorrect: mocks.markWrongCorrect,
 }))
 
 const wrongQuestion: Question = {
@@ -73,16 +73,18 @@ function content(): ContentData {
 describe('QuizView 错题重做模式', () => {
   beforeEach(() => {
     route.query = { wrong: '1' }
-    mocks.resolveWrongQuestion.mockClear()
-    mocks.getWrongQuestions.mockReset()
+    mocks.markWrongCorrect.mockClear()
+    mocks.getDueWrongQuestions.mockReset()
     mocks.addQuizLog.mockClear()
     mocks.addWrongQuestion.mockClear()
-    mocks.getWrongQuestions.mockResolvedValue([
+    mocks.getDueWrongQuestions.mockResolvedValue([
       {
         questionId: 'WRONG.1',
         lastWrongAt: new Date('2026-08-18T08:00:00+08:00'),
         wrongCount: 2,
         resolved: false,
+        dueAt: new Date('2026-08-18T08:00:00+08:00'),
+        correctStreak: 0,
       },
     ])
   })
@@ -97,7 +99,7 @@ describe('QuizView 错题重做模式', () => {
     expect(wrapper.text()).toContain('第 1 题 / 共 1 题')
   })
 
-  it('答对后标记解决，点击完成清空队列并显示空态', async () => {
+  it('答对后按排期累计连续答对，并移出本轮队列', async () => {
     const wrapper = mount(QuizView)
     await flushPromises()
 
@@ -110,7 +112,7 @@ describe('QuizView 错题重做模式', () => {
     await submit!.trigger('click')
     await flushPromises()
 
-    expect(mocks.resolveWrongQuestion).toHaveBeenCalledWith('WRONG.1')
+    expect(mocks.markWrongCorrect).toHaveBeenCalledWith('WRONG.1', expect.any(Date))
 
     const finish = wrapper.findAll('button').find((b) => b.text().includes('完成'))
     expect(finish).toBeTruthy()

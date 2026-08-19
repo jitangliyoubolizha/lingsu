@@ -25,7 +25,7 @@ const groups = [
     title: '学习库',
     items: [
       { label: '我的收藏', icon: Star, to: '/clauses' },
-      { label: '错题本', icon: FileX, to: '/wrong-book' },
+      { label: '待巩固', icon: FileX, to: '/wrong-book' },
     ],
   },
   {

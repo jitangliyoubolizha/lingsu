@@ -24,8 +24,10 @@ export {
   addWrongQuestion,
   getAllDailyLogs,
   getDailyLog,
+  getDueWrongQuestions,
   getQuizLogs,
   getWrongQuestions,
+  markWrongCorrect,
   resolveWrongQuestion,
   saveDailyLog,
 } from './logs'

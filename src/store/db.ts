@@ -42,6 +42,8 @@ export interface WrongQuestionRecord {
   lastWrongAt: Date
   wrongCount: number
   resolved: boolean
+  dueAt: Date
+  correctStreak: number
 }
 
 export class LingsuDatabase extends Dexie {
@@ -68,6 +70,23 @@ export class LingsuDatabase extends Dexie {
       favorites: 'id, type, targetId',
       wrongQuestions: 'questionId, lastWrongAt, wrongCount',
     })
+    this.version(2)
+      .stores({
+        wrongQuestions: 'questionId, lastWrongAt, wrongCount, dueAt',
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('wrongQuestions')
+          .toCollection()
+          .modify((record: Partial<WrongQuestionRecord>) => {
+            if (!record.dueAt) {
+              record.dueAt = record.lastWrongAt
+            }
+            if (typeof record.correctStreak !== 'number') {
+              record.correctStreak = 0
+            }
+          })
+      })
   }
 }
 
