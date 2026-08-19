@@ -6,10 +6,17 @@ import { flushPromises, mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import AgreementView from '../src/ui/views/AgreementView.vue'
+import ComplianceBanner from '../src/ui/components/ComplianceBanner.vue'
+import GlobalNoticeBar from '../src/ui/components/GlobalNoticeBar.vue'
 import HighlightText from '../src/ui/components/HighlightText.vue'
 import ProgressBar from '../src/ui/components/ProgressBar.vue'
 import SearchBar from '../src/ui/components/SearchBar.vue'
 import StatCard from '../src/ui/components/StatCard.vue'
+
+const RouterLinkStub = {
+  props: ['to'],
+  template: '<a :href="to"><slot /></a>',
+}
 
 const mocks = vi.hoisted(() => ({ push: vi.fn() }))
 vi.mock('vue-router', () => ({
@@ -77,11 +84,41 @@ describe('ui 基础组件', () => {
     const clampedLow = mount(ProgressBar, { props: { value: -5 } })
     expect(clampedLow.attributes('aria-valuenow')).toBe('0')
   })
+
+  it('GlobalNoticeBar 常驻合规文案并带内容纠错入口', () => {
+    const wrapper = mount(GlobalNoticeBar, {
+      global: { stubs: { RouterLink: RouterLinkStub } },
+    })
+    expect(wrapper.text()).toContain('仅供学习研究，不构成医疗建议，请勿自行用药')
+    const link = wrapper.find('a[href="/feedback"]')
+    expect(link.exists()).toBe(true)
+    expect(link.text()).toContain('内容纠错')
+  })
+
+  it('ComplianceBanner 开启 feedback 时显示内容纠错入口', () => {
+    const wrapper = mount(ComplianceBanner, {
+      props: { showFeedback: true },
+      global: { stubs: { RouterLink: RouterLinkStub } },
+    })
+    expect(wrapper.find('a[href="/feedback"]').text()).toContain('内容纠错')
+  })
+
+  it('ComplianceBanner 默认不显示内容纠错入口', () => {
+    const wrapper = mount(ComplianceBanner, {
+      global: { stubs: { RouterLink: RouterLinkStub } },
+    })
+    expect(wrapper.find('a[href="/feedback"]').exists()).toBe(false)
+  })
 })
 
 describe('ui 协议流程', () => {
   beforeEach(() => {
     mocks.push.mockReset()
+  })
+
+  it('协议页提示条文可能存在错误并可点击内容纠错', () => {
+    const wrapper = mount(AgreementView)
+    expect(wrapper.text()).toContain('条文可能存在错误，可点击底部『内容纠错』反馈')
   })
 
   it('未勾选时按钮禁用，勾选后点击进入首页', async () => {

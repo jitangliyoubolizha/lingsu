@@ -194,6 +194,6 @@ onMounted(load)
       </div>
     </template>
 
-    <ComplianceBanner />
+    <ComplianceBanner show-feedback />
   </div>
 </template>

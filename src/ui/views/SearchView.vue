@@ -144,6 +144,7 @@ function search() {
     <ComplianceBanner
       text="仅供学习研究，不构成医疗建议"
       tone="muted"
+      show-feedback
     />
   </div>
 </template>

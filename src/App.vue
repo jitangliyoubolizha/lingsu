@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 
 import AppNav from './ui/components/AppNav.vue'
+import GlobalNoticeBar from './ui/components/GlobalNoticeBar.vue'
 
 const route = useRoute()
 </script>
@@ -21,9 +22,13 @@ const route = useRoute()
     class="min-h-screen bg-paper lg:pl-56"
   >
     <AppNav />
+    <GlobalNoticeBar
+      v-if="!route.meta.bare && !route.meta.ownComplianceBanner"
+      :lifted="Boolean(route.meta.bottomNav)"
+    />
     <main
       class="mx-auto w-full max-w-5xl px-5"
-      :class="route.meta.bottomNav ? 'pb-28 pt-2 lg:pb-12' : 'pb-12 pt-2'"
+      :class="route.meta.bottomNav ? 'pb-28 pt-2 lg:pb-24' : 'pb-24 pt-2'"
     >
       <RouterView v-slot="{ Component }">
         <Transition

@@ -23,6 +23,59 @@ describe('domain/stats', () => {
     expect(computeStreakDays(logs, today)).toBe(2)
   })
 
+  it('无任何打卡记录时连续天数为 0', () => {
+    expect(computeStreakDays([], new Date('2026-08-17T10:00:00+08:00'))).toBe(0)
+  })
+
+  it('断签只中断连续天数，不影响后续已有记录', () => {
+    const today = new Date('2026-08-17T10:00:00+08:00')
+    const logs = [
+      { date: '2026-08-17', requiredCount: 2, completedCount: 2 },
+      { date: '2026-08-16', requiredCount: 2, completedCount: 2 },
+      { date: '2026-08-14', requiredCount: 2, completedCount: 2 },
+      { date: '2026-08-13', requiredCount: 2, completedCount: 2 },
+    ]
+    expect(computeStreakDays(logs, today)).toBe(2)
+  })
+
+  it('未完成每日任务的记录不计入连续天数', () => {
+    const today = new Date('2026-08-17T10:00:00+08:00')
+    const logs = [
+      { date: '2026-08-17', requiredCount: 2, completedCount: 1 },
+      { date: '2026-08-16', requiredCount: 2, completedCount: 2 },
+    ]
+    expect(computeStreakDays(logs, today)).toBe(1)
+  })
+
+  it('记录乱序仍按日期计算', () => {
+    const today = new Date('2026-08-17T10:00:00+08:00')
+    const logs = [
+      { date: '2026-08-15', requiredCount: 1, completedCount: 1 },
+      { date: '2026-08-17', requiredCount: 1, completedCount: 1 },
+      { date: '2026-08-16', requiredCount: 1, completedCount: 1 },
+    ]
+    expect(computeStreakDays(logs, today)).toBe(3)
+  })
+
+  it('未来日期的打卡不拉长连续天数', () => {
+    const today = new Date('2026-08-17T10:00:00+08:00')
+    const logs = [
+      { date: '2026-08-17', requiredCount: 1, completedCount: 1 },
+      { date: '2026-08-18', requiredCount: 1, completedCount: 1 },
+    ]
+    expect(computeStreakDays(logs, today)).toBe(1)
+  })
+
+  it('跨月连续打卡正确计数', () => {
+    const today = new Date('2026-08-01T10:00:00+08:00')
+    const logs = [
+      { date: '2026-08-01', requiredCount: 1, completedCount: 1 },
+      { date: '2026-07-31', requiredCount: 1, completedCount: 1 },
+      { date: '2026-07-30', requiredCount: 1, completedCount: 1 },
+    ]
+    expect(computeStreakDays(logs, today)).toBe(3)
+  })
+
   it('篇章进度按已学条文统计', () => {
     const content = {
       chapters: [

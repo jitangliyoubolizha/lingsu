@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChevronRight, Download, FileX, Settings, Star, Upload, User } from 'lucide-vue-next'
+import { ChevronRight, Download, FileX, MessageCircle, Settings, Star, Upload, User } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
 
 import { loadContent } from '../../data'
@@ -32,6 +32,7 @@ const groups = [
     title: '关于',
     items: [
       { label: '免责声明', icon: Settings, to: '/agreement' },
+      { label: '意见反馈', icon: MessageCircle, to: '/feedback' },
       { label: '内容来源', icon: Settings, to: '/profile' },
     ],
   },

@@ -5,6 +5,7 @@ import AgreementView from './views/AgreementView.vue'
 import ClauseDetailView from './views/ClauseDetailView.vue'
 import ClauseListView from './views/ClauseListView.vue'
 import CompareView from './views/CompareView.vue'
+import FeedbackView from './views/FeedbackView.vue'
 import FormulaDetailView from './views/FormulaDetailView.vue'
 import FormulaListView from './views/FormulaListView.vue'
 import HerbDetailView from './views/HerbDetailView.vue'
@@ -46,6 +47,7 @@ const router = createRouter({
       path: '/clauses/:id',
       name: 'clause-detail',
       component: ClauseDetailView,
+      meta: { ownComplianceBanner: true },
     },
     {
       path: '/formulas',
@@ -71,6 +73,7 @@ const router = createRouter({
       path: '/search',
       name: 'search',
       component: SearchView,
+      meta: { ownComplianceBanner: true },
     },
     {
       path: '/quiz',
@@ -95,6 +98,12 @@ const router = createRouter({
       name: 'profile',
       component: ProfileView,
       meta: { navKey: 'profile', bottomNav: true },
+    },
+    {
+      path: '/feedback',
+      name: 'feedback',
+      component: FeedbackView,
+      meta: { navKey: 'profile' },
     },
   ],
 })

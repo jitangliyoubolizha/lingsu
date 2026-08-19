@@ -5,10 +5,12 @@ withDefaults(
   defineProps<{
     text?: string
     tone?: 'cinnabar' | 'muted'
+    showFeedback?: boolean
   }>(),
   {
     text: '仅供学习研究，不构成医疗建议，请勿自行用药',
     tone: 'cinnabar',
+    showFeedback: false,
   }
 )
 </script>
@@ -20,7 +22,7 @@ withDefaults(
     aria-live="polite"
   >
     <div
-      class="mx-auto flex max-w-3xl items-center justify-center gap-1.5 rounded-t-lg px-4 py-2.5 text-center text-xs font-semibold"
+      class="mx-auto flex max-w-3xl items-center justify-center gap-2 rounded-t-lg px-4 py-2.5 text-center text-xs font-semibold"
       :class="
         tone === 'cinnabar'
           ? 'bg-cinnabar text-white'
@@ -32,6 +34,14 @@ withDefaults(
         aria-hidden="true"
       />
       <span>{{ text }}</span>
+      <RouterLink
+        v-if="showFeedback"
+        to="/feedback"
+        class="shrink-0 font-semibold underline underline-offset-2"
+        :class="tone === 'cinnabar' ? 'text-white' : 'text-indigo'"
+      >
+        内容纠错
+      </RouterLink>
     </div>
   </div>
 </template>
