@@ -7,7 +7,7 @@
 
 ### Added
 
-- GitHub Pages 部署：`BASE_PATH` 环境变量支持子路径构建，PWA manifest/scope/start_url 随 base 调整，新增 `.github/workflows/deploy-pages.yml` 自动部署（2026-08-20）
+- GitHub Pages 部署：`BASE_PATH` 环境变量支持子路径构建，PWA manifest/scope/start_url 随 base 调整，新增 `.github/workflows/deploy-pages.yml` 自动部署；woff2 字体改为按需运行时缓存，precache 从 222 项（11MB）降到 17 项（0.9MB）（2026-08-20）
 
 - 错题轻 Leitner 排期：答错次日到期、答对 3 天后复测、连续答对 2 次已掌握；到期错题并入每日任务（每轮最多 10 道、计入打卡），错题重做只取今日到期（2026-08-19）
 - 错题本改为「待巩固」台账：正面汇总（今日到期/之后到期/已掌握）、分组折叠、去掉红色“答错 N 次”，手动“已掌握”移出（2026-08-19）

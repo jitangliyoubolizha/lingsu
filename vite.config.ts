@@ -56,7 +56,8 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,json}'],
+        // woff2 不预缓存：@font-face 按 unicode-range 按需取子集，运行时缓存即可
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
         navigateFallback: `${base}index.html`,
         runtimeCaching: [
           {
