@@ -168,8 +168,8 @@ describe('store/logs 错题本', () => {
   })
 
   it('首次答错创建错题记录，重复答错累计次数并重置 resolved', async () => {
-    const first = new Date('2026-08-17T08:00:00+08:00')
-    const second = new Date('2026-08-18T08:00:00+08:00')
+    const first = new Date('2026-08-17T00:00:00Z')
+    const second = new Date('2026-08-18T00:00:00Z')
 
     await addWrongQuestion('Q.1', first)
     await addWrongQuestion('Q.1', second)
@@ -179,18 +179,18 @@ describe('store/logs 错题本', () => {
     expect(records[0]).toMatchObject({ questionId: 'Q.1', wrongCount: 2, resolved: false })
     expect(records[0].lastWrongAt).toEqual(second)
     expect(records[0].correctStreak).toBe(0)
-    expect(records[0].dueAt).toEqual(new Date(2026, 7, 19, 8, 0, 0))
+    expect(records[0].dueAt).toEqual(new Date('2026-08-19T00:00:00Z'))
   })
 
   it('答对一次进入 3 天后复测，连续答对两次标记已掌握', async () => {
-    const firstCorrect = new Date('2026-08-18T08:00:00+08:00')
-    const secondCorrect = new Date('2026-08-21T08:00:00+08:00')
-    await addWrongQuestion('Q.1', new Date('2026-08-17T08:00:00+08:00'))
+    const firstCorrect = new Date('2026-08-18T00:00:00Z')
+    const secondCorrect = new Date('2026-08-21T00:00:00Z')
+    await addWrongQuestion('Q.1', new Date('2026-08-17T00:00:00Z'))
 
     await markWrongCorrect('Q.1', firstCorrect)
     let records = await getWrongQuestions()
     expect(records[0]).toMatchObject({ correctStreak: 1, resolved: false })
-    expect(records[0].dueAt).toEqual(new Date(2026, 7, 21, 8, 0, 0))
+    expect(records[0].dueAt).toEqual(new Date('2026-08-21T00:00:00Z'))
 
     await markWrongCorrect('Q.1', secondCorrect)
     records = await getWrongQuestions()
