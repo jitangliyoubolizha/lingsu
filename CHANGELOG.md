@@ -7,6 +7,8 @@
 
 ### Added
 
+- 刷题筛选模式（T0-2）：进入刷题页先选模式——随机综合（整卷洗牌）、按篇（太阳病上/中/下）、按题型（四种）、待巩固错题，与错题重做并列；支持 `?mode=random` / `?chapter=` / `?type=` 深链直达；新增 domain 纯函数 `filterQuizDeck` / `shuffleDeck`，共 21 条新测试（2026-08-21）
+
 - GitHub Pages 部署：`BASE_PATH` 环境变量支持子路径构建，PWA manifest/scope/start_url 随 base 调整，新增 `.github/workflows/deploy-pages.yml` 自动部署；woff2 字体改为按需运行时缓存，precache 从 222 项（11MB）降到 17 项（0.9MB）（2026-08-20）
 
 - 错题轻 Leitner 排期：答错次日到期、答对 3 天后复测、连续答对 2 次已掌握；到期错题并入每日任务（每轮最多 10 道、计入打卡），错题重做只取今日到期（2026-08-19）

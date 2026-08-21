@@ -269,6 +269,55 @@ export function generateFormulaComposition(
   }
 }
 
+export interface QuizFilter {
+  /** 篇章代码（如 TYS），与题型可同时生效（交集） */
+  chapter?: string
+  /** 题型，与篇章可同时生效（交集） */
+  type?: Question['type']
+}
+
+/**
+ * 刷题筛选：按篇 / 按题型过滤题库（纯函数）。
+ * 篇章筛选依据内容数据中该篇章代码（含拆分文件）下属的全部条文 ID；
+ * 无条文归属的题目（如部分方剂组成题）在按篇筛选时排除。
+ */
+export function filterQuizDeck<T extends Pick<Question, 'clause' | 'type'>>(
+  deck: T[],
+  content: ContentData,
+  filter: QuizFilter
+): T[] {
+  let clauseIds: Set<string> | null = null
+  if (filter.chapter !== undefined) {
+    clauseIds = new Set(
+      content.chapters
+        .filter((chapter) => chapter.code === filter.chapter)
+        .flatMap((chapter) => chapter.clauses.map((item) => item.id))
+    )
+  }
+
+  return deck.filter((question) => {
+    if (clauseIds !== null && !clauseIds.has(question.clause)) {
+      return false
+    }
+    if (filter.type !== undefined && question.type !== filter.type) {
+      return false
+    }
+    return true
+  })
+}
+
+/**
+ * 随机综合：整卷洗牌（不修改原数组，随机源可注入便于测试）。
+ */
+export function shuffleDeck<T>(items: T[], random: () => number = Math.random): T[] {
+  const shuffled = [...items]
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(random() * (index + 1))
+    ;[shuffled[index], shuffled[target]] = [shuffled[target], shuffled[index]]
+  }
+  return shuffled
+}
+
 /**
  * 组装刷题题库：人工复核题优先，自动生成题按稳定 ID 去重补充。
  * @param content 内容数据
