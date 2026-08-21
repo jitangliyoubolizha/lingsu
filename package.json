@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "dexie": "4.4.5",
-    "echarts": "6.0.0",
     "lucide-vue-next": "1.0.0",
     "minisearch": "7.2.0",
     "ts-fsrs": "5.4.1",
