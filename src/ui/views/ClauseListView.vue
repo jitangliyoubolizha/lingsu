@@ -56,7 +56,7 @@ const learningCount = computed(
 
 async function load() {
   try {
-    const data = loadContent()
+    const data = await loadContent()
     clauses.value = data.clauses
     const [cards, favorites] = await Promise.all([getAllCards(), getFavorites()])
     cardByClause.value = new Map(cards.map((card) => [card.clauseId, card]))

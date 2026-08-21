@@ -62,6 +62,16 @@ export interface Chapter {
   clauses: Clause[]
 }
 
+/** 篇章元数据：不含条文正文，用于首屏轻量加载与篇章导航。 */
+export interface ChapterMeta {
+  code: string
+  name: string
+  order: number
+  part?: number
+  partTotal?: number
+  clauseCount: number
+}
+
 export interface FormulaCompositionItem {
   herb: string
   dose?: string
@@ -116,13 +126,20 @@ export interface Question {
   status: QuestionStatus
 }
 
-export interface ContentData {
+/** 内容元数据：随主包加载的轻量部分，条文正文按篇拆分、按需加载。 */
+export interface ContentMeta {
   book: Book
   edition: Edition
-  chapters: Chapter[]
-  clauses: Clause[]
+  chapters: ChapterMeta[]
+  /** 全书条文顺序（按篇章顺序与条文号排列），用于上一条/下一条导航与条文定位。 */
+  clauseOrder: string[]
   formulas: Formula[]
   herbs: Herb[]
   symptomTerms: SymptomTerm[]
   questions: Question[]
+}
+
+export interface ContentData extends Omit<ContentMeta, 'chapters' | 'clauseOrder'> {
+  chapters: Chapter[]
+  clauses: Clause[]
 }

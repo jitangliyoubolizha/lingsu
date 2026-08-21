@@ -27,8 +27,8 @@ const grouped = computed(() => groupSearchResults(results.value))
 
 const hasResults = computed(() => results.value.length > 0)
 
-onMounted(() => {
-  const data = loadContent()
+onMounted(async () => {
+  const data = await loadContent()
   content.value = data
   index.value = buildSearchIndex(data)
 })

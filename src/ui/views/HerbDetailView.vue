@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 import type { ContentData } from '../../data/types'
-import { loadContent } from '../../data'
+import { loadMeta } from '../../data'
 import { getHerbFormulaIds } from '../../domain'
 import AppHeader from '../components/AppHeader.vue'
 import EmptyState from '../components/EmptyState.vue'
@@ -24,7 +24,9 @@ function formulaName(id: string): string {
 }
 
 onMounted(() => {
-  content.value = loadContent()
+  // 药物详情只依赖方剂组成与药物数据，全部在元数据中，不加载条文正文
+  const meta = loadMeta()
+  content.value = { ...meta, chapters: [], clauses: [] }
   loaded.value = true
 })
 </script>

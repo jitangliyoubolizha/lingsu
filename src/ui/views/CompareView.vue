@@ -65,11 +65,11 @@ function cellValue(row: CompareRow, key: (typeof dimensions)[number]['key']): st
   return Array.isArray(value) ? value.join('、') : String(value)
 }
 
-onMounted(() => {
-  content.value = loadContent()
-  selectedIds.value = loadContent()
-    .formulas.slice(0, 2)
-    .map((formula) => formula.id)
+onMounted(async () => {
+  // 类方对比需要跨篇推导相关条文标签，加载全量内容
+  const data = await loadContent()
+  content.value = data
+  selectedIds.value = data.formulas.slice(0, 2).map((formula) => formula.id)
   buildRows()
 })
 </script>

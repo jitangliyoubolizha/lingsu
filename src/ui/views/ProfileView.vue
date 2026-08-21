@@ -2,7 +2,7 @@
 import { ChevronRight, Download, FileX, MessageCircle, Settings, Star, Upload, User } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
 
-import { loadContent } from '../../data'
+import { loadMeta } from '../../data'
 import {
   exportData,
   getClauseStates,
@@ -39,10 +39,11 @@ const groups = [
 ]
 
 async function load() {
-  const data = loadContent()
+  // 进度百分比只需要条文总数，取元数据的篇章统计，不加载条文正文
+  const totalClauses = loadMeta().chapters.reduce((sum, chapter) => sum + chapter.clauseCount, 0)
   const states = await getClauseStates()
   const learned = states.filter((state) => state.firstLearnedAt).length
-  progress.value = data.clauses.length === 0 ? 0 : Math.round((learned / data.clauses.length) * 100)
+  progress.value = totalClauses === 0 ? 0 : Math.round((learned / totalClauses) * 100)
   dailyNew.value = await getSetting<number>('dailyNew', 3)
   fontSize.value = await getSetting<'小' | '中' | '大'>('fontSize', '中')
   voiceEnabled.value = await getSetting<boolean>('voiceEnabled', true)

@@ -56,7 +56,7 @@ const weekCompleted = computed(() =>
 
 async function loadHome() {
   try {
-    const data = loadContent()
+    const data = await loadContent()
     content.value = data
     await ensureDefaultStudyPlan()
 

@@ -2,7 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 
 import type { Formula } from '../../data/types'
-import { loadContent } from '../../data'
+import { loadMeta } from '../../data'
 import AppHeader from '../components/AppHeader.vue'
 import EmptyState from '../components/EmptyState.vue'
 import FormulaListItem from '../components/FormulaListItem.vue'
@@ -29,7 +29,8 @@ const groups = computed(() => {
 })
 
 onMounted(() => {
-  formulas.value = loadContent().formulas
+  // 方剂列表只依赖元数据，不加载条文正文
+  formulas.value = loadMeta().formulas
 })
 </script>
 

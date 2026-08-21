@@ -79,7 +79,7 @@ function computeTrend(reviewLogs: ReviewLog[]): { values: number[]; labels: stri
 }
 
 async function load() {
-  const data = loadContent()
+  const data = await loadContent()
   const [cards, states, dailyLogs, quizLogs, reviewLogs, favorites] = await Promise.all([
     getAllCards(),
     getClauseStates(),

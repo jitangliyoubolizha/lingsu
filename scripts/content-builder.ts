@@ -173,6 +173,12 @@ function buildChapters(files: YamlFile[], collected: Collected): Chapter[] {
     }
   }
 
+  // 多文件篇章按文件名字母序拼接（如 taiyang-xia-2 先于 taiyang-xia），
+  // 章内统一按条文号排序，保证阅读顺序与上一条/下一条导航正确。
+  for (const chapter of chapterMap.values()) {
+    chapter.clauses.sort((a, b) => a.no - b.no)
+  }
+
   return Array.from(chapterMap.values()).sort((a, b) => a.order - b.order)
 }
 

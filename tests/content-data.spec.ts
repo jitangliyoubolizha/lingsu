@@ -11,8 +11,8 @@ describe('内容数据层', () => {
     expect(issues).toEqual([])
   })
 
-  it('构建产物可加载且包含太阳病上中下篇数据', () => {
-    const content = loadContent()
+  it('构建产物可加载且包含太阳病上中下篇数据', async () => {
+    const content = await loadContent()
 
     expect(content.book.code).toBe('SHL')
     expect(content.edition.code).toBe('SB')

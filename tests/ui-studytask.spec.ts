@@ -109,7 +109,7 @@ const mountOptions = {
 describe('ui/StudyTaskView 每日任务', () => {
   beforeEach(() => {
     vi.clearAllMocks()
-    mocks.loadContent.mockReturnValue({ clauses: [clauseA, clauseB] })
+    mocks.loadContent.mockResolvedValue({ clauses: [clauseA, clauseB] })
     mocks.buildQuizDeck.mockReturnValue([])
     mocks.getDueWrongQuestions.mockResolvedValue([])
     mocks.getTodayQueue.mockReturnValue({

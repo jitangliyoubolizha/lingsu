@@ -27,8 +27,8 @@ describe('题库选项顺序', () => {
     expect(shuffled.options[shuffled.answerIndex]).toBe('正确')
   })
 
-  it('真实题库中复核题正确选项位置不全是 A，且正确内容不变', () => {
-    const content = loadContent()
+  it('真实题库中复核题正确选项位置不全是 A，且正确内容不变', async () => {
+    const content = await loadContent()
     const deck = buildQuizDeck(content)
     const reviewed = deck.filter((question) => question.status === 'reviewed')
 

@@ -5,6 +5,7 @@ import { flushPromises, mount } from '@vue/test-utils'
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+import { loadContent } from '../src/data'
 import FormulaDetailView from '../src/ui/views/FormulaDetailView.vue'
 import ClauseDetailView from '../src/ui/views/ClauseDetailView.vue'
 import StatCard from '../src/ui/components/StatCard.vue'
@@ -64,7 +65,10 @@ vi.mock('../src/store', () => ({
 }))
 
 describe('ui 统计页专项', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
+    // 预加载内容缓存：动态 import 不受 flushPromises 控制，先预热再挂载
+    await loadContent()
+
     vi.useFakeTimers()
     vi.setSystemTime(new Date(2026, 7, 17, 12, 0, 0))
 
@@ -85,6 +89,9 @@ describe('ui 统计页专项', () => {
 
   it('渲染连续打卡与全部统计指标', async () => {
     const wrapper = mount(StatsView)
+    await flushPromises()
+    // 内容按篇懒加载后，动态 import 需要多一轮事件循环
+    await flushPromises()
     await flushPromises()
 
     const labels = [
@@ -123,6 +130,7 @@ describe('ui 方剂详情页专项', () => {
     const wrapper = mount(FormulaDetailView, {
       global: { stubs: { RouterLink: RouterLinkStub } },
     })
+    await flushPromises()
     await flushPromises()
 
     expect(wrapper.text()).toContain('桂枝汤')

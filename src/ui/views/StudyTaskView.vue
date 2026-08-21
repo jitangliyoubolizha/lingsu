@@ -70,7 +70,7 @@ const progress = computed(() =>
 
 async function loadQueue() {
   try {
-    const data = loadContent()
+    const data = await loadContent()
     await ensureDefaultStudyPlan()
 
     const [plans, cards, states, dueWrongs] = await Promise.all([

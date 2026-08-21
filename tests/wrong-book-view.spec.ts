@@ -14,7 +14,7 @@ const mocks = vi.hoisted(() => ({
 }))
 
 vi.mock('../src/data', () => ({
-  loadContent: () => content(),
+  loadContent: () => Promise.resolve(content()),
 }))
 
 vi.mock('../src/store', () => ({

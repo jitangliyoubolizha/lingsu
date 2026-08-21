@@ -1,0 +1,5637 @@
+{
+  "book": {
+    "code": "SHL",
+    "name": "伤寒论",
+    "description": "东汉张仲景著，中医经典著作",
+    "editions": [
+      {
+        "code": "SB",
+        "name": "宋本"
+      }
+    ]
+  },
+  "edition": {
+    "code": "SB",
+    "book": "SHL",
+    "name": "宋本",
+    "source": "明·赵开美复刻宋本系统",
+    "chapters": [
+      {
+        "code": "TYS",
+        "name": "辨太阳病脉证并治上",
+        "order": 1,
+        "files": [
+          "chapters/taiyang-shang.yaml"
+        ]
+      },
+      {
+        "code": "TYZ",
+        "name": "辨太阳病脉证并治中",
+        "order": 2,
+        "files": [
+          "chapters/taiyang-zhong-1.yaml",
+          "chapters/taiyang-zhong-2.yaml",
+          "chapters/taiyang-zhong-3.yaml"
+        ]
+      },
+      {
+        "code": "TYX",
+        "name": "辨太阳病脉证并治下",
+        "order": 3,
+        "files": [
+          "chapters/taiyang-xia.yaml",
+          "chapters/taiyang-xia-2.yaml"
+        ]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "code": "TYS",
+      "name": "辨太阳病脉证并治上",
+      "order": 1,
+      "part": 1,
+      "partTotal": 1,
+      "clauseCount": 30
+    },
+    {
+      "code": "TYZ",
+      "name": "辨太阳病脉证并治中",
+      "order": 2,
+      "part": 1,
+      "partTotal": 3,
+      "clauseCount": 97
+    },
+    {
+      "code": "TYX",
+      "name": "辨太阳病脉证并治下",
+      "order": 3,
+      "part": 2,
+      "partTotal": 2,
+      "clauseCount": 51
+    }
+  ],
+  "clauseOrder": [
+    "SHL.SB.TYS.001",
+    "SHL.SB.TYS.002",
+    "SHL.SB.TYS.003",
+    "SHL.SB.TYS.004",
+    "SHL.SB.TYS.005",
+    "SHL.SB.TYS.006",
+    "SHL.SB.TYS.007",
+    "SHL.SB.TYS.008",
+    "SHL.SB.TYS.009",
+    "SHL.SB.TYS.010",
+    "SHL.SB.TYS.011",
+    "SHL.SB.TYS.012",
+    "SHL.SB.TYS.013",
+    "SHL.SB.TYS.014",
+    "SHL.SB.TYS.015",
+    "SHL.SB.TYS.016",
+    "SHL.SB.TYS.017",
+    "SHL.SB.TYS.018",
+    "SHL.SB.TYS.019",
+    "SHL.SB.TYS.020",
+    "SHL.SB.TYS.021",
+    "SHL.SB.TYS.022",
+    "SHL.SB.TYS.023",
+    "SHL.SB.TYS.024",
+    "SHL.SB.TYS.025",
+    "SHL.SB.TYS.026",
+    "SHL.SB.TYS.027",
+    "SHL.SB.TYS.028",
+    "SHL.SB.TYS.029",
+    "SHL.SB.TYS.030",
+    "SHL.SB.TYZ.031",
+    "SHL.SB.TYZ.032",
+    "SHL.SB.TYZ.033",
+    "SHL.SB.TYZ.034",
+    "SHL.SB.TYZ.035",
+    "SHL.SB.TYZ.036",
+    "SHL.SB.TYZ.037",
+    "SHL.SB.TYZ.038",
+    "SHL.SB.TYZ.039",
+    "SHL.SB.TYZ.040",
+    "SHL.SB.TYZ.041",
+    "SHL.SB.TYZ.042",
+    "SHL.SB.TYZ.043",
+    "SHL.SB.TYZ.044",
+    "SHL.SB.TYZ.045",
+    "SHL.SB.TYZ.046",
+    "SHL.SB.TYZ.047",
+    "SHL.SB.TYZ.048",
+    "SHL.SB.TYZ.049",
+    "SHL.SB.TYZ.050",
+    "SHL.SB.TYZ.051",
+    "SHL.SB.TYZ.052",
+    "SHL.SB.TYZ.053",
+    "SHL.SB.TYZ.054",
+    "SHL.SB.TYZ.055",
+    "SHL.SB.TYZ.056",
+    "SHL.SB.TYZ.057",
+    "SHL.SB.TYZ.058",
+    "SHL.SB.TYZ.059",
+    "SHL.SB.TYZ.060",
+    "SHL.SB.TYZ.061",
+    "SHL.SB.TYZ.062",
+    "SHL.SB.TYZ.063",
+    "SHL.SB.TYZ.064",
+    "SHL.SB.TYZ.065",
+    "SHL.SB.TYZ.066",
+    "SHL.SB.TYZ.067",
+    "SHL.SB.TYZ.068",
+    "SHL.SB.TYZ.069",
+    "SHL.SB.TYZ.070",
+    "SHL.SB.TYZ.071",
+    "SHL.SB.TYZ.072",
+    "SHL.SB.TYZ.073",
+    "SHL.SB.TYZ.074",
+    "SHL.SB.TYZ.075",
+    "SHL.SB.TYZ.076",
+    "SHL.SB.TYZ.077",
+    "SHL.SB.TYZ.078",
+    "SHL.SB.TYZ.079",
+    "SHL.SB.TYZ.080",
+    "SHL.SB.TYZ.081",
+    "SHL.SB.TYZ.082",
+    "SHL.SB.TYZ.083",
+    "SHL.SB.TYZ.084",
+    "SHL.SB.TYZ.085",
+    "SHL.SB.TYZ.086",
+    "SHL.SB.TYZ.087",
+    "SHL.SB.TYZ.088",
+    "SHL.SB.TYZ.089",
+    "SHL.SB.TYZ.090",
+    "SHL.SB.TYZ.091",
+    "SHL.SB.TYZ.092",
+    "SHL.SB.TYZ.093",
+    "SHL.SB.TYZ.094",
+    "SHL.SB.TYZ.095",
+    "SHL.SB.TYZ.096",
+    "SHL.SB.TYZ.097",
+    "SHL.SB.TYZ.098",
+    "SHL.SB.TYZ.099",
+    "SHL.SB.TYZ.100",
+    "SHL.SB.TYZ.101",
+    "SHL.SB.TYZ.102",
+    "SHL.SB.TYZ.103",
+    "SHL.SB.TYZ.104",
+    "SHL.SB.TYZ.105",
+    "SHL.SB.TYZ.106",
+    "SHL.SB.TYZ.107",
+    "SHL.SB.TYZ.108",
+    "SHL.SB.TYZ.109",
+    "SHL.SB.TYZ.110",
+    "SHL.SB.TYZ.111",
+    "SHL.SB.TYZ.112",
+    "SHL.SB.TYZ.113",
+    "SHL.SB.TYZ.114",
+    "SHL.SB.TYZ.115",
+    "SHL.SB.TYZ.116",
+    "SHL.SB.TYZ.117",
+    "SHL.SB.TYZ.118",
+    "SHL.SB.TYZ.119",
+    "SHL.SB.TYZ.120",
+    "SHL.SB.TYZ.121",
+    "SHL.SB.TYZ.122",
+    "SHL.SB.TYZ.123",
+    "SHL.SB.TYZ.124",
+    "SHL.SB.TYZ.125",
+    "SHL.SB.TYZ.126",
+    "SHL.SB.TYZ.127",
+    "SHL.SB.TYX.128",
+    "SHL.SB.TYX.129",
+    "SHL.SB.TYX.130",
+    "SHL.SB.TYX.131",
+    "SHL.SB.TYX.132",
+    "SHL.SB.TYX.133",
+    "SHL.SB.TYX.134",
+    "SHL.SB.TYX.135",
+    "SHL.SB.TYX.136",
+    "SHL.SB.TYX.137",
+    "SHL.SB.TYX.138",
+    "SHL.SB.TYX.139",
+    "SHL.SB.TYX.140",
+    "SHL.SB.TYX.141",
+    "SHL.SB.TYX.142",
+    "SHL.SB.TYX.143",
+    "SHL.SB.TYX.144",
+    "SHL.SB.TYX.145",
+    "SHL.SB.TYX.146",
+    "SHL.SB.TYX.147",
+    "SHL.SB.TYX.148",
+    "SHL.SB.TYX.149",
+    "SHL.SB.TYX.150",
+    "SHL.SB.TYX.151",
+    "SHL.SB.TYX.152",
+    "SHL.SB.TYX.153",
+    "SHL.SB.TYX.154",
+    "SHL.SB.TYX.155",
+    "SHL.SB.TYX.156",
+    "SHL.SB.TYX.157",
+    "SHL.SB.TYX.158",
+    "SHL.SB.TYX.159",
+    "SHL.SB.TYX.160",
+    "SHL.SB.TYX.161",
+    "SHL.SB.TYX.162",
+    "SHL.SB.TYX.163",
+    "SHL.SB.TYX.164",
+    "SHL.SB.TYX.165",
+    "SHL.SB.TYX.166",
+    "SHL.SB.TYX.167",
+    "SHL.SB.TYX.168",
+    "SHL.SB.TYX.169",
+    "SHL.SB.TYX.170",
+    "SHL.SB.TYX.171",
+    "SHL.SB.TYX.172",
+    "SHL.SB.TYX.173",
+    "SHL.SB.TYX.174",
+    "SHL.SB.TYX.175",
+    "SHL.SB.TYX.176",
+    "SHL.SB.TYX.177",
+    "SHL.SB.TYX.178"
+  ],
+  "formulas": [
+    {
+      "id": "SHL.SB.F.001",
+      "name": "桂枝汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 芍药三两 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，㕮咀三味，以水七升，微火煮取三升，去滓，适寒温，服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYS.012",
+        "SHL.SB.TYS.013",
+        "SHL.SB.TYS.015",
+        "SHL.SB.TYS.024",
+        "SHL.SB.TYS.025"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.002",
+          "note": "桂枝加葛根汤"
+        },
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.003",
+          "note": "桂枝加厚朴杏子汤"
+        },
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.004",
+          "note": "桂枝加附子汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.002",
+      "name": "桂枝加葛根汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.006",
+          "dose": "四两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 芍药三两 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 葛根四两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水一斗，先煮葛根，减二升，内诸药，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYS.014"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加葛根"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.003",
+      "name": "桂枝加厚朴杏子汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.007",
+          "dose": "二两",
+          "note": "炙，去皮"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "五十枚",
+          "note": "去皮尖"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 芍药三两 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 厚朴二两（炙，去皮） 杏仁五十枚（去皮尖）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水七升，微火煮取三升，去滓，温服一升，覆取微似汗。",
+      "relatedClauses": [
+        "SHL.SB.TYS.018"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加厚朴、杏仁"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.004",
+      "name": "桂枝加附子汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 芍药三两 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 附子一枚（炮，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水七升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYS.020"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加附子"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.005",
+      "name": "桂枝去芍药汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水七升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYS.021"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤去芍药"
+        },
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.006",
+          "note": "桂枝去芍药加附子汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.006",
+      "name": "桂枝去芍药加附子汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 附子一枚（炮，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水七升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYS.022"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.005",
+          "note": "桂枝去芍药汤加附子"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.007",
+      "name": "桂枝麻黄各半汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "一两十六铢",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "四枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "一两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "二十四枚",
+          "note": "汤浸，去皮尖及两仁者"
+        }
+      ],
+      "originalDoseText": "桂枝一两十六铢（去皮） 芍药一两 生姜一两（切） 甘草一两（炙） 麻黄一两（去节） 大枣四枚（擘） 杏仁二十四枚（汤浸，去皮尖及两仁者）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水五升，先煮麻黄一二沸，去上沫，内诸药，煮取一升八合，去滓，温服六合。",
+      "relatedClauses": [
+        "SHL.SB.TYS.023"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤与麻黄汤各半"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.008",
+      "name": "桂枝二麻黄一汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "一两十七铢",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "一两六铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两二铢",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两六铢",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "五枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "十六铢",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "十六个",
+          "note": "去皮尖"
+        }
+      ],
+      "originalDoseText": "桂枝一两十七铢（去皮） 芍药一两六铢 麻黄十六铢（去节） 生姜一两六铢（切） 杏仁十六个（去皮尖） 甘草一两二铢（炙） 大枣五枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水五升，先煮麻黄一二沸，去上沫，内诸药，煮取二升，去滓，温服一升，日再服。",
+      "relatedClauses": [
+        "SHL.SB.TYS.025"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤与麻黄汤以二比一合用"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.009",
+      "name": "白虎加人参汤",
+      "category": "白虎汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.012",
+          "dose": "六两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.011",
+          "dose": "一斤",
+          "note": "碎"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.014",
+          "dose": "六合",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "知母六两 石膏一斤（碎） 甘草二两（炙） 粳米六合 人参三两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水一斗，煮米熟汤成，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYS.026"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.010",
+      "name": "桂枝二越婢一汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "十八铢",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "十八铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "十八铢",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两二铢",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "四枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "十八铢",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.011",
+          "dose": "二十四铢",
+          "note": "碎，绵裹"
+        }
+      ],
+      "originalDoseText": "桂枝十八铢（去皮） 芍药十八铢 麻黄十八铢（去节） 甘草十八铢（炙） 大枣四枚（擘） 生姜一两二铢（切） 石膏二十四铢（碎，绵裹）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水五升，先煮麻黄一二沸，去上沫，内诸药，煮取二升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYS.027"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤与越婢汤合用"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.011",
+      "name": "桂枝去桂加茯苓白术汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "三两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "芍药三两 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 茯苓三两 白术三两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水八升，煮取三升，去滓，温服一升，小便利则愈。",
+      "relatedClauses": [
+        "SHL.SB.TYS.028"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤去桂枝加茯苓、白术"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.012",
+      "name": "甘草干姜汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "四两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "二两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "甘草四两（炙） 干姜二两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升，煮取一升五合，去滓，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYS.029",
+        "SHL.SB.TYS.030"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.013",
+          "note": "甘草干姜汤温阳后接用芍药甘草汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.013",
+      "name": "芍药甘草汤",
+      "category": "养阴方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "四两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "芍药四两 甘草四两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升，煮取一升五合，去滓，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYS.029",
+        "SHL.SB.TYS.030"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.012",
+          "note": "芍药甘草汤缓急舒筋"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.014",
+      "name": "调胃承气汤",
+      "category": "承气汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "四两",
+          "note": "去皮，清酒洗"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "半升",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "大黄四两（去皮，清酒洗） 甘草二两（炙） 芒硝半升",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水三升，煮取一升，去滓，内芒硝，更上火微煮令沸，少少温服之。",
+      "relatedClauses": [
+        "SHL.SB.TYS.029",
+        "SHL.SB.TYS.030"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.015",
+      "name": "四逆汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "生用，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "甘草二两（炙） 干姜一两半 附子一枚（生用，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水三升，煮取一升二合，去滓，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYS.029"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.012",
+          "note": "均属温阳剂"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.016",
+      "name": "葛根汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.006",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "三两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "葛根四两 麻黄三两（去节） 桂枝二两（去皮） 生姜三两（切） 甘草二两（炙） 芍药二两 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗，先煮麻黄、葛根，减二升，去白沫，内诸药，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.031",
+        "SHL.SB.TYZ.032"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.017",
+          "note": "葛根加半夏汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.017",
+      "name": "葛根加半夏汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.006",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "三两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        }
+      ],
+      "originalDoseText": "葛根四两 麻黄三两（去节） 桂枝二两（去皮） 生姜三两（切） 甘草二两（炙） 芍药二两 大枣十二枚（擘） 半夏半升（洗）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上八味，以水一斗，先煮葛根、麻黄，减二升，去白沫，内诸药，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.033"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.016",
+          "note": "葛根汤加半夏"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.018",
+      "name": "葛根黄芩黄连汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.006",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "三两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "葛根半斤 甘草二两（炙） 黄芩三两 黄连三两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水八升，先煮葛根，减二升，内诸药，煮取二升，去滓，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.034"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.019",
+      "name": "麻黄汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "三两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "七十个",
+          "note": "去皮尖"
+        }
+      ],
+      "originalDoseText": "麻黄三两（去节） 桂枝二两（去皮） 甘草一两（炙） 杏仁七十个（去皮尖）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水九升，先煮麻黄，减二升，去上沫，内诸药，煮取二升半，去滓，温服八合。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.035",
+        "SHL.SB.TYZ.036",
+        "SHL.SB.TYZ.037",
+        "SHL.SB.TYZ.046",
+        "SHL.SB.TYZ.051",
+        "SHL.SB.TYZ.052",
+        "SHL.SB.TYZ.055"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.001",
+          "note": "麻黄汤与桂枝汤同为解表方"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.020",
+      "name": "小柴胡汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "柴胡半斤 黄芩三两 人参三两 半夏半升（洗） 甘草三两（炙） 生姜三两（切） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗二升，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.037"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.021",
+      "name": "大青龙汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "六两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "四十枚",
+          "note": "去皮尖"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.011",
+          "dose": "鸡子大",
+          "note": "碎"
+        }
+      ],
+      "originalDoseText": "麻黄六两（去节） 桂枝二两（去皮） 甘草二两（炙） 杏仁四十枚（去皮尖） 生姜三两（切） 大枣十枚（擘） 石膏如鸡子大（碎）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水九升，先煮麻黄，减二升，去上沫，内诸药，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.038",
+        "SHL.SB.TYZ.039"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.019",
+          "note": "大青龙汤由麻黄汤加石膏、生姜、大枣"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.022",
+      "name": "小青龙汤",
+      "category": "温化水饮方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "三两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.024",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.025",
+          "dose": "半升",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        }
+      ],
+      "originalDoseText": "麻黄三两（去节） 芍药三两 细辛三两 干姜三两 甘草三两（炙） 桂枝三两（去皮） 五味子半升 半夏半升（洗）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上八味，以水一斗，先煮麻黄，减二升，去上沫，内诸药，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.040",
+        "SHL.SB.TYZ.041"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.023",
+      "name": "大陷胸丸",
+      "category": "攻下方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "半斤",
+          "note": "去皮，清酒洗"
+        },
+        {
+          "herb": "SHL.SB.H.027",
+          "dose": "半升",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "半升",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "半升",
+          "note": "去皮尖，熬黑"
+        },
+        {
+          "herb": "SHL.SB.H.026",
+          "dose": "一钱匕",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "大黄半斤 葶苈子半升（熬） 芒硝半升 杏仁半升（去皮尖，熬黑） 甘遂一钱匕 白蜜二合",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，捣筛二味，内杏仁、芒硝，合研如脂，和散，取如弹丸一枚，别捣甘遂末一钱匕，白蜜二合，水二升，煮取一升，温顿服之。",
+      "relatedClauses": [
+        "SHL.SB.TYX.131"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.024",
+          "note": "大陷胸丸与大陷胸汤同治结胸"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.024",
+      "name": "大陷胸汤",
+      "category": "攻下方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "六两",
+          "note": "去皮，清酒洗"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "一升",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.026",
+          "dose": "一钱匕",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "大黄六两（去皮，清酒洗） 芒硝一升 甘遂一钱匕",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水六升，先煮大黄，取二升，去滓，内芒硝，煮一两沸，内甘遂末，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYX.134",
+        "SHL.SB.TYX.135",
+        "SHL.SB.TYX.136",
+        "SHL.SB.TYX.137"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.023",
+          "note": "大陷胸丸缓下，大陷胸汤急下"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.025",
+      "name": "大柴胡汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "五两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.028",
+          "dose": "四枚",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "二两",
+          "note": "去皮，清酒洗"
+        }
+      ],
+      "originalDoseText": "柴胡半斤 黄芩三两 芍药三两 半夏半升（洗） 生姜五两（切） 枳实四枚（炙） 大枣十二枚（擘） 大黄二两（去皮，清酒洗）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上八味，以水一斗二升，煮取六升，去滓，再煎，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.136"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.020",
+          "note": "小柴胡汤去人参、甘草加枳实、大黄、芍药"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.026",
+      "name": "小陷胸汤",
+      "category": "清热化痰方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.029",
+          "dose": "大者一枚",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "黄连一两 半夏半升（洗） 瓜蒌实大者一枚",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水六升，先煮瓜蒌，取三升，去滓，内诸药，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.138"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.027",
+      "name": "文蛤散",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.030",
+          "dose": "五两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "文蛤五两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上一味，杵为散，以沸汤五合，和服方寸匕。",
+      "relatedClauses": [
+        "SHL.SB.TYX.141"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.028",
+      "name": "五苓散",
+      "category": "化气利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.031",
+          "dose": "十八铢",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.032",
+          "dose": "一两六铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "十八铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "十八铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "半两",
+          "note": "去皮"
+        }
+      ],
+      "originalDoseText": "猪苓十八铢（去皮） 泽泻一两六铢 白术十八铢 茯苓十八铢 桂枝半两（去皮）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，捣为散，以白饮和服方寸匕，日三服，多饮暖水，汗出愈。",
+      "relatedClauses": [
+        "SHL.SB.TYX.141"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.029",
+      "name": "三物白散",
+      "category": "温下散寒方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.033",
+          "dose": "三分",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.034",
+          "dose": "三分",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.035",
+          "dose": "一分",
+          "note": "去皮心，熬黑，研如脂"
+        }
+      ],
+      "originalDoseText": "桔梗三分 贝母三分 巴豆一分（去皮心，熬黑，研如脂）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味为散，内巴豆，更于臼中杵之，以白饮和服，强人半钱匕，羸者减之。",
+      "relatedClauses": [
+        "SHL.SB.TYX.141"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.030",
+      "name": "柴胡桂枝汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "一两半",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "二合半",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "六枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两半",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "四两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝一两半（去皮） 黄芩一两半 人参一两半 甘草一两（炙） 半夏二合半（洗） 芍药一两半 大枣六枚（擘） 生姜一两半（切） 柴胡四两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上九味，以水七升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYX.146"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤与柴胡汤合方"
+        },
+        {
+          "relation": "合方",
+          "target": "SHL.SB.F.020",
+          "note": "小柴胡汤与桂枝汤合方"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.031",
+      "name": "柴胡桂枝干姜汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.036",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.037",
+          "dose": "二两",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "柴胡半斤 桂枝三两（去皮） 干姜二两 栝楼根四两 黄芩三两 牡蛎二两（熬） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗二升，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.147"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.032",
+      "name": "干姜附子汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "生用，去皮，切八片"
+        }
+      ],
+      "originalDoseText": "干姜一两 附子一枚（生用，去皮，切八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升，煮取一升，去滓，顿服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.061"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.033",
+      "name": "桂枝加芍药生姜各一两人参三两新加汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "四两",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 芍药四两 甘草二两（炙） 人参三两 大枣十二枚（擘） 生姜四两（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水一斗二升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.062"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加芍药生姜各一两人参三两"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.034",
+      "name": "麻黄杏仁甘草石膏汤",
+      "category": "麻黄汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.010",
+          "dose": "四两",
+          "note": "去节"
+        },
+        {
+          "herb": "SHL.SB.H.008",
+          "dose": "五十个",
+          "note": "去皮尖"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.011",
+          "dose": "半斤",
+          "note": "碎，绵裹"
+        }
+      ],
+      "originalDoseText": "麻黄四两（去节） 杏仁五十个（去皮尖） 甘草二两（炙） 石膏半斤（碎，绵裹）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水七升，煮麻黄，减二升，去上沫，内诸药，煮取二升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.063"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.019",
+          "note": "麻黄汤去桂枝加石膏"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.035",
+      "name": "桂枝甘草汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "桂枝四两（去皮） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升，煮取一升，去滓，顿服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.064"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.036",
+      "name": "茯苓桂枝甘草大枣汤",
+      "category": "温阳利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "半斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十五枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "茯苓半斤 桂枝四两（去皮） 甘草二两（炙） 大枣十五枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以甘澜水一斗，先煮茯苓，减二升，内诸药，煮取三升，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.065"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.037",
+      "name": "厚朴生姜半夏甘草人参汤",
+      "category": "健脾理气方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.007",
+          "dose": "半斤",
+          "note": "炙，去皮"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "半斤",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "厚朴半斤（炙，去皮） 生姜半斤（切） 半夏半升（洗） 甘草二两（炙） 人参一两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水一斗，煮取三升，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.066"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.038",
+      "name": "茯苓桂枝白术甘草汤",
+      "category": "温阳化饮方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "茯苓四两 桂枝三两（去皮） 白术二两 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水六升，煮取三升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.067"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.039",
+      "name": "芍药甘草附子汤",
+      "category": "扶阳益阴方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "芍药三两 甘草三两（炙） 附子一枚（炮，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水五升，煮取一升五合，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.068"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.040",
+      "name": "茯苓四逆汤",
+      "category": "温阳方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "生用，去皮，破八片"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "一两半",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "茯苓四两 人参一两 附子一枚（生用，去皮，破八片） 甘草二两（炙） 干姜一两半",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水五升，煮取三升，去滓，温服七合，日二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.069"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.015",
+          "note": "四逆汤加茯苓、人参"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.041",
+      "name": "茯苓甘草汤",
+      "category": "温阳利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "茯苓二两 桂枝二两（去皮） 甘草一两（炙） 生姜三两（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水四升，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.073"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.042",
+      "name": "栀子豉汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.039",
+          "dose": "四合",
+          "note": "绵裹"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 香豉四合（绵裹）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水四升，先煮栀子，得二升半，内豉，煮取一升半，去滓，分为二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.076",
+        "SHL.SB.TYZ.077",
+        "SHL.SB.TYZ.078",
+        "SHL.SB.TYZ.081"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.043",
+          "note": "栀子甘草豉汤"
+        },
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.044",
+          "note": "栀子生姜豉汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.043",
+      "name": "栀子甘草豉汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.039",
+          "dose": "四合",
+          "note": "绵裹"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 香豉四合（绵裹） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水四升，先煮栀子、甘草，取二升半，内豉，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.076"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.042",
+          "note": "栀子豉汤加甘草"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.044",
+      "name": "栀子生姜豉汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.039",
+          "dose": "四合",
+          "note": "绵裹"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "五两",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 香豉四合（绵裹） 生姜五两（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水四升，先煮栀子、生姜，取二升半，内豉，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.076"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.042",
+          "note": "栀子豉汤加生姜"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.045",
+      "name": "栀子厚朴汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.007",
+          "dose": "四两",
+          "note": "炙，去皮"
+        },
+        {
+          "herb": "SHL.SB.H.028",
+          "dose": "四枚",
+          "note": "水浸，炙令黄"
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 厚朴四两（炙，去皮） 枳实四枚（水浸，炙令黄）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味，以水三升半，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.079"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.046",
+      "name": "栀子干姜汤",
+      "category": "清上温中方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.038",
+          "dose": "十四个",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "二两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "栀子十四个（擘） 干姜二两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水三升半，煮取一升半，去滓，分二服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.080"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.047",
+      "name": "真武汤",
+      "category": "温阳利水方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破八片"
+        }
+      ],
+      "originalDoseText": "茯苓三两 芍药三两 白术二两 生姜三两（切） 附子一枚（炮，去皮，破八片）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水八升，煮取三升，去滓，温服七合，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.082"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.048",
+      "name": "禹余粮丸",
+      "category": "固涩方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.040",
+          "dose": "四两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "禹余粮四两（原方组成或有出入，待校勘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "原方煎服法待校勘。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.088"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.049",
+      "name": "小建中汤",
+      "category": "温中方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "六两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.041",
+          "dose": "一升",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 甘草二两（炙） 大枣十二枚（擘） 芍药六两 生姜三两（切） 胶饴一升",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水七升，煮取三升，去滓，内饴，更上微火消解，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.100",
+        "SHL.SB.TYZ.102"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加芍药、胶饴"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.050",
+      "name": "柴胡加芒硝汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "二两十六铢",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "一两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "二十铢",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "四枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "二两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "柴胡二两十六铢 黄芩一两 人参一两 甘草一两（炙） 生姜一两（切） 半夏二十铢（洗） 大枣四枚（擘） 芒硝二两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上八味，以水四升，煮取二升，去滓，内芒硝，更煮微沸，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.104"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.020",
+          "note": "小柴胡汤加芒硝"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.051",
+      "name": "桃核承气汤",
+      "category": "攻下方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.042",
+          "dose": "五十个",
+          "note": "去皮尖"
+        },
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "二两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.019",
+          "dose": "二两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桃仁五十个（去皮尖） 大黄四两 桂枝二两（去皮） 甘草二两（炙） 芒硝二两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水七升，煮取二升半，去滓，内芒硝，更上火微沸，先食温服五合，日三服，当微利。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.106"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.052",
+      "name": "柴胡加龙骨牡蛎汤",
+      "category": "柴胡汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.023",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.043",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两半",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.044",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "一两半",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.015",
+          "dose": "一两半",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "二合半",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.037",
+          "dose": "一两半",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "六枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "柴胡四两 龙骨 黄芩 生姜（切） 铅丹 人参 桂枝（去皮） 茯苓 各一两半 半夏二合半（洗） 大黄二两 牡蛎一两半（熬） 大枣六枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上十二味，以水八升，煮取四升，内大黄，切如棋子，更煮一两沸，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.107"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.053",
+      "name": "桂枝去芍药加蜀漆牡蛎龙骨救逆汤",
+      "category": "温阳镇惊方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.037",
+          "dose": "五两",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.045",
+          "dose": "三两",
+          "note": "洗去腥"
+        },
+        {
+          "herb": "SHL.SB.H.043",
+          "dose": "四两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝三两（去皮） 甘草二两（炙） 生姜三两（切） 大枣十二枚（擘） 牡蛎五两（熬） 蜀漆三两（洗去腥） 龙骨四两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗二升，先煮蜀漆，减二升，内诸药，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.112"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤去芍药加蜀漆、牡蛎、龙骨"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.054",
+      "name": "桂枝加桂汤",
+      "category": "桂枝汤类",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "五两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "桂枝五两（去皮） 芍药三两 生姜三两（切） 甘草二两（炙） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水七升，煮取三升，去滓，温服一升。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.117"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.001",
+          "note": "桂枝汤加重桂枝"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.055",
+      "name": "桂枝甘草龙骨牡蛎汤",
+      "category": "温阳镇惊方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "一两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.037",
+          "dose": "二两",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.043",
+          "dose": "二两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝一两（去皮） 甘草二两（炙） 牡蛎二两（熬） 龙骨二两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水五升，煮取二升半，去滓，温服八合，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.118"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.056",
+      "name": "抵当汤",
+      "category": "破血逐瘀方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.046",
+          "dose": "三十个",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.047",
+          "dose": "三十个",
+          "note": "去翅足，熬"
+        },
+        {
+          "herb": "SHL.SB.H.042",
+          "dose": "二十个",
+          "note": "去皮尖"
+        },
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "三两",
+          "note": "酒洗"
+        }
+      ],
+      "originalDoseText": "水蛭三十个（熬） 虻虫三十个（去翅足，熬） 桃仁二十个（去皮尖） 大黄三两（酒洗）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水五升，煮取三升，去滓，温服一升，不下更服。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.124",
+        "SHL.SB.TYZ.125"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.057",
+          "note": "抵当丸药力较缓"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.057",
+      "name": "抵当丸",
+      "category": "破血逐瘀方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.046",
+          "dose": "二十个",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.047",
+          "dose": "二十个",
+          "note": "熬，去翅足"
+        },
+        {
+          "herb": "SHL.SB.H.042",
+          "dose": "二十五个",
+          "note": "去皮尖"
+        },
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "三两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "水蛭二十个（熬） 虻虫二十个（熬，去翅足） 桃仁二十五个（去皮尖） 大黄三两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，捣分四丸，以水一升煮一丸，取七合服之。",
+      "relatedClauses": [
+        "SHL.SB.TYZ.126"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "类方",
+          "target": "SHL.SB.F.056",
+          "note": "抵当汤改丸缓攻"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.058",
+      "name": "半夏泻心汤",
+      "category": "和解消痞方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "半夏半升（洗） 黄芩 干姜 人参 甘草各三两（炙） 黄连一两 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.149"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.059",
+      "name": "十枣汤",
+      "category": "攻逐水饮方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.048",
+          "dose": "等分",
+          "note": "熬"
+        },
+        {
+          "herb": "SHL.SB.H.026",
+          "dose": "等分",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.049",
+          "dose": "等分",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十枚",
+          "note": "肥者"
+        }
+      ],
+      "originalDoseText": "芫花（熬） 甘遂 大戟 等分，大枣肥者十枚",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上三味等分，各别捣为散，以水一升半，先煮大枣肥者十枚，取八合，去滓，内药末，强人服一钱匕，羸人服半钱，平旦服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.152"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.060",
+      "name": "大黄黄连泻心汤",
+      "category": "清热消痞方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "大黄二两 黄连一两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以麻沸汤二升渍之，须臾绞去滓，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.154",
+        "SHL.SB.TYX.164"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.061",
+      "name": "附子泻心汤",
+      "category": "清热消痞方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.018",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "一枚",
+          "note": "炮，去皮，破，别煮取汁"
+        }
+      ],
+      "originalDoseText": "大黄二两 黄连一两 黄芩一两 附子一枚（炮，去皮，破，别煮取汁）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，切三味，以麻沸汤二升渍之，须臾绞去滓，内附子汁，分温再服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.155"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.062",
+      "name": "生姜泻心汤",
+      "category": "和解消痞方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "四两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "生姜四两（切） 甘草三两（炙） 人参三两 干姜一两 黄芩三两 半夏半升（洗） 黄连一两 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上八味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.157"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.063",
+      "name": "甘草泻心汤",
+      "category": "和解消痞方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "四两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "一两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "甘草四两（炙） 黄芩三两 干姜三两 半夏半升（洗） 大枣十二枚（擘） 黄连一两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.158"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.064",
+      "name": "赤石脂禹余粮汤",
+      "category": "固涩方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.052",
+          "dose": "一斤",
+          "note": "碎"
+        },
+        {
+          "herb": "SHL.SB.H.040",
+          "dose": "一斤",
+          "note": "碎"
+        }
+      ],
+      "originalDoseText": "赤石脂一斤（碎） 太一禹余粮一斤（碎）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味，以水六升，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.159"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.065",
+      "name": "旋覆代赭汤",
+      "category": "降逆化痰方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.050",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "五两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.051",
+          "dose": "一两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "旋覆花三两 人参二两 生姜五两 代赭一两 甘草三两（炙） 半夏半升（洗） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.161"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.066",
+      "name": "桂枝人参汤",
+      "category": "温中解表方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "另切"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "四两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "三两",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "桂枝四两（另切） 甘草四两（炙） 白术三两 人参三两 干姜三两",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水九升，先煮四味，取五升，内桂，更煮取三升，去滓，温服一升，日再夜一服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.163"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.067",
+      "name": "瓜蒂散",
+      "category": "涌吐方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.053",
+          "dose": "一分",
+          "note": "熬黄"
+        },
+        {
+          "herb": "SHL.SB.H.054",
+          "dose": "一分",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "瓜蒂一分（熬黄） 赤小豆一分",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上二味各别捣筛为散，以香豉一合，热汤七合煮作稀糜，去滓，取汁和散，温顿服之。",
+      "relatedClauses": [
+        "SHL.SB.TYX.166"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.068",
+      "name": "白虎汤",
+      "category": "清热方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.012",
+          "dose": "六两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.011",
+          "dose": "一斤",
+          "note": "碎"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.014",
+          "dose": "六合",
+          "note": ""
+        }
+      ],
+      "originalDoseText": "知母六两 石膏一斤（碎） 甘草二两（炙） 粳米六合",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水一斗，煮米熟汤成，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.170",
+        "SHL.SB.TYX.176"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.009",
+          "note": "白虎汤加人参"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.069",
+      "name": "黄芩汤",
+      "category": "清热止利方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "黄芩三两 芍药二两 甘草二两（炙） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水一斗，煮取三升，去滓，温服一升，日再夜一服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.172"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.070",
+          "note": "黄芩加半夏生姜汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.070",
+      "name": "黄芩加半夏生姜汤",
+      "category": "清热止利方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.021",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.002",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "一两半",
+          "note": "切"
+        }
+      ],
+      "originalDoseText": "黄芩三两 芍药二两 甘草二两（炙） 大枣十二枚（擘） 半夏半升（洗） 生姜一两半（切）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上六味，以水一斗，煮取三升，去滓，温服一升，日再夜一服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.172"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.069",
+          "note": "黄芩汤加半夏、生姜"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.071",
+      "name": "黄连汤",
+      "category": "清上温中方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.022",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "三两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.017",
+          "dose": "三两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.020",
+          "dose": "半升",
+          "note": "洗"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "黄连三两 甘草三两（炙） 干姜三两 桂枝三两（去皮） 人参二两 半夏半升（洗） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上七味，以水一斗，煮取六升，去滓，温服，昼三夜二。",
+      "relatedClauses": [
+        "SHL.SB.TYX.173"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.072",
+      "name": "桂枝附子汤",
+      "category": "温阳祛风方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "三枚",
+          "note": "炮，去皮，破"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        }
+      ],
+      "originalDoseText": "桂枝四两（去皮） 附子三枚（炮，去皮，破） 生姜三两（切） 大枣十二枚（擘） 甘草二两（炙）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水六升，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.174"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.073",
+          "note": "去桂加白术汤"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.073",
+      "name": "去桂加白术汤",
+      "category": "温阳除湿方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "三枚",
+          "note": "炮，去皮，破"
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "四两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "十二枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "附子三枚（炮，去皮，破） 白术四两 生姜三两（切） 甘草二两（炙） 大枣十二枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上五味，以水六升，煮取二升，去滓，分温三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.174"
+      ],
+      "relatedFormulas": [
+        {
+          "relation": "加减方",
+          "target": "SHL.SB.F.072",
+          "note": "桂枝附子汤去桂枝加白术"
+        }
+      ],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.074",
+      "name": "甘草附子汤",
+      "category": "温阳除湿方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "二两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.009",
+          "dose": "二枚",
+          "note": "炮，去皮，破"
+        },
+        {
+          "herb": "SHL.SB.H.016",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "四两",
+          "note": "去皮"
+        }
+      ],
+      "originalDoseText": "甘草二两（炙） 附子二枚（炮，去皮，破） 白术二两 桂枝四两（去皮）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上四味，以水六升，煮取三升，去滓，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.175"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    },
+    {
+      "id": "SHL.SB.F.075",
+      "name": "炙甘草汤",
+      "category": "滋阴复脉方",
+      "composition": [
+        {
+          "herb": "SHL.SB.H.003",
+          "dose": "四两",
+          "note": "炙"
+        },
+        {
+          "herb": "SHL.SB.H.004",
+          "dose": "三两",
+          "note": "切"
+        },
+        {
+          "herb": "SHL.SB.H.013",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.055",
+          "dose": "一斤",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.001",
+          "dose": "三两",
+          "note": "去皮"
+        },
+        {
+          "herb": "SHL.SB.H.056",
+          "dose": "二两",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.057",
+          "dose": "半升",
+          "note": "去心"
+        },
+        {
+          "herb": "SHL.SB.H.058",
+          "dose": "半升",
+          "note": ""
+        },
+        {
+          "herb": "SHL.SB.H.005",
+          "dose": "三十枚",
+          "note": "擘"
+        }
+      ],
+      "originalDoseText": "甘草四两（炙） 生姜三两（切） 人参二两 生地黄一斤 桂枝三两（去皮） 阿胶二两 麦门冬半升（去心） 麻仁半升 大枣三十枚（擘）",
+      "doseReference": "教材通行换算参考，一两约合今 3g；古今剂量存在学术争议，非用药指导。",
+      "decoction": "上九味，以清酒七升、水八升，先煮八味，取三升，去滓，内胶烊消尽，温服一升，日三服。",
+      "relatedClauses": [
+        "SHL.SB.TYX.177"
+      ],
+      "relatedFormulas": [],
+      "safetyNotice": "仅供学习研究，不构成医疗建议，请勿自行用药。",
+      "mainSymptoms": [],
+      "pulse": [],
+      "pathomechanism": ""
+    }
+  ],
+  "herbs": [
+    {
+      "id": "SHL.SB.H.001",
+      "name": "桂枝",
+      "aliases": [
+        "桂"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.002",
+      "name": "芍药",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.003",
+      "name": "甘草",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.004",
+      "name": "生姜",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.005",
+      "name": "大枣",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.006",
+      "name": "葛根",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.007",
+      "name": "厚朴",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.008",
+      "name": "杏仁",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.009",
+      "name": "附子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.010",
+      "name": "麻黄",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.011",
+      "name": "石膏",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.012",
+      "name": "知母",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.013",
+      "name": "人参",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.014",
+      "name": "粳米",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.015",
+      "name": "茯苓",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.016",
+      "name": "白术",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.017",
+      "name": "干姜",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.018",
+      "name": "大黄",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.019",
+      "name": "芒硝",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.020",
+      "name": "半夏",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.021",
+      "name": "黄芩",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.022",
+      "name": "黄连",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.023",
+      "name": "柴胡",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.024",
+      "name": "细辛",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.025",
+      "name": "五味子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.026",
+      "name": "甘遂",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.027",
+      "name": "葶苈子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.028",
+      "name": "枳实",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.029",
+      "name": "瓜蒌实",
+      "aliases": [
+        "栝楼实"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.030",
+      "name": "文蛤",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.031",
+      "name": "猪苓",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.032",
+      "name": "泽泻",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.033",
+      "name": "桔梗",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.034",
+      "name": "贝母",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.035",
+      "name": "巴豆",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.036",
+      "name": "栝楼根",
+      "aliases": [
+        "瓜蒌根",
+        "天花粉"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.037",
+      "name": "牡蛎",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.038",
+      "name": "栀子",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.039",
+      "name": "淡豆豉",
+      "aliases": [
+        "香豉"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.040",
+      "name": "禹余粮",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.041",
+      "name": "胶饴",
+      "aliases": [
+        "饴糖"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.042",
+      "name": "桃仁",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.043",
+      "name": "龙骨",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.044",
+      "name": "铅丹",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.045",
+      "name": "蜀漆",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.046",
+      "name": "水蛭",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.047",
+      "name": "虻虫",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.048",
+      "name": "芫花",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.049",
+      "name": "大戟",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.050",
+      "name": "旋覆花",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.051",
+      "name": "代赭",
+      "aliases": [
+        "代赭石"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.052",
+      "name": "赤石脂",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.053",
+      "name": "瓜蒂",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.054",
+      "name": "赤小豆",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.055",
+      "name": "生地黄",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.056",
+      "name": "阿胶",
+      "aliases": [],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.057",
+      "name": "麦门冬",
+      "aliases": [
+        "麦冬"
+      ],
+      "notes": "AI 初稿待校对。"
+    },
+    {
+      "id": "SHL.SB.H.058",
+      "name": "麻仁",
+      "aliases": [
+        "火麻仁"
+      ],
+      "notes": "AI 初稿待校对。"
+    }
+  ],
+  "symptomTerms": [
+    {
+      "id": "SHL.SB.SYM.001",
+      "name": "发热",
+      "category": "症状",
+      "aliases": [
+        "身热"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.002",
+      "name": "脉浮",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.003",
+      "name": "恶寒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.004",
+      "name": "汗出",
+      "category": "症状",
+      "aliases": [
+        "自汗"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.005",
+      "name": "恶风",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.006",
+      "name": "脉缓",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.007",
+      "name": "鼻鸣",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.008",
+      "name": "干呕",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.009",
+      "name": "营卫不和",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.010",
+      "name": "头项强痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.011",
+      "name": "脉紧",
+      "category": "脉象",
+      "aliases": [
+        "脉阴阳俱紧"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.012",
+      "name": "体痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.013",
+      "name": "呕逆",
+      "category": "症状",
+      "aliases": [
+        "呕吐"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.014",
+      "name": "烦躁",
+      "category": "症状",
+      "aliases": [
+        "躁烦"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.015",
+      "name": "口渴",
+      "category": "症状",
+      "aliases": [
+        "渴"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.016",
+      "name": "项背强几几",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.017",
+      "name": "气上冲",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.018",
+      "name": "喘",
+      "category": "症状",
+      "aliases": [
+        "气喘"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.019",
+      "name": "小便难",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.020",
+      "name": "四肢微急",
+      "category": "症状",
+      "aliases": [
+        "四肢拘急"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.021",
+      "name": "脉促",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.022",
+      "name": "胸满",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.023",
+      "name": "脉微",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.024",
+      "name": "无汗",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.025",
+      "name": "身痒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.026",
+      "name": "脉洪大",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.027",
+      "name": "心下满",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.028",
+      "name": "小便不利",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.029",
+      "name": "心烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.030",
+      "name": "脚挛急",
+      "category": "症状",
+      "aliases": [
+        "脚急"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.031",
+      "name": "咽中干",
+      "category": "症状",
+      "aliases": [
+        "咽干"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.032",
+      "name": "厥逆",
+      "category": "症状",
+      "aliases": [
+        "手足厥冷"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.033",
+      "name": "谵语",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.034",
+      "name": "两胫拘急",
+      "category": "症状",
+      "aliases": [
+        "两脚挛急"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.035",
+      "name": "脉微弱",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.036",
+      "name": "脉数急",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.038",
+      "name": "身大热",
+      "category": "症状",
+      "aliases": [
+        "大热"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.039",
+      "name": "下利",
+      "category": "症状",
+      "aliases": [
+        "腹泻"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.040",
+      "name": "胁痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.041",
+      "name": "嗜卧",
+      "category": "症状",
+      "aliases": [
+        "嗜睡"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.042",
+      "name": "腰痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.043",
+      "name": "骨节疼痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.044",
+      "name": "筋惕肉瞤",
+      "category": "症状",
+      "aliases": [
+        "筋肉跳动"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.045",
+      "name": "身重",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.046",
+      "name": "心悸",
+      "category": "症状",
+      "aliases": [
+        "心动悸"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.047",
+      "name": "咳",
+      "category": "症状",
+      "aliases": [
+        "咳嗽"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.048",
+      "name": "噎",
+      "category": "症状",
+      "aliases": [
+        "噎塞"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.049",
+      "name": "少腹满",
+      "category": "症状",
+      "aliases": [
+        "小腹胀满"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.050",
+      "name": "脉浮缓",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.051",
+      "name": "脉浮弱",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.052",
+      "name": "脉浮细",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.053",
+      "name": "脉浮数",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.054",
+      "name": "脉沉细",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.055",
+      "name": "脉涩",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.056",
+      "name": "衄",
+      "category": "症状",
+      "aliases": [
+        "鼻出血"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.057",
+      "name": "目瞑",
+      "category": "症状",
+      "aliases": [
+        "闭目"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.058",
+      "name": "面色赤",
+      "category": "症状",
+      "aliases": [
+        "面赤"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.059",
+      "name": "短气",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.060",
+      "name": "振寒",
+      "category": "症状",
+      "aliases": [
+        "恶寒战栗"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.061",
+      "name": "小便清",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.062",
+      "name": "脉微细",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.063",
+      "name": "结胸",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.064",
+      "name": "藏结",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.065",
+      "name": "舌上白胎滑",
+      "category": "症状",
+      "aliases": [
+        "舌苔白滑"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.066",
+      "name": "心下硬",
+      "category": "症状",
+      "aliases": [
+        "心下硬满"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.067",
+      "name": "心中懊憹",
+      "category": "症状",
+      "aliases": [
+        "懊憹"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.068",
+      "name": "头汗出",
+      "category": "症状",
+      "aliases": [
+        "但头汗出"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.069",
+      "name": "身黄",
+      "category": "症状",
+      "aliases": [
+        "发黄"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.070",
+      "name": "心下痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.071",
+      "name": "潮热",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.072",
+      "name": "咽痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.073",
+      "name": "两胁拘急",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.074",
+      "name": "下血",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.075",
+      "name": "肉上粟起",
+      "category": "症状",
+      "aliases": [
+        "肤起粟"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.076",
+      "name": "眩冒",
+      "category": "症状",
+      "aliases": [
+        "头晕目眩"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.077",
+      "name": "心下痞硬",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.078",
+      "name": "支节烦疼",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.079",
+      "name": "心下支结",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.080",
+      "name": "往来寒热",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.081",
+      "name": "热入血室",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.082",
+      "name": "不能卧",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.083",
+      "name": "膈内拒痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.084",
+      "name": "项强",
+      "category": "症状",
+      "aliases": [
+        "颈项强"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.085",
+      "name": "脉浮滑",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.086",
+      "name": "不得眠",
+      "category": "症状",
+      "aliases": [
+        "不得卧",
+        "失眠"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.087",
+      "name": "脉沉迟",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.088",
+      "name": "心下悸",
+      "category": "症状",
+      "aliases": [
+        "心悸"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.089",
+      "name": "脐下悸",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.090",
+      "name": "奔豚",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.091",
+      "name": "腹胀满",
+      "category": "症状",
+      "aliases": [
+        "腹满"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.092",
+      "name": "心下逆满",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.093",
+      "name": "头眩",
+      "category": "症状",
+      "aliases": [
+        "头晕"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.094",
+      "name": "身为振振摇",
+      "category": "症状",
+      "aliases": [
+        "身体振摇"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.095",
+      "name": "消渴",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.096",
+      "name": "水逆",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.097",
+      "name": "耳聋",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.098",
+      "name": "虚烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.099",
+      "name": "反复颠倒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.100",
+      "name": "胸中窒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.101",
+      "name": "心中结痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.102",
+      "name": "卧起不安",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.103",
+      "name": "身瞤动",
+      "category": "症状",
+      "aliases": [
+        "肌肉瞤动"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.104",
+      "name": "振振欲擗地",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.105",
+      "name": "咽喉干燥",
+      "category": "症状",
+      "aliases": [
+        "咽干"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.106",
+      "name": "便血",
+      "category": "症状",
+      "aliases": [
+        "尿血"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.107",
+      "name": "痉",
+      "category": "病机",
+      "aliases": [
+        "痉病"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.108",
+      "name": "直视不能眴",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.109",
+      "name": "寒栗而振",
+      "category": "症状",
+      "aliases": [
+        "寒战"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.110",
+      "name": "恍惚心乱",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.111",
+      "name": "小便已阴疼",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.112",
+      "name": "吐蛔",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.113",
+      "name": "胃中冷",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.114",
+      "name": "少气",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.115",
+      "name": "下利清谷",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.116",
+      "name": "冒",
+      "category": "症状",
+      "aliases": [
+        "昏冒"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.117",
+      "name": "振栗",
+      "category": "症状",
+      "aliases": [
+        "战栗"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.118",
+      "name": "脉阴阳俱停",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.119",
+      "name": "胸胁苦满",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.120",
+      "name": "嘿嘿不欲饮食",
+      "category": "症状",
+      "aliases": [
+        "默默不欲饮食"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.121",
+      "name": "心下急",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.122",
+      "name": "郁郁微烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.123",
+      "name": "如狂",
+      "category": "症状",
+      "aliases": [
+        "发狂"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.124",
+      "name": "少腹急结",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.125",
+      "name": "烦惊",
+      "category": "症状",
+      "aliases": [
+        "惊惕"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.126",
+      "name": "一身尽重",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.127",
+      "name": "大渴",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.128",
+      "name": "口干咽烂",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.129",
+      "name": "手足躁扰",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.130",
+      "name": "捻衣摸床",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.131",
+      "name": "惊狂",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.132",
+      "name": "咽燥",
+      "category": "症状",
+      "aliases": [
+        "咽喉干燥"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.133",
+      "name": "吐血",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.134",
+      "name": "火逆",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.135",
+      "name": "朝食暮吐",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.136",
+      "name": "内烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.137",
+      "name": "客热",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.138",
+      "name": "心下温温欲吐",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.139",
+      "name": "胸中痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.140",
+      "name": "血证",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.141",
+      "name": "苦里急",
+      "category": "症状",
+      "aliases": [
+        "里急"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.142",
+      "name": "少腹硬满",
+      "category": "症状",
+      "aliases": [
+        "少腹硬"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.143",
+      "name": "小便自利",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.144",
+      "name": "脉微而沉",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.145",
+      "name": "脉沉结",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.146",
+      "name": "脉阴阳俱微",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.147",
+      "name": "脉迟浮弱",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.148",
+      "name": "不能食",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.149",
+      "name": "胁下满痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.150",
+      "name": "食谷者哕",
+      "category": "症状",
+      "aliases": [
+        "哕"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.151",
+      "name": "腹中急痛",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.152",
+      "name": "阳微结",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.153",
+      "name": "纯阴结",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.154",
+      "name": "心下痞",
+      "category": "症状",
+      "aliases": [
+        "痞"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.155",
+      "name": "气痞",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.156",
+      "name": "心下痞硬满",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.157",
+      "name": "干噫食臭",
+      "category": "症状",
+      "aliases": [
+        "嗳气食臭"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.158",
+      "name": "腹中雷鸣",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.159",
+      "name": "谷不化",
+      "category": "症状",
+      "aliases": [
+        "完谷不化"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.160",
+      "name": "噫气不除",
+      "category": "症状",
+      "aliases": [
+        "嗳气不止"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.161",
+      "name": "协热利",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.162",
+      "name": "胸中痞硬",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.163",
+      "name": "背微恶寒",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.164",
+      "name": "身体疼烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.165",
+      "name": "不能自转侧",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.166",
+      "name": "掣痛",
+      "category": "症状",
+      "aliases": [
+        "牵引疼痛"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.167",
+      "name": "身微肿",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.168",
+      "name": "心动悸",
+      "category": "症状",
+      "aliases": [
+        "心悸"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.169",
+      "name": "脉结代",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.170",
+      "name": "脉结",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.171",
+      "name": "脉代",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.172",
+      "name": "手足冷",
+      "category": "症状",
+      "aliases": [
+        "手足厥冷"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.173",
+      "name": "口不欲食",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.174",
+      "name": "水浆不下",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.175",
+      "name": "肤瞤",
+      "category": "症状",
+      "aliases": [
+        "皮肤跳动"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.176",
+      "name": "口燥烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.177",
+      "name": "气上冲咽喉",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.178",
+      "name": "经脉动惕",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.179",
+      "name": "痿",
+      "category": "病机",
+      "aliases": [
+        "痿证"
+      ]
+    },
+    {
+      "id": "SHL.SB.SYM.180",
+      "name": "风湿相搏",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.181",
+      "name": "骨节疼烦",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.182",
+      "name": "胸中有热",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.183",
+      "name": "胃中有邪气",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.184",
+      "name": "脉浮虚而涩",
+      "category": "脉象",
+      "aliases": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "SHL.SB.Q.0001",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYS.001",
+      "prompt": "太阳之为病，脉浮，头项强痛而＿＿＿。",
+      "options": [
+        "恶寒",
+        "恶风",
+        "发热",
+        "汗出"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“太阳之为病，脉浮，头项强痛而恶寒。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0002",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYS.002",
+      "prompt": "太阳病，发热，汗出，恶风，脉缓者，名为＿＿＿。",
+      "options": [
+        "中风",
+        "伤寒",
+        "温病",
+        "湿病"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“太阳病，发热，汗出，恶风，脉缓者，名为中风。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0003",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYS.003",
+      "prompt": "太阳病，或已发热，或未发热，必恶寒，体痛，呕逆，脉阴阳俱紧者，名为＿＿＿。",
+      "options": [
+        "伤寒",
+        "中风",
+        "温病",
+        "柔痉"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“脉阴阳俱紧者，名为伤寒。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0004",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYS.013",
+      "formula": "SHL.SB.F.001",
+      "prompt": "太阳病，头痛发热，汗出恶风，宜用下列何方？",
+      "options": [
+        "桂枝汤",
+        "麻黄汤",
+        "桂枝加葛根汤",
+        "白虎汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "太阳中风证，汗出恶风，用桂枝汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0005",
+      "type": "formula_composition",
+      "clause": "SHL.SB.TYS.014",
+      "formula": "SHL.SB.F.002",
+      "prompt": "桂枝加葛根汤是在桂枝汤基础上加哪一味药？",
+      "options": [
+        "葛根",
+        "麻黄",
+        "附子",
+        "茯苓"
+      ],
+      "answerIndex": 0,
+      "rationale": "桂枝加葛根汤即桂枝汤加葛根。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0006",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.035",
+      "prompt": "太阳病，头痛发热，身疼腰痛，骨节疼痛，恶风，无汗而喘者，＿＿＿主之。",
+      "options": [
+        "麻黄汤",
+        "桂枝汤",
+        "大青龙汤",
+        "葛根汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "太阳伤寒表实，以麻黄汤主治。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0007",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.038",
+      "prompt": "太阳中风，脉浮紧，发热恶寒，身疼痛，不汗出而烦躁者，＿＿＿主之。",
+      "options": [
+        "大青龙汤",
+        "小青龙汤",
+        "麻黄汤",
+        "桂枝汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "表寒里热，用大青龙汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0008",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYZ.040",
+      "formula": "SHL.SB.F.022",
+      "prompt": "伤寒表不解，心下有水气，干呕发热而咳者，宜用何方？",
+      "options": [
+        "小青龙汤",
+        "大青龙汤",
+        "麻黄汤",
+        "五苓散"
+      ],
+      "answerIndex": 0,
+      "rationale": "外寒内饮，用小青龙汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0009",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.053",
+      "prompt": "病常自汗出者，此为＿＿＿和。宜桂枝汤。",
+      "options": [
+        "荣气",
+        "卫气",
+        "宗气",
+        "元气"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“病常自汗出者，此为荣气和。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0010",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.128",
+      "prompt": "按之痛，寸脉浮，关脉沉，名曰＿＿＿。",
+      "options": [
+        "结胸",
+        "藏结",
+        "痞证",
+        "蓄血"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“按之痛，寸脉浮，关脉沉，名曰结胸也。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0011",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYX.135",
+      "formula": "SHL.SB.F.024",
+      "prompt": "伤寒六七日，结胸热实，脉沉而紧，心下痛，按之石硬者，宜用何方？",
+      "options": [
+        "大陷胸汤",
+        "小陷胸汤",
+        "大陷胸丸",
+        "大柴胡汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "热实结胸，用大陷胸汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0012",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.138",
+      "prompt": "小结胸病，正在心下，按之则痛，脉浮滑者，＿＿＿主之。",
+      "options": [
+        "小陷胸汤",
+        "大陷胸汤",
+        "半夏泻心汤",
+        "甘草泻心汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "小结胸病用小陷胸汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0013",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.063",
+      "prompt": "发汗后，不可更行桂枝汤。汗出而喘，无大热者，可与＿＿＿。",
+      "options": [
+        "麻黄杏仁甘草石膏汤",
+        "麻黄汤",
+        "桂枝加厚朴杏子汤",
+        "小青龙汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "汗后邪热壅肺，用麻杏石甘汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0014",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYZ.082",
+      "formula": "SHL.SB.F.047",
+      "prompt": "太阳病发汗，汗出不解，其人仍发热，心下悸，头眩，身瞤动，振振欲擗地者，宜用何方？",
+      "options": [
+        "真武汤",
+        "苓桂术甘汤",
+        "茯苓四逆汤",
+        "五苓散"
+      ],
+      "answerIndex": 0,
+      "rationale": "阳虚水泛，用真武汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0015",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.076",
+      "prompt": "发汗吐下后，虚烦不得眠，若剧者，必反复颠倒，心中懊憹，＿＿＿主之。",
+      "options": [
+        "栀子豉汤",
+        "栀子厚朴汤",
+        "栀子干姜汤",
+        "酸枣仁汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "余热扰胸，用栀子豉汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0016",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.091",
+      "prompt": "伤寒，医下之，续得下利清谷不止，身疼痛者，急当救里，救里宜＿＿＿。",
+      "options": [
+        "四逆汤",
+        "桂枝汤",
+        "理中汤",
+        "真武汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "里虚急迫，救里宜四逆汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0017",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYZ.106",
+      "formula": "SHL.SB.F.051",
+      "prompt": "太阳病不解，热结膀胱，其人如狂，外解已，但少腹急结者，宜用何方？",
+      "options": [
+        "桃核承气汤",
+        "抵当汤",
+        "五苓散",
+        "大承气汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "蓄血轻证用桃核承气汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0018",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYZ.124",
+      "prompt": "太阳病，表证仍在，脉微而沉，反不结胸，其人发狂，少腹硬满，小便自利者，＿＿＿主之。",
+      "options": [
+        "抵当汤",
+        "桃核承气汤",
+        "大陷胸汤",
+        "五苓散"
+      ],
+      "answerIndex": 0,
+      "rationale": "蓄血重证用抵当汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0019",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.154",
+      "prompt": "心下痞，按之濡，其脉关上浮者，＿＿＿主之。",
+      "options": [
+        "大黄黄连泻心汤",
+        "附子泻心汤",
+        "半夏泻心汤",
+        "甘草泻心汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "热痞用大黄黄连泻心汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0020",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.TYX.177",
+      "formula": "SHL.SB.F.075",
+      "prompt": "伤寒，脉结代，心动悸者，宜用何方？",
+      "options": [
+        "炙甘草汤",
+        "桂枝甘草汤",
+        "小建中汤",
+        "真武汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "脉结代、心动悸用炙甘草汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0021",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.172",
+      "prompt": "太阳与少阳合病，自下利者，与＿＿＿；若呕者，黄芩加半夏生姜汤主之。",
+      "options": [
+        "黄芩汤",
+        "葛根汤",
+        "白头翁汤",
+        "理中汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "太少合病下利用黄芩汤。",
+      "status": "reviewed"
+    }
+  ]
+}

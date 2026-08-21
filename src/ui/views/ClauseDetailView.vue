@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { PenLine, Star } from 'lucide-vue-next'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import type { Clause, ContentData } from '../../data/types'
-import { loadContent } from '../../data'
+import { chapterCodeOfClause, loadChapter, loadMeta } from '../../data'
 import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
 import AppHeader from '../components/AppHeader.vue'
@@ -32,19 +32,16 @@ const feedbackTo = computed(() =>
       }
     : { path: '/feedback' }
 )
-const clauseIndex = computed(() => {
-  if (!content.value) return -1
-  return content.value.clauses.findIndex((item) => item.id === clauseId.value)
-})
+// 上一条/下一条只依赖全书顺序（元数据），无需加载其它篇章
+const clauseIndex = computed(() => loadMeta().clauseOrder.indexOf(clauseId.value))
 const prevClause = computed(() => {
   const index = clauseIndex.value
-  return index > 0 ? content.value?.clauses[index - 1] : undefined
+  return index > 0 ? { id: loadMeta().clauseOrder[index - 1] } : undefined
 })
 const nextClause = computed(() => {
+  const order = loadMeta().clauseOrder
   const index = clauseIndex.value
-  return index >= 0 && content.value && index < content.value.clauses.length - 1
-    ? content.value.clauses[index + 1]
-    : undefined
+  return index >= 0 && index < order.length - 1 ? { id: order[index + 1] } : undefined
 })
 const chapterName = computed(() => {
   const id = clauseId.value.split('.')
@@ -55,10 +52,20 @@ function termName(id: string): string {
   return content.value?.symptomTerms.find((term) => term.id === id)?.name ?? id
 }
 
+/** 只加载条文所属篇章；方剂、术语等数据来自随主包加载的元数据。 */
 async function load() {
-  const data = loadContent()
-  content.value = data
-  clause.value = data.clauses.find((item) => item.id === clauseId.value)
+  loaded.value = false
+  const meta = loadMeta()
+  const chapterCode = chapterCodeOfClause(clauseId.value)
+  const chapter = chapterCode ? await loadChapter(chapterCode) : undefined
+
+  clause.value = chapter?.clauses.find((item) => item.id === clauseId.value)
+  content.value = {
+    ...meta,
+    chapters: chapter ? [chapter] : [],
+    clauses: chapter?.clauses ?? [],
+  }
+
   if (clause.value) {
     favorite.value = await isFavorite('clause', clause.value.id)
   }
@@ -77,6 +84,8 @@ async function toggleFavorite() {
 }
 
 onMounted(load)
+// 路由不带 key，上一条/下一条复用同一组件实例，需在条文变化时重新加载
+watch(clauseId, load)
 </script>
 
 <template>

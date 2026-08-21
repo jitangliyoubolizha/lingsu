@@ -3,8 +3,8 @@ import { Star, TriangleAlert } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
-import type { ContentData, Formula } from '../../data/types'
-import { loadContent } from '../../data'
+import type { Chapter, ContentData, Formula } from '../../data/types'
+import { chapterCodeOfClause, loadChapter, loadMeta } from '../../data'
 import { deriveFormulaFields } from '../../domain'
 import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
@@ -29,19 +29,37 @@ function herbName(id: string): string {
 }
 
 function clauseTitle(id: string): string {
-  return content.value?.clauses.some((clause) => clause.id === id)
-    ? `条文 ${formatClauseRef(id)}`
-    : id
+  return loadMeta().clauseOrder.includes(id) ? `条文 ${formatClauseRef(id)}` : id
 }
 
 function formulaName(id: string): string {
   return content.value?.formulas.find((item) => item.id === id)?.name ?? id
 }
 
+/**
+ * 方证推导只需要相关条文的标签，因此只加载相关条文所在篇章，
+ * 而不是整书条文；方剂/药物/术语数据来自随主包加载的元数据。
+ */
 async function load() {
-  const data = loadContent()
-  content.value = data
-  formula.value = data.formulas.find((item) => item.id === formulaId.value)
+  const meta = loadMeta()
+  formula.value = meta.formulas.find((item) => item.id === formulaId.value)
+
+  const relatedChapterCodes = new Set(
+    (formula.value?.relatedClauses ?? [])
+      .map((clauseId) => chapterCodeOfClause(clauseId))
+      .filter((code): code is string => Boolean(code))
+  )
+  const chapters: Chapter[] = []
+  for (const code of relatedChapterCodes) {
+    const chapter = await loadChapter(code)
+    if (chapter) chapters.push(chapter)
+  }
+  content.value = {
+    ...meta,
+    chapters,
+    clauses: chapters.flatMap((chapter) => chapter.clauses),
+  }
+
   if (formula.value) {
     favorite.value = await isFavorite('formula', formula.value.id)
   }

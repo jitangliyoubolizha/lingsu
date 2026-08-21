@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 import type { Question, QuestionType } from '../../data/types'
-import { loadContent } from '../../data'
+import { loadContent, loadMeta } from '../../data'
 import { buildQuizDeck, filterQuizDeck, shuffleDeck } from '../../domain'
 import {
   addQuizLog,
@@ -50,9 +50,10 @@ const stage = ref<'picker' | 'quiz'>('picker')
 const mode = ref<QuizMode>({ wrong: false, random: false })
 
 const chapters = computed(() => {
-  const data = loadContent()
+  // 模式选择只需要篇章目录，用元数据即可，不加载条文正文
+  const meta = loadMeta()
   const seen = new Set<string>()
-  return data.chapters
+  return meta.chapters
     .slice()
     .sort((a, b) => a.order - b.order)
     .filter((chapter) => {
@@ -108,7 +109,7 @@ async function startQuiz(next: QuizMode) {
   mode.value = next
   stage.value = 'quiz'
 
-  const data = loadContent()
+  const data = await loadContent()
   let deck: QuizItem[] = buildQuizDeck(data)
   if (next.chapter !== undefined || next.type !== undefined) {
     deck = filterQuizDeck(deck, data, { chapter: next.chapter, type: next.type })

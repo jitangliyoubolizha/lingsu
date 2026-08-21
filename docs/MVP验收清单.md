@@ -14,7 +14,7 @@
 
 | # | PRD §13 验收项 | 状态 | 说明 / 依据 |
 |---|---|---|---|
-| 1 | 可安装到手机主屏，离线可打开主要页面与已学内容 | 🟡 | 自动化侧已验证：SW 激活、manifest/192/512/maskable 图标完整、precache 17 项约 0.9MB（应用本体；204 个自托管字体按 unicode-range 按需运行时缓存）、离线可打开首页与条文列表；**真机安装与离线实测仍待做** |
+| 1 | 可安装到手机主屏，离线可打开主要页面与已学内容 | 🟡 | 自动化侧已验证：SW 激活、manifest/192/512/maskable 图标完整、precache 20 项约 826KB（应用本体；204 个自托管字体按 unicode-range 按需运行时缓存；内容按篇拆分后篇章 JSON 亦在 precache 中）、离线可打开首页与条文列表；**真机安装与离线实测仍待做** |
 | 2 | 太阳病三篇条文可浏览、搜索、收藏 | 🟡 | 178 条已录入；搜索 token/索引/分组有 domain 测试，SearchBar/HighlightText 有组件测试；收藏 UI 流程未专门覆盖；内容为 AI 初稿，正确性走用户反馈纠错 |
 | 3 | 每条条文有原文、白话译文、至少 1 条名家注解 | ✅ | 结构层由 `validate-content` 强制（含新增负向测试），178 条全部通过；正确性不设人工校对前置，以用户反馈纠错 |
 | 4 | 方剂页展示组成、原文剂量、古今剂量换算、煎服法、相关条文、类方关系、安全提示 | ✅ | 75 首方剂数据齐全（含相关公式字段）；方证推导有 domain 测试；`FormulaDetailView` 组件测试覆盖组成/换算警告/安全提示/相关条文/类方关系；剂量出处标注后置（随反馈完善，不阻塞发布） |
@@ -27,7 +27,7 @@
 
 ## 测试基线（子计划 8）
 
-- 单元/组件/真库测试：**142 用例**（`npm test`）
+- 单元/组件/真库测试：**149 用例**（`npm test`）
   - 内容校验负向：11
   - domain（memory/search/formula/quiz/gaps/stats/选项顺序/错题排期/刷题筛选与洗牌）：56
   - store（Dexie 真库/backup）：17
@@ -35,10 +35,11 @@
   - 反馈 mailto 纯函数：7
   - 路由：2
   - 其他（content-data/formatters/example）：7
+  - 内容按篇懒加载（T1-6）：7
 - `npm run validate:content` ✅
 - `npm run lint` ✅
 - `npm run typecheck` ✅
-- `npm run build` ✅（有 chunk>500kB 性能提示，非阻塞；已登记 TD-2；2026-08-21 本机因删除配额临时以 `--outDir dist-verify` 验证，CI 不受影响）
+- `npm run build` ✅（2026-08-22 内容按篇懒加载后，主 chunk 从 500kB+ 降至 453kB，chunk>500kB 警告消除；TD-2 已关闭）
 
 ## 挂起项（不因本轮全绿而关闭）
 

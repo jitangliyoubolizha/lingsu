@@ -26,7 +26,19 @@ vi.mock('vue-router', () => ({
 }))
 
 vi.mock('../src/data', () => ({
-  loadContent: () => content(),
+  loadContent: () => Promise.resolve(content()),
+  loadMeta: () => ({
+    ...content(),
+    chapters: content().chapters.map((chapter) => ({
+      code: chapter.code,
+      name: chapter.name,
+      order: chapter.order,
+      clauseCount: chapter.clauses.length,
+    })),
+    clauseOrder: content().chapters.flatMap((chapter) =>
+      chapter.clauses.map((clause) => clause.id)
+    ),
+  }),
 }))
 
 vi.mock('../src/store', () => ({

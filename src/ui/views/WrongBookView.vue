@@ -85,7 +85,7 @@ function dueLabel(item: WrongItem): string {
 
 async function load() {
   try {
-    const data = loadContent()
+    const data = await loadContent()
     const byId = new Map(buildQuizDeck(data).map((question) => [question.id, question]))
     const wrongs = await getWrongQuestions()
     items.value = wrongs
