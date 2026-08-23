@@ -26,6 +26,11 @@
   color-scheme: light;
 }
 
+/* 字号三档：小/中(默认)/大，通过 html class 切换，rem 自动缩放 */
+html.font-size-sm { font-size: 14px; }
+html.font-size-lg { font-size: 18px; }
+/* 中 = 16px（浏览器默认，无需 class） */
+
 html {
   color: var(--color-ink);
   background-color: var(--color-paper);

@@ -11,12 +11,15 @@ import {
   serializeBackup,
   setSetting,
 } from '../../store'
+import { useFontSize } from '../composables/useFontSize'
+import type { FontSize } from '../composables/useFontSize'
 import AppHeader from '../components/AppHeader.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 
 const progress = ref(0)
 const dailyNew = ref(3)
-const fontSize = ref<'小' | '中' | '大'>('中')
+const { changeFontSize: applyFontSize } = useFontSize()
+const fontSize = ref<FontSize>('中')
 const voiceEnabled = ref(true)
 const fileInput = ref<{ click: () => void } | null>(null)
 
@@ -54,9 +57,9 @@ async function changeDailyNew(value: number) {
   await setSetting('dailyNew', value)
 }
 
-async function changeFontSize(value: '小' | '中' | '大') {
+async function changeFontSize(value: FontSize) {
   fontSize.value = value
-  await setSetting('fontSize', value)
+  await applyFontSize(value)
 }
 
 async function toggleVoice() {

@@ -3,8 +3,12 @@ import { useRoute } from 'vue-router'
 
 import AppNav from './ui/components/AppNav.vue'
 import GlobalNoticeBar from './ui/components/GlobalNoticeBar.vue'
+import { useFontSize } from './ui/composables/useFontSize'
 
 const route = useRoute()
+
+// 应用字号三档设置到 <html> 根元素
+useFontSize()
 </script>
 
 <template>
