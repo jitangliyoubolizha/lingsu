@@ -1,0 +1,556 @@
+# 辨阳明病脉证并治（宋本条文 211–240）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: YM
+  name: 辨阳明病脉证并治
+  order: 4
+  part: 2
+  part_total: 3
+clauses:
+  - id: SHL.SB.YM.211
+    no: 211
+    text: 发汗多，若重发汗者，亡其阳，谵语脉短者死，脉自和者不死。
+    translation: 发汗已经很多，如果再重复发汗的，就会亡失阳气，出现谵语。脉象短的会死，脉象自然平和的不会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 汗多复汗则阳气亡失，心神失养则谵语。脉短为阳气衰竭故死，脉自和为阳气尚存故不死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.033
+    study_tags:
+      - 亡阳谵语
+      - 脉象预后
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.212
+    no: 212
+    text: 伤寒若吐若下后不解，不大便五六日，上至十余日，日晡所发潮热，不恶寒，独语如见鬼状。若剧者，发则不识人，循衣摸床，惕而不安，微喘直视，脉弦者生，涩者死。微者，但发热谵语者，大承气汤主之。若一服利，则止后服。
+    translation: 伤寒病如果涌吐或泻下后病不解除，五六天不大便，甚至十多天，每天下午申时发潮热，不怕冷，自言自语好像看见鬼的样子。如果病情严重的，发作时不认识人，沿着衣服摸索床铺，恐惧不安，轻微气喘两眼直视，脉象弦的能活，涩的会死。病情轻微的，只是发热谵语的，用大承气汤主治。如果服一次药后通便了，就停止后面的服药。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 吐下后不解为邪未去，不大便五六日至十余日为腑实已成。日晡潮热、不恶寒为阳明腑实特征。独语如见鬼、不识人、循衣摸床为热扰心神。微喘直视为正气将脱。脉弦为正气尚存故生，脉涩为正衰邪盛故死。轻证用大承气汤，中病即止。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.130
+      - SHL.SB.SYM.108
+      - SHL.SB.SYM.018
+    study_tags:
+      - 阳明腑实重症
+      - 大承气汤
+      - 脉象预后
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.213
+    no: 213
+    text: 阳明病，其人多汗，以津液外出，胃中燥，大便必硬，硬则谵语，小承气汤主之。若一服谵语止者，更莫复服。
+    translation: 阳明病，患者出汗很多，因为津液外泄，胃中干燥，大便必然变硬，大便硬就会谵语，用小承气汤主治。如果服一次药后谵语停止的，就不要再服了。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 多汗则津液外泄，胃肠失润则大便硬，腑气不通、热扰心神则谵语。小承气汤轻下热结，中病即止。
+    formulas:
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.033
+    study_tags:
+      - 小承气汤
+      - 中病即止
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.214
+    no: 214
+    text: 阳明病，谵语发潮热，脉滑而疾者，小承气汤主之。因与承气汤一升，腹中转气者，更服一升，若不转气者，勿更与之。明日又不大便，脉反微涩者，里虚也，为难治，不可更与承气汤也。
+    translation: 阳明病，谵语发潮热，脉象滑而快的，用小承气汤主治。因此给承气汤一升，腹中气转动的，再服一升，如果不转气的，不要再给。第二天又不大便，脉象反而微弱涩滞的，是里虚，是难以治疗的，不可以再给承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 谵语潮热为阳明腑实，脉滑疾为实热内盛。腹中转气为药力已行、腑气将通。若不转气说明腑实不甚或正虚不能运药。明日不大便、脉微涩为正虚邪实、攻补两难，故难治。
+    formulas:
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.085
+    study_tags:
+      - 小承气汤
+      - 脉象判断
+      - 里虚难治
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.215
+    no: 215
+    text: 阳明病，下之，其外有热，手足温，不结胸，心中懊憹，饥不能食，但头汗出者，栀子豉汤主之。
+    translation: 阳明病，泻下后，体表还有发热，手足温暖，没有结胸证，心中懊恼烦闷，饥饿却不能进食，只是头部出汗的，用栀子豉汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下后外有热、手足温为表邪未尽。不结胸排除水热互结。心中懊憹、饥不能食为余热郁于胸膈。但头汗出为郁热上蒸。栀子豉汤清宣郁热、除烦。
+    formulas:
+      - SHL.SB.F.042
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.067
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.068
+    study_tags:
+      - 下后虚烦
+      - 栀子豉汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.216
+    no: 216
+    text: 阳明病，下血谵语者，此为热入血室，但头汗出者，刺期门，随其实而泻之，濈然汗出则愈。
+    translation: 阳明病，下血并且谵语的，这是热邪进入血室，只是头部出汗的，针刺期门穴，随着实邪泻除，濈濈然出汗就会好。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下血谵语为热入血室、热迫血行、热扰心神。但头汗出为热郁不得外越。刺期门泻肝经实热，热去则汗出而愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.074
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.068
+    study_tags:
+      - 热入血室
+      - 刺期门
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.217
+    no: 217
+    text: 汗出谵语者，以有燥屎在胃中，此为风也。须下者，过经乃可下之。下之若早，语言必乱，以表虚里实故也。下之愈，宜大承气汤。
+    translation: 出汗并且谵语的，是因为有燥屎在胃肠中，这是风邪入里的缘故。需要泻下的，必须表证解除后才可以泻下。如果泻下过早，语言必然会混乱，因为表虚里实的缘故。泻下后会好，适合用大承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 汗出谵语为阳明腑实、燥屎内结。此为风邪入里化热成实。须待表证解除后才可攻里，若下之过早则表邪内陷、正虚邪实而语言乱。表解后用大承气汤攻下则愈。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.033
+    study_tags:
+      - 大承气汤
+      - 表解乃可攻里
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.218
+    no: 218
+    text: 伤寒四五日，脉沉而喘满，沉为在里，而反发其汗，津液越出，大便为难，表虚里实，久则谵语。
+    translation: 伤寒病四五天，脉象沉并且气喘胀满，脉沉是病在里，却反而发汗，津液外泄，大便困难，表虚里实，时间长了就会谵语。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉沉喘满为里实证，当攻里不当发汗。误汗则津液外泄、胃肠更燥，大便难。表虚（汗出）里实（腑实），久则热扰心神而谵语。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.033
+    study_tags:
+      - 里实误汗
+      - 表虚里实
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.219
+    no: 219
+    text: 三阳合病，腹满身重，难以转侧，口不仁，面垢，谵语遗尿。发汗则谵语，下之则额上生汗，手足逆冷。若自汗出者，白虎汤主之。
+    translation: 三阳经同时发病，腹部胀满身体沉重，难以翻身转侧，口中不知味，面部油垢，谵语遗尿。发汗就会谵语加重，泻下就会额头出汗，手足冰冷。如果自然出汗的，用白虎汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 三阳合病以阳明热盛为主。腹满身重为热盛气滞，口不仁面垢为热蒸于上，谵语遗尿为热扰心神、膀胱失约。汗下皆不宜，白虎汤清泄阳明经热为正治。
+    formulas:
+      - SHL.SB.F.068
+    symptom_tags:
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.045
+      - SHL.SB.SYM.033
+    study_tags:
+      - 三阳合病
+      - 白虎汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.220
+    no: 220
+    text: 二阳并病，太阳证罢，但发潮热，手足漐漐汗出，大便难而谵语者，下之则愈，宜大承气汤。
+    translation: 太阳与阳明两经同时发病，太阳证已经解除，只是发潮热，手足微微出汗，大便困难并且谵语的，泻下就会好，适合用大承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 太阳证罢说明表邪已解，病全入阳明。潮热、手足汗出、大便难、谵语为阳明腑实典型证候，当用大承气汤攻下。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.033
+    study_tags:
+      - 二阳并病
+      - 大承气汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.221
+    no: 221
+    text: 阳明病，脉浮而紧，咽燥口苦，腹满而喘，发热汗出，不恶寒反恶热，身重。若发汗则躁，心愦愦反谵语。若加温针，必怵惕烦躁不得眠。若下之，则胃中空虚，客气动膈，心中懊憹，舌上胎者，栀子豉汤主之。
+    translation: 阳明病，脉象浮而紧，咽喉干燥口苦，腹部胀满并且气喘，发热出汗，不怕冷反而怕热，身体沉重。如果发汗就会烦躁，心中烦乱反而谵语。如果加用温针，必然会恐惧烦躁不能入睡。如果泻下，就会导致胃中空虚，客气动膈，心中懊恼烦闷，舌上有苔的，用栀子豉汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明经证（非腑实）见脉浮紧、咽燥口苦、腹满喘、身热汗出恶热。汗则伤津助热而躁谵，温针助热则怵惕不眠，下则伤胃致虚烦懊憹。误下后栀子豉汤清宣郁热。
+    formulas:
+      - SHL.SB.F.042
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.031
+      - SHL.SB.SYM.197
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.045
+      - SHL.SB.SYM.067
+    study_tags:
+      - 阳明经证
+      - 禁汗下温针
+      - 栀子豉汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.222
+    no: 222
+    text: 若渴欲饮水，口干舌燥者，白虎加人参汤主之。
+    translation: 如果口渴想要饮水，口中干燥舌头干燥的，用白虎加人参汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 渴欲饮水、口干舌燥为阳明经热炽盛、津液大伤。白虎汤清热，加人参益气生津。
+    formulas:
+      - SHL.SB.F.009
+    symptom_tags:
+      - SHL.SB.SYM.015
+    study_tags:
+      - 白虎加人参汤
+      - 阳明经热
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.223
+    no: 223
+    text: 若脉浮发热，渴欲饮水，小便不利者，猪苓汤主之。
+    translation: 如果脉象浮发热，口渴想要饮水，小便不通利的，用猪苓汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮发热为表邪未尽或热郁于表，渴欲饮水为津伤，小便不利为水热互结。猪苓汤滋阴利水、清热生津。
+    formulas:
+      - SHL.SB.F.114
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.015
+      - SHL.SB.SYM.028
+    study_tags:
+      - 猪苓汤
+      - 水热互结
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.224
+    no: 224
+    text: 阳明病，汗出多而渴者，不可与猪苓汤，以汗多胃中燥，猪苓汤复利其小便故也。
+    translation: 阳明病，出汗多并且口渴的，不可以给猪苓汤，因为汗多胃中干燥，猪苓汤又会通利小便的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 汗多渴为津液已伤，猪苓汤虽能滋阴但主要功效为利水，利小便则更伤津液，故禁用。当用白虎加人参汤清热生津。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.015
+    study_tags:
+      - 猪苓汤禁忌
+      - 津伤禁利小便
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.225
+    no: 225
+    text: 脉浮而迟，表热里寒，下利清谷者，四逆汤主之。
+    translation: 脉象浮而迟，表有热里有寒，下利排出完谷不化的食物的，用四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮为表有热（假热），脉迟为里有寒（真寒）。下利清谷为脾肾阳虚、不能腐熟水谷。此为真寒假热证，四逆汤回阳救逆。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.159
+    study_tags:
+      - 真寒假热
+      - 四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.226
+    no: 226
+    text: 若胃中虚冷，不能食者，饮水则哕。
+    translation: 如果胃中虚冷，不能进食的，饮水就会呃逆。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 胃中虚冷则不能腐熟水谷，故不能食。饮水则水寒相搏、胃气上逆而哕。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.113
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.150
+    study_tags:
+      - 胃中虚冷
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.227
+    no: 227
+    text: 脉浮发热，口干鼻燥，能食者则衄。
+    translation: 脉象浮发热，口中干燥鼻腔干燥，能够进食的就会鼻出血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮发热为表热，口干鼻燥为热伤上焦津液。能食说明胃气尚强、热在经不在腑。热在经络则迫血妄行，故衄。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.132
+      - SHL.SB.SYM.056
+    study_tags:
+      - 阳明衄血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.228
+    no: 228
+    text: 阳明病下之，其外有热，手足温，不结胸，心中懊憹，饥不能食，但头汗出者，栀子豉汤主之。
+    translation: 阳明病泻下后，体表还有发热，手足温暖，没有结胸证，心中懊恼烦闷，饥饿却不能进食，只是头部出汗的，用栀子豉汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下后外有热、手足温为表邪未尽入里。不结胸排除水热互结。心中懊憹、饥不能食为余热郁于胸膈。但头汗出为郁热上蒸不得外越。栀子豉汤清宣郁热。
+    formulas:
+      - SHL.SB.F.042
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.067
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.068
+    study_tags:
+      - 下后虚烦
+      - 栀子豉汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.229
+    no: 229
+    text: 阳明病，发潮热，大便溏，小便自可，胸胁满不去者，与小柴胡汤。
+    translation: 阳明病，发潮热，大便溏薄，小便自然正常，胸胁部胀满不消除的，给小柴胡汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 虽有潮热但大便溏、小便自可，说明腑实未成。胸胁满不去为少阳证未解。此为阳明少阳并病，当和解少阳，用小柴胡汤。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.119
+    study_tags:
+      - 阳明少阳并病
+      - 小柴胡汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.230
+    no: 230
+    text: 阳明病，胁下硬满，不大便而呕，舌上白胎者，可与小柴胡汤。上焦得通，津液得下，胃气因和，身濈然汗出而解。
+    translation: 阳明病，胁下硬满，不大便并且呕吐，舌上有白苔的，可以给小柴胡汤。上焦得以通畅，津液得以下行，胃气因而调和，身体濈濈然出汗而解除。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 胁下硬满、呕吐为少阳证，不大便为阳明证，舌上白苔说明非阳明实热。此为少阳阳明并病，用小柴胡汤和解少阳，枢机利则上焦通、津液下、胃气和、汗出而解。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.149
+      - SHL.SB.SYM.013
+    study_tags:
+      - 小柴胡汤
+      - 上焦得通
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.231
+    no: 231
+    text: 阳明中风，脉弦浮大而短气，腹都满，胁下及心痛，久按之气不通，鼻干不得汗，嗜卧，一身及目悉黄，小便难，有潮热，时时哕，耳前后肿，刺之小差，外不解。病过十日，脉续浮者，与小柴胡汤。
+    translation: 阳明病感受风邪，脉象弦浮大并且气短，腹部全部胀满，胁下和心口疼痛，长时间按压气不流通，鼻腔干燥不出汗，嗜睡，全身和眼睛都发黄，小便困难，有潮热，时常呃逆，耳朵前后肿胀，针刺后稍微好转，表证不解除。病过了十天，脉象继续浮的，给小柴胡汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 此为三阳合病之重证。脉弦为少阳，浮为太阳，大为阳明。腹满胁痛为少阳阳明并病，身目黄为湿热郁蒸，潮热为阳明实热。病过十日脉续浮说明邪仍在表里之间，用小柴胡汤和解。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.199
+      - SHL.SB.SYM.059
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.149
+      - SHL.SB.SYM.069
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.150
+    study_tags:
+      - 三阳合病重证
+      - 小柴胡汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.232
+    no: 232
+    text: 脉但浮，无余证者，与麻黄汤。若不尿，腹满加哕者，不治。
+    translation: 脉象只是浮，没有其他证候的，给麻黄汤。如果小便不通，腹部胀满加上呃逆的，无法治疗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉但浮无余证为纯表证，当用麻黄汤发汗解表。若不尿（小便不通）、腹满加哕，为三焦气化失常、胃气败绝，故不治。
+    formulas:
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.150
+    study_tags:
+      - 麻黄汤
+      - 不治证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.233
+    no: 233
+    text: 阳明病，自汗出，若发汗，小便自利者，此为津液内竭，虽硬不可攻之，当须自欲大便，宜蜜煎导而通之。若土瓜根及大猪胆汁，皆可为导。
+    translation: 阳明病，自然出汗，如果又发汗，小便自然通利的，这是津液内竭，虽然大便硬也不可以攻下，应当等待患者自然想要大便时，适合用蜜煎导法来通便。如果土瓜根和大猪胆汁，都可以用来导便。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 自汗出又发汗、小便利，津液从汗和小便两途耗竭，肠中干燥故大便硬。此为津枯便秘，非腑实热结，故禁用攻下。当用润导法（蜜煎导、猪胆汁导）从局部润肠通便。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.143
+    study_tags:
+      - 津枯便秘
+      - 蜜煎导法
+      - 禁攻下
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.234
+    no: 234
+    text: 阳明病，脉迟，汗出多，微恶寒者，表未解也，可发汗，宜桂枝汤。
+    translation: 阳明病，脉象迟，出汗多，微微怕冷的，是表证尚未解除，可以发汗，适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉迟汗多微恶寒为表虚证未解（太阳中风证），虽有阳明证但表证为主，当先解表，用桂枝汤调和营卫。
+    formulas:
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.003
+    study_tags:
+      - 阳明兼表
+      - 桂枝汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.235
+    no: 235
+    text: 阳明病，脉浮，无汗而喘者，发汗则愈，宜麻黄汤。
+    translation: 阳明病，脉象浮，没有汗并且气喘的，发汗就会好，适合用麻黄汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮无汗喘为太阳伤寒表实证，虽有阳明证但表实为主，当用麻黄汤发汗解表。
+    formulas:
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.018
+    study_tags:
+      - 阳明兼表
+      - 麻黄汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.236
+    no: 236
+    text: 阳明病，发热汗出者，此为热越，不能发黄也。但头汗出，身无汗，剂颈而还，小便不利，渴引水浆者，此为瘀热在里，身必发黄，茵陈蒿汤主之。
+    translation: 阳明病，发热出汗的，这是热邪外越，不会发黄。只是头部出汗，身体没有汗，到颈部为止，小便不通利，口渴饮水的，这是瘀热在里，身体必然会发黄，用茵陈蒿汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 发热汗出为热有出路（热越），故不发黄。但头汗出、身无汗为热不得外越，小便不利为湿不得下泄，渴引水浆为湿热内盛。湿热郁蒸则发黄。茵陈蒿汤清热利湿退黄。
+    formulas:
+      - SHL.SB.F.108
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.068
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.015
+      - SHL.SB.SYM.069
+    study_tags:
+      - 阳明发黄
+      - 茵陈蒿汤
+      - 湿热郁蒸
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.237
+    no: 237
+    text: 阳明证，其人喜忘者，必有蓄血。所以然者，本有久瘀血，故令喜忘，屎虽硬，大便反易，其色必黑者，宜抵当汤下之。
+    translation: 阳明证，患者容易健忘的，必然有蓄血。之所以这样，是因为本来就有久瘀血，所以导致容易健忘，大便虽然硬，排大便反而容易，颜色必然发黑的，适合用抵当汤泻下。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 喜忘为瘀血扰心。本有久瘀血与阳明热邪相合，瘀热互结。大便硬反易为瘀血润肠，色黑为瘀血下行之征。抵当汤破血逐瘀。
+    formulas:
+      - SHL.SB.F.056
+    symptom_tags: []
+    study_tags:
+      - 阳明蓄血
+      - 抵当汤
+      - 喜忘
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.238
+    no: 238
+    text: 阳明病，下之，心中懊憹而烦，胃中有燥屎者，可攻。腹微满，初头硬，后必溏，不可攻之。若有燥屎者，宜大承气汤。
+    translation: 阳明病，泻下后，心中懊恼烦闷而烦躁，胃肠中有燥屎的，可以攻下。腹部微微胀满，开始硬后来必然溏的，不可以攻下。如果有燥屎的，适合用大承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下后心中懊憹烦为余热未尽，若确有燥屎则可再攻。腹微满、初硬后溏为脾虚不运，非腑实，故不可攻。有燥屎者用大承气汤。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.067
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.091
+    study_tags:
+      - 大承气汤
+      - 燥屎辨证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.239
+    no: 239
+    text: 病人不大便五六日，绕脐痛，烦躁，发作有时者，此有燥屎，故使不大便也。
+    translation: 患者五六天不大便，围绕肚脐疼痛，烦躁，发作有定时的，这是有燥屎，所以导致不大便。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 不大便五六日为腑实，绕脐痛为燥屎内结、腑气不通，烦躁为热扰心神，发作有时为阳明实热之特征（日晡潮热）。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.014
+    study_tags:
+      - 燥屎辨证
+      - 绕脐痛
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.240
+    no: 240
+    text: 病人烦热，汗出则解，又如疟状，日晡所发热者，属阳明也。脉实者，宜下之；脉浮虚者，宜发汗。下之与大承气汤，发汗宜桂枝汤。
+    translation: 患者烦躁发热，出汗就会解除，又像疟疾一样，下午申时左右发热的，属于阳明病。脉象实的，适合泻下；脉象浮虚的，适合发汗。泻下用大承气汤，发汗适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 烦热汗出解为表证，如疟状日晡发热为阳明特征。脉实为里实当攻下（大承气汤），脉浮虚为表虚当发汗（桂枝汤）。同病异治，以脉定方。
+    formulas:
+      - SHL.SB.F.112
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.071
+    study_tags:
+      - 同病异治
+      - 以脉定方
+    notes: AI 初稿待校对。

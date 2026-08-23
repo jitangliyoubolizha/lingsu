@@ -1,0 +1,372 @@
+# 辨少阴病脉证并治（宋本条文 306–325）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: SI
+  name: 辨少阴病脉证并治
+  order: 7
+  part: 2
+  part_total: 2
+clauses:
+  - id: SHL.SB.SI.306
+    no: 306
+    text: 少阴病，下利便脓血者，桃花汤主之。
+    translation: 少阴病，下利并且大便带脓血的，用桃花汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴虚寒，脾肾阳衰，不能固摄，下利便脓血为滑脱不禁之象。桃花汤温涩固脱，赤石脂涩肠止利，干姜温中散寒，粳米养胃和中。
+    formulas:
+      - SHL.SB.F.088
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.074
+    study_tags:
+      - 少阴下利便脓血
+      - 桃花汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.307
+    no: 307
+    text: 少阴病，二三日至四五日，腹痛，小便不利，下利不止，便脓血者，桃花汤主之。
+    translation: 少阴病，两三天到四五天，腹部疼痛，小便不通畅，下利不止，大便带脓血的，用桃花汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 腹痛为寒凝气滞，小便不利为阳虚气化失司，下利不止、便脓血为脾肾阳虚、滑脱不禁。桃花汤温涩固脱止利。
+    formulas:
+      - SHL.SB.F.088
+    symptom_tags:
+      - SHL.SB.SYM.151
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.074
+    study_tags:
+      - 少阴滑脱
+      - 桃花汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.308
+    no: 308
+    text: 少阴病，下利便脓血者，可刺。
+    translation: 少阴病，下利并且大便带脓血的，可以用针刺治疗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利便脓血除用桃花汤温涩外，亦可用针刺疗法，疏通经络、调和气血以止利。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.074
+    study_tags:
+      - 少阴针刺法
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.309
+    no: 309
+    text: 少阴病，吐利，手足厥冷，烦躁欲死者，吴茱萸汤主之。
+    translation: 少阴病，呕吐下利，手足冰冷，烦躁得要死的，用吴茱萸汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 吐利厥冷为阴寒内盛，烦躁欲死为阴寒上逆、胃气不和。吴茱萸汤温中散寒、降逆止呕，为肝胃虚寒、浊阴上逆之要方。
+    formulas:
+      - SHL.SB.F.089
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.172
+      - SHL.SB.SYM.014
+    study_tags:
+      - 吴茱萸汤证
+      - 肝胃虚寒
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.310
+    no: 310
+    text: 少阴病，下利咽痛，胸满心烦，猪肤汤主之。
+    translation: 少阴病，下利、咽痛，胸中胀满、心中烦躁的，用猪肤汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利伤阴，阴虚火旺，虚火上炎则咽痛，扰于胸中则胸满心烦。猪肤汤滋阴润燥、清热利咽，为少阴阴虚咽痛之方。
+    formulas:
+      - SHL.SB.F.090
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.072
+      - SHL.SB.SYM.022
+      - SHL.SB.SYM.029
+    study_tags:
+      - 少阴阴虚咽痛
+      - 猪肤汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.311
+    no: 311
+    text: 少阴病二三日，咽痛者，可与甘草汤，不差，与桔梗汤。
+    translation: 少阴病两三天，咽痛的，可以给甘草汤，如果不好，给桔梗汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病初期咽痛较轻者，用甘草汤清热解毒、缓急止痛。若甘草汤不效，说明邪气较重，加桔梗开宣肺气、利咽排脓，即桔梗汤。
+    formulas:
+      - SHL.SB.F.091
+      - SHL.SB.F.092
+    symptom_tags:
+      - SHL.SB.SYM.072
+    study_tags:
+      - 少阴咽痛
+      - 甘草汤
+      - 桔梗汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.312
+    no: 312
+    text: 少阴病，咽中伤生疮，不能语言，声不出者，苦酒汤主之。
+    translation: 少阴病，咽喉受伤生疮，不能说话，声音发不出来的，用苦酒汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 咽中生疮为热毒壅盛、腐肉成疮，不能语言、声不出为咽喉肿痛严重。苦酒汤（半夏、鸡子、苦酒）清热解毒、消肿利咽。
+    formulas:
+      - SHL.SB.F.093
+    symptom_tags:
+      - SHL.SB.SYM.072
+    study_tags:
+      - 少阴咽中生疮
+      - 苦酒汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.313
+    no: 313
+    text: 少阴病，咽中痛，半夏散及汤主之。
+    translation: 少阴病，咽喉中疼痛的，用半夏散或半夏汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 咽中痛为寒邪客于咽喉，半夏散（半夏、桂枝、甘草）温散寒邪、利咽止痛。散剂可含化，汤剂可内服。
+    formulas:
+      - SHL.SB.F.094
+    symptom_tags:
+      - SHL.SB.SYM.072
+    study_tags:
+      - 少阴咽痛
+      - 半夏散
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.314
+    no: 314
+    text: 少阴病，下利，白通汤主之。
+    translation: 少阴病，下利的，用白通汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴虚寒下利，白通汤（葱白、干姜、附子）温阳散寒、通阳止利。葱白通阳达表，干姜附子温里散寒。
+    formulas:
+      - SHL.SB.F.095
+    symptom_tags:
+      - SHL.SB.SYM.039
+    study_tags:
+      - 少阴虚寒下利
+      - 白通汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.315
+    no: 315
+    text: 少阴病，下利脉微者，与白通汤；利不止，厥逆无脉，干呕烦者，白通加猪胆汁汤主之。服汤脉暴出者死，微续者生。
+    translation: 少阴病，下利脉象微弱的，给白通汤；如果下利不止，四肢冰冷、摸不到脉搏，干呕烦躁的，用白通加猪胆汁汤主治。服药后脉象突然出现的会死，脉象渐渐恢复的能活。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利脉微为阳虚，白通汤温阳止利。若利不止、厥逆无脉、干呕烦，为阴寒格拒、阳药难入，加猪胆汁苦寒反佐，引阳入阴。脉暴出为虚阳外脱故死，微续为阳气渐复故生。
+    formulas:
+      - SHL.SB.F.095
+      - SHL.SB.F.096
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.023
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.008
+      - SHL.SB.SYM.014
+    study_tags:
+      - 白通加猪胆汁汤
+      - 阴寒格拒
+      - 脉象预后
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.316
+    no: 316
+    text: 少阴病，二三日不已，至四五日，腹痛，小便不利，四肢沉重疼痛，自下利者，此为有水气。其人或咳，或小便利，或下利，或呕者，真武汤主之。
+    translation: 少阴病，两三天不好，到了四五天，腹部疼痛，小便不通畅，四肢沉重疼痛，自行下利的，这是有水气。患者有的咳嗽，有的小便通畅，有的下利，有的呕吐的，用真武汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴阳虚，水湿内停，水气泛溢则四肢沉重疼痛，水走肠间则下利，水气上逆则咳呕。真武汤温阳利水，附子温肾阳，白术健脾，茯苓利水，生姜散水，芍药和营。
+    formulas:
+      - SHL.SB.F.047
+    symptom_tags:
+      - SHL.SB.SYM.151
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.045
+      - SHL.SB.SYM.012
+      - SHL.SB.SYM.039
+    study_tags:
+      - 少阴水气
+      - 真武汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.317
+    no: 317
+    text: 少阴病，下利清谷，里寒外热，手足厥逆，脉微欲绝，身反不恶寒，其人面色赤，或腹痛，或干呕，或咽痛，或利止脉不出者，通脉四逆汤主之。
+    translation: 少阴病，下利排出完谷不化的食物，里面寒冷外面发热，手足冰冷，脉象微弱几乎摸不到，身体反而不怕冷，患者面色发红，有的腹痛，有的干呕，有的咽痛，有的下利停止但脉象摸不到的，用通脉四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利清谷、手足厥逆、脉微欲绝为阳虚寒盛之极。身不恶寒、面赤为阴盛格阳、虚阳外越之假热。通脉四逆汤重用姜附，回阳救逆、通达血脉。
+    formulas:
+      - SHL.SB.F.115
+    symptom_tags:
+      - SHL.SB.SYM.159
+      - SHL.SB.SYM.172
+      - SHL.SB.SYM.023
+      - SHL.SB.SYM.058
+    study_tags:
+      - 阴盛格阳
+      - 通脉四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.318
+    no: 318
+    text: 少阴病，四逆，其人或咳，或悸，或小便不利，或腹中痛，或泄利下重者，四逆散主之。
+    translation: 少阴病，四肢冰冷，患者有的咳嗽，有的心悸，有的小便不通畅，有的腹中疼痛，有的泄利并且里急后重的，用四逆散主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 四逆为阳气郁遏不达四末，非阳虚所致。或咳或悸或小便不利或腹痛或泄利下重，皆为气机郁滞之象。四逆散疏肝解郁、透达阳气，柴胡疏肝，枳实理气，芍药和血，甘草和中。
+    formulas:
+      - SHL.SB.F.098
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.046
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.151
+      - SHL.SB.SYM.039
+    study_tags:
+      - 四逆散证
+      - 阳气郁遏
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.319
+    no: 319
+    text: 少阴病，下利六七日，咳而呕渴，心烦不得眠者，猪苓汤主之。
+    translation: 少阴病，下利六七天，咳嗽并且呕吐口渴，心中烦躁不能入睡的，用猪苓汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利伤阴，阴虚生热，水热互结。咳呕为水气上逆，渴为阴虚津伤，心烦不得眠为阴虚火旺、心神被扰。猪苓汤滋阴利水、清热除烦。
+    formulas:
+      - SHL.SB.F.114
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.015
+      - SHL.SB.SYM.029
+      - SHL.SB.SYM.086
+    study_tags:
+      - 少阴阴虚水热互结
+      - 猪苓汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.320
+    no: 320
+    text: 少阴病，得之二三日，口燥咽干者，急下之，宜大承气汤。
+    translation: 少阴病，得病两三天，口燥咽干的，应当紧急泻下，适合用大承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病本为虚寒，但若邪从热化、热结旁流，口燥咽干为热盛伤津之象，当急下存阴。大承气汤峻下热结，釜底抽薪以救阴液。此为少阴急下三证之一。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.132
+      - SHL.SB.SYM.031
+    study_tags:
+      - 少阴急下证
+      - 大承气汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.321
+    no: 321
+    text: 少阴病，自利清水，色纯青，心下必痛，口干燥者，急下之，宜大承气汤。
+    translation: 少阴病，自行下利清水，颜色纯青，心下必然疼痛，口中干燥的，应当紧急泻下，适合用大承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 自利清水、色纯青为热结旁流，心下痛为实热内结，口干燥为热盛伤津。此为少阴急下三证之二，当急下存阴。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.027
+      - SHL.SB.SYM.132
+    study_tags:
+      - 少阴急下证
+      - 热结旁流
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.322
+    no: 322
+    text: 少阴病，六七日，腹胀不大便者，急下之，宜大承气汤。
+    translation: 少阴病，六七天，腹部胀满不解大便的，应当紧急泻下，适合用大承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 腹胀不大便为阳明腑实，热结于里。少阴病见此证为邪从热化、热盛伤阴，当急下存阴。此为少阴急下三证之三。
+    formulas:
+      - SHL.SB.F.112
+    symptom_tags:
+      - SHL.SB.SYM.091
+    study_tags:
+      - 少阴急下证
+      - 阳明腑实
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.323
+    no: 323
+    text: 少阴病，脉沉者，急温之，宜四逆汤。
+    translation: 少阴病，脉象沉的，应当紧急温阳，适合用四逆汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉沉为阳气衰微、阴寒内盛，当急温回阳。四逆汤（附子、干姜、甘草）为回阳救逆之要方。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags: []
+    study_tags:
+      - 少阴急温
+      - 四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.324
+    no: 324
+    text: 少阴病，饮食入口则吐，心中温温欲吐，复不能吐，始得之，手足寒，脉弦迟者，此胸中实，不可下也，当吐之。若膈上有寒饮，干呕者，不可吐也，当温之，宜四逆汤。
+    translation: 少阴病，饮食入口就吐，心中郁闷想吐，又吐不出来，刚得病时，手足寒冷，脉象弦迟的，这是胸中有实邪，不可以泻下，应当涌吐。如果膈上有寒饮，干呕的，不可以涌吐，应当温阳，适合用四逆汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 胸中实邪壅塞，饮食入口即吐，手足寒、脉弦迟为实邪阻滞、阳气不达，当吐以祛邪。若膈上寒饮干呕，为阳虚饮停，当温阳化饮，用四逆汤。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.008
+      - SHL.SB.SYM.172
+    study_tags:
+      - 少阴吐法
+      - 胸中实
+      - 膈上寒饮
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.325
+    no: 325
+    text: 少阴病，下利，脉微涩，呕而汗出，必数更衣，反少者，当温其上，灸之。
+    translation: 少阴病，下利，脉象微涩，呕吐并且出汗，必然频繁上厕所，反而大便量少的，应当温灸其上部。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利脉微涩为阳虚血少，呕而汗出为阳气上越。数更衣反少为里急后重、气虚下陷。当温灸上部（百会等穴）以升阳举陷。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.062
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.004
+    study_tags:
+      - 少阴灸法
+      - 升阳举陷
+    notes: AI 初稿待校对。

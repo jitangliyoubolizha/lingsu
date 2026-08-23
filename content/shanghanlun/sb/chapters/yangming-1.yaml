@@ -1,0 +1,551 @@
+# 辨阳明病脉证并治（宋本条文 179–210）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: YM
+  name: 辨阳明病脉证并治
+  order: 4
+  part: 1
+  part_total: 3
+clauses:
+  - id: SHL.SB.YM.179
+    no: 179
+    text: 问曰：病有太阳阳明，有正阳阳明，有少阳阳明，何谓也？答曰：太阳阳明者，脾约是也；正阳阳明者，胃家实是也；少阳阳明者，发汗利小便已，胃中燥烦实，大便难是也。
+    translation: 问：病有太阳阳明、正阳阳明、少阳阳明，是什么意思？答：太阳阳明，就是脾约证；正阳阳明，就是胃家实证；少阳阳明，就是发汗、利小便之后，胃中干燥、烦躁、有实邪，大便困难的证候。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病有三种来路：太阳阳明为太阳病误治伤津，邪入阳明化燥；正阳阳明为外邪直犯阳明，胃肠实热；少阳阳明为少阳病误汗误利，津伤化燥。三者病机均为燥热实，但来路不同。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 阳明病分类
+      - 脾约
+      - 胃家实
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.180
+    no: 180
+    text: 阳明之为病，胃家实是也。
+    translation: 阳明病的提纲证，就是胃家实。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病提纲，以"胃家实"为辨证要点。胃家泛指胃肠，实指邪气盛实、正邪交争剧烈。阳明病以燥热实为主要病机特征。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 阳明病提纲
+      - 胃家实
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.181
+    no: 181
+    text: 问曰：何缘得阳明病？答曰：太阳病，若发汗，若下，若利小便，此亡津液，胃中干燥，因转属阳明。不更衣，内实，大便难者，此名阳明也。
+    translation: 问：什么原因导致阳明病？答：太阳病，如果发汗、泻下、利小便，这些都会亡失津液，胃中干燥，因而转属阳明。不解大便，内有实邪，大便困难的，这就叫做阳明病。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 太阳病误治（汗、下、利小便）均可伤津，津伤则胃肠干燥，邪从燥化而转属阳明。不更衣（不大便）、内实、大便难为阳明病的特征性表现。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 阳明病成因
+      - 转属阳明
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.182
+    no: 182
+    text: 问曰：阳明病外证云何？答曰：身热，汗自出，不恶寒，反恶热也。
+    translation: 问：阳明病的外在表现是什么？答：身体发热，自然出汗，不怕冷，反而怕热。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病外证四大特征：身热、汗自出、不恶寒、反恶热。里热炽盛外蒸则身热汗出，表邪已解则不恶寒，里热盛则恶热。此与太阳病恶寒发热形成对比。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+    study_tags:
+      - 阳明病外证
+      - 身热汗出
+      - 不恶寒反恶热
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.183
+    no: 183
+    text: 问曰：病一日得之，不发热而恶寒者，何也？答曰：虽得之一日，恶寒将自罢，即自汗出而恶热也。
+    translation: 问：病一天就得了，不发热却怕冷的，为什么？答：虽然得病一天，怕冷将会自行消失，随即自然出汗而怕热。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病初起可见短暂恶寒，但很快恶寒自罢，转为汗出恶热。这是因为阳明为多气多血之经，邪入即从燥化，故恶寒短暂。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.004
+    study_tags:
+      - 阳明初起恶寒
+      - 恶寒自罢
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.184
+    no: 184
+    text: 问曰：恶寒何故自罢？答曰：阳明居中，主土也，万物所归，无所复传，始虽恶寒，二日自止，此为阳明病也。
+    translation: 问：怕冷为什么会自行消失？答：阳明位居中焦，主土，是万物归聚之处，邪气到此无所再传，开始虽然怕冷，第二天就会自行停止，这就是阳明病。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明属土居中，为万物所归。邪入阳明则从燥化，不再他传，故恶寒自罢。此条从五行角度解释阳明病恶寒自罢的机理。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.003
+    study_tags:
+      - 阳明居中主土
+      - 恶寒自罢
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.185
+    no: 185
+    text: 本太阳，初得病时，发其汗，汗先出不彻，因转属阳明也。伤寒发热无汗，呕不能食，而反汗出濈濈然者，是转属阳明也。
+    translation: 本来是太阳病，刚得病时，发汗，汗先出不透彻，因而转属阳明。伤寒发热没有汗，呕吐不能进食，却反而出汗濈濈然的，这是转属阳明了。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 太阳病发汗不彻，表邪未尽，邪热内传入里转属阳明。或太阳伤寒本无汗，若见汗出濈濈然（汗出连绵），说明邪已入里化热，转属阳明。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.004
+    study_tags:
+      - 太阳转阳明
+      - 汗出不彻
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.186
+    no: 186
+    text: 伤寒三日，阳明脉大。
+    translation: 伤寒病第三天，阳明病脉象大。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 伤寒三日邪入阳明，阳明为多气多血之经，邪热盛则脉大。脉大为阳明病的特征性脉象。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 阳明脉大
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.187
+    no: 187
+    text: 伤寒脉浮而缓，手足自温者，是为系在太阴。太阴者，身当发黄，若小便自利者，不能发黄。至七八日大便硬者，为阳明病也。
+    translation: 伤寒病脉象浮而缓，手足自然温暖的，这是病在太阴。太阴病，身体应当发黄，如果小便自然通利的，就不会发黄。到了七八天大便变硬的，就是阳明病了。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮缓、手足温为太阴表证。太阴湿郁可发黄，小便自利则湿有出路不发黄。若七八日大便硬，说明湿从燥化，太阴转属阳明。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.050
+      - SHL.SB.SYM.069
+    study_tags:
+      - 太阴转阳明
+      - 大便硬
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.188
+    no: 188
+    text: 伤寒转系阳明者，其人濈然微汗出也。
+    translation: 伤寒病转属阳明的，患者会濈濈然微微出汗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 濈然微汗出为阳明病的特征性表现，里热蒸腾则汗出。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.004
+    study_tags:
+      - 阳明汗出
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.189
+    no: 189
+    text: 阳明中风，口苦咽干，腹满微喘，发热恶寒，脉浮而紧，若下之，则腹满小便难也。
+    translation: 阳明病感受风邪，口苦咽干，腹部胀满轻微气喘，发热怕冷，脉象浮而紧，如果用泻下法，就会导致腹部胀满、小便困难。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明中风兼有表证（发热恶寒脉浮紧），里证未实（腹满微喘）。此时禁用下法，误下则表邪内陷，气机更滞则腹满，津伤则小便难。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.197
+      - SHL.SB.SYM.031
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.011
+    study_tags:
+      - 阳明中风
+      - 禁下
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.190
+    no: 190
+    text: 阳明病，若能食，名中风；不能食，名中寒。
+    translation: 阳明病，如果能够进食的，叫做中风；不能进食的，叫做中寒。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病以能食与否辨别中风与中寒。能食为中风（风为阳邪，阳能消谷），不能食为中寒（寒为阴邪，阴不消谷）。此为阳明病的寒热辨证要点。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.148
+    study_tags:
+      - 阳明中风
+      - 阳明中寒
+      - 能食辨证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.191
+    no: 191
+    text: 阳明病，若中寒者，不能食，小便不利，手足濈然汗出，此欲作固瘕，必大便初硬后溏。所以然者，以胃中冷，水谷不别故也。
+    translation: 阳明病，如果是中寒的，不能进食，小便不通利，手足濈濈然出汗，这是将要形成固瘕证，大便必然开始硬后来溏。之所以这样，是因为胃中寒冷，水谷不能分别的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明中寒，胃阳不足不能腐熟水谷，故不能食。胃寒水液不化，故小便不利。手足汗出为阳虚不固。大便初硬后溏为胃中虚冷、水谷不别，欲作固瘕（寒积）。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.004
+    study_tags:
+      - 阳明中寒
+      - 固瘕
+      - 大便初硬后溏
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.192
+    no: 192
+    text: 阳明病，初欲食，小便反不利，大便自调，其人骨节疼，翕翕如有热状，奄然发狂，濈然汗出而解者，此水不胜谷气，与汗共并，脉紧则愈。
+    translation: 阳明病，开始想要进食，小便反而不通利，大便自然正常，患者骨节疼痛，翕翕然好像有热的样子，突然发狂，濈濈然出汗而解除的，这是水湿不能胜过谷气，与汗一起排出，脉象紧就会好。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 欲食说明胃气尚强，小便不利为水湿内停，骨节疼为湿邪在表。奄然发狂为正邪剧烈交争，濈然汗出为正胜邪却、水湿随汗而解。脉紧为邪去正复。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.043
+      - SHL.SB.SYM.004
+    study_tags:
+      - 阳明湿解
+      - 水不胜谷气
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.193
+    no: 193
+    text: 阳明病，欲解时，从申至戌上。
+    translation: 阳明病容易解除的时间，是从申时到戌时（下午三点至晚上九点）。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 申酉戌为阳明经气旺盛之时，正气得时气相助则邪易解。此为阳明病的欲解时辰。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 阳明欲解时
+      - 申酉戌
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.194
+    no: 194
+    text: 阳明病，不能食，攻其热必哕。所以然者，胃中虚冷故也。以其人本虚，攻其热必哕。
+    translation: 阳明病，不能进食的，用泻下法攻热必然会导致呃逆。之所以这样，是因为胃中虚冷的缘故。因为患者本来虚寒，攻热必然会呃逆。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 不能食为胃中虚寒（中寒证），非阳明实热。误用寒下攻热则更伤胃阳，胃气上逆则哕。此为阳明中寒禁用下法之戒。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.150
+    study_tags:
+      - 阳明中寒禁下
+      - 误下致哕
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.195
+    no: 195
+    text: 阳明病，脉迟，食难用饱，饱则微烦头眩，必小便难，此欲作谷疸。虽下之，腹满如故，所以然者，脉迟故也。
+    translation: 阳明病，脉象迟，进食难以吃饱，吃饱就会微微烦躁、头晕目眩，必然小便困难，这是将要发生谷疸。虽然用泻下法，腹部胀满还是和原来一样，之所以这样，是因为脉迟的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉迟为胃中虚寒，食难用饱为胃阳不足。饱则微烦头眩为食滞不化、浊气上逆。小便难为水液不化。欲作谷疸为寒湿郁蒸。误下则更伤阳气，腹满不除。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.093
+      - SHL.SB.SYM.028
+    study_tags:
+      - 谷疸
+      - 阳明虚寒
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.196
+    no: 196
+    text: 阳明病，法多汗，反无汗，其身如虫行皮中状者，此以久虚故也。
+    translation: 阳明病，按理应当多汗，反而没有汗，身体好像有虫子在皮肤中爬行的样子，这是因为长久虚弱的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病本应多汗（热盛迫津外泄），反无汗为津液不足或阳气虚弱。身如虫行皮中为正气虚不能鼓邪外出、邪郁肌表之象。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.024
+    study_tags:
+      - 阳明无汗
+      - 久虚
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.197
+    no: 197
+    text: 阳明病，反无汗，而小便利，二三日呕而咳，手足厥者，必苦头痛。若不咳不呕，手足不厥者，头不痛。
+    translation: 阳明病，反而没有汗，而小便通利，两三天后呕吐并且咳嗽，手足厥冷的，必然会剧烈头痛。如果不咳嗽不呕吐，手足不厥冷的，头就不痛。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病无汗而小便利为寒邪内盛。呕咳为寒邪上逆，手足厥为阳虚不达四末，头痛为寒邪上攻。若不呕不咳不厥，说明寒邪不盛，故头不痛。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.143
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.010
+    study_tags:
+      - 阳明寒证
+      - 呕咳厥头痛
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.198
+    no: 198
+    text: 阳明病，但头眩，不恶寒，故能食而咳，其人咽必痛。若不咳者，咽不痛。
+    translation: 阳明病，只是头晕目眩，不怕冷，所以能够进食并且咳嗽，患者咽喉必然疼痛。如果不咳嗽的，咽喉就不痛。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 头眩不恶寒为阳明热证，能食为胃中有热。咳为热邪上迫肺系，咽痛为热邪上攻咽喉。不咳说明热不上迫，故咽不痛。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.093
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.072
+    study_tags:
+      - 阳明热证
+      - 咳则咽痛
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.199
+    no: 199
+    text: 阳明病，无汗，小便不利，心中懊憹者，身必发黄。
+    translation: 阳明病，没有汗，小便不通利，心中懊恼烦闷的，身体必然会发黄。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 无汗则热不得外越，小便不利则湿不得下泄，湿热内蕴郁蒸则心中懊憹，湿热熏蒸肝胆则身必发黄。此为阳明湿热发黄的典型表现。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.067
+      - SHL.SB.SYM.069
+    study_tags:
+      - 阳明发黄
+      - 湿热郁蒸
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.200
+    no: 200
+    text: 阳明病，被火，额上微汗出，而小便不利者，必发黄。
+    translation: 阳明病，被火法治疗，额头微微出汗，而小便不通利的，必然会发黄。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳明病本有里热，误用火法则热更盛。额上微汗出为热不得外越，小便不利为湿不得下泄，湿热郁蒸必发黄。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.068
+      - SHL.SB.SYM.028
+      - SHL.SB.SYM.069
+    study_tags:
+      - 误火发黄
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.201
+    no: 201
+    text: 阳明病，脉浮而紧者，必潮热，发作有时。但浮者，必盗汗出。
+    translation: 阳明病，脉象浮而紧的，必然会有潮热，发作有定时。只是浮脉的，必然会有盗汗出现。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉浮紧为表邪未尽、里热已成，正邪交争则潮热有时。脉但浮为表虚不固，阴虚则盗汗。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.002
+      - SHL.SB.SYM.011
+    study_tags:
+      - 阳明潮热
+      - 脉浮紧
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.202
+    no: 202
+    text: 阳明病，口燥，但欲漱水，不欲咽者，此必衄。
+    translation: 阳明病，口中干燥，只想用水漱口，不想咽下去的，这必然会鼻出血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 口燥但欲漱水不欲咽，为热在血分不在气分。血分有热则血热妄行，故必衄。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.132
+      - SHL.SB.SYM.056
+    study_tags:
+      - 阳明衄血
+      - 热在血分
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.203
+    no: 203
+    text: 阳明病，本自汗出，医更重发汗，病已差，尚微烦不了了者，此必大便硬故也。以亡津液，胃中干燥，故令大便硬。当问其小便日几行，若本小便日三四行，今日再行，故知大便不久出。今为小便数少，以津液当还入胃中，故知不久必大便也。
+    translation: 阳明病，本来自然出汗，医生又重新发汗，病已经好了，还有微微烦躁不清楚的，这必然是因为大便硬的缘故。因为亡失津液，胃中干燥，所以导致大便硬。应当问患者小便一天几次，如果本来小便一天三四次，今天只有两次，所以知道大便不久就会排出。现在因为小便次数减少，津液应当还流入胃肠中，所以知道不久必然会排大便。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 本自汗出又发汗，津液更伤，胃中干燥则大便硬。微烦不了了为腑气不通。通过观察小便次数判断津液恢复情况：小便减少说明津液还入胃肠，大便将自通。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.014
+    study_tags:
+      - 津液还入
+      - 小便判断大便
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.204
+    no: 204
+    text: 伤寒呕多，虽有阳明证，不可攻之。
+    translation: 伤寒病呕吐多的，虽然有阳明证，也不可以用泻下法。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 呕多为病势向上，邪在上焦或少阳。虽有阳明证，但病势向上则不可逆其势而下之。当因势利导。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.013
+    study_tags:
+      - 阳明禁下
+      - 呕多不可攻
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.205
+    no: 205
+    text: 阳明病，心下硬满者，不可攻之。攻之利遂不止者死，利止者愈。
+    translation: 阳明病，心下硬满的，不可以用泻下法。泻下后下利不止的会死，下利停止的会好。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 心下硬满为邪在胸膈（上焦），非阳明腑实（中下焦）。误下则正气大伤，利不止为阳气下脱故死，利止为正气尚能恢复故愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.066
+      - SHL.SB.SYM.039
+    study_tags:
+      - 阳明禁下
+      - 心下硬满
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.206
+    no: 206
+    text: 阳明病，面合色赤，不可攻之，必发热色黄者，小便不利也。
+    translation: 阳明病，满面通红的，不可以用泻下法，必然会导致发热、面色发黄，这是因为小便不通利的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 面合色赤为热邪上蒸、郁于面部，非腑实内结。误下则伤脾胃，湿热内蕴则发热发黄，小便不利为湿热不得下泄。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.058
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.069
+      - SHL.SB.SYM.028
+    study_tags:
+      - 阳明禁下
+      - 面赤误下发黄
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.207
+    no: 207
+    text: 阳明病，不吐不下，心烦者，可与调胃承气汤。
+    translation: 阳明病，没有呕吐也没有泻下，心中烦躁的，可以给调胃承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 不吐不下排除误治因素，心烦为阳明燥热内扰心神。调胃承气汤泻热和胃，适用于阳明燥热初结、腑实未甚之证。
+    formulas:
+      - SHL.SB.F.014
+    symptom_tags:
+      - SHL.SB.SYM.029
+    study_tags:
+      - 调胃承气汤
+      - 阳明燥热
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.208
+    no: 208
+    text: 阳明病，脉迟，虽汗出不恶寒者，其身必重，短气，腹满而喘，有潮热者，此外欲解，可攻里也。手足濈然汗出者，此大便已硬也，大承气汤主之。若汗多，微发热恶寒者，外未解也，其热不潮，未可与承气汤。若腹大满不通者，可与小承气汤，微和胃气，勿令至大泄下。
+    translation: 阳明病，脉象迟，虽然出汗不怕冷的，身体必然沉重，气短，腹部胀满并且气喘，有潮热的，这是表证将要解除，可以攻里了。手足濈濈然出汗的，这是大便已经变硬了，用大承气汤主治。如果汗多，轻微发热怕冷的，是表证尚未解除，发热不是潮热，不可以给承气汤。如果腹部非常胀满不通的，可以给小承气汤，轻微调和胃气，不要导致大泻下。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉迟汗出不恶寒为表解里实。身重短气腹满喘为腑实气滞，潮热为阳明实热特征。手足汗出为津液外泄、大便已硬。大承气汤峻下热结。若表未解（恶寒发热非潮热）则不可攻。腹大满可用小承气汤微和。
+    formulas:
+      - SHL.SB.F.112
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.045
+      - SHL.SB.SYM.059
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.071
+    study_tags:
+      - 大承气汤
+      - 小承气汤
+      - 阳明腑实
+      - 表里辨证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.209
+    no: 209
+    text: 阳明病，潮热，大便微硬者，可与大承气汤，不硬者，不可与之。若不大便六七日，恐有燥屎，欲知之法，少与小承气汤，汤入腹中，转失气者，此有燥屎也，可攻之。若不转失气者，此但初头硬，后必溏，不可攻之，攻之必胀满不能食也。欲饮水者，与水则哕。其后发热者，必大便复硬而少也，以小承气汤和之。不转失气者，慎不可攻也。
+    translation: 阳明病，潮热，大便微微变硬的，可以给大承气汤，不变硬的，不可以给。如果六七天不大便，恐怕有燥屎，想知道的方法，少量给予小承气汤，汤药进入腹中，放屁的，这是有燥屎，可以攻下。如果不放屁的，这只是开始硬，后来必然溏，不可以攻下，攻下必然会导致胀满不能进食。想要饮水的，给水就会呃逆。之后又发热的，必然是大便又变硬而且量少，用小承气汤调和。不放屁的，千万不可以攻下。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 潮热、大便硬为腑实已成，可用大承气汤。若不确定有无燥屎，可用小承气汤试探：转失气（放屁）说明有燥屎可攻，不转失气说明无燥屎不可攻。误攻则伤脾胃致胀满不能食。
+    formulas:
+      - SHL.SB.F.112
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.071
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.148
+      - SHL.SB.SYM.150
+    study_tags:
+      - 大承气汤
+      - 小承气汤试探
+      - 转失气
+    notes: AI 初稿待校对。
+  - id: SHL.SB.YM.210
+    no: 210
+    text: 夫实则谵语，虚则郑声。郑声者，重语也。直视谵语，喘满者死，下利者亦死。
+    translation: 实证就会谵语，虚证就会郑声。郑声，就是重复说话。两眼直视并且谵语，气喘胀满的会死，下利的也会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 谵语为实热扰心，郑声为气虚神散（重复语言）。直视谵语为肝肾阴竭、心神将脱。喘满为肺气将绝，下利为脾肾阳亡，均为死证。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.108
+      - SHL.SB.SYM.018
+      - SHL.SB.SYM.039
+    study_tags:
+      - 谵语郑声
+      - 阳明死证
+    notes: AI 初稿待校对。

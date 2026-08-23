@@ -21,3 +21,42 @@ chapters:
     files:
       - chapters/taiyang-xia.yaml
       - chapters/taiyang-xia-2.yaml
+  - code: YM
+    name: 辨阳明病脉证并治
+    order: 4
+    files:
+      - chapters/yangming-1.yaml
+      - chapters/yangming-2.yaml
+      - chapters/yangming-3.yaml
+  - code: SY
+    name: 辨少阳病脉证并治
+    order: 5
+    files:
+      - chapters/shaoyang.yaml
+  - code: TAI
+    name: 辨太阴病脉证并治
+    order: 6
+    files:
+      - chapters/taiyin.yaml
+  - code: SI
+    name: 辨少阴病脉证并治
+    order: 7
+    files:
+      - chapters/shaoyin-1.yaml
+      - chapters/shaoyin-2.yaml
+  - code: JUE
+    name: 辨厥阴病脉证并治
+    order: 8
+    files:
+      - chapters/jueyin-1.yaml
+      - chapters/jueyin-2.yaml
+  - code: HUO
+    name: 辨霍乱病脉证并治
+    order: 9
+    files:
+      - chapters/huoluan.yaml
+  - code: YI
+    name: 辨阴阳易差后劳复病脉证并治
+    order: 10
+    files:
+      - chapters/yinyi-chahou.yaml

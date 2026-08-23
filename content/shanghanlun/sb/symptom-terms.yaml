@@ -794,3 +794,94 @@ terms:
     name: 脉浮虚而涩
     category: 脉象
     aliases: []
+  - id: SHL.SB.SYM.185
+    name: 少腹里急
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.186
+    name: 引阴中拘挛
+    category: 症状
+    aliases:
+      - 阴中拘挛
+  - id: SHL.SB.SYM.187
+    name: 热上冲胸
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.188
+    name: 头重不欲举
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.189
+    name: 眼中生花
+    category: 症状
+    aliases:
+      - 眼花
+  - id: SHL.SB.SYM.190
+    name: 劳复
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.191
+    name: 水气
+    category: 病机
+    aliases: []
+  - id: SHL.SB.SYM.192
+    name: 喜唾
+    category: 症状
+    aliases:
+      - 多唾
+  - id: SHL.SB.SYM.193
+    name: 虚羸
+    category: 症状
+    aliases:
+      - 虚羸少气
+  - id: SHL.SB.SYM.194
+    name: 气逆欲吐
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.195
+    name: 日暮微烦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.196
+    name: 脉沉实
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.197
+    name: 口苦
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.198
+    name: 目赤
+    category: 症状
+    aliases:
+      - 眼睛发红
+  - id: SHL.SB.SYM.199
+    name: 脉弦细
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.200
+    name: 脉浮大
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.201
+    name: 脉小
+    category: 脉象
+    aliases: []
+  - id: SHL.SB.SYM.202
+    name: 躁烦
+    category: 症状
+    aliases:
+      - 烦躁
+  - id: SHL.SB.SYM.203
+    name: 息高
+    category: 症状
+    aliases:
+      - 呼吸表浅
+  - id: SHL.SB.SYM.204
+    name: 气上撞心
+    category: 症状
+    aliases: []
+  - id: SHL.SB.SYM.205
+    name: 心中疼热
+    category: 症状
+    aliases: []

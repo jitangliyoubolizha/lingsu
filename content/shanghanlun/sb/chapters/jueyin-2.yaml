@@ -1,0 +1,469 @@
+# 辨厥阴病脉证并治（宋本条文 356–381）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: JUE
+  name: 辨厥阴病脉证并治
+  order: 8
+  part: 2
+  part_total: 2
+clauses:
+  - id: SHL.SB.JUE.356
+    no: 356
+    text: 伤寒厥而心下悸，宜先治水，当服茯苓甘草汤，却治其厥。不尔，水渍入胃，必作利也。
+    translation: 伤寒病厥冷并且心下悸动，应当先治疗水饮，应当服用茯苓甘草汤，然后再治疗厥冷。不这样做的话，水饮浸渍进入胃中，必然会发生下利。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥冷兼心下悸为水饮内停、阳气不达。水饮为急，当先治水，茯苓甘草汤健脾利水。水去后再治厥，否则水渍入胃则作利。
+    formulas:
+      - SHL.SB.F.041
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.088
+    study_tags:
+      - 水厥
+      - 茯苓甘草汤
+      - 先治其水
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.357
+    no: 357
+    text: 伤寒六七日，大下后，寸脉沉而迟，手足厥逆，下部脉不至，喉咽不利，唾脓血，泄利不止者，为难治，麻黄升麻汤主之。
+    translation: 伤寒病六七天，大量泻下后，寸脉沉而迟，手足厥冷，下部脉摸不到，咽喉不利，吐脓血，泄利不止的，是难以治疗的，用麻黄升麻汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 大下后伤阳伤阴，寸脉沉迟为上焦虚寒，下部脉不至为下焦虚衰。喉咽不利唾脓血为上热，泄利不止为下寒。此为寒热错杂、虚实夹杂之难治证，麻黄升麻汤寒热并用、攻补兼施。
+    formulas:
+      - SHL.SB.F.105
+    symptom_tags:
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.072
+      - SHL.SB.SYM.133
+      - SHL.SB.SYM.039
+    study_tags:
+      - 寒热错杂
+      - 麻黄升麻汤
+      - 难治证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.358
+    no: 358
+    text: 伤寒四五日，腹中痛，若转气下趣少腹者，此欲自利也。
+    translation: 伤寒病四五天，腹中疼痛，如果感觉气向下趋向小腹的，这是将要自行下利。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 腹中痛为肠道气机不利，转气下趋少腹为气机下陷，是下利将作之先兆。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.151
+      - SHL.SB.SYM.039
+    study_tags:
+      - 下利先兆
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.359
+    no: 359
+    text: 伤寒本自寒下，医复吐下之，寒格，更逆吐下，若食入口即吐，干姜黄芩黄连人参汤主之。
+    translation: 伤寒病本来就有虚寒下利，医生又用吐法下法治疗，形成寒格，更导致呕吐下利，如果食物入口就吐的，用干姜黄芩黄连人参汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 本有虚寒下利，误用吐下更伤阳气，形成寒格（上热下寒）。食入口即吐为胃热上逆，下利为脾寒下陷。干姜黄芩黄连人参汤寒热并用，温清兼施。
+    formulas:
+      - SHL.SB.F.106
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.148
+    study_tags:
+      - 寒格
+      - 干姜黄芩黄连人参汤
+      - 上热下寒
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.360
+    no: 360
+    text: 下利，有微热而渴，脉弱者，今自愈。
+    translation: 下利，有轻微发热并且口渴，脉象虚弱的，现在会自行痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利见微热而渴为阳气来复，脉弱为正复邪退，故自愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.015
+      - SHL.SB.SYM.051
+    study_tags:
+      - 下利自愈
+      - 阳气来复
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.361
+    no: 361
+    text: 下利，脉数，有微热汗出，今自愈，设复紧，为未解。
+    translation: 下利，脉象数，有轻微发热出汗，现在会自行痊愈，如果脉又变紧的，是尚未解除。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利脉数为阳复，微热汗出为邪从表解，故自愈。若脉复紧为寒邪未尽，故未解。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.053
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.011
+    study_tags:
+      - 下利预后
+      - 脉象判断
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.362
+    no: 362
+    text: 下利，手足厥冷，无脉者，灸之不温，若脉不还，反微喘者，死。少阴负趺阳者，为顺也。
+    translation: 下利，手足厥冷，摸不到脉的，用灸法治疗后不温暖，如果脉象不恢复，反而出现轻微气喘的，会死。少阴脉弱于趺阳脉的，是顺证。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利厥冷无脉为阳气衰竭，灸之不温、脉不还为阳绝。反微喘为肾不纳气、气将脱绝，故死。少阴负趺阳为胃气尚存，故为顺。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.059
+    study_tags:
+      - 下利死证
+      - 少阴趺阳脉
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.363
+    no: 363
+    text: 下利，寸脉反浮数，尺中自涩者，必清脓血。
+    translation: 下利，寸脉反而浮数，尺中自然涩的，必然会排出脓血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 寸脉浮数为热邪上盛，尺中涩为血分受伤，热迫血行则清脓血。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.053
+      - SHL.SB.SYM.055
+    study_tags:
+      - 下利便脓血
+      - 脉象判断
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.364
+    no: 364
+    text: 下利清谷，不可攻表，汗出必胀满。
+    translation: 下利排出完谷不化的食物，不可以用解表法，出汗必然会导致胀满。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利清谷为脾肾阳虚，禁用汗法。误汗则更伤阳气，阳虚不运则胀满。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.159
+      - SHL.SB.SYM.091
+    study_tags:
+      - 下利清谷
+      - 禁汗
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.365
+    no: 365
+    text: 下利，脉沉弦者，下重也，脉大者，为未止，脉微弱数者，为欲自止，虽发热不死。
+    translation: 下利，脉象沉弦的，是里急后重，脉象大的，是下利不会停止，脉象微弱而数的，是将要自行停止，虽然发热也不会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉沉弦为肝气郁结、里急后重。脉大为邪盛正虚，故未止。脉微弱数为正复邪退，故欲自止。发热为阳复，故不死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.141
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.026
+      - SHL.SB.SYM.053
+      - SHL.SB.SYM.001
+    study_tags:
+      - 下利预后
+      - 脉象判断
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.366
+    no: 366
+    text: 下利，脉沉而迟，其人面少赤，身有微热，下利清谷者，必郁冒汗出而解，病人必微厥。所以然者，其面戴阳，下虚故也。
+    translation: 下利，脉象沉而迟，患者面色微微发红，身体有轻微发热，下利排出完谷不化的食物的，必然会郁冒出汗而解除，患者必然会有轻微厥冷。之所以这样，是因为面色戴阳，下部虚弱的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利清谷、脉沉迟为阳虚寒盛。面少赤身微热为虚阳外越（戴阳）。郁冒汗出为正复邪退而解。微厥为阳虚不达四末。面戴阳为下虚阳浮。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.058
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.159
+      - SHL.SB.SYM.116
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.032
+    study_tags:
+      - 戴阳证
+      - 郁冒汗解
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.367
+    no: 367
+    text: 下利，脉数而渴者，今自愈。设不差，必清脓血，以有热故也。
+    translation: 下利，脉象数并且口渴的，现在会自行痊愈。假设不好，必然会排出脓血，这是因为有热的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利脉数渴为阳复有热，阳复则自愈。若热不除则热伤血络，故清脓血。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.053
+      - SHL.SB.SYM.015
+    study_tags:
+      - 下利预后
+      - 热伤血络
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.368
+    no: 368
+    text: 下利后脉绝，手足厥冷，晬时脉还，手足温者生，脉不还者死。
+    translation: 下利后脉象消失，手足厥冷，一个时辰后脉象恢复，手足温暖的会活，脉象不恢复的会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利后脉绝厥冷为阳气暴脱。晬时（一个时辰）脉还手足温为阳气来复，故生。脉不还为阳绝，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.059
+      - SHL.SB.SYM.032
+    study_tags:
+      - 下利预后
+      - 阳气存亡
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.369
+    no: 369
+    text: 伤寒下利，日十余行，脉反实者死。
+    translation: 伤寒病下利，一天十多次，脉象反而实的，会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利日十余行为正气大虚，脉当虚弱。脉反实为邪盛正衰、胃气已绝，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+    study_tags:
+      - 下利死证
+      - 脉证不符
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.370
+    no: 370
+    text: 下利清谷，里寒外热，汗出而厥者，通脉四逆汤主之。
+    translation: 下利排出完谷不化的食物，里面寒冷外面发热，出汗并且厥冷的，用通脉四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利清谷、里寒为阳虚寒盛，外热汗出为虚阳外越（阴盛格阳），厥冷为阳气衰竭。通脉四逆汤重用姜附，回阳救逆、通达血脉。
+    formulas:
+      - SHL.SB.F.115
+    symptom_tags:
+      - SHL.SB.SYM.159
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.032
+    study_tags:
+      - 阴盛格阳
+      - 通脉四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.371
+    no: 371
+    text: 热利下重者，白头翁汤主之。
+    translation: 热性下利里急后重的，用白头翁汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 热利为湿热下注大肠，下重为里急后重。白头翁汤清热燥湿、凉血止痢，为热利之主方。
+    formulas:
+      - SHL.SB.F.107
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.141
+    study_tags:
+      - 热利
+      - 白头翁汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.372
+    no: 372
+    text: 下利腹胀满，身体疼痛者，先温其里，乃攻其表，温里宜四逆汤，攻表宜桂枝汤。
+    translation: 下利腹部胀满，身体疼痛的，应当先温里，然后再解表，温里适合用四逆汤，解表适合用桂枝汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利腹胀满为里虚寒，身体疼痛为表邪。里虚为急，当先温里用四逆汤，里和后再解表用桂枝汤。此为先里后表之法。
+    formulas:
+      - SHL.SB.F.015
+      - SHL.SB.F.001
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.091
+      - SHL.SB.SYM.012
+    study_tags:
+      - 先里后表
+      - 四逆汤
+      - 桂枝汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.373
+    no: 373
+    text: 下利欲饮水者，以有热故也，白头翁汤主之。
+    translation: 下利想要饮水的，是因为有热的缘故，用白头翁汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利欲饮水为热伤津液，故口渴欲饮。白头翁汤清热止利、生津止渴。
+    formulas:
+      - SHL.SB.F.107
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.015
+    study_tags:
+      - 热利口渴
+      - 白头翁汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.374
+    no: 374
+    text: 下利谵语者，有燥屎也，宜小承气汤。
+    translation: 下利谵语的，是有燥屎的缘故，适合用小承气汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利谵语为热结旁流，燥屎内结、热扰心神。小承气汤轻下热结，热除则利止谵语除。
+    formulas:
+      - SHL.SB.F.113
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.033
+    study_tags:
+      - 热结旁流
+      - 小承气汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.375
+    no: 375
+    text: 下利后更烦，按之心下濡者，为虚烦也，宜栀子豉汤。
+    translation: 下利后更加烦躁，按压心下柔软的，是虚烦，适合用栀子豉汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利后烦为余热未尽、扰动心神。心下濡为无实邪，故为虚烦。栀子豉汤清宣郁热、除烦。
+    formulas:
+      - SHL.SB.F.042
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.014
+    study_tags:
+      - 虚烦
+      - 栀子豉汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.376
+    no: 376
+    text: 呕家有痈脓者，不可治呕，脓尽自愈。
+    translation: 呕吐的患者如果有痈脓的，不可以治疗呕吐，脓排尽就会自行痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 呕吐为排脓之自然反应，不可止呕。脓尽则邪去正安，呕自止。此为因势利导之法。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.013
+    study_tags:
+      - 呕家有痈脓
+      - 因势利导
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.377
+    no: 377
+    text: 呕而脉弱，小便复利，身有微热，见厥者难治，四逆汤主之。
+    translation: 呕吐并且脉象虚弱，小便又通利，身体有轻微发热，出现厥冷的难以治疗，用四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 呕而脉弱为阳虚，小便利为阳不化气，身微热为虚阳外越，见厥为阳虚寒盛。阳虚阴盛，故难治。四逆汤回阳救逆。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.051
+      - SHL.SB.SYM.143
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.032
+    study_tags:
+      - 阳虚呕吐
+      - 四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.378
+    no: 378
+    text: 干呕吐涎沫，头痛者，吴茱萸汤主之。
+    translation: 干呕、吐出涎沫，头痛的，用吴茱萸汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 干呕吐涎沫为肝胃虚寒、浊阴上逆，头痛为寒邪上犯巅顶。吴茱萸汤温中散寒、降逆止呕。
+    formulas:
+      - SHL.SB.F.089
+    symptom_tags:
+      - SHL.SB.SYM.008
+      - SHL.SB.SYM.010
+    study_tags:
+      - 肝胃虚寒
+      - 吴茱萸汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.379
+    no: 379
+    text: 呕而发热者，小柴胡汤主之。
+    translation: 呕吐并且发热的，用小柴胡汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 呕而发热为少阳证，邪在半表半里，枢机不利。小柴胡汤和解少阳。
+    formulas:
+      - SHL.SB.F.020
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.001
+    study_tags:
+      - 少阳呕热
+      - 小柴胡汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.380
+    no: 380
+    text: 伤寒大吐大下之，极虚，复极汗者，其人外气怫郁，复与之水，以发其汗，因得哕。所以然者，胃中寒冷故也。
+    translation: 伤寒病大量涌吐大量泻下后，极度虚弱，又大量出汗的，患者外气郁结不舒，又给他喝水，用来发汗，因此得了哕证。之所以这样，是因为胃中寒冷的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 大吐大下伤阳伤气，极虚复汗更伤阳气。外气怫郁为阳虚不运，饮水发汗更伤胃阳，胃寒则哕。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.150
+    study_tags:
+      - 误治致哕
+      - 胃中寒冷
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.381
+    no: 381
+    text: 伤寒哕而腹满，视其前后，知何部不利，利之即愈。
+    translation: 伤寒病哕逆并且腹部胀满的，观察大小便，知道哪个部位不通利，通利它就好了。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 哕而腹满为气机阻滞。视前后（大小便）以辨病位，小便不利则利小便，大便不利则通大便，气机通畅则哕止满消。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.150
+      - SHL.SB.SYM.091
+    study_tags:
+      - 哕证
+      - 通利法
+    notes: AI 初稿待校对。

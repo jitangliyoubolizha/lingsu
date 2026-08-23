@@ -1,0 +1,428 @@
+# 辨少阴病脉证并治（宋本条文 281–305）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: SI
+  name: 辨少阴病脉证并治
+  order: 7
+  part: 1
+  part_total: 2
+clauses:
+  - id: SHL.SB.SI.281
+    no: 281
+    text: 少阴之为病，脉微细，但欲寐也。
+    translation: 少阴病的提纲证，脉象微细，只想睡觉。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病提纲，以脉微细、但欲寐为辨证要点。脉微为阳气虚衰，脉细为阴血不足；但欲寐为心肾阳虚、神失所养之象。此二症反映少阴心肾阳虚的基本病机。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.062
+      - SHL.SB.SYM.041
+    study_tags:
+      - 少阴病提纲
+      - 心肾阳虚
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.282
+    no: 282
+    text: 少阴病，欲吐不吐，心烦但欲寐。五六日自利而渴者，属少阴也。虚故引水自救；若小便色白者，少阴病形悉具。小便白者，以下焦虚有寒，不能制水，故令色白也。
+    translation: 少阴病，想吐又吐不出来，心中烦躁却只想睡觉。到了五六天出现自行下利并且口渴的，属于少阴病。因为正虚所以饮水自救；如果小便颜色发白的，少阴病的证候就完全具备了。小便发白的原因，是因为下焦虚寒，不能制约水液，所以小便颜色发白。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 欲吐不吐为阴寒上逆，心烦但欲寐为虚阳外越而神疲。自利而渴为阳虚不能蒸化津液。小便色白是少阴虚寒的特征性表现，因下焦阳虚有寒，不能制水所致。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.029
+      - SHL.SB.SYM.041
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.015
+    study_tags:
+      - 少阴虚寒
+      - 小便色白
+      - 下焦虚寒
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.283
+    no: 283
+    text: 病人脉阴阳俱紧，反汗出者，亡阳也。此属少阴，法当咽痛而复吐利。
+    translation: 病人寸关尺脉都紧，反而出汗的，是阳气亡失的表现。这属于少阴病，按理应当咽痛并且又吐又利。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉阴阳俱紧为寒盛，反汗出为阳气外亡。少阴亡阳则寒邪上逆咽痛，中阳不守则吐利。此为少阴亡阳的危重证候。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.072
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.039
+    study_tags:
+      - 少阴亡阳
+      - 脉紧反汗
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.284
+    no: 284
+    text: 少阴病，咳而下利谵语者，被火气劫故也。小便必难，以强责少阴汗也。
+    translation: 少阴病，咳嗽并且下利、谵语的，是被火法劫迫的缘故。小便必然困难，因为强行逼迫少阴发汗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病禁用火法发汗。误用火劫则伤阴动血，上逆则咳，下迫则利，热扰心神则谵语。津液大伤故小便难。"强责少阴汗"点明误治原因。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.047
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.033
+      - SHL.SB.SYM.019
+    study_tags:
+      - 少阴禁火法
+      - 误治变证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.285
+    no: 285
+    text: 少阴病，脉细沉数，病为在里，不可发汗。
+    translation: 少阴病，脉象细沉而数的，病邪在里，不可以发汗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉细沉数为里证脉象，或为阴虚内热，或为阳虚阴盛。少阴病本虚，禁用汗法，误汗则更伤阴阳。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.054
+    study_tags:
+      - 少阴禁汗
+      - 脉细沉数
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.286
+    no: 286
+    text: 少阴病，脉微，不可发汗，亡阳故也；阳已虚，尺脉弱涩者，复不可下之。
+    translation: 少阴病，脉象微弱的，不可以发汗，因为会亡失阳气的缘故；阳气已经虚弱，尺脉弱涩的，又不可以用泻下法。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉微为阳虚，发汗则更伤阳气而致亡阳。尺脉弱涩为阴血亦虚，泻下则更伤阴血。此条强调少阴病汗下两禁，顾护阴阳。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.023
+      - SHL.SB.SYM.055
+    study_tags:
+      - 少阴禁汗下
+      - 顾护阴阳
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.287
+    no: 287
+    text: 少阴病，脉紧，至七八日，自下利，脉暴微，手足反温，脉紧反去者，为欲解也，虽烦下利，必自愈。
+    translation: 少阴病，脉象紧，到了七八天，自行下利，脉象突然变微弱，手足反而温暖，紧脉反而消失的，是即将解除的表现，虽然烦躁下利，必然自行痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉紧为寒盛，七八日后脉暴微、紧去，说明寒邪已退。手足反温为阳气来复之象。虽烦下利为正邪相争、驱邪外出，故必自愈。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.014
+    study_tags:
+      - 少阴欲解
+      - 阳气来复
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.288
+    no: 288
+    text: 少阴病，下利，若利自止，恶寒而蜷卧，手足温者，可治。
+    translation: 少阴病，下利，如果下利自行停止，怕冷并且蜷缩着躺卧，手足温暖的，可以治疗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利自止为邪去，恶寒蜷卧为阳虚，但手足温说明阳气尚存、有来复之机，故可治。手足温是判断少阴病预后的关键指标。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.003
+    study_tags:
+      - 少阴可治
+      - 手足温
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.289
+    no: 289
+    text: 少阴病，恶寒而蜷，时自烦，欲去衣被者，可治。
+    translation: 少阴病，怕冷并且蜷缩着，时常自己烦躁，想要脱去衣被的，可以治疗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 恶寒蜷卧为阳虚寒盛，时自烦、欲去衣被为阳气来复、能与邪争之象。阳气未绝则生机尚存，故可治。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.014
+    study_tags:
+      - 少阴可治
+      - 阳气来复
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.290
+    no: 290
+    text: 少阴中风，脉阳微阴浮者，为欲愈。
+    translation: 少阴病感受风邪，寸脉微弱、尺脉浮的，是即将痊愈的表现。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 阳微为表邪已微，阴浮为里阳来复。邪退正复，故为欲愈之象。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.023
+      - SHL.SB.SYM.002
+    study_tags:
+      - 少阴欲愈
+      - 脉象预后
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.291
+    no: 291
+    text: 少阴病，欲解时，从子至寅上。
+    translation: 少阴病容易解除的时间，是从子时到寅时（夜间十一点至凌晨五点）。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 子丑寅为阴尽阳生之时，少阴得阳气相助则邪易解。此为少阴病的欲解时辰，体现天人相应观念。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 少阴欲解时
+      - 子丑寅
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.292
+    no: 292
+    text: 少阴病，吐利，手足不逆冷，反发热者，不死。脉不至者，灸少阴七壮。
+    translation: 少阴病，呕吐下利，手足不冰冷，反而发热的，不会死。脉象摸不到的，灸少阴经穴位七壮。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 吐利为阴寒内盛，但手足不逆冷、反发热说明阳气未绝，故不死。脉不至为阳气一时郁闭，灸法可温通阳气。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.001
+    study_tags:
+      - 少阴不死证
+      - 灸法
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.293
+    no: 293
+    text: 少阴病，八九日，一身手足尽热者，以热在膀胱，必便血也。
+    translation: 少阴病，到了八九天，全身和手足都发热的，因为热在膀胱，必然出现便血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病日久，若一身尽热为邪从热化、热入膀胱血分。热迫血妄行则便血。此为少阴热化变证。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.038
+      - SHL.SB.SYM.074
+    study_tags:
+      - 少阴热化
+      - 便血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.294
+    no: 294
+    text: 少阴病，但厥无汗，而强发之，必动其血，未知从何道出，或从口鼻，或从目出者，是名下厥上竭，为难治。
+    translation: 少阴病，只有四肢冰冷而没有汗，却强行发汗，必然扰动血液，不知道血从什么途径出来，有的从口鼻，有的从眼睛出来的，这叫做下厥上竭，是难以治疗的。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 但厥无汗为阳虚阴盛，强发汗则更伤阴血而动血。下厥为下焦阳虚厥冷，上竭为上焦阴血耗竭。阴阳两伤，故难治。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.024
+      - SHL.SB.SYM.133
+    study_tags:
+      - 下厥上竭
+      - 少阴难治
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.295
+    no: 295
+    text: 少阴病，恶寒身蜷而利，手足逆冷者，不治。
+    translation: 少阴病，怕冷身体蜷缩并且下利，手足冰冷的，无法治疗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 恶寒身蜷为阳虚寒盛，下利为脾肾阳衰，手足逆冷为阳气将绝。阴阳离决之象，故不治。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.032
+    study_tags:
+      - 少阴不治
+      - 阳气将绝
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.296
+    no: 296
+    text: 少阴病，吐利躁烦，四逆者死。
+    translation: 少阴病，呕吐下利、烦躁不安，四肢冰冷的，是死证。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 吐利为阴寒内盛，躁烦为虚阳外越，四逆为阳气衰竭。阴阳离决，故为死证。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.013
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.032
+    study_tags:
+      - 少阴死证
+      - 阴阳离决
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.297
+    no: 297
+    text: 少阴病，下利止而头眩，时时自冒者死。
+    translation: 少阴病，下利停止却头晕目眩，时常自己昏冒的，是死证。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 下利止非病愈，而是阴液竭尽、无物可下。头眩自冒为虚阳上越、神明将脱，故为死证。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.093
+      - SHL.SB.SYM.116
+    study_tags:
+      - 少阴死证
+      - 阴竭阳越
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.298
+    no: 298
+    text: 少阴病，四逆恶寒而身蜷，脉不至，不烦而躁者死。
+    translation: 少阴病，四肢冰冷、怕冷并且身体蜷缩，脉象摸不到，不烦躁却躁动不安的，是死证。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 四逆恶寒身蜷为阳虚寒盛，脉不至为阳气已绝。不烦而躁为神气将脱、躁动无主之象，较烦躁更危，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.202
+    study_tags:
+      - 少阴死证
+      - 不烦而躁
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.299
+    no: 299
+    text: 少阴病，六七日，息高者死。
+    translation: 少阴病，到了六七天，呼吸表浅、气息高浮的，是死证。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 息高为呼吸表浅、气浮于上，是肾不纳气、气将脱绝之象，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.203
+    study_tags:
+      - 少阴死证
+      - 息高
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.300
+    no: 300
+    text: 少阴病，脉微细沉，但欲卧，汗出不烦，自欲吐，至五六日自利，复烦躁不得卧寐者死。
+    translation: 少阴病，脉象微细而沉，只想躺卧，出汗不烦躁，自己想呕吐，到了五六天自行下利，又烦躁不能躺卧入睡的，是死证。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 初期脉微细沉、但欲卧、汗出不烦为阳虚阴盛。五六日后自利复烦躁不得卧寐，说明阳气已绝、阴液将竭、神气涣散，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.062
+      - SHL.SB.SYM.041
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.086
+    study_tags:
+      - 少阴死证
+      - 病情恶化
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.301
+    no: 301
+    text: 少阴病，始得之，反发热，脉沉者，麻黄细辛附子汤主之。
+    translation: 少阴病，刚开始得病，反而发热，脉象沉的，用麻黄细辛附子汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病本应无热，今反发热说明兼有表邪。脉沉为少阴里虚。此为太少两感证，麻黄发汗解表，附子温阳扶正，细辛助麻黄解表又助附子温经。
+    formulas:
+      - SHL.SB.F.085
+    symptom_tags:
+      - SHL.SB.SYM.001
+    study_tags:
+      - 太少两感
+      - 麻黄细辛附子汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.302
+    no: 302
+    text: 少阴病，得之二三日，麻黄附子甘草汤微发汗。以二三日无证，故微发汗也。
+    translation: 少阴病，得病两三天，用麻黄附子甘草汤轻微发汗。因为两三天没有其他证候，所以轻微发汗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病二三日，表邪较轻，无其他变证，用麻黄附子甘草汤微发汗解表。甘草缓麻黄之峻，使汗出而不伤正。
+    formulas:
+      - SHL.SB.F.086
+    symptom_tags: []
+    study_tags:
+      - 少阴微发汗
+      - 麻黄附子甘草汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.303
+    no: 303
+    text: 少阴病，得之二三日以上，心中烦，不得卧，黄连阿胶汤主之。
+    translation: 少阴病，得病两三天以上，心中烦躁，不能入睡的，用黄连阿胶汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 少阴病日久，邪从热化，阴虚火旺，心神被扰则心烦不得卧。黄连阿胶汤清热滋阴、交通心肾，为少阴热化证代表方。
+    formulas:
+      - SHL.SB.F.087
+    symptom_tags:
+      - SHL.SB.SYM.029
+      - SHL.SB.SYM.086
+    study_tags:
+      - 少阴热化
+      - 黄连阿胶汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.304
+    no: 304
+    text: 少阴病，得之一二日，口中和，其背恶寒者，当灸之，附子汤主之。
+    translation: 少阴病，得病一两天，口中不苦不燥，背部怕冷的，应当灸治，用附子汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 口中和为无热象，背恶寒为阳虚寒盛。附子汤温阳散寒、健脾除湿，为少阴虚寒证代表方。灸法可助阳温经。
+    formulas:
+      - SHL.SB.F.116
+    symptom_tags:
+      - SHL.SB.SYM.003
+    study_tags:
+      - 少阴虚寒
+      - 附子汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.SI.305
+    no: 305
+    text: 少阴病，身体痛，手足寒，骨节痛，脉沉者，附子汤主之。
+    translation: 少阴病，身体疼痛，手足寒冷，骨节疼痛，脉象沉的，用附子汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 身体痛、骨节痛为寒湿痹阻，手足寒为阳虚不达四末，脉沉为里虚寒盛。附子汤温阳散寒、健脾除湿止痛。
+    formulas:
+      - SHL.SB.F.116
+    symptom_tags:
+      - SHL.SB.SYM.012
+      - SHL.SB.SYM.172
+      - SHL.SB.SYM.043
+    study_tags:
+      - 少阴寒湿
+      - 附子汤
+    notes: AI 初稿待校对。

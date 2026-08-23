@@ -1,0 +1,525 @@
+# 辨厥阴病脉证并治（宋本条文 326–355）
+# 状态：AI 初稿，待人工校对
+# 底本：宋本《伤寒论》（明·赵开美复刻宋本系统）
+# 译文：项目自编；注解：AI 初稿，待人工核对注家出处
+chapter:
+  code: JUE
+  name: 辨厥阴病脉证并治
+  order: 8
+  part: 1
+  part_total: 2
+clauses:
+  - id: SHL.SB.JUE.326
+    no: 326
+    text: 厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食，食则吐蛔，下之利不止。
+    translation: 厥阴病的提纲证，表现为口渴多饮，气向上冲撞心胸，心中灼热疼痛，虽然饥饿却不想进食，进食就会吐出蛔虫，如果用泻下法就会导致下利不止。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥阴病提纲，以消渴、气上撞心、心中疼热、饥不欲食、吐蛔、下之利不止为辨证要点。厥阴为阴尽阳生之经，病则寒热错杂、上热下寒。上热则消渴、心中疼热；下寒则饥不欲食、吐蛔；误下则更伤阳气而利不止。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.095
+      - SHL.SB.SYM.204
+      - SHL.SB.SYM.205
+      - SHL.SB.SYM.173
+      - SHL.SB.SYM.112
+      - SHL.SB.SYM.039
+    study_tags:
+      - 厥阴病提纲
+      - 寒热错杂
+      - 上热下寒
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.327
+    no: 327
+    text: 厥阴中风，脉微浮为欲愈，不浮为未愈。
+    translation: 厥阴病感受风邪，脉象微微浮起的，是即将痊愈的表现；脉象不浮的，是尚未痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥阴为阴经，病则脉多沉。若脉微浮，说明阳气来复、邪从表解，故为欲愈；脉不浮则阳气未复，故未愈。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 厥阴中风
+      - 脉象预后
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.328
+    no: 328
+    text: 厥阴病，欲解时，从丑至卯上。
+    translation: 厥阴病容易解除的时间，是从丑时到卯时（凌晨一点至早晨七点）。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 丑寅卯为阴尽阳生之时，厥阴得阳气相助则邪易解。此为厥阴病的欲解时辰。
+    formulas: []
+    symptom_tags: []
+    study_tags:
+      - 厥阴欲解时
+      - 丑寅卯
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.329
+    no: 329
+    text: 厥阴病，渴欲饮水者，少少与之愈。
+    translation: 厥阴病，口渴想要喝水的，少量给予饮水就会痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥阴病渴欲饮水为阳气来复之象，但厥阴本虚，不可多饮，少少与之则胃气渐和而愈。多饮则水停中焦反致变证。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.015
+    study_tags:
+      - 厥阴渴饮
+      - 少少与之
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.330
+    no: 330
+    text: 诸四逆厥者，不可下之，虚家亦然。
+    translation: 凡是四肢冰冷厥逆的，不可以用泻下法，体质虚弱的人也是这样。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 四逆厥冷为阳气衰微，泻下则更伤阳气，故禁用。虚家本虚，亦不可下。此为厥阴病禁下之法。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+    study_tags:
+      - 厥阴禁下
+      - 四逆厥
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.331
+    no: 331
+    text: 伤寒先厥后发热而利者，必自止，见厥复利。
+    translation: 伤寒病先出现四肢厥冷然后发热的，如果伴有下利，下利必然会自行停止，如果再出现厥冷就会又下利。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 先厥后发热为阳气来复，阳复则利自止。若复见厥冷，说明阳气又衰，则利复作。厥热胜复反映阴阳消长。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.039
+    study_tags:
+      - 厥热胜复
+      - 阴阳消长
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.332
+    no: 332
+    text: 伤寒始发热六日，厥反九日而利。凡厥利者，当不能食，今反能食者，恐为除中，食以索饼，不发热者，知胃气尚在，必愈。恐暴热来出而复去也。后日脉之，其热续在者，期之旦日夜半愈。所以然者，本发热六日，厥反九日，复发热三日，并前六日，亦十一日，与厥相应，故期之旦日夜半愈。后三日脉之而脉数，其热不罢者，此为热气有余，必发痈脓也。
+    translation: 伤寒病开始发热六天，厥冷反而九天并且下利。凡是厥冷下利的，应当不能进食，现在反而能进食的，恐怕是除中证，给吃面条饼，如果不发热的，知道胃气还在，必然会好。恐怕是突然发热出现后又消退。后来诊脉，发热继续存在的，预期在明天半夜会好。之所以这样，本来发热六天，厥冷反而九天，又发热三天，加上前面的六天，也是十一天，与厥冷的天数相应，所以预期在明天半夜会好。后来三天诊脉而脉数，发热不退的，这是热气有余，必然会发生痈肿化脓。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 此条论述厥热胜复的预后判断。厥多热少为阳虚，若能食为胃气尚存。食索饼后不发热为胃气和，发热为除中（胃气将绝）。厥热相应则阴阳平衡而愈，热多厥少为热气有余则发痈脓。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.148
+    study_tags:
+      - 厥热胜复
+      - 除中证
+      - 预后判断
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.333
+    no: 333
+    text: 伤寒脉迟六七日，而反与黄芩汤彻其热。脉迟为寒，今与黄芩汤复除其热，腹中应冷，当不能食，今反能食，此名除中，必死。
+    translation: 伤寒病脉象迟，到了六七天，反而用黄芩汤来清除发热。脉迟是寒证，现在用黄芩汤又清除发热，腹中应当寒冷，应当不能进食，现在反而能进食，这叫做除中，必然会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉迟为寒证，误用黄芩汤苦寒清热，更伤阳气。腹中应冷而不能食，反能食为胃气将绝之"除中"证，是回光返照之象，故必死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.087
+      - SHL.SB.SYM.148
+    study_tags:
+      - 除中证
+      - 误治死证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.334
+    no: 334
+    text: 伤寒先厥后发热，下利必自止，而反汗出，咽中痛者，其喉为痹。发热无汗，而利必自止，若不止，必便脓血，便脓血者，其喉不痹。
+    translation: 伤寒病先厥冷后发热，下利必然会自行停止，如果反而出汗，咽喉疼痛的，咽喉就会发生痹阻。发热没有汗，下利也必然会自行停止，如果下利不止，必然会出现便脓血，便脓血的，咽喉就不会痹阻。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 先厥后热为阳气来复，利当自止。若反汗出咽痛，为阳复太过、热毒上攻咽喉成痹。若无汗而利不止，为热毒下迫大肠成便脓血。热毒上攻则不下迫，下迫则不上攻，故喉痹与便脓血不并见。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.072
+    study_tags:
+      - 厥后发热变证
+      - 喉痹
+      - 便脓血
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.335
+    no: 335
+    text: 伤寒一二日至四五日厥者，必发热。前热者后必厥，厥深者热亦深，厥微者热亦微。厥应下之，而反发汗者，必口伤烂赤。
+    translation: 伤寒病一两天到四五天出现厥冷的，必然会发热。先发热后来必然厥冷，厥冷严重的发热也严重，厥冷轻微的发热也轻微。厥冷应当用泻下法，反而用发汗法的，必然会导致口腔糜烂红肿。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 此为热厥证，阳热内郁不达四末则厥，热深厥深、热微厥微。热厥当清热或下之，误汗则更伤阴液，热毒上攻则口伤烂赤。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.001
+    study_tags:
+      - 热厥
+      - 厥深热深
+      - 误汗变证
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.336
+    no: 336
+    text: 伤寒病，厥五日，热亦五日，设六日当复厥，不厥者自愈。厥终不过五日，以热五日，故知自愈。
+    translation: 伤寒病，厥冷五天，发热也五天，假设第六天应当再厥冷，不厥冷的就会自行痊愈。厥冷始终不超过五天，因为发热也是五天，所以知道会自行痊愈。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥热相应、天数相等，说明阴阳平衡、正气来复，故自愈。厥终不过五日说明阳气渐复、邪气渐退。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.001
+    study_tags:
+      - 厥热相应
+      - 自愈
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.337
+    no: 337
+    text: 凡厥者，阴阳气不相顺接，便为厥。厥者，手足逆冷者是也。
+    translation: 凡是厥证的，都是阴阳之气不能相互顺接，就会发生厥冷。厥证，就是手足冰冷的证候。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 此条为厥证的总纲。阴阳气不相顺接为厥证的基本病机，可因阳虚、热郁、痰饮、血虚等多种原因导致。手足逆冷为厥证的特征性表现。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+    study_tags:
+      - 厥证总纲
+      - 阴阳气不相顺接
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.338
+    no: 338
+    text: 伤寒脉微而厥，至七八日肤冷，其人躁无暂安时者，此为脏厥，非蛔厥也。蛔厥者，其人当吐蛔。今病者静，而复时烦者，此为脏寒，蛔上入其膈，故烦，须臾复止，得食而呕，又烦者，蛔闻食臭出，其人常自吐蛔。蛔厥者，乌梅丸主之。又主久利。
+    translation: 伤寒病脉象微弱并且厥冷，到了七八天皮肤冰冷，患者烦躁没有片刻安宁的时候，这是脏厥，不是蛔厥。蛔厥的患者，应当会吐出蛔虫。现在患者安静，却又时常烦躁的，这是内脏寒冷，蛔虫向上进入膈膜，所以烦躁，一会儿又停止，进食就呕吐，又烦躁的，是蛔虫闻到食物的气味出来，患者经常自己吐出蛔虫。蛔厥的，用乌梅丸主治。又主治久利。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 此条辨脏厥与蛔厥。脏厥为阳气衰竭，肤冷躁无暂安，预后不良。蛔厥为蛔虫扰动，时烦时静，得食而呕，乌梅丸酸苦辛并用，安蛔止痛。乌梅丸寒热并用、攻补兼施，为厥阴病主方。
+    formulas:
+      - SHL.SB.F.102
+    symptom_tags:
+      - SHL.SB.SYM.023
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.112
+      - SHL.SB.SYM.013
+    study_tags:
+      - 脏厥
+      - 蛔厥
+      - 乌梅丸
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.339
+    no: 339
+    text: 伤寒热少微厥，指头寒，嘿嘿不欲食，烦躁，数日小便利，色白者，此热除也，欲得食，其病为愈。若厥而呕，胸胁烦满者，其后必便血。
+    translation: 伤寒病发热轻微、厥冷也轻微，手指头发冷，沉默不想进食，烦躁，几天后小便通畅、颜色发白的，这是热邪已除，想要进食的，病就会好。如果厥冷并且呕吐，胸胁部烦躁胀满的，后来必然会出现便血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 热少微厥为热厥轻证。小便利色白为热除，欲得食为胃气和，故愈。若厥而呕、胸胁烦满为热邪内郁、肝胃不和，热迫血行则便血。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.173
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.143
+    study_tags:
+      - 热厥轻证
+      - 预后判断
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.340
+    no: 340
+    text: 病者手足厥冷，言我不结胸，小腹满，按之痛者，此冷结在膀胱关元也。
+    translation: 患者手足厥冷，说自己不是结胸证，小腹胀满，按压疼痛的，这是寒邪凝结在膀胱关元部位。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 手足厥冷为阳虚，小腹满按痛为寒邪凝结下焦。非结胸（胸膈），而在膀胱关元（下焦），当温阳散寒。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.049
+    study_tags:
+      - 冷结膀胱关元
+      - 下焦寒凝
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.341
+    no: 341
+    text: 伤寒发热四日，厥反三日，复热四日，厥少热多者，其病当愈。四日至七日热不除者，必便脓血。
+    translation: 伤寒病发热四天，厥冷反而三天，又发热四天，厥冷少发热多的，病应当会好。四天到七天发热不退的，必然会出现便脓血。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥少热多为阳气来复、正胜邪退，故当愈。若热不除为阳复太过、热毒内盛，热迫血行则便脓血。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.032
+    study_tags:
+      - 厥热胜复
+      - 预后判断
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.342
+    no: 342
+    text: 伤寒厥四日，热反三日，复厥五日，其病为进。寒多热少，阳气退，故为进也。
+    translation: 伤寒病厥冷四天，发热反而三天，又厥冷五天，病在进展。寒多热少，阳气衰退，所以是病进。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 厥多热少为阳虚阴盛、正不胜邪，阳气衰退则病进，预后不良。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.001
+    study_tags:
+      - 厥多热少
+      - 病进
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.343
+    no: 343
+    text: 伤寒六七日，脉微，手足厥冷，烦躁，灸厥阴，厥不还者，死。
+    translation: 伤寒病六七天，脉象微弱，手足厥冷，烦躁，灸厥阴经穴位，厥冷不恢复的，会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉微厥冷烦躁为阳虚寒盛，灸厥阴以温阳。若灸后厥不还，说明阳气已绝、无法回阳，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.023
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.014
+    study_tags:
+      - 厥阴死证
+      - 灸法
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.344
+    no: 344
+    text: 伤寒发热，下利厥逆，躁不得卧者，死。
+    translation: 伤寒病发热，下利、厥冷，烦躁不能躺卧的，会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 发热为假热（虚阳外越），下利厥逆为阳虚寒盛，躁不得卧为神气将脱。阴阳离决，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.086
+    study_tags:
+      - 厥阴死证
+      - 阴阳离决
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.345
+    no: 345
+    text: 伤寒发热，下利至甚，厥不止者，死。
+    translation: 伤寒病发热，下利非常严重，厥冷不止的，会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 发热为假热，下利至甚为阴液将竭，厥不止为阳气已绝。阴阳俱竭，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.032
+    study_tags:
+      - 厥阴死证
+      - 阴阳俱竭
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.346
+    no: 346
+    text: 伤寒六七日不利，便发热而利，其人汗出不止者，死。有阴无阳故也。
+    translation: 伤寒病六七天不下利，突然发热并且下利，患者出汗不止的，会死。这是因为只有阴邪没有阳气的缘故。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 本不利而突发热利，为阳气暴脱。汗出不止为阳亡于外，有阴无阳为阴盛阳亡，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.004
+    study_tags:
+      - 厥阴死证
+      - 阳气暴脱
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.347
+    no: 347
+    text: 伤寒五六日，不结胸，腹濡，脉虚复厥者，不可下，此亡血，下之死。
+    translation: 伤寒病五六天，没有结胸证，腹部柔软，脉象虚弱又厥冷的，不可以泻下，这是亡血证，泻下就会死。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 不结胸、腹濡为无实邪，脉虚厥冷为血虚阳弱。亡血之人不可下，误下则更伤气血而致阳亡，故死。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.051
+      - SHL.SB.SYM.032
+    study_tags:
+      - 亡血厥冷
+      - 禁下
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.348
+    no: 348
+    text: 发热而厥，七日下利者，为难治。
+    translation: 发热并且厥冷，到了第七天下利的，是难以治疗的。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 发热而厥为寒热错杂，七日下利为正气更虚、邪气内陷，正虚邪盛，故难治。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.039
+    study_tags:
+      - 厥阴难治
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.349
+    no: 349
+    text: 伤寒脉促，手足厥逆，可灸之。
+    translation: 伤寒病脉象促，手足厥冷的，可以用灸法治疗。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉促为阳气郁遏，手足厥逆为阳气不达四末。灸法可温通阳气、解除郁遏。
+    formulas: []
+    symptom_tags:
+      - SHL.SB.SYM.021
+      - SHL.SB.SYM.032
+    study_tags:
+      - 厥阴灸法
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.350
+    no: 350
+    text: 伤寒脉滑而厥者，里有热，白虎汤主之。
+    translation: 伤寒病脉象滑而厥冷的，是里有热邪，用白虎汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 脉滑为实热，厥冷为热邪内郁不达四末（热厥）。白虎汤清泄里热，热除则厥自解。
+    formulas:
+      - SHL.SB.F.068
+    symptom_tags:
+      - SHL.SB.SYM.085
+      - SHL.SB.SYM.032
+    study_tags:
+      - 热厥
+      - 白虎汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.351
+    no: 351
+    text: 手足厥寒，脉细欲绝者，当归四逆汤主之。
+    translation: 手足厥冷，脉象细弱几乎摸不到的，用当归四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 手足厥寒、脉细欲绝为血虚寒凝，当归四逆汤温经散寒、养血通脉。当归养血，桂枝芍药调和营卫，细辛通阳，甘草大枣和中。
+    formulas:
+      - SHL.SB.F.103
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.052
+    study_tags:
+      - 血虚寒凝
+      - 当归四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.352
+    no: 352
+    text: 若其人内有久寒者，宜当归四逆加吴茱萸生姜汤。
+    translation: 如果患者体内有久寒的，适合用当归四逆加吴茱萸生姜汤。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 血虚寒凝兼内有久寒，当归四逆汤温经养血，加吴茱萸生姜温中散寒、降逆止呕。
+    formulas:
+      - SHL.SB.F.104
+    symptom_tags:
+      - SHL.SB.SYM.032
+    study_tags:
+      - 血虚寒凝兼久寒
+      - 当归四逆加吴茱萸生姜汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.353
+    no: 353
+    text: 大汗出，热不去，内拘急，四肢疼，又下利厥逆而恶寒者，四逆汤主之。
+    translation: 大量出汗，发热不退，腹内拘急，四肢疼痛，又下利、厥冷并且怕冷的，用四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 大汗出热不去为阳虚不能固表，内拘急四肢疼为阳虚寒凝，下利厥逆恶寒为阳虚寒盛。四逆汤回阳救逆。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.001
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.003
+      - SHL.SB.SYM.012
+    study_tags:
+      - 阳虚厥逆
+      - 四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.354
+    no: 354
+    text: 大汗，若大下利而厥冷者，四逆汤主之。
+    translation: 大量出汗，或者严重下利并且厥冷的，用四逆汤主治。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 大汗或大下利均可亡阳，阳虚则厥冷。四逆汤回阳救逆为正治之法。
+    formulas:
+      - SHL.SB.F.015
+    symptom_tags:
+      - SHL.SB.SYM.004
+      - SHL.SB.SYM.039
+      - SHL.SB.SYM.032
+    study_tags:
+      - 阳虚厥冷
+      - 四逆汤
+    notes: AI 初稿待校对。
+  - id: SHL.SB.JUE.355
+    no: 355
+    text: 病人手足厥冷，脉乍紧者，邪结在胸中，心下满而烦，饥不能食者，病在胸中，当须吐之，宜瓜蒂散。
+    translation: 患者手足厥冷，脉象突然紧的，是邪气凝结在胸中，心下胀满并且烦躁，饥饿却不能进食的，病在胸中，应当涌吐，适合用瓜蒂散。
+    annotations:
+      - source: 项目自编（待校对）
+        author: 灵素内容组
+        text: 手足厥冷、脉乍紧为邪结胸中、阳气不达。心下满烦、饥不能食为痰实壅塞胸膈。瓜蒂散涌吐痰实，邪去则阳气通达、厥冷自解。
+    formulas:
+      - SHL.SB.F.067
+    symptom_tags:
+      - SHL.SB.SYM.032
+      - SHL.SB.SYM.011
+      - SHL.SB.SYM.027
+      - SHL.SB.SYM.014
+      - SHL.SB.SYM.148
+    study_tags:
+      - 痰厥
+      - 瓜蒂散
+      - 吐法
+    notes: AI 初稿待校对。
