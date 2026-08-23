@@ -96,5 +96,28 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['tests/**/*.spec.ts', 'src/**/*.spec.ts'],
+    coverage: {
+      provider: 'v8',
+      include: ['src/domain/**/*.ts', 'src/store/**/*.ts'],
+      exclude: [
+        'src/domain/**/*.spec.ts',
+        'src/store/**/*.spec.ts',
+        'src/domain/index.ts',
+        'src/domain/**/types.ts',
+        'src/store/index.ts',
+        'src/store/db.ts',
+        'src/store/migrations.ts',
+        'src/store/cards.ts',
+        'src/store/favorites.ts',
+        'src/store/studyPlans.ts',
+        'src/store/settings.ts',
+      ],
+      thresholds: {
+        'src/domain': { statements: 90, branches: 90, functions: 90, lines: 90 },
+        'src/store': { statements: 80, branches: 80, functions: 70, lines: 80 },
+      },
+      reporter: ['text', 'lcov'],
+      reportsDirectory: './coverage',
+    },
   },
 })

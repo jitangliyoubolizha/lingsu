@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "validate:content": "tsx scripts/validate-content.ts",
     "build:content": "tsx scripts/build-content.ts",
     "build:formulas-doc": "tsx scripts/generate-formula-catalog.ts"
@@ -31,6 +32,7 @@
     "@tailwindcss/vite": "4.3.3",
     "@types/node": "24.13.3",
     "@vitejs/plugin-vue": "6.0.8",
+    "@vitest/coverage-v8": "^3.2.7",
     "@vue/test-utils": "2.4.11",
     "eslint": "9.39.5",
     "eslint-plugin-vue": "10.10.0",
