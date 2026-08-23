@@ -15,7 +15,8 @@
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run",
     "validate:content": "tsx scripts/validate-content.ts",
-    "build:content": "tsx scripts/build-content.ts"
+    "build:content": "tsx scripts/build-content.ts",
+    "build:formulas-doc": "tsx scripts/generate-formula-catalog.ts"
   },
   "dependencies": {
     "dexie": "4.4.5",
