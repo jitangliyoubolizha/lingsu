@@ -15,6 +15,7 @@
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
     "validate:content": "tsx scripts/validate-content.ts",
     "build:content": "tsx scripts/build-content.ts",
     "build:formulas-doc": "tsx scripts/generate-formula-catalog.ts"
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "4.3.3",
     "@types/node": "24.13.3",
     "@vitejs/plugin-vue": "6.0.8",

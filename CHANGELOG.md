@@ -11,6 +11,8 @@
 
 - **测试覆盖率门禁**（TD-4）：安装 `@vitest/coverage-v8@3.2.7`；`vite.config.ts` 配置 domain ≥90% / store ≥80% 阈值；新增 `npm run test:coverage` 脚本；CI workflow 接入覆盖率步骤；纯 Dexie 代理层（cards/favorites/studyPlans/settings）排除（由 store-db 集成测试保证覆盖）；28 文件 159 测试全绿，覆盖率门禁通过（2026-08-23）
 
+- **E2E 冒烟测试**（TD-5）：安装 `@playwright/test`；新增 `playwright.config.ts` + `e2e/smoke.spec.ts` 三条关键链路——协议→首页→背诵 / 搜索→条文详情 / 刷题→错题本；新增 `npm run test:e2e` 脚本；CI workflow 接入 `playwright install --with-deps` + `test:e2e`；本机跑通 3 passed（2026-08-23）
+
 - **完成伤寒论全篇内容录入**（T1-1）：新增 7 篇 220 条条文（阳明病 84 条、少阳病 10 条、太阴病 8 条、少阴病 45 条、厥阴病 56 条、霍乱病 10 条、阴阳易差后劳复 7 条），总计 398 条覆盖完整原文；新增方剂、药物、症状术语并启用全部 10 篇；新增 `docs/方剂目录.md`（`npm run build:formulas-doc` 自动生成），便于集中查看与维护全部方剂（2026-01-22）
 
 - 内容按篇懒加载（T1-6/TD-2/E-9）：构建产物拆为 `meta.json`（79KB，随主包）+ `chapters/<code>.json`（按篇异步 chunk，加载器带缓存）；新增 `loadMeta`/`loadChapter`/`loadAllChapters`/`chapterCodeOfClause` API；条文详情页只加载所属篇、方剂/药物/我的页只用元数据；搜索/刷题/每日任务等跨篇页面按全量加载但共享缓存；测试 142 → 149 用例（2026-08-22）
