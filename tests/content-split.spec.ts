@@ -6,13 +6,15 @@ describe('内容按篇懒加载（T1-6）', () => {
   it('loadMeta 同步返回篇章元数据、全书顺序与方药数据', () => {
     const meta = loadMeta()
 
-    expect(meta.chapters).toHaveLength(3)
-    expect(meta.chapters.map((chapter) => chapter.code)).toEqual(['TYS', 'TYZ', 'TYX'])
-    expect(meta.chapters.reduce((sum, chapter) => sum + chapter.clauseCount, 0)).toBe(178)
-    expect(meta.clauseOrder).toHaveLength(178)
+    expect(meta.chapters).toHaveLength(10)
+    expect(meta.chapters.map((chapter) => chapter.code)).toEqual([
+      'TYS', 'TYZ', 'TYX', 'YM', 'SY', 'TAI', 'SI', 'JUE', 'HUO', 'YI',
+    ])
+    expect(meta.chapters.reduce((sum, chapter) => sum + chapter.clauseCount, 0)).toBe(398)
+    expect(meta.clauseOrder).toHaveLength(398)
     expect(meta.clauseOrder[0]).toBe('SHL.SB.TYS.001')
-    expect(meta.formulas).toHaveLength(75)
-    expect(meta.herbs).toHaveLength(58)
+    expect(meta.formulas).toHaveLength(112)
+    expect(meta.herbs).toHaveLength(81)
     expect(meta.questions).toHaveLength(21)
   })
 
@@ -38,8 +40,10 @@ describe('内容按篇懒加载（T1-6）', () => {
 
   it('loadAllChapters 按篇章顺序返回全部章节', async () => {
     const chapters = await loadAllChapters()
-    expect(chapters.map((chapter) => chapter.code)).toEqual(['TYS', 'TYZ', 'TYX'])
-    expect(chapters.reduce((sum, chapter) => sum + chapter.clauses.length, 0)).toBe(178)
+    expect(chapters.map((chapter) => chapter.code)).toEqual([
+      'TYS', 'TYZ', 'TYX', 'YM', 'SY', 'TAI', 'SI', 'JUE', 'HUO', 'YI',
+    ])
+    expect(chapters.reduce((sum, chapter) => sum + chapter.clauses.length, 0)).toBe(398)
   })
 
   it('chapterCodeOfClause 依据全书顺序定位条文所属篇章', () => {
@@ -54,13 +58,13 @@ describe('内容按篇懒加载（T1-6）', () => {
   it('loadContent 聚合全量数据，clauses 由章节派生且顺序正确', async () => {
     const content = await loadContent()
 
-    expect(content.clauses).toHaveLength(178)
-    expect(content.chapters).toHaveLength(3)
+    expect(content.clauses).toHaveLength(398)
+    expect(content.chapters).toHaveLength(10)
     expect(content.clauses[0]?.id).toBe('SHL.SB.TYS.001')
     expect(content.clauses[29]?.id).toBe('SHL.SB.TYS.030')
     expect(content.clauses[30]?.id).toBe('SHL.SB.TYZ.031')
     expect(content.clauses[177]?.id).toBe('SHL.SB.TYX.178')
-    expect(content.formulas).toHaveLength(75)
+    expect(content.formulas).toHaveLength(112)
     expect(content.questions).toHaveLength(21)
   })
 })
