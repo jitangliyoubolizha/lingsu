@@ -7,6 +7,8 @@
 
 ### Added
 
+- **学习计划管理**（T1-3）：我的页新增学习计划管理——列出全部计划（进行中/已暂停/已完成标签）、暂停/激活切换、删除、新增计划（选择篇章 + 每日新学 3/5/10）；强制最多 2 个 active 计划（`createStudyPlan` 超限返回 null、`togglePlanStatus` 激活前检查上限，常量 `MAX_ACTIVE_PLANS`）；新增 `src/store/studyPlans.spec.ts` 真库测试 13 例 + `tests/profile-study-plans.spec.ts` UI 组件测试 5 例，测试 149 → 177（2026-08-24）
+
 - **安全头配置**（TD-7）：`index.html` 注入 CSP（Content-Security-Policy）与 Referrer-Policy meta 标签，限制脚本/样式/字体/图片/连接来源均为同源；GitHub Pages 自带 HSTS/X-Frame-Options/X-Content-Type-Options；159 测试 + lint/typecheck/validate:content/build 全绿（2026-08-23）
 
 - **测试覆盖率门禁**（TD-4）：安装 `@vitest/coverage-v8@3.2.7`；`vite.config.ts` 配置 domain ≥90% / store ≥80% 阈值；新增 `npm run test:coverage` 脚本；CI workflow 接入覆盖率步骤；纯 Dexie 代理层（cards/favorites/studyPlans/settings）排除（由 store-db 集成测试保证覆盖）；28 文件 159 测试全绿，覆盖率门禁通过（2026-08-23）
