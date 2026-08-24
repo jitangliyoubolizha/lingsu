@@ -34,9 +34,14 @@ export {
 export { CURRENT_SCHEMA_VERSION, migrations, runMigrations } from './migrations'
 export { getSetting, hasAgreed, markAgreed, setSetting } from './settings'
 export {
+  createStudyPlan,
   deleteStudyPlan,
   ensureDefaultStudyPlan,
-  getAllStudyPlans,
+  getActivePlanCount,
   getActiveStudyPlans,
+  getAllStudyPlans,
+  MAX_ACTIVE_PLANS,
   saveStudyPlan,
+  togglePlanStatus,
 } from './studyPlans'
+export type { CreateStudyPlanInput } from './studyPlans'
