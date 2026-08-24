@@ -7,6 +7,8 @@
 
 ### Added
 
+- **收藏独立页**（T1-4）：新增 `/favorites` 收藏页，按条文/方剂/药物三组展示收藏内容，支持跳转详情与直接取消收藏；我的页「我的收藏」入口由条文列表改为收藏页；新增 `FavoritesView` 与组件测试 3 例，测试 177 → 180（2026-08-24）
+
 - **学习计划管理**（T1-3）：我的页新增学习计划管理——列出全部计划（进行中/已暂停/已完成标签）、暂停/激活切换、删除、新增计划（选择篇章 + 每日新学 3/5/10）；强制最多 2 个 active 计划（`createStudyPlan` 超限返回 null、`togglePlanStatus` 激活前检查上限，常量 `MAX_ACTIVE_PLANS`）；新增 `src/store/studyPlans.spec.ts` 真库测试 13 例 + `tests/profile-study-plans.spec.ts` UI 组件测试 5 例，测试 149 → 177（2026-08-24）
 
 - **安全头配置**（TD-7）：`index.html` 注入 CSP（Content-Security-Policy）与 Referrer-Policy meta 标签，限制脚本/样式/字体/图片/连接来源均为同源；GitHub Pages 自带 HSTS/X-Frame-Options/X-Content-Type-Options；159 测试 + lint/typecheck/validate:content/build 全绿（2026-08-23）
