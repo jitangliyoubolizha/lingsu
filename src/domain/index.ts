@@ -1,3 +1,4 @@
+export * from './clauseLink'
 export * from './formula'
 export * from './memory'
 export * from './quiz'

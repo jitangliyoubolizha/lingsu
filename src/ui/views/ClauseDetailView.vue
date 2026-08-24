@@ -8,6 +8,7 @@ import { chapterCodeOfClause, loadChapter, loadMeta } from '../../data'
 import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
 import AppHeader from '../components/AppHeader.vue'
+import ClauseLinkText from '../components/ClauseLinkText.vue'
 import ComplianceBanner from '../components/ComplianceBanner.vue'
 import EmptyState from '../components/EmptyState.vue'
 import TagPill from '../components/TagPill.vue'
@@ -20,6 +21,8 @@ const favorite = ref(false)
 const loaded = ref(false)
 
 const clauseId = computed(() => String(route.params.id))
+/** 全书条文顺序（宋本第 N 条 → clauseId），供条文互链渲染 */
+const clauseOrder = loadMeta().clauseOrder
 const feedbackTo = computed(() =>
   clause.value
     ? {
@@ -148,7 +151,10 @@ watch(clauseId, load)
           aria-hidden="true"
         />
         <p class="font-serif text-[27px] leading-[1.8] text-ink">
-          {{ clause.text }}
+          <ClauseLinkText
+            :text="clause.text"
+            :clause-order="clauseOrder"
+          />
         </p>
       </section>
 
@@ -173,7 +179,10 @@ watch(clauseId, load)
           :default-open="true"
         >
           <p class="text-sm leading-relaxed text-ink-secondary">
-            {{ clause.translation }}
+            <ClauseLinkText
+              :text="clause.translation"
+              :clause-order="clauseOrder"
+            />
           </p>
         </AccordionPanel>
 
@@ -184,7 +193,10 @@ watch(clauseId, load)
           :source="annotation.source"
         >
           <p class="text-sm leading-relaxed text-ink-secondary">
-            {{ annotation.text }}
+            <ClauseLinkText
+              :text="annotation.text"
+              :clause-order="clauseOrder"
+            />
           </p>
         </AccordionPanel>
       </div>
