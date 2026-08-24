@@ -58,7 +58,7 @@ const groups = [
   {
     title: '学习库',
     items: [
-      { label: '我的收藏', icon: Star, to: '/clauses' },
+      { label: '我的收藏', icon: Star, to: '/favorites' },
       { label: '待巩固', icon: FileX, to: '/wrong-book' },
     ],
   },

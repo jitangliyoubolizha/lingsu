@@ -5,6 +5,7 @@ import AgreementView from './views/AgreementView.vue'
 import ClauseDetailView from './views/ClauseDetailView.vue'
 import ClauseListView from './views/ClauseListView.vue'
 import CompareView from './views/CompareView.vue'
+import FavoritesView from './views/FavoritesView.vue'
 import FeedbackView from './views/FeedbackView.vue'
 import FormulaDetailView from './views/FormulaDetailView.vue'
 import FormulaListView from './views/FormulaListView.vue'
@@ -68,6 +69,12 @@ const router = createRouter({
       path: '/compare',
       name: 'compare',
       component: CompareView,
+    },
+    {
+      path: '/favorites',
+      name: 'favorites',
+      component: FavoritesView,
+      meta: { navKey: 'profile' },
     },
     {
       path: '/search',
