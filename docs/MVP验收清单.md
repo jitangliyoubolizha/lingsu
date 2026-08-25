@@ -27,7 +27,7 @@
 
 ## 测试基线（子计划 8）
 
-- 单元/组件/真库测试：**197 用例**（`npm test`）
+- 单元/组件/真库测试：**198 用例**（`npm test`）
   - 内容校验负向：11
   - domain（memory/search/formula/quiz/gaps/stats/选项顺序/错题排期/刷题筛选与洗牌/条文互链）：68
   - store（Dexie 真库/backup/学习计划）：30
@@ -35,11 +35,11 @@
   - 反馈 mailto 纯函数：7
   - 路由：2
   - 其他（content-data/formatters/example）：7
-  - 内容按篇懒加载（T1-6）：7
+  - 内容按篇懒加载（T1-6/方剂懒加载）：8
 - `npm run validate:content` ✅
 - `npm run lint` ✅
 - `npm run typecheck` ✅
-- `npm run build` ✅（2026-08-22 内容按篇懒加载后，主 chunk 从 500kB+ 降至 453kB，chunk>500kB 警告消除；TD-2 已关闭）
+- `npm run build` ✅（2026-08-25 方剂按需加载后，主 chunk 511KB → 412KB，>500kB 警告消除；TD-2 二次瘦身关闭）
 
 ## 挂起项（不因本轮全绿而关闭）
 
