@@ -117,12 +117,16 @@ describe('ui 协议流程', () => {
   })
 
   it('协议页提示条文可能存在错误并可点击内容纠错', () => {
-    const wrapper = mount(AgreementView)
+    const wrapper = mount(AgreementView, {
+      global: { stubs: { RouterLink: RouterLinkStub } },
+    })
     expect(wrapper.text()).toContain('条文可能存在错误，可点击底部『内容纠错』反馈')
   })
 
   it('未勾选时按钮禁用，勾选后点击进入首页', async () => {
-    const wrapper = mount(AgreementView)
+    const wrapper = mount(AgreementView, {
+      global: { stubs: { RouterLink: RouterLinkStub } },
+    })
     const button = wrapper.get('button')
     expect(button.attributes('disabled')).toBeDefined()
 

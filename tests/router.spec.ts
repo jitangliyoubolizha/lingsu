@@ -18,4 +18,10 @@ describe('ui 路由配置', () => {
     expect(feedback.name).toBe('feedback')
     expect(feedback.meta.navKey).toBe('profile')
   })
+
+  it('注册免责声明全文页路由', () => {
+    expect(router.hasRoute('disclaimer')).toBe(true)
+    const disclaimer = router.resolve('/disclaimer')
+    expect(disclaimer.name).toBe('disclaimer')
+  })
 })

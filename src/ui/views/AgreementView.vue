@@ -75,7 +75,13 @@ async function start() {
         同意并开始学习
       </BaseButton>
       <p class="mt-4 text-center text-xs text-ink-muted">
-        完整协议文本见「我的 → 免责声明」
+        完整协议文本见
+        <RouterLink
+          to="/disclaimer"
+          class="text-indigo"
+        >
+          《用户协议与免责声明》
+        </RouterLink>
       </p>
     </main>
   </div>

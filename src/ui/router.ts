@@ -5,6 +5,7 @@ import AgreementView from './views/AgreementView.vue'
 import ClauseDetailView from './views/ClauseDetailView.vue'
 import ClauseListView from './views/ClauseListView.vue'
 import CompareView from './views/CompareView.vue'
+import DisclaimerView from './views/DisclaimerView.vue'
 import FavoritesView from './views/FavoritesView.vue'
 import FeedbackView from './views/FeedbackView.vue'
 import FormulaDetailView from './views/FormulaDetailView.vue'
@@ -26,6 +27,11 @@ const router = createRouter({
       name: 'agreement',
       component: AgreementView,
       meta: { bare: true },
+    },
+    {
+      path: '/disclaimer',
+      name: 'disclaimer',
+      component: DisclaimerView,
     },
     {
       path: '/',
@@ -116,7 +122,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  if (to.name === 'agreement') {
+  if (to.name === 'agreement' || to.name === 'disclaimer') {
     return true
   }
   const agreed = await hasAgreed()

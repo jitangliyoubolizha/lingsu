@@ -2398,7 +2398,7 @@ formulas:
         dose: 方寸匕
         note: 取妇人中裩近隐处烧作灰，男病用女裩，女病用男裩
     original_dose_text: 取妇人中裩近隐处烧作灰
-    dose_reference: ""
+    dose_reference: 原文未提供现代剂量换算依据，待专业校对。
     decoction: 上一味，水调服方寸匕，日三服。小便即利，阴头微肿，此为愈矣。若男病以女裩，女病以男裩。
     related_clauses:
       - SHL.SB.YI.392
@@ -2800,7 +2800,7 @@ formulas:
         dose: 一斤
         note: ""
     original_dose_text: 猪肤一斤
-    dose_reference: ""
+    dose_reference: 原文未提供现代剂量换算依据，待专业校对。
     decoction: 上一味，以水一斗，煮取五升，去滓，加白蜜一升，白粉五合，熬香，和令相得，温分六服。
     related_clauses:
       - SHL.SB.SI.310
@@ -2863,7 +2863,7 @@ formulas:
         dose: 一枚
         note: 去黄
     original_dose_text: 半夏十四枚（洗，破如枣核） 鸡子一枚（去黄）
-    dose_reference: ""
+    dose_reference: 原文未提供现代剂量换算依据，待专业校对。
     decoction: 上二味，内半夏著苦酒中，以鸡子壳置刀环中，安火上，令三沸，去滓，少少含咽之。不差，更作三剂。
     related_clauses:
       - SHL.SB.SI.312
@@ -2886,7 +2886,7 @@ formulas:
         dose: 等分
         note: 炙
     original_dose_text: 半夏（洗） 桂枝（去皮） 甘草（炙） 各等分
-    dose_reference: ""
+    dose_reference: 原文未提供现代剂量换算依据，待专业校对。
     decoction: 上三味，捣筛，白饮和服方寸匕，日三服。若不能散服者，以水一升，煎七沸，内散两方寸匕，更煮三沸，下火令小冷，少少咽之。
     related_clauses:
       - SHL.SB.SI.313
@@ -2971,7 +2971,7 @@ formulas:
         dose: 十分
         note: ""
     original_dose_text: 甘草（炙） 枳实（破，水渍，炙干） 柴胡 芍药 各十分
-    dose_reference: ""
+    dose_reference: 原文未提供现代剂量换算依据，待专业校对。
     decoction: 上四味，捣筛，白饮和服方寸匕，日三服。
     related_clauses:
       - SHL.SB.SI.318
