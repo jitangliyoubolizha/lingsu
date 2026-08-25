@@ -1,4 +1,12 @@
-export { chapterCodeOfClause, loadAllChapters, loadChapter, loadContent, loadMeta } from './loader'
+export {
+  chapterCodeOfClause,
+  loadAllChapters,
+  loadAllFormulas,
+  loadChapter,
+  loadContent,
+  loadFormula,
+  loadMeta,
+} from './loader'
 export type {
   Book,
   Chapter,
@@ -8,6 +16,7 @@ export type {
   ContentMeta,
   Edition,
   Formula,
+  FormulaSummary,
   Herb,
   Question,
   SymptomTerm,

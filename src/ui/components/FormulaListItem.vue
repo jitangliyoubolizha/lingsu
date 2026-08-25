@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ChevronRight } from 'lucide-vue-next'
 
-import type { Formula } from '../../data/types'
+import type { FormulaSummary } from '../../data/types'
 
 defineProps<{
-  formula: Formula
+  formula: FormulaSummary
 }>()
 </script>
 

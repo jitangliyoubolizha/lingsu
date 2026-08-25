@@ -1,9 +1,17 @@
 import { describe, expect, it } from 'vitest'
 
-import { chapterCodeOfClause, loadAllChapters, loadChapter, loadContent, loadMeta } from '../src/data'
+import {
+  chapterCodeOfClause,
+  loadAllChapters,
+  loadAllFormulas,
+  loadChapter,
+  loadContent,
+  loadFormula,
+  loadMeta,
+} from '../src/data'
 
 describe('内容按篇懒加载（T1-6）', () => {
-  it('loadMeta 同步返回篇章元数据、全书顺序与方药数据', () => {
+  it('loadMeta 同步返回篇章元数据、全书顺序与方剂摘要', () => {
     const meta = loadMeta()
 
     expect(meta.chapters).toHaveLength(10)
@@ -55,6 +63,26 @@ describe('内容按篇懒加载（T1-6）', () => {
     expect(chapterCodeOfClause('SHL.SB.XX.999')).toBeUndefined()
   })
 
+  it('loadAllFormulas 按需加载完整方剂，meta 仅保留摘要', async () => {
+    const meta = loadMeta()
+    expect(meta.formulas[0]).toEqual({
+      id: 'SHL.SB.F.001',
+      name: '桂枝汤',
+      category: '桂枝汤类',
+    })
+    expect('composition' in (meta.formulas[0] ?? {})).toBe(false)
+
+    const formulas = await loadAllFormulas()
+    expect(formulas).toHaveLength(112)
+    expect(formulas[0]?.name).toBe('桂枝汤')
+    expect(formulas[0]?.composition.length).toBeGreaterThan(0)
+
+    const formula = await loadFormula('SHL.SB.F.001')
+    expect(formula?.name).toBe('桂枝汤')
+    expect(formula?.composition.length).toBeGreaterThan(0)
+    await expect(loadFormula('SHL.SB.F.999')).resolves.toBeUndefined()
+  })
+
   it('loadContent 聚合全量数据，clauses 由章节派生且顺序正确', async () => {
     const content = await loadContent()
 
@@ -65,6 +93,7 @@ describe('内容按篇懒加载（T1-6）', () => {
     expect(content.clauses[30]?.id).toBe('SHL.SB.TYZ.031')
     expect(content.clauses[177]?.id).toBe('SHL.SB.TYX.178')
     expect(content.formulas).toHaveLength(112)
+    expect(content.formulas[0]?.composition.length).toBeGreaterThan(0)
     expect(content.questions).toHaveLength(21)
   })
 })

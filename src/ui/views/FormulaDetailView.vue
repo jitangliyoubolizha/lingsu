@@ -4,7 +4,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 import type { Chapter, ContentData, Formula } from '../../data/types'
-import { chapterCodeOfClause, loadChapter, loadMeta } from '../../data'
+import { chapterCodeOfClause, loadAllFormulas, loadChapter, loadMeta } from '../../data'
 import { deriveFormulaFields } from '../../domain'
 import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
@@ -38,11 +38,12 @@ function formulaName(id: string): string {
 
 /**
  * 方证推导只需要相关条文的标签，因此只加载相关条文所在篇章，
- * 而不是整书条文；方剂/药物/术语数据来自随主包加载的元数据。
+ * 而不是整书条文；完整方剂按需加载，药物/术语数据来自随主包加载的元数据。
  */
 async function load() {
   const meta = loadMeta()
-  formula.value = meta.formulas.find((item) => item.id === formulaId.value)
+  const formulas = await loadAllFormulas()
+  formula.value = formulas.find((item) => item.id === formulaId.value)
 
   const relatedChapterCodes = new Set(
     (formula.value?.relatedClauses ?? [])
@@ -56,6 +57,7 @@ async function load() {
   }
   content.value = {
     ...meta,
+    formulas,
     chapters,
     clauses: chapters.flatMap((chapter) => chapter.clauses),
   }

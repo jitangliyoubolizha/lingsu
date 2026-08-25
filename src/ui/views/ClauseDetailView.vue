@@ -55,6 +55,10 @@ function termName(id: string): string {
   return content.value?.symptomTerms.find((term) => term.id === id)?.name ?? id
 }
 
+function formulaName(id: string): string {
+  return loadMeta().formulas.find((formula) => formula.id === id)?.name ?? id
+}
+
 /** 只加载条文所属篇章；方剂、术语等数据来自随主包加载的元数据。 */
 async function load() {
   loaded.value = false
@@ -65,6 +69,8 @@ async function load() {
   clause.value = chapter?.clauses.find((item) => item.id === clauseId.value)
   content.value = {
     ...meta,
+    // 条文详情仅需方剂名，从 loadMeta().formulas 摘要取，不加载完整方剂数据
+    formulas: [],
     chapters: chapter ? [chapter] : [],
     clauses: chapter?.clauses ?? [],
   }
@@ -215,7 +221,7 @@ watch(clauseId, load)
             :to="`/formulas/${formulaId}`"
             class="flex min-h-10 items-center justify-between rounded-lg px-2 text-sm text-indigo hover:bg-paper-deep"
           >
-            {{ content.formulas.find((formula) => formula.id === formulaId)?.name ?? formulaId }}
+            {{ formulaName(formulaId) }}
           </RouterLink>
         </div>
       </div>

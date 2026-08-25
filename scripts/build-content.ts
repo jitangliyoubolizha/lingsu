@@ -25,7 +25,8 @@ async function writeSplitContent(contentDir: string, outDir: string): Promise<vo
       clauseCount: chapter.clauses.length,
     })),
     clauseOrder: data.chapters.flatMap((chapter) => chapter.clauses.map((clause) => clause.id)),
-    formulas: data.formulas,
+    // 方剂仅保留摘要进主包，完整数据（组成/煎服/剂量等）拆到 formulas.json 按需加载
+    formulas: data.formulas.map(({ id, name, category }) => ({ id, name, category })),
     herbs: data.herbs,
     symptomTerms: data.symptomTerms,
     questions: data.questions,
@@ -33,6 +34,7 @@ async function writeSplitContent(contentDir: string, outDir: string): Promise<vo
 
   await mkdir(path.join(outDir, 'chapters'), { recursive: true })
   await writeFile(path.join(outDir, 'meta.json'), JSON.stringify(meta, null, 2), 'utf8')
+  await writeFile(path.join(outDir, 'formulas.json'), JSON.stringify(data.formulas, null, 2), 'utf8')
 
   for (const chapter of data.chapters) {
     await writeFile(

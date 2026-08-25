@@ -2,7 +2,7 @@
 import { Star } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 
-import type { Clause, Formula, Herb } from '../../data/types'
+import type { Clause, FormulaSummary, Herb } from '../../data/types'
 import { loadContent, loadMeta } from '../../data'
 import { getFavorites, removeFavorite } from '../../store'
 import AppHeader from '../components/AppHeader.vue'
@@ -13,7 +13,7 @@ type FavoriteType = 'clause' | 'formula' | 'herb'
 
 const loading = ref(true)
 const clauses = ref<Clause[]>([])
-const formulas = ref<Formula[]>([])
+const formulas = ref<FormulaSummary[]>([])
 const herbs = ref<Herb[]>([])
 
 const hasAny = computed(
@@ -36,7 +36,7 @@ async function load() {
     formulas.value = favorites
       .filter((favorite) => favorite.type === 'formula')
       .map((favorite) => formulaMap.get(favorite.targetId))
-      .filter((formula): formula is Formula => formula != null)
+      .filter((formula): formula is FormulaSummary => formula != null)
     herbs.value = favorites
       .filter((favorite) => favorite.type === 'herb')
       .map((favorite) => herbMap.get(favorite.targetId))

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 
-import type { Formula } from '../../data/types'
+import type { FormulaSummary } from '../../data/types'
 import { loadMeta } from '../../data'
 import AppHeader from '../components/AppHeader.vue'
 import EmptyState from '../components/EmptyState.vue'
@@ -9,7 +9,7 @@ import FormulaListItem from '../components/FormulaListItem.vue'
 import SearchBar from '../components/SearchBar.vue'
 
 const keyword = ref('')
-const formulas = ref<Formula[]>([])
+const formulas = ref<FormulaSummary[]>([])
 
 const groups = computed(() => {
   const keywordTrimmed = keyword.value.trim()
@@ -19,7 +19,7 @@ const groups = computed(() => {
       )
     : formulas.value
 
-  const map = new Map<string, Formula[]>()
+  const map = new Map<string, FormulaSummary[]>()
   for (const formula of list) {
     const items = map.get(formula.category) ?? []
     items.push(formula)

@@ -1,4 +1,4 @@
-import type { Chapter, ContentData, ContentMeta } from './types'
+import type { Chapter, ContentData, ContentMeta, Formula } from './types'
 import metaJson from './generated/meta.json'
 
 /** 按篇懒加载器：由 Vite 静态分析，每篇 JSON 编译为独立异步 chunk。 */
@@ -7,8 +7,15 @@ const chapterLoaders = import.meta.glob('./generated/chapters/*.json') as Record
   () => Promise<{ default: Chapter }>
 >
 
+/** 完整方剂数据懒加载器：独立异步 chunk，随主包仅保留方剂摘要。 */
+const formulaLoaders = import.meta.glob('./generated/formulas.json') as Record<
+  string,
+  () => Promise<{ default: Formula[] }>
+>
+
 let metaCache: ContentMeta | undefined
 const chapterCache = new Map<string, Chapter>()
+let formulasCache: Formula[] | undefined
 let contentCache: ContentData | undefined
 
 /**
@@ -71,7 +78,32 @@ export function chapterCodeOfClause(clauseId: string): string | undefined {
 }
 
 /**
- * 加载全量内容数据：元数据 + 全部篇章，clauses 由各篇条文按顺序派生。
+ * 加载完整方剂数据（含缓存）。
+ * 列表/搜索/收藏等只需摘要的场景优先用 loadMeta().formulas；需完整字段时调用本函数。
+ * @returns 完整方剂数组
+ */
+export async function loadAllFormulas(): Promise<Formula[]> {
+  if (formulasCache) return formulasCache
+
+  const loader = formulaLoaders['./generated/formulas.json']
+  if (!loader) return []
+
+  formulasCache = (await loader()).default
+  return formulasCache
+}
+
+/**
+ * 按 ID 加载单个完整方剂。
+ * @param id 方剂 ID（如 SHL.SB.F.001）
+ * @returns 方剂对象；ID 不存在时返回 undefined
+ */
+export async function loadFormula(id: string): Promise<Formula | undefined> {
+  const formulas = await loadAllFormulas()
+  return formulas.find((formula) => formula.id === id)
+}
+
+/**
+ * 加载全量内容数据：元数据 + 全部篇章 + 完整方剂，clauses 由各篇条文按顺序派生。
  * 供搜索、刷题、每日任务等需要跨篇数据的页面使用；仅浏览单篇/单条的页面应优先用 loadMeta/loadChapter。
  * @returns 完整内容数据对象
  */
@@ -79,11 +111,12 @@ export async function loadContent(): Promise<ContentData> {
   if (contentCache) return contentCache
 
   const meta = loadMeta()
-  const chapters = await loadAllChapters()
+  const [chapters, formulas] = await Promise.all([loadAllChapters(), loadAllFormulas()])
   contentCache = {
     ...meta,
     chapters,
     clauses: chapters.flatMap((chapter) => chapter.clauses),
+    formulas,
   }
   return contentCache
 }

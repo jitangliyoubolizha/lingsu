@@ -100,6 +100,13 @@ export interface Formula {
   pathomechanism: string
 }
 
+/** 方剂摘要：列表/搜索/收藏/互链名查询所需的最小字段，随主包加载。 */
+export interface FormulaSummary {
+  id: string
+  name: string
+  category: string
+}
+
 export interface Herb {
   id: string
   name: string
@@ -133,13 +140,16 @@ export interface ContentMeta {
   chapters: ChapterMeta[]
   /** 全书条文顺序（按篇章顺序与条文号排列），用于上一条/下一条导航与条文定位。 */
   clauseOrder: string[]
-  formulas: Formula[]
+  /** 方剂摘要（id/name/category），完整方剂数据按需加载，见 loadAllFormulas/loadFormula。 */
+  formulas: FormulaSummary[]
   herbs: Herb[]
   symptomTerms: SymptomTerm[]
   questions: Question[]
 }
 
-export interface ContentData extends Omit<ContentMeta, 'chapters' | 'clauseOrder'> {
+export interface ContentData extends Omit<ContentMeta, 'chapters' | 'clauseOrder' | 'formulas'> {
   chapters: Chapter[]
   clauses: Clause[]
+  /** 完整方剂数据（含组成/煎服/剂量/类方关系等），由 loadContent 聚合加载。 */
+  formulas: Formula[]
 }
