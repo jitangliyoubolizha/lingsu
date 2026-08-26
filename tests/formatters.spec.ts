@@ -13,8 +13,22 @@ describe('ui/formatters', () => {
     expect(formatClauseRef('unknown')).toBe('unknown')
   })
 
-  it('篇代码转篇名', () => {
-    expect(formatChapterCode('TYS')).toBe('太阳病上篇')
+  it('篇代码转篇名（全书 10 篇）', () => {
+    const expected: Record<string, string> = {
+      TYS: '太阳病上篇',
+      TYZ: '太阳病中篇',
+      TYX: '太阳病下篇',
+      YM: '阳明病',
+      SY: '少阳病',
+      TAI: '太阴病',
+      SI: '少阴病',
+      JUE: '厥阴病',
+      HUO: '霍乱病',
+      YI: '阴阳易差后劳复',
+    }
+    for (const [code, name] of Object.entries(expected)) {
+      expect(formatChapterCode(code)).toBe(name)
+    }
     expect(formatChapterCode('XYZ')).toBe('XYZ')
   })
 

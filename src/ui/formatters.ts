@@ -7,6 +7,13 @@ const CHAPTER_NAMES: Record<string, string> = {
   TYS: '太阳病上篇',
   TYZ: '太阳病中篇',
   TYX: '太阳病下篇',
+  YM: '阳明病',
+  SY: '少阳病',
+  TAI: '太阴病',
+  SI: '少阴病',
+  JUE: '厥阴病',
+  HUO: '霍乱病',
+  YI: '阴阳易差后劳复',
 }
 
 /**
