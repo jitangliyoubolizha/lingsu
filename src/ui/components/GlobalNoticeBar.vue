@@ -22,15 +22,13 @@ withDefaults(
     role="note"
   >
     <div
-      class="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-t-lg border border-b-0 border-border-paper bg-paper-card px-4 py-2 shadow-[0_-2px_8px_rgba(34,26,16,.06)]"
+      class="mx-auto flex max-w-3xl items-center justify-center gap-2 rounded-t-lg border border-b-0 border-border-paper bg-paper-card px-4 py-2 text-xs text-ink-muted shadow-[0_-2px_8px_rgba(34,26,16,.06)]"
     >
-      <p class="flex min-w-0 items-center gap-1.5 text-xs text-ink-muted">
-        <TriangleAlert
-          class="h-4 w-4 shrink-0"
-          aria-hidden="true"
-        />
-        <span class="truncate">仅供学习研究，不构成医疗建议，请勿自行用药</span>
-      </p>
+      <TriangleAlert
+        class="h-4 w-4 shrink-0"
+        aria-hidden="true"
+      />
+      <span class="truncate">仅供学习研究，不构成医疗建议，请勿自行用药</span>
       <RouterLink
         to="/feedback"
         class="shrink-0 text-xs font-semibold text-indigo hover:underline"
