@@ -146,6 +146,13 @@ watch(clauseId, load)
         <TagPill tone="muted">
           汉 · 张仲景
         </TagPill>
+        <RouterLink
+          :to="{ path: '/graph', query: { focus: `t:${clause.id}`, texts: '1' } }"
+          class="rounded-full border border-gold/50 bg-gold/10 px-3 py-1 text-xs font-medium text-gold transition-colors hover:bg-gold/20"
+          aria-label="在知识图谱中查看该条文"
+        >
+          ⊙ 在图谱中查看
+        </RouterLink>
       </div>
 
       <section

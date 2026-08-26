@@ -57,6 +57,14 @@ onMounted(async () => {
         别名：{{ herb.aliases.join('、') }}
       </p>
 
+      <RouterLink
+        :to="{ path: '/graph', query: { focus: `h:${herb.id}` } }"
+        class="mt-3 inline-flex items-center rounded-full border border-gold/50 bg-gold/10 px-3 py-1.5 text-xs font-medium text-gold transition-colors hover:bg-gold/20"
+        aria-label="在知识图谱中查看该药物"
+      >
+        ⊙ 在图谱中查看
+      </RouterLink>
+
       <section
         class="mt-6 rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)]"
       >

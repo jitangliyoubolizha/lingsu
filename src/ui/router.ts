@@ -10,6 +10,7 @@ import FavoritesView from './views/FavoritesView.vue'
 import FeedbackView from './views/FeedbackView.vue'
 import FormulaDetailView from './views/FormulaDetailView.vue'
 import FormulaListView from './views/FormulaListView.vue'
+import GraphView from './views/GraphView.vue'
 import HerbDetailView from './views/HerbDetailView.vue'
 import HomeView from './views/HomeView.vue'
 import ProfileView from './views/ProfileView.vue'
@@ -70,6 +71,11 @@ const router = createRouter({
       path: '/herbs/:id',
       name: 'herb-detail',
       component: HerbDetailView,
+    },
+    {
+      path: '/graph',
+      name: 'graph',
+      component: GraphView,
     },
     {
       path: '/compare',

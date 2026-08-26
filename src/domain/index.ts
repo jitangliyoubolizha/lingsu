@@ -1,5 +1,6 @@
 export * from './clauseLink'
 export * from './formula'
+export * from './graph'
 export * from './memory'
 export * from './quiz'
 export * from './search'

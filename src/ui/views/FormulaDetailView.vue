@@ -123,6 +123,13 @@ onMounted(load)
         <TagPill tone="muted">
           《伤寒论》
         </TagPill>
+        <RouterLink
+          :to="{ path: '/graph', query: { focus: `f:${formula.id}` } }"
+          class="rounded-full border border-gold/50 bg-gold/10 px-3 py-1 text-xs font-medium text-gold transition-colors hover:bg-gold/20"
+          aria-label="在知识图谱中查看该方剂"
+        >
+          ⊙ 在图谱中查看
+        </RouterLink>
       </div>
 
       <section

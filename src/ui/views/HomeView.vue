@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Bell, ChevronRight, Flame } from 'lucide-vue-next'
+import { Bell, ChevronRight, Flame, Network } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -248,6 +248,23 @@ onMounted(loadHome)
       >
         <span class="text-sm font-semibold text-ink">方剂</span>
         <span class="text-xs text-ink-muted">类方分组浏览</span>
+      </RouterLink>
+      <RouterLink
+        to="/graph"
+        class="col-span-2 flex min-h-20 items-center justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] transition-transform active:scale-[0.98]"
+      >
+        <div>
+          <p class="text-sm font-semibold text-ink">
+            知识图谱
+          </p>
+          <p class="mt-1 text-xs text-ink-muted">
+            方剂 · 中药 · 条文关系网络，药对一览
+          </p>
+        </div>
+        <Network
+          class="h-8 w-8 shrink-0 text-cinnabar/60"
+          aria-hidden="true"
+        />
       </RouterLink>
     </div>
   </div>
