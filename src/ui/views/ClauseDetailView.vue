@@ -9,7 +9,6 @@ import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
 import AppHeader from '../components/AppHeader.vue'
 import ClauseLinkText from '../components/ClauseLinkText.vue'
-import ComplianceBanner from '../components/ComplianceBanner.vue'
 import EmptyState from '../components/EmptyState.vue'
 import TagPill from '../components/TagPill.vue'
 import { formatChapterCode } from '../formatters'
@@ -244,7 +243,5 @@ watch(clauseId, load)
         </RouterLink>
       </div>
     </template>
-
-    <ComplianceBanner show-feedback />
   </div>
 </template>

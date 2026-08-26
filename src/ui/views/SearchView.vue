@@ -11,7 +11,6 @@ import {
   type SearchResultItem,
 } from '../../domain'
 import AppHeader from '../components/AppHeader.vue'
-import ComplianceBanner from '../components/ComplianceBanner.vue'
 import EmptyState from '../components/EmptyState.vue'
 import HighlightText from '../components/HighlightText.vue'
 import SearchBar from '../components/SearchBar.vue'
@@ -140,11 +139,5 @@ function search() {
     >
       输入关键词搜索条文、方剂与药物
     </p>
-
-    <ComplianceBanner
-      text="仅供学习研究，不构成医疗建议"
-      tone="muted"
-      show-feedback
-    />
   </div>
 </template>
