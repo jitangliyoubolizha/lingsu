@@ -44,18 +44,20 @@ function computeHeatDays(
   const completed = new Set(
     dailyLogs.filter((log) => log.completedCount >= log.requiredCount).map((log) => log.date)
   )
-  const days: Array<{ label: string; value: number }> = []
   const now = new Date()
-  const labels = ['日', '一', '二', '三', '四', '五', '六']
-  for (let offset = 6; offset >= 0; offset -= 1) {
-    const date = new Date(now)
-    date.setDate(now.getDate() - offset)
-    days.push({
-      label: labels[date.getDay()],
+  // 本周周一（getDay() 周日=0、周一=1 … 周六=6；周一偏移 1 - getDay()，周日为 -6）
+  const mondayOffset = now.getDay() === 0 ? -6 : 1 - now.getDay()
+  const monday = new Date(now)
+  monday.setDate(now.getDate() + mondayOffset)
+  const labels = ['一', '二', '三', '四', '五', '六', '日']
+  return labels.map((label, index) => {
+    const date = new Date(monday)
+    date.setDate(monday.getDate() + index)
+    return {
+      label,
       value: completed.has(formatDay(date)) ? 1 : 0,
-    })
-  }
-  return days
+    }
+  })
 }
 
 function computeTrend(reviewLogs: ReviewLog[]): { values: number[]; labels: string[] } {

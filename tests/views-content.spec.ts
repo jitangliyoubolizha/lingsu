@@ -114,6 +114,12 @@ describe('ui 统计页专项', () => {
     const streakCard = wrapper.findAllComponents(StatCard)[0]
     expect(streakCard.props('value')).toBe(2)
     expect(streakCard.props('unit')).toBe('天')
+
+    // 学习日历按周一至周日固定顺序展示
+    const weekDayLabels = wrapper
+      .findAll('[aria-label="最近一周打卡热力图"] span')
+      .map((node) => node.text())
+    expect(weekDayLabels).toEqual(['一', '二', '三', '四', '五', '六', '日'])
   })
 })
 
