@@ -13,7 +13,7 @@ withDefaults(
 
 <template>
   <div
-    class="fixed inset-x-0 z-30 px-3 lg:px-4"
+    class="fixed inset-x-0 z-30 px-3 lg:pl-56 lg:pr-4"
     :class="
       lifted
         ? 'bottom-[calc(3.5rem+env(safe-area-inset-bottom))] lg:bottom-0 lg:pb-[env(safe-area-inset-bottom)]'

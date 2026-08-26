@@ -17,7 +17,7 @@ withDefaults(
 
 <template>
   <div
-    class="fixed inset-x-0 bottom-0 z-30 px-4 pb-[env(safe-area-inset-bottom)]"
+    class="fixed inset-x-0 bottom-0 z-30 px-4 pb-[env(safe-area-inset-bottom)] lg:pl-56"
     role="note"
     aria-live="polite"
   >
