@@ -35,3 +35,6 @@ playwright-report/
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+
+# 本机环境与推送方式记录（隐私，仅本地保留）
+docs/推送指南.md
