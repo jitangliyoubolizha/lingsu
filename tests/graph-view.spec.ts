@@ -24,7 +24,11 @@ vi.stubGlobal('requestAnimationFrame', vi.fn(() => 0))
 vi.stubGlobal('cancelAnimationFrame', vi.fn())
 window.requestAnimationFrame = vi.fn(() => 0)
 window.cancelAnimationFrame = vi.fn()
-HTMLCanvasElement.prototype.getContext = vi.fn(() => makeCtx())
+// 用 defineProperty 规避 getContext 重载签名的严格类型不匹配（CI 的 vue-tsc -b 会查到这里）
+Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+  configurable: true,
+  value: () => makeCtx(),
+})
 
 /* ---- 固定内容数据：3 方剂 + 4 入图中药 (+1 孤儿中药不入图) ---- */
 const contentFixture: ContentData = {
