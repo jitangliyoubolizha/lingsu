@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router'
 
 import type { Clause, ContentData } from '../../data/types'
 import { chapterCodeOfClause, loadChapter, loadMeta } from '../../data'
-import { addFavorite, isFavorite, removeFavorite } from '../../store'
+import { addFavorite, getNote, isFavorite, removeFavorite, saveNote } from '../../store'
 import AccordionPanel from '../components/AccordionPanel.vue'
 import AppHeader from '../components/AppHeader.vue'
 import ClauseLinkText from '../components/ClauseLinkText.vue'
@@ -22,6 +22,11 @@ const loaded = ref(false)
 const clauseId = computed(() => String(route.params.id))
 /** 全书条文顺序（宋本第 N 条 → clauseId），供条文互链渲染 */
 const clauseOrder = loadMeta().clauseOrder
+
+/* —— 我的笔记（E-5，仅存本机、随备份导出） —— */
+const noteContent = ref('')
+const noteSaved = ref(false)
+let noteStatusTimer: ReturnType<typeof setTimeout> | undefined
 const feedbackTo = computed(() =>
   clause.value
     ? {
@@ -76,8 +81,23 @@ async function load() {
 
   if (clause.value) {
     favorite.value = await isFavorite('clause', clause.value.id)
+    noteStatusTimer && clearTimeout(noteStatusTimer)
+    noteSaved.value = false
+    const note = await getNote(clause.value.id)
+    noteContent.value = note?.content ?? ''
   }
   loaded.value = true
+}
+
+/** 保存笔记；清空内容即删除。 */
+async function persistNote() {
+  if (!clause.value) return
+  await saveNote(clause.value.id, noteContent.value)
+  noteSaved.value = true
+  clearTimeout(noteStatusTimer)
+  noteStatusTimer = setTimeout(() => {
+    noteSaved.value = false
+  }, 2000)
 }
 
 async function toggleFavorite() {
@@ -231,6 +251,40 @@ watch(clauseId, load)
           </RouterLink>
         </div>
       </div>
+
+      <!-- 我的笔记：仅存本机 IndexedDB，随备份导出/导入 -->
+      <section class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4">
+        <h2 class="text-sm font-semibold text-ink-secondary">
+          我的笔记
+        </h2>
+        <textarea
+          v-model="noteContent"
+          rows="3"
+          aria-label="我的笔记"
+          placeholder="写下你的理解、疑问或记忆要点（仅保存在本机）"
+          class="mt-2 w-full resize-y rounded-lg border border-border-paper bg-paper p-2 text-sm leading-relaxed text-ink placeholder:text-ink-muted focus:border-cinnabar/50 focus:outline-none"
+        />
+        <div
+          class="mt-2 flex items-center gap-2"
+          role="status"
+        >
+          <button
+            type="button"
+            class="rounded-full bg-cinnabar px-3.5 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-cinnabar-deep"
+            @click="persistNote"
+          >
+            保存笔记
+          </button>
+          <span
+            v-if="noteSaved"
+            class="text-xs text-green"
+          >已保存</span>
+          <span
+            v-else
+            class="text-xs text-ink-muted"
+          >清空内容保存即删除笔记</span>
+        </div>
+      </section>
 
       <div class="mt-6 flex justify-between border-t border-border-paper pt-3">
         <RouterLink

@@ -8,11 +8,12 @@ import {
   type ClauseStateRecord,
   type DailyLogRecord,
   type FavoriteRecord,
+  type NoteRecord,
   type QuizLogRecord,
   type SettingsRecord,
   type WrongQuestionRecord,
 } from './db'
-import { CURRENT_SCHEMA_VERSION } from './migrations'
+import { CURRENT_SCHEMA_VERSION, SUPPORTED_SCHEMA_VERSIONS } from './migrations'
 
 export interface BackupData {
   schemaVersion: number
@@ -28,6 +29,8 @@ export interface BackupData {
     quizLogs: QuizLogRecord[]
     favorites: FavoriteRecord[]
     wrongQuestions: WrongQuestionRecord[]
+    /** v2 备份起包含；v1 旧备份缺省按空表处理 */
+    notes: NoteRecord[]
   }
 }
 
@@ -76,7 +79,10 @@ export function validateBackupData(data: unknown): string[] {
     return ['备份数据不是对象']
   }
   const backup = data as Partial<BackupData>
-  if (backup.schemaVersion !== CURRENT_SCHEMA_VERSION) {
+  if (
+    backup.schemaVersion === undefined ||
+    !SUPPORTED_SCHEMA_VERSIONS.includes(backup.schemaVersion)
+  ) {
     issues.push(`不支持的 schemaVersion：${String(backup.schemaVersion)}`)
   }
   if (typeof backup.exportedAt !== 'string') {
@@ -106,6 +112,10 @@ export function validateBackupData(data: unknown): string[] {
       issues.push(`表 ${name} 不是数组`)
     }
   }
+  // notes 自备份 v2 引入：v1 备份允许缺省（按空表导入）
+  if (backup.schemaVersion !== 1 && !Array.isArray(tables.notes)) {
+    issues.push('表 notes 不是数组')
+  }
   return issues
 }
 
@@ -123,6 +133,7 @@ export async function exportData(): Promise<BackupData> {
     quizLogs,
     favorites,
     wrongQuestions,
+    notes,
   ] = await Promise.all([
     db.settings.toArray(),
     db.studyPlans.toArray(),
@@ -133,6 +144,7 @@ export async function exportData(): Promise<BackupData> {
     db.quizLogs.toArray(),
     db.favorites.toArray(),
     db.wrongQuestions.toArray(),
+    db.notes.toArray(),
   ])
 
   return {
@@ -149,6 +161,7 @@ export async function exportData(): Promise<BackupData> {
       quizLogs,
       favorites,
       wrongQuestions,
+      notes,
     },
   }
 }
@@ -193,5 +206,7 @@ export async function importData(json: string): Promise<void> {
     await db.quizLogs.bulkAdd(backup.data.quizLogs)
     await db.favorites.bulkAdd(backup.data.favorites)
     await db.wrongQuestions.bulkAdd(backup.data.wrongQuestions)
+    // v1 旧备份无 notes，按空表导入
+    await db.notes.bulkAdd(backup.data.notes ?? [])
   })
 }

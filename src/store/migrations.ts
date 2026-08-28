@@ -2,7 +2,10 @@
  * 数据版本与迁移。
  * Dexie 的 version(n).stores 负责结构升级；这里集中登记业务迁移。
  */
-export const CURRENT_SCHEMA_VERSION = 1
+export const CURRENT_SCHEMA_VERSION = 2
+
+/** 仍可导入的历史备份版本（v1：无 notes 表；导入时按空表处理）。 */
+export const SUPPORTED_SCHEMA_VERSIONS: number[] = [1, 2]
 
 export interface Migration {
   version: number

@@ -46,6 +46,13 @@ export interface WrongQuestionRecord {
   correctStreak: number
 }
 
+export interface NoteRecord {
+  /** 条文 ID，作为主键：一条条文一篇笔记 */
+  clauseId: string
+  content: string
+  updatedAt: Date
+}
+
 export class LingsuDatabase extends Dexie {
   settings!: Table<SettingsRecord, string>
   studyPlans!: Table<StudyPlan, string>
@@ -56,6 +63,7 @@ export class LingsuDatabase extends Dexie {
   quizLogs!: Table<QuizLogRecord, number>
   favorites!: Table<FavoriteRecord, string>
   wrongQuestions!: Table<WrongQuestionRecord, string>
+  notes!: Table<NoteRecord, string>
 
   constructor() {
     super('lingsu')
@@ -87,6 +95,10 @@ export class LingsuDatabase extends Dexie {
             }
           })
       })
+    // v3（2026-08-26）：新增条文笔记表（E-5）
+    this.version(3).stores({
+      notes: 'clauseId, updatedAt',
+    })
   }
 }
 

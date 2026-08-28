@@ -51,6 +51,7 @@ const storeMocks = vi.hoisted(() => ({
   isFavorite: vi.fn(),
   addFavorite: vi.fn(),
   removeFavorite: vi.fn(),
+  getNote: vi.fn(),
 }))
 vi.mock('../src/store', () => ({
   getAllCards: storeMocks.getAllCards,
@@ -62,6 +63,7 @@ vi.mock('../src/store', () => ({
   isFavorite: storeMocks.isFavorite,
   addFavorite: storeMocks.addFavorite,
   removeFavorite: storeMocks.removeFavorite,
+  getNote: storeMocks.getNote,
 }))
 
 describe('ui 统计页专项', () => {

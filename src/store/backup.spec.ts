@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { parseBackup, serializeBackup, validateBackupData, type BackupData } from './backup'
-import { CURRENT_SCHEMA_VERSION } from './migrations'
+import { CURRENT_SCHEMA_VERSION, SUPPORTED_SCHEMA_VERSIONS } from './migrations'
 
 const validBackup: BackupData = {
   schemaVersion: 1,
@@ -28,13 +28,15 @@ const validBackup: BackupData = {
     dailyLogs: [],
     quizLogs: [],
     favorites: [],
+    notes: [],
     wrongQuestions: [],
   },
 }
 
 describe('store/backup', () => {
-  it('当前 schema 版本为 1', () => {
-    expect(CURRENT_SCHEMA_VERSION).toBe(1)
+  it('当前 schema 版本为 2（notes 表引入），且 v1 仍在可导入列表', () => {
+    expect(CURRENT_SCHEMA_VERSION).toBe(2)
+    expect(SUPPORTED_SCHEMA_VERSIONS).toContain(1)
   })
 
   it('序列化与解析保留日期字段', () => {
@@ -59,5 +61,13 @@ describe('store/backup', () => {
       data: { ...validBackup.data, cards: undefined },
     }
     expect(validateBackupData(invalid).length).toBeGreaterThan(0)
+  })
+
+  it('v1 旧备份缺 notes 表仍通过校验（向后兼容，导入按空表处理）', () => {
+    const legacy = {
+      ...validBackup,
+      data: { ...validBackup.data, notes: undefined },
+    }
+    expect(validateBackupData(legacy)).toEqual([])
   })
 })

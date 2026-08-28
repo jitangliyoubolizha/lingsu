@@ -19,6 +19,8 @@ export type {
   WrongQuestionRecord,
 } from './db'
 export { addFavorite, getFavorites, isFavorite, removeFavorite } from './favorites'
+export { deleteNote, getNote, saveNote } from './notes'
+export type { NoteRecord } from './db'
 export {
   addQuizLog,
   addWrongQuestion,

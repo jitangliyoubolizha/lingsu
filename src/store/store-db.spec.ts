@@ -32,6 +32,7 @@ function baseData(): BackupData['data'] {
     quizLogs: [],
     favorites: [],
     wrongQuestions: [],
+    notes: [],
   }
 }
 
