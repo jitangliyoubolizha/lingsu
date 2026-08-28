@@ -41,7 +41,8 @@ export interface StudyPlan {
   id: string
   name: string
   scope: StudyPlanScope
-  dailyNew: 3 | 5 | 10
+  /** 每日新学条数（1~20；历史值可能为 3/5/10，UI 负责钳制与录入） */
+  dailyNew: number
   startDate: string
   status: 'active' | 'paused' | 'completed'
 }

@@ -45,5 +45,6 @@ export {
   MAX_ACTIVE_PLANS,
   saveStudyPlan,
   togglePlanStatus,
+  updateActivePlansDailyNew,
 } from './studyPlans'
 export type { CreateStudyPlanInput } from './studyPlans'

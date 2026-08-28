@@ -7,6 +7,7 @@ import { db } from './db'
 import {
   createStudyPlan,
   deleteStudyPlan,
+  updateActivePlansDailyNew,
   ensureDefaultStudyPlan,
   getActivePlanCount,
   getActiveStudyPlans,
@@ -154,12 +155,49 @@ describe('store/studyPlans 学习计划管理', () => {
       expect(await getActivePlanCount()).toBe(1)
     })
 
+    it('默认计划的任务量为每日 5 条（2026-08-26 由 3 上调）', async () => {
+      const plan = await ensureDefaultStudyPlan()
+      expect(plan.dailyNew).toBe(5)
+    })
+
     it('已有 active 计划时直接返回第一个', async () => {
       await saveStudyPlan(makePlan({ id: 'p1', name: '既有计划' }))
 
       const plan = await ensureDefaultStudyPlan()
       expect(plan.id).toBe('p1')
       expect(await getAllStudyPlans()).toHaveLength(1)
+    })
+  })
+
+  describe('每日任务量自定义（E-定制）', () => {
+    it('createStudyPlan 接受 3/5/10 之外的任意条数（1~20）', async () => {
+      const plan = await createStudyPlan({
+        name: '自定义量计划',
+        scope: { book: 'SHL', edition: 'SB', chapters: ['TYS'] },
+        dailyNew: 8,
+      })
+      expect(plan?.dailyNew).toBe(8)
+    })
+
+    it('updateActivePlansDailyNew 更新全部 active 计划，paused 不受影响', async () => {
+      await saveStudyPlan(makePlan({ id: 'p1', status: 'active', dailyNew: 3 }))
+      await saveStudyPlan(makePlan({ id: 'p2', status: 'paused', dailyNew: 3 }))
+
+      await updateActivePlansDailyNew(12)
+
+      const all = await getAllStudyPlans()
+      expect(all.find((p) => p.id === 'p1')?.dailyNew).toBe(12)
+      expect(all.find((p) => p.id === 'p2')?.dailyNew).toBe(3)
+    })
+
+    it('updateActivePlansDailyNew 将数值钳制到 1~20', async () => {
+      await saveStudyPlan(makePlan({ id: 'p1', status: 'active', dailyNew: 5 }))
+
+      await updateActivePlansDailyNew(99)
+      expect((await getAllStudyPlans()).find((p) => p.id === 'p1')?.dailyNew).toBe(20)
+
+      await updateActivePlansDailyNew(0)
+      expect((await getAllStudyPlans()).find((p) => p.id === 'p1')?.dailyNew).toBe(1)
     })
   })
 

@@ -8,13 +8,23 @@ import { db } from './db'
 export interface CreateStudyPlanInput {
   name: string
   scope: StudyPlanScope
-  dailyNew: 3 | 5 | 10
+  /** 每日新学条数，1~20（支持自定义；存储前钳制） */
+  dailyNew: number
   /** 开始日期 YYYY-MM-DD，缺省为当天。 */
   startDate?: string
 }
 
 /** 同一时间最多保持进行的计划数。 */
 export const MAX_ACTIVE_PLANS = 2
+
+/** 每日新学条数边界（自定义条数在此范围内钳制）。 */
+export const MIN_DAILY_NEW = 1
+export const MAX_DAILY_NEW = 20
+
+function clampDailyNew(value: number): number {
+  if (!Number.isFinite(value)) return 5
+  return Math.min(MAX_DAILY_NEW, Math.max(MIN_DAILY_NEW, Math.round(value)))
+}
 
 let planSeq = 0
 
@@ -39,7 +49,7 @@ export async function createStudyPlan(input: CreateStudyPlanInput): Promise<Stud
     id: `plan-${Date.now().toString(36)}-${planSeq}`,
     name: input.name,
     scope: input.scope,
-    dailyNew: input.dailyNew,
+    dailyNew: clampDailyNew(input.dailyNew),
     startDate: input.startDate ?? new Date().toISOString().slice(0, 10),
     status: 'active',
   }
@@ -102,7 +112,7 @@ export async function ensureDefaultStudyPlan(): Promise<StudyPlan> {
     id: 'default-tys',
     name: '太阳病上篇 30 天计划',
     scope: { book: 'SHL', edition: 'SB', chapters: ['TYS'] },
-    dailyNew: 3,
+    dailyNew: 5,
     startDate: today,
     status: 'active',
   }
@@ -115,4 +125,18 @@ export async function ensureDefaultStudyPlan(): Promise<StudyPlan> {
  */
 export async function deleteStudyPlan(id: string): Promise<void> {
   await db.studyPlans.delete(id)
+}
+
+/**
+ * 将全部 active 计划的每日新学条数统一更新为指定值（1~20，越界自动钳制）。
+ * 供「我的页 → 学习设置 → 每日新学数量」联动今日任务队列使用。
+ */
+export async function updateActivePlansDailyNew(value: number): Promise<void> {
+  const clamped = clampDailyNew(value)
+  await db.studyPlans
+    .where('status')
+    .equals('active')
+    .modify((plan: StudyPlan) => {
+      plan.dailyNew = clamped
+    })
 }

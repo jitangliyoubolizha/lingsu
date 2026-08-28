@@ -31,6 +31,7 @@ import {
   serializeBackup,
   setSetting,
   togglePlanStatus,
+  updateActivePlansDailyNew,
 } from '../../store'
 import { useFontSize } from '../composables/useFontSize'
 import type { FontSize } from '../composables/useFontSize'
@@ -60,8 +61,23 @@ const plans = ref<StudyPlan[]>([])
 const activeCount = ref(0)
 const showPlanForm = ref(false)
 const newChapter = ref('')
-const newDailyNew = ref<3 | 5 | 10>(3)
+const newDailyNew = ref<number>(5)
+const planFormCustom = ref(false)
+const planCustomInput = ref(6)
 const canAddPlan = computed(() => activeCount.value < MAX_ACTIVE_PLANS)
+
+/* —— 学习设置 · 每日新学数量（自定义 1~20，联动 active 计划） —— */
+const settingsCustomMode = ref(false)
+const customDraft = ref(6)
+const DAILY_NEW_PRESETS = [3, 5, 8, 10]
+const selectValue = computed(() =>
+  DAILY_NEW_PRESETS.includes(dailyNew.value) ? String(dailyNew.value) : 'custom'
+)
+
+function clampDailyNew(value: number): number {
+  if (!Number.isFinite(value)) return 5
+  return Math.min(20, Math.max(1, Math.round(value)))
+}
 
 const groups = [
   {
@@ -87,7 +103,14 @@ async function load() {
   const states = await getClauseStates()
   const learned = states.filter((state) => state.firstLearnedAt).length
   progress.value = totalClauses === 0 ? 0 : Math.round((learned / totalClauses) * 100)
-  dailyNew.value = await getSetting<number>('dailyNew', 3)
+  const storedDailyNew = await getSetting<number | undefined>('dailyNew', undefined)
+  if (storedDailyNew === undefined) {
+    // 首次使用：把默认任务量 5 条落库（备份/联动都用它）
+    dailyNew.value = 5
+    await setSetting('dailyNew', 5)
+  } else {
+    dailyNew.value = storedDailyNew
+  }
   fontSize.value = await getSetting<'小' | '中' | '大'>('fontSize', '中')
   voiceEnabled.value = await getSetting<boolean>('voiceEnabled', true)
   await loadPlans()
@@ -113,7 +136,9 @@ function openPlanForm() {
   const used = new Set(plans.value.flatMap((plan) => plan.scope.chapters))
   const firstAvailable = planChapters.find((chapter) => !used.has(chapter.code))
   newChapter.value = firstAvailable?.code ?? planChapters[0]?.code ?? ''
-  newDailyNew.value = 3
+  newDailyNew.value = 5
+  planFormCustom.value = false
+  planCustomInput.value = 6
   showPlanForm.value = true
 }
 
@@ -127,15 +152,34 @@ async function submitPlan() {
   await createStudyPlan({
     name: chapter?.name ?? newChapter.value,
     scope: { book: 'SHL', edition: 'SB', chapters: [newChapter.value] },
-    dailyNew: newDailyNew.value,
+    dailyNew: planFormCustom.value ? planCustomInput.value : newDailyNew.value,
   })
   showPlanForm.value = false
   await loadPlans()
 }
 
 async function changeDailyNew(value: number) {
-  dailyNew.value = value
-  await setSetting('dailyNew', value)
+  const clamped = clampDailyNew(value)
+  dailyNew.value = clamped
+  await setSetting('dailyNew', clamped)
+  // 联动：把进行中计划的每日任务量一并更新，今日任务立即生效
+  await updateActivePlansDailyNew(clamped)
+  await loadPlans()
+}
+
+function onDailyNewSelectChange(event: Event) {
+  const value = String((event.target as unknown as { value: string }).value)
+  if (value === 'custom') {
+    settingsCustomMode.value = true
+    customDraft.value = dailyNew.value
+    return
+  }
+  settingsCustomMode.value = false
+  void changeDailyNew(Number(value))
+}
+
+function applyCustomDailyNew() {
+  void changeDailyNew(clampDailyNew(customDraft.value))
 }
 
 async function changeFontSize(value: FontSize) {
@@ -345,11 +389,33 @@ onMounted(load)
             :key="n"
             type="button"
             class="h-9 flex-1 rounded-lg text-sm"
-            :class="newDailyNew === n ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'"
-            @click="newDailyNew = n"
+            :class="!planFormCustom && newDailyNew === n ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'"
+            @click="planFormCustom = false; newDailyNew = n"
           >
             {{ n }} 条/日
           </button>
+          <button
+            type="button"
+            class="h-9 flex-1 rounded-lg text-sm"
+            :class="planFormCustom ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'"
+            @click="planFormCustom = true"
+          >
+            自定义
+          </button>
+        </div>
+        <div
+          v-if="planFormCustom"
+          class="mt-2 flex items-center justify-end gap-2 rounded-lg bg-paper-deep/60 p-2"
+        >
+          <label class="text-xs text-ink-muted">每日条数（1~20）</label>
+          <input
+            v-model.number="planCustomInput"
+            type="number"
+            min="1"
+            max="20"
+            aria-label="自定义每日条数"
+            class="h-9 w-20 rounded-lg border border-border-paper bg-paper-card px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
+          >
         </div>
         <div class="mt-4 flex gap-2">
           <button
@@ -409,20 +475,43 @@ onMounted(load)
       <div class="flex items-center justify-between">
         <span class="text-sm text-ink-secondary">每日新学数量</span>
         <select
-          :value="dailyNew"
+          :value="selectValue"
+          aria-label="每日新学数量"
           class="h-9 rounded-lg border border-border-paper bg-paper-card px-2 text-sm text-ink"
-          @change="changeDailyNew(Number(($event.target as unknown as { value: string }).value))"
+          @change="onDailyNewSelectChange"
         >
-          <option :value="3">
-            3 条/日
+          <option
+            v-for="n in DAILY_NEW_PRESETS"
+            :key="n"
+            :value="String(n)"
+          >
+            {{ n }} 条/日
           </option>
-          <option :value="5">
-            5 条/日
-          </option>
-          <option :value="10">
-            10 条/日
+          <option value="custom">
+            自定义…
           </option>
         </select>
+      </div>
+      <div
+        v-if="settingsCustomMode"
+        class="mt-3 flex items-center justify-end gap-2 rounded-lg bg-paper-deep/60 p-2"
+      >
+        <label class="text-xs text-ink-muted">自定义条数（1~20）</label>
+        <input
+          v-model.number="customDraft"
+          type="number"
+          min="1"
+          max="20"
+          aria-label="自定义条数"
+          class="h-9 w-20 rounded-lg border border-border-paper bg-paper-card px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
+        >
+        <button
+          type="button"
+          class="h-9 rounded-lg bg-cinnabar px-3 text-xs font-semibold text-white hover:bg-cinnabar-deep"
+          @click="applyCustomDailyNew"
+        >
+          应用
+        </button>
       </div>
       <div class="mt-3 flex items-center justify-between">
         <span class="text-sm text-ink-secondary">字号大小</span>

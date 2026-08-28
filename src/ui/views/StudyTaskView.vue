@@ -16,11 +16,13 @@ import {
   getClauseStates,
   getDailyLog,
   getDueWrongQuestions,
+  getSetting,
   markClauseLearned,
   markWrongCorrect,
   saveCard,
   saveDailyLog,
   saveReviewLog,
+  setSetting,
 } from '../../store'
 import BaseButton from '../components/BaseButton.vue'
 import ProgressBar from '../components/ProgressBar.vue'
@@ -44,6 +46,27 @@ const selfRating = ref<'forgot' | 'fuzzy' | 'remember' | null>(null)
 const wrongSelected = ref<number | null>(null)
 const wrongSubmitted = ref(false)
 const wrongCorrect = ref(false)
+
+/* —— 首次进入任务量提醒（可不再提示，记录于本地设置） —— */
+const showDailyTip = ref(false)
+
+onMounted(async () => {
+  try {
+    const dismissed = await getSetting<boolean>('dailyTipDismissed', false)
+    if (!dismissed) showDailyTip.value = true
+  } catch {
+    // 读取失败按未提醒处理，保守展示
+  }
+})
+
+async function dismissDailyTip() {
+  showDailyTip.value = false
+  await setSetting('dailyTipDismissed', true)
+}
+
+function goDailySettings() {
+  void router.push('/profile')
+}
 
 const todayKey = new Date().toISOString().slice(0, 10)
 const current = computed(() => items.value[currentIndex.value])
@@ -226,6 +249,35 @@ onMounted(loadQueue)
 
     <div class="mt-1">
       <ProgressBar :value="progress" />
+    </div>
+
+    <!-- 首次进入任务量提醒 -->
+    <div
+      v-if="showDailyTip"
+      class="mt-3 rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs leading-relaxed text-ink"
+    >
+      <p class="font-semibold text-ink">
+        背诵任务量可以自己调整
+      </p>
+      <p class="mt-1 text-ink-secondary">
+        默认每日新学 5 条。轻松可设 3 条，标准 5~8 条，强化 10 条以上，支持 1~20 条自定义。
+      </p>
+      <div class="mt-2 flex items-center gap-2">
+        <button
+          type="button"
+          class="rounded-full bg-cinnabar px-3 py-1 text-xs font-semibold text-white transition-colors hover:bg-cinnabar-deep"
+          @click="goDailySettings"
+        >
+          去设置
+        </button>
+        <button
+          type="button"
+          class="rounded-full border border-border-paper bg-paper-card px-3 py-1 text-xs text-ink-secondary transition-colors hover:bg-paper-deep"
+          @click="dismissDailyTip"
+        >
+          我知道了
+        </button>
+      </div>
     </div>
 
     <div
