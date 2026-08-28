@@ -67,18 +67,18 @@ async function toggleVoice() {
 <template>
   <div
     v-if="open"
-    class="fixed inset-0 z-50"
+    class="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6"
   >
     <div
       aria-label="设置遮罩"
-      class="absolute inset-0 bg-ink/30 backdrop-blur-[2px]"
+      class="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
       @click="emit('close')"
     />
     <div
       aria-label="设置弹层"
       role="dialog"
       aria-modal="true"
-      class="absolute inset-x-0 bottom-0 mx-auto max-w-2xl rounded-t-2xl border border-border-paper bg-paper p-4 shadow-[0_-8px_24px_rgba(34,26,16,.15)]"
+      class="relative w-full max-w-2xl rounded-t-2xl border border-border-paper bg-paper-card p-4 shadow-[0_-8px_24px_rgba(34,26,16,.18)] sm:max-w-md sm:rounded-2xl sm:shadow-[0_16px_48px_rgba(0,0,0,.35)]"
     >
       <div class="mb-3 flex items-center justify-between">
         <h2 class="font-serif text-base font-bold text-ink">
@@ -97,12 +97,13 @@ async function toggleVoice() {
         </button>
       </div>
 
-      <div class="flex items-center justify-between py-2">
+      <div class="divide-y divide-border-paper/60">
+      <div class="flex items-center justify-between py-3">
         <span class="text-sm text-ink-secondary">每日新学数量</span>
         <select
           :value="selectValue"
           aria-label="每日新学数量"
-          class="h-9 rounded-lg border border-border-paper bg-paper-card px-2 text-sm text-ink"
+          class="h-9 rounded-lg border border-border-paper bg-paper px-2 text-sm text-ink"
           @change="onDailyNewSelectChange"
         >
           <option v-for="n in DAILY_NEW_PRESETS" :key="n" :value="String(n)">{{ n }} 条/日</option>
@@ -111,7 +112,7 @@ async function toggleVoice() {
       </div>
       <div
         v-if="settingsCustomMode"
-        class="flex items-center justify-end gap-2 rounded-lg bg-paper-deep/60 p-2"
+        class="flex items-center justify-end gap-2 py-2"
       >
         <label class="text-xs text-ink-muted">自定义条数（1~20）</label>
         <input
@@ -120,7 +121,7 @@ async function toggleVoice() {
           min="1"
           max="20"
           aria-label="自定义条数"
-          class="h-9 w-20 rounded-lg border border-border-paper bg-paper-card px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
+          class="h-9 w-20 rounded-lg border border-border-paper bg-paper px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
         >
         <button
           type="button"
@@ -131,7 +132,7 @@ async function toggleVoice() {
         </button>
       </div>
 
-      <div class="flex items-center justify-between py-2">
+      <div class="flex items-center justify-between py-3">
         <span class="text-sm text-ink-secondary">字号大小</span>
         <div class="flex gap-1">
           <button
@@ -147,7 +148,7 @@ async function toggleVoice() {
         </div>
       </div>
 
-      <div class="flex items-center justify-between py-2">
+      <div class="flex items-center justify-between py-3">
         <span class="text-sm text-ink-secondary">朗读语音</span>
         <button
           type="button"
@@ -162,6 +163,7 @@ async function toggleVoice() {
             :class="voiceEnabled ? 'left-[22px]' : 'left-0.5'"
           />
         </button>
+      </div>
       </div>
     </div>
   </div>
