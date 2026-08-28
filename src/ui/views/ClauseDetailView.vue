@@ -81,7 +81,7 @@ async function load() {
 
   if (clause.value) {
     favorite.value = await isFavorite('clause', clause.value.id)
-    noteStatusTimer && clearTimeout(noteStatusTimer)
+    clearTimeout(noteStatusTimer)
     noteSaved.value = false
     const note = await getNote(clause.value.id)
     noteContent.value = note?.content ?? ''
