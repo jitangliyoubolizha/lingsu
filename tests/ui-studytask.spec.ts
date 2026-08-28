@@ -21,6 +21,8 @@ const mocks = vi.hoisted(() => ({
   getDueWrongQuestions: vi.fn().mockResolvedValue([]),
   getSetting: vi.fn().mockResolvedValue(undefined),
   setSetting: vi.fn().mockResolvedValue(undefined),
+  updateActivePlansDailyNew: vi.fn().mockResolvedValue(undefined),
+  applyDailyNew: vi.fn().mockResolvedValue(8),
   addQuizLog: vi.fn().mockResolvedValue(1),
   addWrongQuestion: vi.fn().mockResolvedValue(undefined),
   markWrongCorrect: vi.fn().mockResolvedValue(undefined),
@@ -45,6 +47,7 @@ vi.mock('../src/domain', () => ({
 }))
 vi.mock('../src/store', () => ({
   addQuizLog: mocks.addQuizLog,
+  applyDailyNew: mocks.applyDailyNew,
   addWrongQuestion: mocks.addWrongQuestion,
   ensureDefaultStudyPlan: mocks.ensureDefaultStudyPlan,
   getActiveStudyPlans: mocks.getActiveStudyPlans,
@@ -54,6 +57,7 @@ vi.mock('../src/store', () => ({
   getDueWrongQuestions: mocks.getDueWrongQuestions,
   getSetting: mocks.getSetting,
   setSetting: mocks.setSetting,
+  updateActivePlansDailyNew: mocks.updateActivePlansDailyNew,
   markClauseLearned: mocks.markClauseLearned,
   markWrongCorrect: mocks.markWrongCorrect,
   saveCard: mocks.saveCard,
@@ -245,7 +249,7 @@ describe('ui/StudyTaskView 每日任务', () => {
   })
 })
 
-describe('ui/StudyTaskView 首次进入任务量提醒', () => {
+describe('ui/StudyTaskView 任务量就地调整', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     mocks.loadContent.mockResolvedValue({ clauses: [clauseA, clauseB] })
@@ -263,42 +267,82 @@ describe('ui/StudyTaskView 首次进入任务量提醒', () => {
       lapses: 0,
     })
     mocks.getDueWrongQuestions.mockResolvedValue([])
-    mocks.getSetting.mockResolvedValue(false)
+    mocks.getSetting.mockResolvedValue(5)
     mocks.setSetting.mockResolvedValue(undefined)
+    mocks.updateActivePlansDailyNew.mockResolvedValue(undefined)
   })
 
-  it('首次进入显示任务量提示，含推荐值与「去设置」入口', async () => {
+  it('顶部常驻任务量控件：预设 chips 与当前值高亮', async () => {
+    const wrapper = mount(StudyTaskView, mountOptions)
+    await flushPromises()
+    await flushPromises()
+
+    expect(wrapper.text()).toContain('每日任务量')
+    for (const n of ['3', '5', '8', '10']) {
+      expect(
+        wrapper.findAll('button').some((b) => b.text().trim() === n),
+        `缺少 ${n} chip`
+      ).toBe(true)
+    }
+  })
+
+  it('点击 chip 8：写设置 + 联动计划 + 立即重算队列', async () => {
+    const wrapper = mount(StudyTaskView, mountOptions)
+    await flushPromises()
+    await flushPromises()
+    const queueCallsBefore = mocks.getTodayQueue.mock.calls.length
+
+    await wrapper.findAll('button').find((b) => b.text().trim() === '8')!.trigger('click')
+    await flushPromises()
+    await flushPromises()
+
+    expect(mocks.applyDailyNew).toHaveBeenCalledWith(8)
+    expect(mocks.getTodayQueue.mock.calls.length).toBeGreaterThan(queueCallsBefore)
+  })
+
+  it('自定义输入 12 后应用，同样生效', async () => {
+    const wrapper = mount(StudyTaskView, mountOptions)
+    await flushPromises()
+    await flushPromises()
+
+    await wrapper.findAll('button').find((b) => b.text().includes('自定义'))!.trigger('click')
+    await flushPromises()
+    const input = wrapper.find('input[aria-label="自定义每日任务量"]')
+    expect(input.exists()).toBe(true)
+    await input.setValue('12')
+    await wrapper.findAll('button').find((b) => b.text().includes('应用'))!.trigger('click')
+    await flushPromises()
+    await flushPromises()
+
+    expect(mocks.applyDailyNew).toHaveBeenCalledWith(12)
+  })
+
+  it('首次进入显示引导文案，点「我知道了」记录不再提示，但控件保留', async () => {
+    mocks.getSetting
+      .mockResolvedValueOnce(false)
+      .mockResolvedValue(5)
     const wrapper = mount(StudyTaskView, mountOptions)
     await flushPromises()
     await flushPromises()
 
     expect(wrapper.text()).toContain('任务量可以自己调整')
-    expect(wrapper.text()).toContain('自定义')
-    expect(wrapper.text()).toContain('5 条')
-    const go = wrapper.findAll('button, a').find((el) => el.text().includes('去设置'))
-    expect(go).toBeTruthy()
-  })
-
-  it('点击「我知道了」写入 dailyTipDismissed 且提示消失', async () => {
-    const wrapper = mount(StudyTaskView, mountOptions)
-    await flushPromises()
-    await flushPromises()
-
-    const ok = wrapper.findAll('button').find((b) => b.text().includes('我知道了'))
-    expect(ok).toBeTruthy()
-    await ok!.trigger('click')
+    await wrapper.findAll('button').find((b) => b.text().includes('我知道了'))!.trigger('click')
     await flushPromises()
 
     expect(mocks.setSetting).toHaveBeenCalledWith('dailyTipDismissed', true)
-    expect(wrapper.text()).not.toContain('去设置')
+    expect(wrapper.text()).not.toContain('任务量可以自己调整')
+    expect(wrapper.text()).toContain('每日任务量') // 控件常驻
   })
 
-  it('已关闭过提醒的用户不再看到提示', async () => {
-    mocks.getSetting.mockResolvedValue(true)
+  it('已关闭引导的用户只看到常驻控件', async () => {
+    mocks.getSetting
+      .mockResolvedValueOnce(true)
+      .mockResolvedValue(5)
     const wrapper = mount(StudyTaskView, mountOptions)
     await flushPromises()
     await flushPromises()
 
-    expect(wrapper.text()).not.toContain('去设置')
+    expect(wrapper.text()).not.toContain('任务量可以自己调整')
+    expect(wrapper.text()).toContain('每日任务量')
   })
 })

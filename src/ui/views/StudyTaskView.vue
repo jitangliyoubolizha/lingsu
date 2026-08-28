@@ -10,6 +10,7 @@ import type { MemoryCard } from '../../domain/memory'
 import {
   addQuizLog,
   addWrongQuestion,
+  applyDailyNew,
   ensureDefaultStudyPlan,
   getActiveStudyPlans,
   getAllCards,
@@ -47,15 +48,24 @@ const wrongSelected = ref<number | null>(null)
 const wrongSubmitted = ref(false)
 const wrongCorrect = ref(false)
 
-/* —— 首次进入任务量提醒（可不再提示，记录于本地设置） —— */
+/* —— 每日任务量就地调整（常驻）+ 首次引导（可不再提示） —— */
+const dailyNew = ref(5)
+const customOpen = ref(false)
+const customDraft = ref(6)
 const showDailyTip = ref(false)
+
+function clampLocal(value: number): number {
+  if (!Number.isFinite(value)) return 5
+  return Math.min(20, Math.max(1, Math.round(value)))
+}
 
 onMounted(async () => {
   try {
     const dismissed = await getSetting<boolean>('dailyTipDismissed', false)
+    dailyNew.value = await getSetting<number>('dailyNew', 5)
     if (!dismissed) showDailyTip.value = true
   } catch {
-    // 读取失败按未提醒处理，保守展示
+    // 读取失败按默认值与未提醒处理
   }
 })
 
@@ -64,8 +74,11 @@ async function dismissDailyTip() {
   await setSetting('dailyTipDismissed', true)
 }
 
-function goDailySettings() {
-  void router.push('/profile')
+/** 就地应用任务量：写设置 + 联动计划 + 重算今日队列 */
+async function applyDailyNewValue(value: number) {
+  dailyNew.value = await applyDailyNew(clampLocal(value))
+  customOpen.value = false
+  await loadQueue()
 }
 
 const todayKey = new Date().toISOString().slice(0, 10)
@@ -251,25 +264,67 @@ onMounted(loadQueue)
       <ProgressBar :value="progress" />
     </div>
 
-    <!-- 首次进入任务量提醒 -->
-    <div
-      v-if="showDailyTip"
-      class="mt-3 rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs leading-relaxed text-ink"
-    >
-      <p class="font-semibold text-ink">
-        背诵任务量可以自己调整
-      </p>
-      <p class="mt-1 text-ink-secondary">
-        默认每日新学 5 条。轻松可设 3 条，标准 5~8 条，强化 10 条以上，支持 1~20 条自定义。
-      </p>
-      <div class="mt-2 flex items-center gap-2">
+    <!-- 每日任务量：就地调整，改完立即生效 -->
+    <div class="mt-3 flex flex-wrap items-center gap-1.5">
+      <span class="text-xs text-ink-muted">每日任务量</span>
+      <button
+        v-for="n in [3, 5, 8, 10]"
+        :key="n"
+        type="button"
+        class="rounded-full px-2.5 py-1 text-xs transition-colors"
+        :class="
+          dailyNew === n && !customOpen
+            ? 'bg-cinnabar text-white'
+            : 'border border-border-paper bg-paper-card text-ink-secondary hover:bg-paper-deep'
+        "
+        :aria-pressed="dailyNew === n && !customOpen"
+        @click="applyDailyNewValue(n)"
+      >
+        {{ n }}
+      </button>
+      <button
+        type="button"
+        class="rounded-full px-2.5 py-1 text-xs transition-colors"
+        :class="
+          customOpen
+            ? 'bg-cinnabar text-white'
+            : 'border border-border-paper bg-paper-card text-ink-secondary hover:bg-paper-deep'
+        "
+        @click="customOpen = !customOpen"
+      >
+        自定义
+      </button>
+      <template v-if="customOpen">
+        <input
+          v-model.number="customDraft"
+          type="number"
+          min="1"
+          max="20"
+          aria-label="自定义每日任务量"
+          class="h-7 w-16 rounded-full border border-border-paper bg-paper-card px-2 text-center text-xs text-ink focus:border-cinnabar/50 focus:outline-none"
+        >
         <button
           type="button"
-          class="rounded-full bg-cinnabar px-3 py-1 text-xs font-semibold text-white transition-colors hover:bg-cinnabar-deep"
-          @click="goDailySettings"
+          class="rounded-full bg-cinnabar px-2.5 py-1 text-xs font-semibold text-white hover:bg-cinnabar-deep"
+          @click="applyDailyNewValue(customDraft)"
         >
-          去设置
+          应用
         </button>
+      </template>
+    </div>
+
+    <!-- 首次进入引导 -->
+    <div
+      v-if="showDailyTip"
+      class="mt-2 rounded-xl border border-gold/40 bg-gold/10 p-3 text-xs leading-relaxed text-ink"
+    >
+      <p class="font-semibold text-ink">
+        任务量可以自己调整
+      </p>
+      <p class="mt-1 text-ink-secondary">
+        推荐 5~8 条：学得轻松就调低，想冲量就调高。在上方选一个数字或点「自定义」，改完立即生效。
+      </p>
+      <div class="mt-2">
         <button
           type="button"
           class="rounded-full border border-border-paper bg-paper-card px-3 py-1 text-xs text-ink-secondary transition-colors hover:bg-paper-deep"

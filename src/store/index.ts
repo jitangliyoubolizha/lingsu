@@ -36,6 +36,7 @@ export {
 export { CURRENT_SCHEMA_VERSION, migrations, runMigrations } from './migrations'
 export { getSetting, hasAgreed, markAgreed, setSetting } from './settings'
 export {
+  applyDailyNew,
   createStudyPlan,
   deleteStudyPlan,
   ensureDefaultStudyPlan,

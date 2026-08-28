@@ -3,6 +3,7 @@
  */
 import type { StudyPlan, StudyPlanScope } from '../domain/memory/types'
 import { db } from './db'
+import { setSetting } from './settings'
 
 /** 新增学习计划的输入，不包含 id 与 status（由创建函数统一生成）。 */
 export interface CreateStudyPlanInput {
@@ -139,4 +140,15 @@ export async function updateActivePlansDailyNew(value: number): Promise<void> {
     .modify((plan: StudyPlan) => {
       plan.dailyNew = clamped
     })
+}
+
+/**
+ * 一步应用每日任务量：写设置 + 联动全部 active 计划。
+ * 返回钳制后的实际值。今日任务页与我的页设置共用此入口。
+ */
+export async function applyDailyNew(value: number): Promise<number> {
+  const clamped = clampDailyNew(value)
+  await setSetting('dailyNew', clamped)
+  await updateActivePlansDailyNew(clamped)
+  return clamped
 }

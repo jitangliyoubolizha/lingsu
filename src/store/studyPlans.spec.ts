@@ -4,9 +4,11 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
 import type { StudyPlan } from '../domain/memory'
 import { db } from './db'
+import { getSetting } from './settings'
 import {
   createStudyPlan,
-  deleteStudyPlan,
+    deleteStudyPlan,
+  applyDailyNew,
   updateActivePlansDailyNew,
   ensureDefaultStudyPlan,
   getActivePlanCount,
@@ -198,6 +200,16 @@ describe('store/studyPlans 学习计划管理', () => {
 
       await updateActivePlansDailyNew(0)
       expect((await getAllStudyPlans()).find((p) => p.id === 'p1')?.dailyNew).toBe(1)
+    })
+
+    it('applyDailyNew 一次完成：写设置 + 联动计划 + 返回钳制值', async () => {
+      await saveStudyPlan(makePlan({ id: 'p1', status: 'active', dailyNew: 5 }))
+
+      const applied = await applyDailyNew(15)
+
+      expect(applied).toBe(15)
+      expect(await getSetting<number>('dailyNew', 0)).toBe(15)
+      expect((await getAllStudyPlans()).find((p) => p.id === 'p1')?.dailyNew).toBe(15)
     })
   })
 
