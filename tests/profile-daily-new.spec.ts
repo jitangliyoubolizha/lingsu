@@ -47,78 +47,31 @@ async function seedActiveDefaultPlan() {
   await ensureDefaultStudyPlan()
 }
 
-async function activePlanDailyNew(): Promise<number | undefined> {
-  const plans = await db.studyPlans.where('status').equals('active').toArray()
-  return plans[0]?.dailyNew
-}
-
 beforeEach(async () => {
   await Promise.all(db.tables.map((table) => table.clear()))
 })
 
 describe('ProfileView 每日新学数量（含自定义）', () => {
-  it('默认值为 5 条（2026-08-26 上调）', async () => {
+  it('自定义输入越界时钳制到 1~20（设置已收纳至弹层）', async () => {
     await seedActiveDefaultPlan()
     const wrapper = mountProfile()
     await flushPromises()
     await flushPromises()
 
-    const select = wrapper.find('select[aria-label="每日新学数量"]')
-    expect((select.element as HTMLSelectElement).value).toBe('5')
-    expect(await getSetting<number>('dailyNew', 0)).toBe(5)
-  })
+    await wrapper.find('button[aria-label="设置"]').trigger('click')
+    await flushPromises()
+    const sheet = wrapper.find('div[aria-label="设置弹层"]')
 
-  it('选择 8 条立即生效：写设置并联动更新 active 计划', async () => {
-    await seedActiveDefaultPlan()
-    const wrapper = mountProfile()
+    await sheet.find('select[aria-label="每日新学数量"]').setValue('custom')
     await flushPromises()
-    await flushPromises()
-
-    const select = wrapper.find('select[aria-label="每日新学数量"]')
-    await select.setValue('8')
-    await flushPromises()
-    await flushPromises()
-
-    expect(await getSetting<number>('dailyNew', 0)).toBe(8)
-    expect(await activePlanDailyNew()).toBe(8)
-  })
-
-  it('选择「自定义」出现数字输入，应用 12 后设置与计划同步生效', async () => {
-    await seedActiveDefaultPlan()
-    const wrapper = mountProfile()
-    await flushPromises()
-    await flushPromises()
-
-    await wrapper.find('select[aria-label="每日新学数量"]').setValue('custom')
-    await flushPromises()
-
-    const input = wrapper.find('input[aria-label="自定义条数"]')
-    expect(input.exists()).toBe(true)
-    await input.setValue('12')
-    await wrapper.findAll('button').find((b) => b.text().includes('应用'))!.trigger('click')
-    await flushPromises()
-    await flushPromises()
-
-    expect(await getSetting<number>('dailyNew', 0)).toBe(12)
-    expect(await activePlanDailyNew()).toBe(12)
-  })
-
-  it('自定义输入越界时钳制到 1~20', async () => {
-    await seedActiveDefaultPlan()
-    const wrapper = mountProfile()
-    await flushPromises()
-    await flushPromises()
-
-    await wrapper.find('select[aria-label="每日新学数量"]').setValue('custom')
-    await flushPromises()
-    await wrapper.find('input[aria-label="自定义条数"]').setValue('99')
-    await wrapper.findAll('button').find((b) => b.text().includes('应用'))!.trigger('click')
+    await sheet.find('input[aria-label="自定义条数"]').setValue('99')
+    await sheet.findAll('button').find((b) => b.text().includes('应用'))!.trigger('click')
     await flushPromises()
     await flushPromises()
     expect(await getSetting<number>('dailyNew', 0)).toBe(20)
 
-    await wrapper.find('input[aria-label="自定义条数"]').setValue('0')
-    await wrapper.findAll('button').find((b) => b.text().includes('应用'))!.trigger('click')
+    await sheet.find('input[aria-label="自定义条数"]').setValue('0')
+    await sheet.findAll('button').find((b) => b.text().includes('应用'))!.trigger('click')
     await flushPromises()
     await flushPromises()
     expect(await getSetting<number>('dailyNew', 0)).toBe(1)

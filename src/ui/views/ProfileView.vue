@@ -31,13 +31,11 @@ import {
   serializeBackup,
   setSetting,
   togglePlanStatus,
-  updateActivePlansDailyNew,
 } from '../../store'
-import { useFontSize } from '../composables/useFontSize'
-import type { FontSize } from '../composables/useFontSize'
 import { useTheme } from '../composables/useTheme'
 import type { ThemeMode } from '../composables/useTheme'
 import AppHeader from '../components/AppHeader.vue'
+import ProfileSettingsSheet from '../components/ProfileSettingsSheet.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import TagPill from '../components/TagPill.vue'
 
@@ -49,11 +47,10 @@ const THEME_OPTIONS: Array<{ value: ThemeMode; label: string }> = [
 const { mode: themeMode, setMode } = useTheme()
 
 const progress = ref(0)
-const dailyNew = ref(3)
-const { changeFontSize: applyFontSize } = useFontSize()
-const fontSize = ref<FontSize>('中')
-const voiceEnabled = ref(true)
 const fileInput = ref<{ click: () => void } | null>(null)
+
+/* —— 设置按钮弹层（字号/朗读/每日新学已收纳其中） —— */
+const showSettings = ref(false)
 
 // —— 学习计划管理 ——
 const planChapters = loadMeta().chapters
@@ -65,19 +62,6 @@ const newDailyNew = ref<number>(5)
 const planFormCustom = ref(false)
 const planCustomInput = ref(6)
 const canAddPlan = computed(() => activeCount.value < MAX_ACTIVE_PLANS)
-
-/* —— 学习设置 · 每日新学数量（自定义 1~20，联动 active 计划） —— */
-const settingsCustomMode = ref(false)
-const customDraft = ref(6)
-const DAILY_NEW_PRESETS = [3, 5, 8, 10]
-const selectValue = computed(() =>
-  DAILY_NEW_PRESETS.includes(dailyNew.value) ? String(dailyNew.value) : 'custom'
-)
-
-function clampDailyNew(value: number): number {
-  if (!Number.isFinite(value)) return 5
-  return Math.min(20, Math.max(1, Math.round(value)))
-}
 
 const groups = [
   {
@@ -106,13 +90,8 @@ async function load() {
   const storedDailyNew = await getSetting<number | undefined>('dailyNew', undefined)
   if (storedDailyNew === undefined) {
     // 首次使用：把默认任务量 5 条落库（备份/联动都用它）
-    dailyNew.value = 5
     await setSetting('dailyNew', 5)
-  } else {
-    dailyNew.value = storedDailyNew
   }
-  fontSize.value = await getSetting<'小' | '中' | '大'>('fontSize', '中')
-  voiceEnabled.value = await getSetting<boolean>('voiceEnabled', true)
   await loadPlans()
 }
 
@@ -158,40 +137,6 @@ async function submitPlan() {
   await loadPlans()
 }
 
-async function changeDailyNew(value: number) {
-  const clamped = clampDailyNew(value)
-  dailyNew.value = clamped
-  await setSetting('dailyNew', clamped)
-  // 联动：把进行中计划的每日任务量一并更新，今日任务立即生效
-  await updateActivePlansDailyNew(clamped)
-  await loadPlans()
-}
-
-function onDailyNewSelectChange(event: Event) {
-  const value = String((event.target as unknown as { value: string }).value)
-  if (value === 'custom') {
-    settingsCustomMode.value = true
-    customDraft.value = dailyNew.value
-    return
-  }
-  settingsCustomMode.value = false
-  void changeDailyNew(Number(value))
-}
-
-function applyCustomDailyNew() {
-  void changeDailyNew(clampDailyNew(customDraft.value))
-}
-
-async function changeFontSize(value: FontSize) {
-  fontSize.value = value
-  await applyFontSize(value)
-}
-
-async function toggleVoice() {
-  voiceEnabled.value = !voiceEnabled.value
-  await setSetting('voiceEnabled', voiceEnabled.value)
-}
-
 async function downloadBackup() {
   const backup = await exportData()
   const blob = new Blob([serializeBackup(backup)], { type: 'application/json' })
@@ -225,6 +170,7 @@ onMounted(load)
           type="button"
           class="flex h-9 w-9 items-center justify-center rounded-full text-ink-secondary hover:bg-paper-deep"
           aria-label="设置"
+          @click="showSettings = true"
         >
           <Settings
             class="h-5 w-5"
@@ -233,6 +179,12 @@ onMounted(load)
         </button>
       </template>
     </AppHeader>
+
+    <ProfileSettingsSheet
+      :open="showSettings"
+      @close="showSettings = false"
+      @changed="loadPlans"
+    />
 
     <section
       class="rounded-2xl border border-border-paper bg-paper-card p-5 shadow-[0_4px_12px_rgba(34,26,16,.05)]"
@@ -470,67 +422,9 @@ onMounted(load)
 
     <section class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-4">
       <h2 class="mb-3 text-sm font-semibold text-ink-secondary">
-        学习设置
+        外观
       </h2>
       <div class="flex items-center justify-between">
-        <span class="text-sm text-ink-secondary">每日新学数量</span>
-        <select
-          :value="selectValue"
-          aria-label="每日新学数量"
-          class="h-9 rounded-lg border border-border-paper bg-paper-card px-2 text-sm text-ink"
-          @change="onDailyNewSelectChange"
-        >
-          <option
-            v-for="n in DAILY_NEW_PRESETS"
-            :key="n"
-            :value="String(n)"
-          >
-            {{ n }} 条/日
-          </option>
-          <option value="custom">
-            自定义…
-          </option>
-        </select>
-      </div>
-      <div
-        v-if="settingsCustomMode"
-        class="mt-3 flex items-center justify-end gap-2 rounded-lg bg-paper-deep/60 p-2"
-      >
-        <label class="text-xs text-ink-muted">自定义条数（1~20）</label>
-        <input
-          v-model.number="customDraft"
-          type="number"
-          min="1"
-          max="20"
-          aria-label="自定义条数"
-          class="h-9 w-20 rounded-lg border border-border-paper bg-paper-card px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
-        >
-        <button
-          type="button"
-          class="h-9 rounded-lg bg-cinnabar px-3 text-xs font-semibold text-white hover:bg-cinnabar-deep"
-          @click="applyCustomDailyNew"
-        >
-          应用
-        </button>
-      </div>
-      <div class="mt-3 flex items-center justify-between">
-        <span class="text-sm text-ink-secondary">字号大小</span>
-        <div class="flex gap-1">
-          <button
-            v-for="size in ['小', '中', '大'] as const"
-            :key="size"
-            type="button"
-            class="h-9 rounded-lg px-3 text-sm"
-            :class="
-              fontSize === size ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'
-            "
-            @click="changeFontSize(size)"
-          >
-            {{ size }}
-          </button>
-        </div>
-      </div>
-      <div class="mt-3 flex items-center justify-between">
         <span class="text-sm text-ink-secondary">外观主题</span>
         <div class="flex gap-1">
           <button
@@ -549,23 +443,6 @@ onMounted(load)
             {{ option.label }}
           </button>
         </div>
-      </div>
-      <div class="mt-3 flex items-center justify-between">
-        <span class="text-sm text-ink-secondary">朗读语音</span>
-        <button
-          type="button"
-          class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors"
-          :class="voiceEnabled ? 'bg-cinnabar' : 'bg-paper-deep'"
-          role="switch"
-          :aria-checked="voiceEnabled"
-          aria-label="朗读语音开关"
-          @click="toggleVoice"
-        >
-          <span
-            class="inline-block h-5 w-5 rounded-full bg-white shadow transition-transform"
-            :class="voiceEnabled ? 'translate-x-5' : 'translate-x-0.5'"
-          />
-        </button>
       </div>
     </section>
 
