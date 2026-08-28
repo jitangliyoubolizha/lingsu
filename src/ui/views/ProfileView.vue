@@ -34,9 +34,18 @@ import {
 } from '../../store'
 import { useFontSize } from '../composables/useFontSize'
 import type { FontSize } from '../composables/useFontSize'
+import { useTheme } from '../composables/useTheme'
+import type { ThemeMode } from '../composables/useTheme'
 import AppHeader from '../components/AppHeader.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import TagPill from '../components/TagPill.vue'
+
+const THEME_OPTIONS: Array<{ value: ThemeMode; label: string }> = [
+  { value: 'light', label: '浅色' },
+  { value: 'dark', label: '深色' },
+  { value: 'system', label: '跟随系统' },
+]
+const { mode: themeMode, setMode } = useTheme()
 
 const progress = ref(0)
 const dailyNew = ref(3)
@@ -429,6 +438,26 @@ onMounted(load)
             @click="changeFontSize(size)"
           >
             {{ size }}
+          </button>
+        </div>
+      </div>
+      <div class="mt-3 flex items-center justify-between">
+        <span class="text-sm text-ink-secondary">外观主题</span>
+        <div class="flex gap-1">
+          <button
+            v-for="option in THEME_OPTIONS"
+            :key="option.value"
+            type="button"
+            class="h-9 rounded-lg px-3 text-sm"
+            :class="
+              themeMode === option.value
+                ? 'bg-cinnabar text-white'
+                : 'bg-paper-deep text-ink-secondary'
+            "
+            :aria-pressed="themeMode === option.value"
+            @click="setMode(option.value)"
+          >
+            {{ option.label }}
           </button>
         </div>
       </div>

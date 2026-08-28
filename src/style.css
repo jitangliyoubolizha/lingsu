@@ -7,7 +7,7 @@
   --color-border-paper: #d8c7ac;
   --color-ink: #2b2720;
   --color-ink-secondary: #5c564a;
-  --color-ink-muted: #8a8272;
+  --color-ink-muted: #6f675a;
   --color-cinnabar: #8b0000;
   --color-cinnabar-deep: #6e0000;
   --color-cinnabar-soft: #f6e9e7;
@@ -20,6 +20,26 @@
 
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
   --font-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 宣纸暗夜：暗色主题 token 覆盖（对比度门禁见 tests/theme-contrast.spec.ts） */
+html.dark {
+  --color-paper: #17130f;
+  --color-paper-card: #201a15;
+  --color-paper-deep: #2b241d;
+  --color-border-paper: #3d342a;
+  --color-ink: #ede4d3;
+  --color-ink-secondary: #c8bca6;
+  --color-ink-muted: #94897a;
+  --color-cinnabar: #e2604d;
+  --color-cinnabar-deep: #b04a3c;
+  --color-cinnabar-soft: #3a201b;
+  --color-red: #d9827a;
+  --color-gold: #d9b455;
+  --color-indigo: #85aacd;
+  --color-indigo-soft: #20262e;
+  --color-green: #6fae7f;
+  --color-green-soft: #1d2b21;
 }
 
 :root {

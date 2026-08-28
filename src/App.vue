@@ -6,6 +6,7 @@ import AppNav from './ui/components/AppNav.vue'
 import ComplianceBanner from './ui/components/ComplianceBanner.vue'
 import GlobalNoticeBar from './ui/components/GlobalNoticeBar.vue'
 import { useFontSize } from './ui/composables/useFontSize'
+import { useTheme } from './ui/composables/useTheme'
 
 const route = useRoute()
 
@@ -22,6 +23,9 @@ const compliance = computed(() => {
 
 // 应用字号三档设置到 <html> 根元素
 useFontSize()
+
+// 应用主题模式（浅色/深色/跟随系统），并监听系统偏好变化
+useTheme()
 </script>
 
 <template>
