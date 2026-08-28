@@ -51,7 +51,7 @@ const contentFixture: ContentData = {
       relatedClauses: [],
       relatedFormulas: [],
       safetyNotice: '',
-      mainSymptoms: [],
+      mainSymptoms: ['SYM1'],
       pulse: [],
       pathomechanism: '',
     },
@@ -100,7 +100,7 @@ const contentFixture: ContentData = {
     { id: 'H4', name: '药四', aliases: [] },
     { id: 'H5', name: '孤儿药', aliases: [] },
   ],
-  symptomTerms: [],
+  symptomTerms: [{ id: 'SYM1', name: '发热', category: '症状', aliases: ['身热'] }],
   questions: [],
 }
 
@@ -203,5 +203,34 @@ describe('GraphView 只看邻居', () => {
     expect(statusText(wrapper)).toContain('7')
     expect(statusText(wrapper)).toContain('8')
     expect(wrapper.text()).toContain('甲汤')
+  })
+
+  it('开启「显示症状节点」后计入症状节点与主症边（7→8 节点 / 8→9 关系）', async () => {
+    const wrapper = mountGraph()
+    await flushPromises()
+    await flushPromises()
+
+    const symptomToggle = wrapper.find('input[aria-label="显示症状节点"]')
+    expect(symptomToggle).toBeTruthy()
+    await symptomToggle.setValue(true)
+    await flushPromises()
+    await flushPromises()
+
+    expect(statusText(wrapper)).toContain('8')
+    expect(statusText(wrapper)).toContain('9')
+    expect(wrapper.text()).toContain('症状')
+  })
+
+  it('选中方剂时信息面板提供「刷相关题」闭环链接', async () => {
+    routerMocks.query = { focus: 'f:F1' }
+    const wrapper = mountGraph()
+    await flushPromises()
+    await flushPromises()
+
+    expect(wrapper.text()).toContain('甲汤')
+    const quizLink = wrapper.findAll('a').find((a) => a.attributes('href')?.includes('/quiz'))
+    expect(quizLink).toBeTruthy()
+    expect(quizLink!.attributes('href')).toContain('formula=F1')
+    expect(quizLink!.text()).toContain('刷相关题')
   })
 })

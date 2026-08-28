@@ -19,6 +19,7 @@ const route = useRoute()
 
 const loading = ref(true)
 const showTexts = ref(false)
+const showSymptoms = ref(false)
 const searchQuery = ref('')
 const notFound = ref(false)
 const neighborMode = ref(false)
@@ -43,7 +44,10 @@ function buildDatasets(): void {
   fullDataset = buildGraphDataset({
     formulas: content.formulas,
     herbs: content.herbs,
-    clauses: showTexts.value ? content.clauses : undefined,
+    clauses: content.clauses,
+    symptomTerms: content.symptomTerms,
+    includeTextNodes: showTexts.value,
+    includeSymptomNodes: showSymptoms.value,
   })
 }
 
@@ -104,13 +108,37 @@ async function submitSearch(): Promise<void> {
     await nextTick()
   }
 
-  const id = locateGraphNode(currentDataset(), q)
+  let id = locateGraphNode(currentDataset(), q)
+  if (!id && !showSymptoms.value) {
+    // 症状节点默认关闭：在含症状层的探测数据集中试查，命中则自动开启症状层
+    const probe = probeSymptomDataset(q)
+    if (probe) {
+      fullDataset = probe
+      showSymptoms.value = true
+      await nextTick()
+      id = locateGraphNode(currentDataset(), q)
+    }
+  }
   if (!id) {
     flashNotFound()
     return
   }
   neighborMode.value = false
   graph.selectById(id, true)
+}
+
+/** 构建含症状层的数据集；仅当查询能在其中命中时返回，否则返回 null。 */
+function probeSymptomDataset(query: string): GraphDataset | null {
+  if (!content) return null
+  const probe = buildGraphDataset({
+    formulas: content.formulas,
+    herbs: content.herbs,
+    clauses: content.clauses,
+    symptomTerms: content.symptomTerms,
+    includeTextNodes: showTexts.value,
+    includeSymptomNodes: true,
+  })
+  return locateGraphNode(probe, query) ? probe : null
 }
 
 function flashNotFound(): void {
@@ -175,7 +203,7 @@ function applyFocusQuery(): void {
 
 /* ---------------- 生命周期 ---------------- */
 
-watch(showTexts, () => {
+watch([showTexts, showSymptoms], () => {
   buildDatasets()
   applyDataset()
 })
@@ -245,6 +273,7 @@ const summary = computed(() => {
       badgeClass: 'bg-cinnabar-soft text-cinnabar',
       title: formula.name,
       detailLink: `/formulas/${formula.id}`,
+      quizLink: `/quiz?formula=${formula.id}`,
       lines: [
         { label: '分类', value: formula.category },
         {
@@ -261,6 +290,22 @@ const summary = computed(() => {
     }
   }
 
+  if (node.type === 'symptom') {
+    const term = content.symptomTerms.find((item) => item.id === node.refId)
+    if (!term) return null
+    return {
+      badge: '症状',
+      badgeClass: 'bg-gold/15 text-gold',
+      title: term.name,
+      detailLink: null,
+      quizLink: null,
+      lines: [
+        ...(term.aliases.length ? [{ label: '别名', value: term.aliases.join('、') }] : []),
+        { label: '类别', value: term.category },
+      ],
+    }
+  }
+
   if (node.type === 'herb') {
     const herb = content.herbs.find((item) => item.id === node.refId)
     if (!herb) return null
@@ -272,6 +317,7 @@ const summary = computed(() => {
       badgeClass: 'bg-green-soft text-green',
       title: herb.name,
       detailLink: `/herbs/${herb.id}`,
+      quizLink: null,
       lines: [
         ...(herb.aliases.length ? [{ label: '别名', value: herb.aliases.join('、') }] : []),
         { label: '出现方剂', value: `${formulaCount} 首` },
@@ -286,6 +332,7 @@ const summary = computed(() => {
     badgeClass: 'bg-indigo-soft text-indigo',
     title: `第${clause.no}条`,
     detailLink: `/clauses/${clause.id}`,
+    quizLink: `/quiz?clause=${clause.id}`,
     lines: [{ label: '原文', value: clause.text.length > 56 ? `${clause.text.slice(0, 56)}…` : clause.text }],
   }
 })
@@ -333,6 +380,19 @@ const NODE_COLORS: Record<string, string> = {
           :disabled="loading"
         >
         显示条文节点
+      </label>
+
+      <label
+        class="flex cursor-pointer items-center gap-1.5 rounded-full border border-border-paper bg-paper-card px-3 py-1.5 text-xs text-ink-secondary select-none"
+      >
+        <input
+          v-model="showSymptoms"
+          type="checkbox"
+          class="accent-cinnabar"
+          aria-label="显示症状节点"
+          :disabled="loading"
+        >
+        显示症状节点
       </label>
 
       <div class="relative flex-1 basis-44">
@@ -393,7 +453,7 @@ const NODE_COLORS: Record<string, string> = {
             :style="{ backgroundColor: color }"
             aria-hidden="true"
           />
-          {{ type === 'formula' ? '方剂' : type === 'herb' ? '中药' : '条文' }}
+          {{ type === 'formula' ? '方剂' : type === 'herb' ? '中药' : type === 'text' ? '条文' : '症状' }}
         </span>
       </div>
 
@@ -437,10 +497,18 @@ const NODE_COLORS: Record<string, string> = {
         </dl>
         <div class="mt-3 flex items-center gap-2">
           <RouterLink
+            v-if="summary.detailLink"
             :to="summary.detailLink"
             class="text-xs font-medium text-cinnabar underline decoration-cinnabar/40 underline-offset-2"
           >
             查看详情 →
+          </RouterLink>
+          <RouterLink
+            v-if="summary.quizLink"
+            :to="summary.quizLink"
+            class="text-xs font-medium text-green underline decoration-green/40 underline-offset-2"
+          >
+            刷相关题 →
           </RouterLink>
           <button
             type="button"
@@ -461,7 +529,7 @@ const NODE_COLORS: Record<string, string> = {
     </div>
 
     <p class="mt-3 text-xs leading-relaxed text-ink-muted">
-      拖拽节点可调整位置，滚轮 / 双指缩放，双击复位视野。实线为「组成」与「出处」关系，金色连线表示同现于多个方剂的药对。
+      拖拽节点可调整位置，滚轮 / 双指缩放，双击复位视野。实线为「组成」「出处」「主症」关系，虚线为「见症」「提示症」症状关系，金色连线表示同现于多个方剂的药对。
     </p>
 
     <p

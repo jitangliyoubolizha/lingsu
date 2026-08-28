@@ -36,6 +36,10 @@ interface QuizMode {
   random: boolean
   chapter?: string
   type?: QuestionType
+  /** 方剂 ID（图谱学习闭环深链 ?formula=） */
+  formula?: string
+  /** 条文 ID（深链 ?clause=） */
+  clause?: string
 }
 
 const route = useRoute()
@@ -70,8 +74,13 @@ const pageTitle = computed(() => {
   if (mode.value.random) return '随机综合'
   if (mode.value.chapter) return `刷题 · ${formatChapterCode(mode.value.chapter)}`
   if (mode.value.type) return `刷题 · ${formatQuizType(mode.value.type)}`
+  if (mode.value.formula) {
+    return formulaLabel.value ? `刷题 · ${formulaLabel.value}相关` : '刷题 · 方剂相关'
+  }
+  if (mode.value.clause) return '刷题 · 本条相关'
   return '刷题'
 })
+const formulaLabel = ref<string | null>(null)
 const current = computed<QuizItem | undefined>(() => questions.value[currentIndex.value])
 const total = computed(() => questions.value.length)
 const nextLabel = computed(() => {
@@ -98,8 +107,15 @@ function parseQueryMode(): QuizMode | null {
     QUESTION_TYPES.includes(route.query.type as QuestionType)
       ? (route.query.type as QuestionType)
       : undefined
-  if (chapter !== undefined || type !== undefined) {
-    return { wrong: false, random: false, chapter, type }
+  const formula = typeof route.query.formula === 'string' ? route.query.formula : undefined
+  const clause = typeof route.query.clause === 'string' ? route.query.clause : undefined
+  if (
+    chapter !== undefined ||
+    type !== undefined ||
+    formula !== undefined ||
+    clause !== undefined
+  ) {
+    return { wrong: false, random: false, chapter, type, formula, clause }
   }
   return null
 }
@@ -110,9 +126,21 @@ async function startQuiz(next: QuizMode) {
   stage.value = 'quiz'
 
   const data = await loadContent()
+  formulaLabel.value =
+    next.formula ? data.formulas.find((item) => item.id === next.formula)?.name ?? null : null
   let deck: QuizItem[] = buildQuizDeck(data)
-  if (next.chapter !== undefined || next.type !== undefined) {
-    deck = filterQuizDeck(deck, data, { chapter: next.chapter, type: next.type })
+  if (
+    next.chapter !== undefined ||
+    next.type !== undefined ||
+    next.formula !== undefined ||
+    next.clause !== undefined
+  ) {
+    deck = filterQuizDeck(deck, data, {
+      chapter: next.chapter,
+      type: next.type,
+      formula: next.formula,
+      clause: next.clause,
+    })
   }
   if (next.random) {
     deck = shuffleDeck(deck)

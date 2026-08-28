@@ -48,11 +48,17 @@ vi.mock('../src/store', () => ({
   markWrongCorrect: mocks.markWrongCorrect,
 }))
 
-function makeQuestion(id: string, type: Question['type'], clauseRef: string): Question {
+function makeQuestion(
+  id: string,
+  type: Question['type'],
+  clauseRef: string,
+  formula?: string
+): Question {
   return {
     id,
     type,
     clause: clauseRef,
+    ...(formula !== undefined ? { formula } : {}),
     prompt: `题干 ${id}`,
     options: ['甲', '乙', '丙', '丁'],
     answerIndex: 0,
@@ -62,9 +68,9 @@ function makeQuestion(id: string, type: Question['type'], clauseRef: string): Qu
 }
 
 const questions: Question[] = [
-  makeQuestion('Q.1', 'fill_blank', 'SHL.SB.TYS.001'),
+  makeQuestion('Q.1', 'fill_blank', 'SHL.SB.TYS.001', 'F1'),
   makeQuestion('Q.2', 'clause_chain', 'SHL.SB.TYS.002'),
-  makeQuestion('Q.3', 'fill_blank', 'SHL.SB.TYZ.001'),
+  makeQuestion('Q.3', 'fill_blank', 'SHL.SB.TYZ.001', 'F2'),
   makeQuestion('Q.4', 'formula_composition', 'SHL.SB.TYX.001'),
 ]
 
@@ -285,5 +291,25 @@ describe('QuizView 深链筛选模式', () => {
 
     expect(wrapper.text()).toContain('随机综合')
     expect(wrapper.text()).not.toContain('第 1 题')
+  })
+
+  it('?formula=F1 直接进入该方剂相关题（图谱学习闭环）', async () => {
+    route.query = { formula: 'F1' }
+    const wrapper = mount(QuizView)
+    await flushPromises()
+
+    expect(wrapper.text()).toContain('第 1 题 / 共 1 题')
+    expect(wrapper.text()).toContain('题干 Q.1')
+    expect(wrapper.text()).not.toContain('题干 Q.3')
+  })
+
+  it('?clause= 直接进入该条文相关题', async () => {
+    route.query = { clause: 'SHL.SB.TYZ.001' }
+    const wrapper = mount(QuizView)
+    await flushPromises()
+
+    expect(wrapper.text()).toContain('第 1 题 / 共 1 题')
+    expect(wrapper.text()).toContain('题干 Q.3')
+    expect(wrapper.text()).not.toContain('题干 Q.1')
   })
 })

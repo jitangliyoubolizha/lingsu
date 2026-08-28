@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import type { Clause, Formula, Herb } from '../../data/types'
+import type { Clause, Formula, Herb, SymptomTerm } from '../../data/types'
 import { buildGraphDataset, locateGraphNode, neighborSubgraph } from './data'
 
 const herbs: Herb[] = [
@@ -243,5 +243,114 @@ describe('neighborSubgraph', () => {
     const sub = neighborSubgraph(withTexts, 'h:NOT.EXIST')
     expect(sub.nodes).toHaveLength(0)
     expect(sub.links).toHaveLength(0)
+  })
+})
+
+/* ---------------- 症状维度 ---------------- */
+
+const symptomTerms: SymptomTerm[] = [
+  { id: 'SYM1', name: '发热', category: '症状', aliases: ['身热'] },
+  { id: 'SYM2', name: '恶寒', category: '症状', aliases: [] },
+  { id: 'SYM3', name: '孤立症状', category: '症状', aliases: [] },
+]
+
+const clausesWithTags: Clause[] = [
+  { ...clauses[0]!, symptomTags: ['SYM1', 'SYM2'] }, // T12
+  { ...clauses[1]!, symptomTags: ['SYM1'] }, // T13
+  { ...clauses[2]!, symptomTags: ['SYM1', 'SYM2'] }, // T117
+]
+
+const formulaWithTargets: Formula[] = [
+  formulas[0]!,
+  { ...formulas[1]!, mainSymptoms: ['SYM2', 'SYM9'] }, // SYM9 未收录，应忽略
+]
+
+describe('buildGraphDataset 症状维度', () => {
+  it('开启症状层：生成症状节点（含别名匹配名），未被引用的术语不生成', () => {
+    const dataset = buildGraphDataset({
+      formulas: formulaWithTargets,
+      herbs,
+      clauses: clausesWithTags,
+      symptomTerms,
+      includeSymptomNodes: true,
+    })
+
+    const s1 = dataset.nodes.find((n) => n.id === 's:SYM1')
+    expect(s1).toMatchObject({ label: '发热', type: 'symptom', refId: 'SYM1' })
+    expect(s1?.matchNames).toContain('身热')
+    expect(s1?.matchNames).toContain('发热')
+    expect(dataset.nodes.some((n) => n.id === 's:SYM3')).toBe(false)
+    expect(dataset.nodes.some((n) => n.id === 's:SYM9')).toBe(false)
+  })
+
+  it('三类症状边：present（条→症，随条文节点）、suggests（方→症，≥2 条推导）、targets（主症显式）', () => {
+    const dataset = buildGraphDataset({
+      formulas: formulaWithTargets,
+      herbs,
+      clauses: clausesWithTags,
+      symptomTerms,
+      includeSymptomNodes: true,
+    })
+
+    const present = dataset.links.filter((l) => l.kind === 'present')
+    expect(present).toEqual([
+      { source: 't:SHL.SB.TYS.012', target: 's:SYM1', kind: 'present' },
+      { source: 't:SHL.SB.TYS.012', target: 's:SYM2', kind: 'present' },
+      { source: 't:SHL.SB.TYS.013', target: 's:SYM1', kind: 'present' },
+      { source: 't:SHL.SB.TYS.117', target: 's:SYM1', kind: 'present' },
+      { source: 't:SHL.SB.TYS.117', target: 's:SYM2', kind: 'present' },
+    ])
+
+    // F1 相关条文 T12+T13 都见 SYM1（2 条）→ suggests；SYM2 只在 T12（1 条）→ 不推导
+    expect(dataset.links.filter((l) => l.kind === 'suggests')).toEqual([
+      { source: 'f:SHL.SB.F.001', target: 's:SYM1', kind: 'suggests' },
+    ])
+
+    // 主症显式录入直接连线（SYM9 未收录被忽略）
+    expect(dataset.links.filter((l) => l.kind === 'targets')).toEqual([
+      { source: 'f:SHL.SB.F.002', target: 's:SYM2', kind: 'targets' },
+    ])
+  })
+
+  it('关闭条文节点但开启症状：present 边随条文节点消失，suggests/targets 不受影响', () => {
+    const dataset = buildGraphDataset({
+      formulas: formulaWithTargets,
+      herbs,
+      clauses: clausesWithTags,
+      symptomTerms,
+      includeTextNodes: false,
+      includeSymptomNodes: true,
+    })
+
+    expect(dataset.nodes.some((n) => n.type === 'text')).toBe(false)
+    expect(dataset.links.some((l) => l.kind === 'present')).toBe(false)
+    expect(dataset.links.some((l) => l.kind === 'suggests')).toBe(true)
+    expect(dataset.links.some((l) => l.kind === 'targets')).toBe(true)
+  })
+
+  it('不开症状层时即使传入术语也无任何症状节点/边（默认关闭）', () => {
+    const dataset = buildGraphDataset({
+      formulas: formulaWithTargets,
+      herbs,
+      clauses: clausesWithTags,
+      symptomTerms,
+    })
+    expect(dataset.nodes.some((n) => n.type === 'symptom')).toBe(false)
+    expect(dataset.links.some((l) => ['present', 'suggests', 'targets'].includes(l.kind))).toBe(
+      false
+    )
+  })
+
+  it('locateGraphNode 支持症状名与别名精确/回退匹配', () => {
+    const dataset = buildGraphDataset({
+      formulas: formulaWithTargets,
+      herbs,
+      clauses: clausesWithTags,
+      symptomTerms,
+      includeSymptomNodes: true,
+    })
+    expect(locateGraphNode(dataset, '发热')).toBe('s:SYM1')
+    expect(locateGraphNode(dataset, '身热')).toBe('s:SYM1')
+    expect(locateGraphNode(dataset, '恶寒')).toBe('s:SYM2')
   })
 })

@@ -21,13 +21,20 @@ const TYPE_COLORS: Record<string, string> = {
   formula: '#8b0000', // --color-cinnabar
   herb: '#3e7c4f', // --color-green
   text: '#35506b', // --color-indigo
+  symptom: '#b08d2f', // 赭金（暗金），两主题下均可读
 }
 
 const LINK_COLORS: Record<string, string> = {
   compose: 'rgba(62, 124, 79, 0.38)', // green
   text: 'rgba(53, 80, 107, 0.30)', // indigo
   pair: 'rgba(201, 162, 39, 0.45)', // gold
+  present: 'rgba(176, 141, 47, 0.40)', // 赭金虚线：条文见症
+  suggests: 'rgba(176, 141, 47, 0.30)', // 赭金虚线：方剂提示症（推导）
+  targets: 'rgba(176, 141, 47, 0.55)', // 赭金实线：方剂主症（显式）
 }
+
+/** 症状相关边用虚线绘制，与结构关系（实线）区分。 */
+const DASHED_LINK_KINDS = new Set(['present', 'suggests'])
 
 const SELECT_STROKE = '#c9a227' // --color-gold
 
@@ -63,6 +70,8 @@ interface SimLink {
 function linkLength(kind: string): number {
   if (kind === 'text') return 100
   if (kind === 'pair') return 48
+  if (kind === 'present' || kind === 'targets') return 60
+  if (kind === 'suggests') return 78
   return 62
 }
 
@@ -393,13 +402,15 @@ export class ForceGraph {
       const [x2, y2] = this.toScreen(link.target.x, link.target.y)
       const isActive = hasFocus && (link.source.id === focus!.id || link.target.id === focus!.id)
       ctx.strokeStyle = LINK_COLORS[link.kind] ?? 'rgba(0,0,0,0.2)'
-      ctx.globalAlpha = hasFocus ? (isActive ? 1 : 0.12) : 1
+      ctx.globalAlpha = hasFocus ? (isActive ? 1 : 0.12) : 0.95
       ctx.lineWidth = isActive ? 1.6 : 1
+      ctx.setLineDash(DASHED_LINK_KINDS.has(link.kind) ? [4, 3] : [])
       ctx.beginPath()
       ctx.moveTo(x1, y1)
       ctx.lineTo(x2, y2)
       ctx.stroke()
     }
+    ctx.setLineDash([])
     ctx.globalAlpha = 1
 
     ctx.textAlign = 'center'

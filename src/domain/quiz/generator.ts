@@ -274,6 +274,10 @@ export interface QuizFilter {
   chapter?: string
   /** 题型，与篇章可同时生效（交集） */
   type?: Question['type']
+  /** 方剂 ID（如图谱学习闭环的「刷这个方的题」） */
+  formula?: string
+  /** 条文 ID */
+  clause?: string
 }
 
 /**
@@ -281,7 +285,7 @@ export interface QuizFilter {
  * 篇章筛选依据内容数据中该篇章代码（含拆分文件）下属的全部条文 ID；
  * 无条文归属的题目（如部分方剂组成题）在按篇筛选时排除。
  */
-export function filterQuizDeck<T extends Pick<Question, 'clause' | 'type'>>(
+export function filterQuizDeck<T extends Pick<Question, 'clause' | 'type' | 'formula'>>(
   deck: T[],
   content: ContentData,
   filter: QuizFilter
@@ -300,6 +304,12 @@ export function filterQuizDeck<T extends Pick<Question, 'clause' | 'type'>>(
       return false
     }
     if (filter.type !== undefined && question.type !== filter.type) {
+      return false
+    }
+    if (filter.formula !== undefined && question.formula !== filter.formula) {
+      return false
+    }
+    if (filter.clause !== undefined && question.clause !== filter.clause) {
       return false
     }
     return true

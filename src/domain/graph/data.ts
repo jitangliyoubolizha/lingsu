@@ -1,17 +1,20 @@
 /**
  * 知识图谱数据构建（纯函数）。
  *
- * 由内容数据派生三类节点（方剂 / 中药 / 条文）与三类边：
+ * 由内容数据派生四类节点（方剂 / 中药 / 条文 / 症状）与六类边：
  * - compose：方剂 → 组成中药（composition.herb 为中药 ID，未收录药材忽略）
  * - text：方剂 → 出处条文（relatedClauses）
  * - pair：药对 —— 同书 ≥2 个方剂组成中共现的两味药
+ * - present：条文 → 症状（clause.symptomTags，随条文节点开关）
+ * - targets：方剂 → 主症（formula.mainSymptoms 显式录入）
+ * - suggests：方剂 → 提示症 —— 相关条文中 ≥2 次出现的症状（推导，同药对思路）
  *
  * 设计说明见 docs/核心模块设计.md §8.2。
  */
-import type { Clause, Formula, Herb } from '../../data/types'
+import type { Clause, Formula, Herb, SymptomTerm } from '../../data/types'
 
-export type GraphNodeType = 'formula' | 'herb' | 'text'
-export type GraphLinkKind = 'compose' | 'text' | 'pair'
+export type GraphNodeType = 'formula' | 'herb' | 'text' | 'symptom'
+export type GraphLinkKind = 'compose' | 'text' | 'pair' | 'present' | 'suggests' | 'targets'
 
 export interface GraphNodeData {
   id: string
@@ -37,8 +40,14 @@ export interface GraphDataset {
 export interface BuildGraphDatasetInput {
   formulas: Formula[]
   herbs: Herb[]
-  /** 提供时生成条文节点与 text 边；省略表示纯方药图。 */
+  /** 条文数据源；与 includeTextNodes 共同决定条文节点与 text/present 边。 */
   clauses?: Clause[]
+  /** 症状术语注册表；与 includeSymptomNodes 共同决定症状层。 */
+  symptomTerms?: SymptomTerm[]
+  /** 条文节点开关；省略时跟随 clauses 的有无（向后兼容）。 */
+  includeTextNodes?: boolean
+  /** 症状节点开关；默认关闭。 */
+  includeSymptomNodes?: boolean
 }
 
 /** 中药节点只收录实际参与至少一个方剂组成的药材，避免孤点干扰布局。 */
@@ -51,7 +60,9 @@ function collectUsedHerbIds(formulas: Formula[]): Set<string> {
 }
 
 export function buildGraphDataset(input: BuildGraphDatasetInput): GraphDataset {
-  const { formulas, herbs, clauses } = input
+  const { formulas, herbs, clauses, symptomTerms } = input
+  const textNodesOn = clauses !== undefined && input.includeTextNodes !== false
+  const symptomNodesOn = input.includeSymptomNodes === true && symptomTerms !== undefined
   const nodes: GraphNodeData[] = []
   const links: GraphLinkData[] = []
 
@@ -103,7 +114,7 @@ export function buildGraphDataset(input: BuildGraphDatasetInput): GraphDataset {
   }
 
   // 条文节点 + text 边
-  if (clauses) {
+  if (clauses && textNodesOn) {
     const clauseIds = new Set(clauses.map((clause) => clause.id))
     for (const clause of clauses) {
       nodes.push({
@@ -131,6 +142,72 @@ export function buildGraphDataset(input: BuildGraphDatasetInput): GraphDataset {
     if (count < 2) continue
     const [a, b] = key.split('|')
     links.push({ source: `h:${a}`, target: `h:${b}`, kind: 'pair' })
+  }
+
+  // 症状层：节点只收录被条文/方剂引用过的术语
+  if (symptomNodesOn && symptomTerms) {
+    const termById = new Map(symptomTerms.map((term) => [term.id, term]))
+    const usedSymptomIds = new Set<string>()
+    if (clauses) {
+      for (const clause of clauses) {
+        for (const tag of clause.symptomTags) usedSymptomIds.add(tag)
+      }
+    }
+    for (const formula of formulas) {
+      for (const tag of formula.mainSymptoms) usedSymptomIds.add(tag)
+    }
+
+    const symptomOn = (tagId: string): boolean =>
+      termById.has(tagId) && usedSymptomIds.has(tagId)
+
+    for (const term of symptomTerms) {
+      if (!usedSymptomIds.has(term.id)) continue
+      nodes.push({
+        id: `s:${term.id}`,
+        label: term.name,
+        type: 'symptom',
+        refId: term.id,
+        matchNames: [term.name, ...term.aliases],
+      })
+    }
+
+    // present：条文 → 症状（条文节点开启时才有条文端点）
+    if (clauses && textNodesOn) {
+      for (const clause of clauses) {
+        for (const tag of new Set(clause.symptomTags)) {
+          if (!symptomOn(tag)) continue
+          links.push({ source: `t:${clause.id}`, target: `s:${tag}`, kind: 'present' })
+        }
+      }
+    }
+
+    // targets：方剂主症（显式录入）
+    for (const formula of formulas) {
+      for (const tag of new Set(formula.mainSymptoms)) {
+        if (!symptomOn(tag)) continue
+        links.push({ source: `f:${formula.id}`, target: `s:${tag}`, kind: 'targets' })
+      }
+    }
+
+    // suggests：相关条文中 ≥2 次出现的症状（推导）
+    if (clauses) {
+      const clauseById = new Map(clauses.map((clause) => [clause.id, clause]))
+      for (const formula of formulas) {
+        const support = new Map<string, number>()
+        for (const clauseId of formula.relatedClauses) {
+          const clause = clauseById.get(clauseId)
+          if (!clause) continue
+          for (const tag of new Set(clause.symptomTags)) {
+            if (!symptomOn(tag)) continue
+            support.set(tag, (support.get(tag) ?? 0) + 1)
+          }
+        }
+        for (const [tag, count] of support) {
+          if (count < 2) continue
+          links.push({ source: `f:${formula.id}`, target: `s:${tag}`, kind: 'suggests' })
+        }
+      }
+    }
   }
 
   return { nodes, links }
@@ -169,7 +246,7 @@ export function neighborSubgraph(dataset: GraphDataset, nodeId: string): GraphDa
 /**
  * 图谱内搜索定位：返回目标节点 id 或 null。
  * - 纯数字：按条文号定位（条文节点缺失时返回 null，由视图决定是否开启条文后重查）；
- * - 文本：方剂名精确 → 中药名精确（含别名）→ 名称包含匹配。
+ * - 文本：方剂/中药/症状名精确（含别名）→ 名称包含匹配。
  */
 export function locateGraphNode(dataset: GraphDataset, query: string): string | null {
   const q = query.trim()
@@ -182,13 +259,16 @@ export function locateGraphNode(dataset: GraphDataset, query: string): string | 
     return hit?.id ?? null
   }
 
+  const searchable = (type: GraphNodeType): boolean =>
+    type === 'formula' || type === 'herb' || type === 'symptom'
+
   for (const node of dataset.nodes) {
-    if ((node.type === 'formula' || node.type === 'herb') && node.matchNames.includes(q)) {
+    if (searchable(node.type) && node.matchNames.includes(q)) {
       return node.id
     }
   }
   for (const node of dataset.nodes) {
-    if (node.type === 'formula' || node.type === 'herb') {
+    if (searchable(node.type)) {
       if (node.matchNames.some((name) => name.includes(q))) return node.id
     }
   }
