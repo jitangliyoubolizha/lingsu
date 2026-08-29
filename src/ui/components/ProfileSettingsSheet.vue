@@ -98,72 +98,80 @@ async function toggleVoice() {
       </div>
 
       <div class="divide-y divide-border-paper/60">
-      <div class="flex items-center justify-between py-3">
-        <span class="text-sm text-ink-secondary">每日新学数量</span>
-        <select
-          :value="selectValue"
-          aria-label="每日新学数量"
-          class="h-9 rounded-lg border border-border-paper bg-paper px-2 text-sm text-ink"
-          @change="onDailyNewSelectChange"
-        >
-          <option v-for="n in DAILY_NEW_PRESETS" :key="n" :value="String(n)">{{ n }} 条/日</option>
-          <option value="custom">自定义…</option>
-        </select>
-      </div>
-      <div
-        v-if="settingsCustomMode"
-        class="flex items-center justify-end gap-2 py-2"
-      >
-        <label class="text-xs text-ink-muted">自定义条数（1~20）</label>
-        <input
-          v-model.number="customDraft"
-          type="number"
-          min="1"
-          max="20"
-          aria-label="自定义条数"
-          class="h-9 w-20 rounded-lg border border-border-paper bg-paper px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
-        >
-        <button
-          type="button"
-          class="h-9 rounded-lg bg-cinnabar px-3 text-xs font-semibold text-white hover:bg-cinnabar-deep"
-          @click="changeDailyNew(clampDailyNew(customDraft))"
-        >
-          应用
-        </button>
-      </div>
-
-      <div class="flex items-center justify-between py-3">
-        <span class="text-sm text-ink-secondary">字号大小</span>
-        <div class="flex gap-1">
-          <button
-            v-for="size in ['小', '中', '大'] as const"
-            :key="size"
-            type="button"
-            class="h-9 w-12 rounded-lg text-sm"
-            :class="fontSize === size ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'"
-            @click="changeFontSize(size)"
+        <div class="flex items-center justify-between py-3">
+          <span class="text-sm text-ink-secondary">每日新学数量</span>
+          <select
+            :value="selectValue"
+            aria-label="每日新学数量"
+            class="h-9 rounded-lg border border-border-paper bg-paper px-2 text-sm text-ink"
+            @change="onDailyNewSelectChange"
           >
-            {{ size }}
+            <option
+              v-for="n in DAILY_NEW_PRESETS"
+              :key="n"
+              :value="String(n)"
+            >
+              {{ n }} 条/日
+            </option>
+            <option value="custom">
+              自定义…
+            </option>
+          </select>
+        </div>
+        <div
+          v-if="settingsCustomMode"
+          class="flex items-center justify-end gap-2 py-2"
+        >
+          <label class="text-xs text-ink-muted">自定义条数（1~20）</label>
+          <input
+            v-model.number="customDraft"
+            type="number"
+            min="1"
+            max="20"
+            aria-label="自定义条数"
+            class="h-9 w-20 rounded-lg border border-border-paper bg-paper px-2 text-center text-sm text-ink focus:border-cinnabar/50 focus:outline-none"
+          >
+          <button
+            type="button"
+            class="h-9 rounded-lg bg-cinnabar px-3 text-xs font-semibold text-white hover:bg-cinnabar-deep"
+            @click="changeDailyNew(clampDailyNew(customDraft))"
+          >
+            应用
           </button>
         </div>
-      </div>
 
-      <div class="flex items-center justify-between py-3">
-        <span class="text-sm text-ink-secondary">朗读语音</span>
-        <button
-          type="button"
-          role="switch"
-          :aria-checked="voiceEnabled"
-          class="relative h-6 w-11 rounded-full transition-colors"
-          :class="voiceEnabled ? 'bg-green' : 'bg-paper-deep'"
-          @click="toggleVoice"
-        >
-          <span
-            class="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all"
-            :class="voiceEnabled ? 'left-[22px]' : 'left-0.5'"
-          />
-        </button>
-      </div>
+        <div class="flex items-center justify-between py-3">
+          <span class="text-sm text-ink-secondary">字号大小</span>
+          <div class="flex gap-1">
+            <button
+              v-for="size in ['小', '中', '大'] as const"
+              :key="size"
+              type="button"
+              class="h-9 w-12 rounded-lg text-sm"
+              :class="fontSize === size ? 'bg-cinnabar text-white' : 'bg-paper-deep text-ink-secondary'"
+              @click="changeFontSize(size)"
+            >
+              {{ size }}
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between py-3">
+          <span class="text-sm text-ink-secondary">朗读语音</span>
+          <button
+            type="button"
+            role="switch"
+            :aria-checked="voiceEnabled"
+            class="relative h-6 w-11 rounded-full transition-colors"
+            :class="voiceEnabled ? 'bg-green' : 'bg-paper-deep'"
+            @click="toggleVoice"
+          >
+            <span
+              class="absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all"
+              :class="voiceEnabled ? 'left-[22px]' : 'left-0.5'"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
