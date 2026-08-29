@@ -43,6 +43,13 @@ onMounted(() => {
     >
       <template #actions>
         <RouterLink
+          to="/compare"
+          class="flex h-9 items-center px-2 text-sm text-indigo"
+          aria-label="方证对比"
+        >
+          对比
+        </RouterLink>
+        <RouterLink
           to="/search"
           class="flex h-9 items-center px-2 text-sm text-indigo"
           aria-label="搜索方剂"

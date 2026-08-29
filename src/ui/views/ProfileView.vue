@@ -76,7 +76,6 @@ const groups = [
     items: [
       { label: '免责声明', icon: Settings, to: '/disclaimer' },
       { label: '意见反馈', icon: MessageCircle, to: '/feedback' },
-      { label: '内容来源', icon: Settings, to: '/profile' },
     ],
   },
 ]

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5efe2" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17130f" />
+    <!-- theme-color 由 theme-boot.js / useTheme 按"应用内主题"同步改写，勿用媒体查询（应用内深色≠系统深色） -->
+    <meta name="theme-color" id="meta-theme-color" content="#f5efe2" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self';" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <script src="/theme-boot.js"></script>

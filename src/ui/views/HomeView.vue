@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Bell, ChevronRight, Flame, Network } from 'lucide-vue-next'
+import { ChevronRight, Flame, Moon, Network, Sun } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import type { ContentData } from '../../data/types'
 import { loadContent } from '../../data'
-import { computeChapterProgress, computeLearningStats, computeStreakDays } from '../../domain'
+import { computeStreakDays } from '../../domain'
 import type { DailyQueue } from '../../domain/memory'
 import { getTodayQueue } from '../../domain/memory'
 import {
@@ -16,8 +16,17 @@ import {
   getClauseStates,
   getDailyLog,
 } from '../../store'
+import { currentEffectiveTheme, useTheme } from '../composables/useTheme'
 import ProgressBar from '../components/ProgressBar.vue'
 import SearchBar from '../components/SearchBar.vue'
+
+const { setMode } = useTheme()
+// currentEffectiveTheme 内部读取共享的 mode 状态，computed 可随模式切换联动
+const isDark = computed(() => currentEffectiveTheme() === 'dark')
+
+function toggleTheme() {
+  setMode(isDark.value ? 'light' : 'dark')
+}
 
 const keyword = ref('')
 const content = ref<ContentData>()
@@ -25,34 +34,10 @@ const queue = ref<DailyQueue>({ dueCards: [], newClauses: [] })
 const taskDone = ref(0)
 const streakDays = ref(0)
 const loading = ref(true)
-const chapterProgress = ref<Array<{ code: string; name: string; done: number; total: number }>>([])
-const learningStats = ref({ mastered: 0, learning: 0, dueReviews: 0 })
-const dailyLogs = ref<
-  Array<{ date: string; requiredCount: number; completedCount: number }>
->([])
 
 const taskTotal = computed(() => queue.value.dueCards.length + queue.value.newClauses.length)
 
 const todayKey = new Date().toISOString().slice(0, 10)
-
-/** 本周（周一起）某下标对应的日期字符串 */
-function weekDayDate(weekIndex: number): string {
-  const now = new Date()
-  const mondayOffset = now.getDay() === 0 ? -6 : 1 - now.getDay()
-  const monday = new Date(now)
-  monday.setDate(now.getDate() + mondayOffset)
-  const target = new Date(monday)
-  target.setDate(monday.getDate() + weekIndex)
-  return target.toISOString().slice(0, 10)
-}
-
-/** 本周一至周日是否完成过打卡（基于真实 dailyLogs） */
-const weekCompleted = computed(() =>
-  ['一', '二', '三', '四', '五', '六', '日'].map((_, index) => {
-    const key = weekDayDate(index)
-    return dailyLogs.value.some((log) => log.date === key && log.completedCount > 0)
-  })
-)
 
 async function loadHome() {
   try {
@@ -73,10 +58,7 @@ async function loadHome() {
     )
     queue.value = getTodayQueue(cards, plans, data.clauses, learnedIds, 20, new Date())
     taskDone.value = todayLog?.completedCount ?? 0
-    dailyLogs.value = dailyLogRecords
     streakDays.value = computeStreakDays(dailyLogRecords)
-    chapterProgress.value = computeChapterProgress(data, learnedIds)
-    learningStats.value = computeLearningStats(cards)
   } finally {
     loading.value = false
   }
@@ -100,12 +82,26 @@ onMounted(loadHome)
       <button
         type="button"
         class="flex h-9 w-9 items-center justify-center rounded-full text-ink-secondary transition-colors hover:bg-paper-deep"
-        aria-label="通知"
+        :aria-label="isDark ? '切换到浅色模式' : '切换到深色模式'"
+        @click="toggleTheme"
       >
-        <Bell
-          class="h-5 w-5"
-          aria-hidden="true"
-        />
+        <Transition
+          name="theme-icon"
+          mode="out-in"
+        >
+          <Moon
+            v-if="isDark"
+            key="moon"
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
+          <Sun
+            v-else
+            key="sun"
+            class="h-5 w-5"
+            aria-hidden="true"
+          />
+        </Transition>
       </button>
     </header>
 
@@ -183,55 +179,6 @@ onMounted(loadHome)
         v-else
         class="mt-5 h-12 animate-pulse rounded-xl bg-white/50"
       />
-    </section>
-
-    <section
-      class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-5 shadow-[0_4px_12px_rgba(34,26,16,.05)]"
-    >
-      <div class="flex items-center justify-between">
-        <h2 class="font-serif text-base font-bold">
-          学习统计
-        </h2>
-        <RouterLink
-          to="/stats"
-          class="flex items-center gap-0.5 text-xs text-indigo"
-        >
-          查看全部 <ChevronRight
-            class="h-3.5 w-3.5"
-            aria-hidden="true"
-          />
-        </RouterLink>
-      </div>
-      <div
-        class="mt-4 flex justify-between gap-1.5"
-        aria-label="本周打卡热力图"
-      >
-        <div
-          v-for="(day, index) in ['一', '二', '三', '四', '五', '六', '日']"
-          :key="day"
-          class="flex flex-1 flex-col items-center gap-1"
-        >
-          <div
-            class="h-8 w-full rounded-md"
-            :class="weekCompleted[index] ? 'bg-cinnabar' : 'bg-paper-deep'"
-            :aria-label="`周${day}${weekCompleted[index] ? '已打卡' : '未打卡'}`"
-          />
-          <span class="text-[10px] text-ink-muted">{{ day }}</span>
-        </div>
-      </div>
-      <div class="mt-4 space-y-3">
-        <div
-          v-for="item in chapterProgress"
-          :key="item.code"
-        >
-          <div class="mb-1 flex items-center justify-between text-xs">
-            <span class="font-serif text-sm text-ink">{{ item.name }}</span>
-            <span class="text-ink-muted">{{ item.done }}/{{ item.total }} ·
-              {{ item.total === 0 ? 0 : Math.round((item.done / item.total) * 100) }}%</span>
-          </div>
-          <ProgressBar :value="item.total === 0 ? 0 : (item.done / item.total) * 100" />
-        </div>
-      </div>
     </section>
 
     <div class="mt-4 grid grid-cols-2 gap-3">

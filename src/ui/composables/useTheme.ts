@@ -42,7 +42,7 @@ export function resolveEffective(modeValue: ThemeMode, prefersDark: boolean): Th
   return modeValue
 }
 
-/** 将解析后的主题应用到 <html> 根元素。 */
+/** 将解析后的主题应用到 <html> 根元素，并同步 theme-color（iOS 状态栏/主屏幕区域取此值）。 */
 export function applyTheme(modeValue: ThemeMode): void {
   const prefersDark =
     typeof window !== 'undefined' &&
@@ -50,6 +50,8 @@ export function applyTheme(modeValue: ThemeMode): void {
     window.matchMedia('(prefers-color-scheme: dark)').matches
   const effective = resolveEffective(modeValue, prefersDark)
   document.documentElement.classList.toggle('dark', effective === 'dark')
+  const meta = document.querySelector('meta[name="theme-color"]')
+  if (meta) meta.setAttribute('content', effective === 'dark' ? '#17130f' : '#f5efe2')
 }
 
 function systemPrefersDark(): boolean {

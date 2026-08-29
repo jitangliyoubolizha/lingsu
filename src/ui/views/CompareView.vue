@@ -79,7 +79,7 @@ onMounted(async () => {
     <AppHeader
       title="方证对比"
       show-back
-      back-to="/"
+      back-to="/formulas"
     />
 
     <div class="flex flex-wrap items-center gap-2">
