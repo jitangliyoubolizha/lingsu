@@ -181,7 +181,8 @@ function wrongOptionClass(index: number) {
       : 'border-border-paper bg-paper-card'
   }
   if (index === item.question.answerIndex) return 'border-green bg-green-soft'
-  if (index === wrongSelected.value) return 'border-red bg-cinnabar-soft'
+  /* 答错：选中项摇头一次（错选才加，与解析面板同期） */
+  if (index === wrongSelected.value) return 'animate-shake-x border-red bg-cinnabar-soft'
   return 'border-border-paper bg-paper-card opacity-60'
 }
 
@@ -414,12 +415,17 @@ onMounted(loadQueue)
           {{ current.question.prompt }}
         </p>
 
-        <div class="mt-5 space-y-3">
+        <TransitionGroup
+          tag="div"
+          name="stagger"
+          appear
+          class="mt-5 space-y-3"
+        >
           <button
             v-for="(option, index) in current.question.options"
-            :key="index"
+            :key="`${currentIndex}-${index}`"
             type="button"
-            class="flex min-h-14 w-full items-center gap-3 rounded-xl border px-4 text-left text-[15px] transition-colors duration-200"
+            class="pressable flex min-h-14 w-full items-center gap-3 rounded-xl border px-4 text-left text-[15px] transition-colors duration-200"
             :class="wrongOptionClass(index)"
             :disabled="wrongSubmitted"
             @click="wrongSelected = index"
@@ -439,16 +445,16 @@ onMounted(loadQueue)
             <span class="flex-1">{{ option }}</span>
             <Check
               v-if="wrongSubmitted && index === current.question.answerIndex"
-              class="h-5 w-5 text-green"
+              class="animate-pop-in h-5 w-5 text-green"
               aria-hidden="true"
             />
             <X
               v-else-if="wrongSubmitted && index === wrongSelected && index !== current.question.answerIndex"
-              class="h-5 w-5 text-red"
+              class="animate-pop-in h-5 w-5 text-red"
               aria-hidden="true"
             />
           </button>
-        </div>
+        </TransitionGroup>
 
         <div
           v-if="wrongSubmitted"
@@ -487,7 +493,7 @@ onMounted(loadQueue)
         class="relative flex-1 [perspective:1200px]"
       >
         <div
-          class="relative h-full min-h-[360px] transition-transform duration-300 ease-in-out"
+          class="relative h-full min-h-[360px] transition-transform duration-300 ease-out-soft"
           :class="flipped ? '[transform:rotateY(180deg)]' : ''"
           :style="{ transformStyle: 'preserve-3d' }"
         >

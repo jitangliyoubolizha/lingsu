@@ -17,8 +17,12 @@ import {
   getDailyLog,
 } from '../../store'
 import { currentEffectiveTheme, useTheme } from '../composables/useTheme'
+import CardStack from '../components/CardStack.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import SearchBar from '../components/SearchBar.vue'
+
+/** 首页轮播的经典条文号：太阳/少阳提纲与桂枝汤、麻黄汤、小柴胡汤主证条 */
+const FEATURED_CLAUSE_NOS = [1, 12, 35, 96, 263]
 
 const { setMode } = useTheme()
 // currentEffectiveTheme 内部读取共享的 mode 状态，computed 可随模式切换联动
@@ -34,6 +38,9 @@ const queue = ref<DailyQueue>({ dueCards: [], newClauses: [] })
 const taskDone = ref(0)
 const streakDays = ref(0)
 const loading = ref(true)
+/** 卡片堆数据；内容加载失败时回退为静态每日一句 */
+const featuredClauses = ref<Array<{ no: number; text: string }>>([])
+const contentFailed = ref(false)
 
 const taskTotal = computed(() => queue.value.dueCards.length + queue.value.newClauses.length)
 
@@ -43,6 +50,11 @@ async function loadHome() {
   try {
     const data = await loadContent()
     content.value = data
+    const clauseByNo = new Map(data.clauses.map((clause) => [clause.no, clause]))
+    featuredClauses.value = FEATURED_CLAUSE_NOS.flatMap((no) => {
+      const clause = clauseByNo.get(no)
+      return clause ? [{ no, text: clause.text }] : []
+    })
     await ensureDefaultStudyPlan()
 
     const [plans, cards, states, dailyLogRecords, todayLog] = await Promise.all([
@@ -59,6 +71,9 @@ async function loadHome() {
     queue.value = getTodayQueue(cards, plans, data.clauses, learnedIds, 20, new Date())
     taskDone.value = todayLog?.completedCount ?? 0
     streakDays.value = computeStreakDays(dailyLogRecords)
+  } catch {
+    // 首页不因内容/存储异常阻塞，卡片堆回退为静态引文
+    contentFailed.value = true
   } finally {
     loading.value = false
   }
@@ -117,7 +132,49 @@ onMounted(loadHome)
       </RouterLink>
     </div>
 
+    <div
+      v-if="loading"
+      class="mt-5 h-64 animate-pulse rounded-2xl border border-border-paper bg-paper-card"
+      aria-hidden="true"
+    />
+    <CardStack
+      v-else-if="featuredClauses.length > 1"
+      class="mt-5 h-64"
+      :items="featuredClauses"
+      random-rotation
+      :sensitivity="290"
+      send-to-back-on-click
+      autoplay
+      :autoplay-delay="5000"
+      pause-on-hover
+      mobile-click-only
+      :rotation-step="2"
+      :scale-step="0.05"
+      aria-label="经典条文轮播"
+    >
+      <template #card="{ item }">
+        <figure
+          class="zhusi-rule relative flex h-full flex-col items-center justify-center rounded-2xl border border-border-paper bg-paper-card px-6 py-5 text-center shadow-[0_4px_12px_rgba(34,26,16,.05)]"
+        >
+          <span
+            class="absolute left-3 top-2 h-3 w-3 rounded-tl-sm border-l-2 border-t-2 border-cinnabar/40"
+            aria-hidden="true"
+          />
+          <span
+            class="absolute bottom-2 right-3 h-3 w-3 rounded-br-sm border-b-2 border-r-2 border-cinnabar/40"
+            aria-hidden="true"
+          />
+          <blockquote class="font-serif text-sm leading-relaxed text-ink-secondary sm:text-base">
+            「{{ item.text }}」
+          </blockquote>
+          <figcaption class="mt-2 shrink-0 text-xs text-ink-muted">
+            ——《伤寒论》第 {{ item.no }} 条
+          </figcaption>
+        </figure>
+      </template>
+    </CardStack>
     <section
+      v-else
       class="zhusi-rule relative mt-5 rounded-2xl border border-border-paper bg-paper-card px-5 py-4 text-center shadow-[0_4px_12px_rgba(34,26,16,.05)]"
     >
       <span
@@ -167,7 +224,7 @@ onMounted(loadHome)
       <RouterLink
         v-if="!loading"
         to="/study"
-        class="mt-5 flex h-12 items-center justify-center gap-1 rounded-xl bg-white font-sans text-[15px] font-semibold text-cinnabar shadow-[0_4px_10px_rgba(0,0,0,.12)] transition-transform active:scale-[0.98]"
+        class="mt-5 flex h-12 items-center justify-center gap-1 rounded-xl bg-white font-sans text-[15px] font-semibold text-cinnabar shadow-[0_4px_10px_rgba(0,0,0,.12)] pressable"
       >
         开始背诵 ({{ taskDone }}/{{ taskTotal }})
         <ChevronRight
@@ -184,21 +241,21 @@ onMounted(loadHome)
     <div class="mt-4 grid grid-cols-2 gap-3">
       <RouterLink
         to="/clauses"
-        class="flex min-h-20 flex-col justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] transition-transform active:scale-[0.98]"
+        class="flex min-h-20 flex-col justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] pressable"
       >
         <span class="text-sm font-semibold text-ink">条文库</span>
         <span class="text-xs text-ink-muted">按篇浏览原文</span>
       </RouterLink>
       <RouterLink
         to="/formulas"
-        class="flex min-h-20 flex-col justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] transition-transform active:scale-[0.98]"
+        class="flex min-h-20 flex-col justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] pressable"
       >
         <span class="text-sm font-semibold text-ink">方剂</span>
         <span class="text-xs text-ink-muted">类方分组浏览</span>
       </RouterLink>
       <RouterLink
         to="/graph"
-        class="col-span-2 flex min-h-20 items-center justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] transition-transform active:scale-[0.98]"
+        class="col-span-2 flex min-h-20 items-center justify-between rounded-2xl border border-border-paper bg-paper-card p-4 shadow-[0_4px_12px_rgba(34,26,16,.05)] pressable"
       >
         <div>
           <p class="text-sm font-semibold text-ink">

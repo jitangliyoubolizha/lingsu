@@ -20,6 +20,10 @@
 
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
   --font-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  /* 动效令牌：Tailwind v4 依 --ease-* 生成 ease-* 工具类，自定义动画用 var() 引用 */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* 宣纸暗夜：暗色主题 token 覆盖（对比度门禁见 tests/theme-contrast.spec.ts） */
@@ -83,12 +87,21 @@ select {
   outline-offset: 2px;
 }
 
+/* 通用按压反馈：贴到按钮、选项行、卡片类可点元素（BaseButton 已自带 scale） */
+.pressable {
+  transition: transform 0.12s var(--ease-out-soft);
+}
+
+.pressable:active {
+  transform: scale(0.98);
+}
+
 /* 首页主题切换：日/月图标旋转缩放互换 */
 .theme-icon-enter-active,
 .theme-icon-leave-active {
   transition:
     opacity 0.2s ease,
-    transform 0.25s ease;
+    transform 0.25s var(--ease-out-soft);
 }
 
 .theme-icon-enter-from {
@@ -101,22 +114,146 @@ select {
   transform: rotate(90deg) scale(0.5);
 }
 
-/* 页面切换动效：像轻轻翻过一页纸 */
+/* 页面切换动效：旧页快速淡出让位，新页自下轻浮入场（out-in 串行，退场要短） */
 .page-enter-active,
 .page-leave-active {
+  will-change: opacity, transform;
+}
+
+.page-enter-active {
   transition:
-    opacity 0.25s ease-out,
-    transform 0.25s ease-out;
+    opacity 0.22s var(--ease-out-soft),
+    transform 0.22s var(--ease-out-soft);
+}
+
+.page-leave-active {
+  transition: opacity 0.1s ease-in;
 }
 
 .page-enter-from {
   opacity: 0;
-  transform: translateX(14px) rotate(0.4deg);
+  transform: translateY(6px);
 }
 
 .page-leave-to {
   opacity: 0;
-  transform: translateX(-14px) rotate(-0.4deg);
+}
+
+/* 列表编舞：项目依次错峰入场（配 TransitionGroup appear；≤8 项封顶 280ms） */
+.stagger-enter-active {
+  transition:
+    opacity 0.2s var(--ease-out-soft),
+    transform 0.2s var(--ease-out-soft);
+}
+
+.stagger-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.stagger-leave-active {
+  display: none;
+}
+
+.stagger-enter-active:nth-child(2) {
+  transition-delay: 40ms;
+}
+
+.stagger-enter-active:nth-child(3) {
+  transition-delay: 80ms;
+}
+
+.stagger-enter-active:nth-child(4) {
+  transition-delay: 120ms;
+}
+
+.stagger-enter-active:nth-child(5) {
+  transition-delay: 160ms;
+}
+
+.stagger-enter-active:nth-child(6) {
+  transition-delay: 200ms;
+}
+
+.stagger-enter-active:nth-child(7) {
+  transition-delay: 240ms;
+}
+
+.stagger-enter-active:nth-child(8) {
+  transition-delay: 280ms;
+}
+
+/* 答题微反馈：答对轻弹、答错摇头 */
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.25s var(--ease-spring) both;
+}
+
+@keyframes shake-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  55% {
+    transform: translateX(4px);
+  }
+
+  80% {
+    transform: translateX(-2px);
+  }
+}
+
+.animate-shake-x {
+  animation: shake-x 0.3s var(--ease-out-soft);
+}
+
+/* 设置弹层：遮罩淡入 + 面板自下滑入（Transition :duration 驱动，动效在子元素上） */
+.sheet-enter-active .sheet-backdrop,
+.sheet-leave-active .sheet-backdrop {
+  transition: opacity 0.2s ease-out;
+}
+
+.sheet-enter-active .sheet-panel,
+.sheet-leave-active .sheet-panel {
+  transition:
+    opacity 0.2s ease-out,
+    transform 0.25s var(--ease-out-soft);
+}
+
+.sheet-enter-from .sheet-backdrop,
+.sheet-leave-to .sheet-backdrop {
+  opacity: 0;
+}
+
+.sheet-enter-from .sheet-panel {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.sheet-leave-to .sheet-panel {
+  opacity: 0;
+  transform: translateY(16px);
 }
 
 /* 打卡成功：朱砂印章盖章动画 */
@@ -153,14 +290,13 @@ select {
   );
 }
 
+/* 减少动效：全局兜底——动画与过渡压至瞬时，等效直接切换（规范 §4.3） */
 @media (prefers-reduced-motion: reduce) {
-  .page-enter-active,
-  .page-leave-active {
-    transition: opacity 0.15s ease-out;
-  }
-
-  .page-enter-from,
-  .page-leave-to {
-    transform: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
