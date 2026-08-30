@@ -93,6 +93,15 @@ chapters:
   - id: SHL.SB.H.001
     name: 桂枝
     aliases: []
+    category: 解表药
+    nature: 辛、甘，温
+    meridians:
+      - 心
+      - 肺
+    effects: 发汗解肌，温通经脉
+    applications: 测试用经方应用说明。
+    dosage: 3~10g
+    cautions: 测试用注意。
     notes: ""
 `,
     'sb/symptom-terms.yaml': `terms:

@@ -107,10 +107,48 @@ export interface FormulaSummary {
   category: string
 }
 
+/** 本草卡功效分类（通行中药学分类 + 经方特殊用品）。 */
+export type HerbCategory =
+  | '解表药'
+  | '清热药'
+  | '泻下药'
+  | '祛风湿药'
+  | '化湿药'
+  | '利水渗湿药'
+  | '温里药'
+  | '理气药'
+  | '消食药'
+  | '驱虫药'
+  | '止血药'
+  | '活血化瘀药'
+  | '化痰止咳平喘药'
+  | '安神药'
+  | '平肝息风药'
+  | '开窍药'
+  | '补虚药'
+  | '收涩药'
+  | '涌吐药'
+  | '攻毒杀虫止痒药'
+  | '拔毒化腐生肌药'
+  | '经方特殊用品'
+
 export interface Herb {
   id: string
   name: string
   aliases: string[]
+  category?: HerbCategory
+  /** 性味，如「辛、甘，温」。 */
+  nature?: string
+  /** 归经，脏腑名数组（不带「经」字）。 */
+  meridians?: string[]
+  /** 功效概述（古典本草表述）。 */
+  effects?: string
+  /** 经方应用：本药在伤寒金匮方中的运用要点（自撰口径）。 */
+  applications?: string
+  /** 内服用量参考（教材通行范围），展示时标注仅供参考。 */
+  dosage?: string
+  /** 使用注意。 */
+  cautions?: string
   notes?: string
 }
 

@@ -12,6 +12,14 @@ describe('ui 路由配置', () => {
     expect(search.meta.ownComplianceBanner).toBe(true)
   })
 
+  it('注册中药列表页路由并标记底部导航', () => {
+    expect(router.hasRoute('herbs')).toBe(true)
+    const herbs = router.resolve('/herbs')
+    expect(herbs.name).toBe('herbs')
+    expect(herbs.meta.navKey).toBe('herbs')
+    expect(herbs.meta.bottomNav).toBe(true)
+  })
+
   it('注册意见反馈页路由', () => {
     expect(router.hasRoute('feedback')).toBe(true)
     const feedback = router.resolve('/feedback')

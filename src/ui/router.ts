@@ -13,6 +13,7 @@ import FormulaDetailView from './views/FormulaDetailView.vue'
 import FormulaListView from './views/FormulaListView.vue'
 import GraphView from './views/GraphView.vue'
 import HerbDetailView from './views/HerbDetailView.vue'
+import HerbListView from './views/HerbListView.vue'
 import HomeView from './views/HomeView.vue'
 import ProfileView from './views/ProfileView.vue'
 import QuizView from './views/QuizView.vue'
@@ -73,6 +74,12 @@ const router = createRouter({
       path: '/formulas/:id',
       name: 'formula-detail',
       component: FormulaDetailView,
+    },
+    {
+      path: '/herbs',
+      name: 'herbs',
+      component: HerbListView,
+      meta: { navKey: 'herbs', bottomNav: true },
     },
     {
       path: '/herbs/:id',

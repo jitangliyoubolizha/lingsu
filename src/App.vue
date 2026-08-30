@@ -39,8 +39,8 @@ watch(
   }
 )
 
-// 底部主 tab（首页/刷题/统计/我的）之间切换：按 tab 左右顺序做方向性滑动，强化位置反馈
-const TAB_ORDER = ['home', 'quiz', 'stats', 'profile']
+// 底部主 tab（首页/刷题/中药/统计/我的）之间切换：按 tab 左右顺序做方向性滑动，强化位置反馈
+const TAB_ORDER = ['home', 'quiz', 'herbs', 'stats', 'profile']
 const tabDirection = ref<'next' | 'prev' | null>(null)
 
 watch(

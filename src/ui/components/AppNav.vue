@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChartColumn, FileText, House, User } from 'lucide-vue-next'
+import { ChartColumn, FileText, House, Leaf, User } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -10,6 +10,7 @@ const route = useRoute()
 const items = [
   { name: 'home', label: '首页', to: '/', icon: House },
   { name: 'quiz', label: '刷题', to: '/quiz', icon: FileText },
+  { name: 'herbs', label: '中药', to: '/herbs', icon: Leaf },
   { name: 'stats', label: '统计', to: '/stats', icon: ChartColumn },
   { name: 'profile', label: '我的', to: '/profile', icon: User },
 ]

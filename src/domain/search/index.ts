@@ -55,7 +55,7 @@ export function buildSearchIndex(content: ContentData): SearchIndex {
       id: herb.id,
       group: 'herb' as const,
       title: herb.name,
-      text: [herb.name, ...herb.aliases].join(' '),
+      text: [herb.name, ...herb.aliases, herb.category ?? ''].join(' '),
     })),
   ]
 

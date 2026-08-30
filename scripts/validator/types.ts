@@ -3,6 +3,31 @@ import type { Document } from 'yaml'
 export const YAML_EXTENSIONS = new Set(['.yaml', '.yml'])
 export const FORBIDDEN_WORDS = ['诊断', '治疗方案', '推荐用药']
 export const TERM_CATEGORIES = new Set(['症状', '脉象', '病机'])
+/** 本草卡功效分类枚举（通行中药学分类 + 经方特殊用品），与 docs/数据规范.md §4.5 对应。 */
+export const HERB_CATEGORIES = new Set([
+  '解表药',
+  '清热药',
+  '泻下药',
+  '祛风湿药',
+  '化湿药',
+  '利水渗湿药',
+  '温里药',
+  '理气药',
+  '消食药',
+  '驱虫药',
+  '止血药',
+  '活血化瘀药',
+  '化痰止咳平喘药',
+  '安神药',
+  '平肝息风药',
+  '开窍药',
+  '补虚药',
+  '收涩药',
+  '涌吐药',
+  '攻毒杀虫止痒药',
+  '拔毒化腐生肌药',
+  '经方特殊用品',
+])
 export const QUESTION_TYPES = new Set([
   'fill_blank',
   'clause_chain',

@@ -85,6 +85,13 @@ function toHerb(value: Record<string, unknown>): Herb {
     id: value.id as string,
     name: value.name as string,
     aliases: toStringArray(value.aliases),
+    category: value.category as Herb['category'],
+    nature: typeof value.nature === 'string' ? value.nature : undefined,
+    meridians: value.meridians === undefined ? undefined : toStringArray(value.meridians),
+    effects: typeof value.effects === 'string' ? value.effects : undefined,
+    applications: typeof value.applications === 'string' ? value.applications : undefined,
+    dosage: typeof value.dosage === 'string' ? value.dosage : undefined,
+    cautions: typeof value.cautions === 'string' ? value.cautions : undefined,
     notes: typeof value.notes === 'string' ? value.notes : undefined,
   }
 }

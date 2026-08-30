@@ -4,6 +4,7 @@ import {
   isRecord,
   isString,
   isEmptyString,
+  HERB_CATEGORIES,
   TERM_CATEGORIES,
   QUESTION_TYPES,
   QUESTION_STATUSES,
@@ -143,6 +144,47 @@ export function validateRequiredFields(collected: Collected, issues: ValidationI
         'herbs[].name',
         '缺少药名',
         '请填写 name'
+      )
+    }
+    // 本草卡字段（81 味已全部补齐，升级为必填）：category 枚举、其余文本非空、归经为非空字符串数组
+    if (!isString(herb.value.category) || !HERB_CATEGORIES.has(herb.value.category)) {
+      addIssue(
+        issues,
+        herb.file,
+        herb.path.concat('category'),
+        'E1003',
+        'herbs[].category',
+        `category 必须是 ${Array.from(HERB_CATEGORIES).join(' / ')}`,
+        '请修正 category'
+      )
+    }
+    for (const field of ['nature', 'effects', 'applications', 'dosage', 'cautions'] as const) {
+      if (isEmptyString(herb.value[field])) {
+        addIssue(
+          issues,
+          herb.file,
+          herb.path.concat(field),
+          'E1001',
+          `herbs[].${field}`,
+          `本草卡缺少 ${field}`,
+          `请补充 ${field}`
+        )
+      }
+    }
+    const meridians = herb.value.meridians
+    if (
+      !Array.isArray(meridians) ||
+      meridians.length === 0 ||
+      !meridians.every((item) => isString(item) && item.trim() !== '')
+    ) {
+      addIssue(
+        issues,
+        herb.file,
+        herb.path.concat('meridians'),
+        'E1002',
+        'herbs[].meridians',
+        'meridians 必须是非空字符串数组（脏腑名，不带「经」字）',
+        '请补充归经，如 [心, 肺, 膀胱]'
       )
     }
   }

@@ -144,7 +144,13 @@ onMounted(load)
             :key="item.herb"
             class="flex items-center justify-between py-2.5"
           >
-            <span class="font-serif text-[15px] text-ink">{{ herbName(item.herb) }}</span>
+            <RouterLink
+              :to="`/herbs/${item.herb}`"
+              class="rounded font-serif text-[15px] text-ink underline-offset-4 hover:text-indigo hover:underline"
+              :aria-label="`查看药物 ${herbName(item.herb)}`"
+            >
+              {{ herbName(item.herb) }}
+            </RouterLink>
             <span class="text-[13px] text-ink-muted">{{ item.dose }}</span>
           </li>
         </ul>

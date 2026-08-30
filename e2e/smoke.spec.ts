@@ -1,9 +1,10 @@
 /**
- * E2E 冒烟测试 — 三条关键链路（TD-5）
+ * E2E 冒烟测试 — 关键链路（TD-5 + 中药板块）
  *
  * 链路 1: 协议 → 背诵  (agree → study)
  * 链路 2: 搜索 → 条文  (search → clause detail)
  * 链路 3: 刷题 → 错题本 (quiz → wrong book)
+ * 链路 4: 中药 tab → 列表 → 药物详情 → 方剂组成联动 (herbs → herb detail → formula detail)
  */
 import { expect, test, type Page } from '@playwright/test'
 
@@ -95,5 +96,29 @@ test.describe('E2E 冒烟测试', () => {
 
     // 错题本应渲染"待巩固"标题（空态或台账均含该字样）
     await expect(page.locator('text=待巩固').first()).toBeVisible({ timeout: 8000 })
+  })
+
+  test('链路 4: 中药列表 → 药物详情 → 方剂组成联动', async ({ page }) => {
+    await agreeAndGoHome(page)
+
+    // 导航点击「中药」入口（移动端为底部 tab、桌面端为左侧栏，:visible 过滤当前视口可见的那个）
+    await page.locator('a[href="#/herbs"]:visible').first().click()
+    await page.waitForURL('**/#/herbs')
+
+    // 列表页按功效分类分组，点击「桂枝」进入药物详情
+    await expect(page.locator('text=解表药').first()).toBeVisible({ timeout: 8000 })
+    await page.locator('a[href="#/herbs/SHL.SB.H.001"]').first().click()
+    await page.waitForURL('**/#/herbs/SHL.SB.H.001')
+
+    // 药物详情页应出现本草卡与安全提示
+    await expect(page.locator('text=本草卡').first()).toBeVisible({ timeout: 8000 })
+    await expect(page.locator('text=请勿自行用药').first()).toBeVisible()
+
+    // 从「出现方剂」进入方剂详情，组成药名可点击返回药物详情
+    await page.locator('a[href^="#/formulas/"]').first().click()
+    await page.waitForURL('**/#/formulas/**')
+    await expect(page.locator('a[href="#/herbs/SHL.SB.H.001"]').first()).toBeVisible({
+      timeout: 8000,
+    })
   })
 })
