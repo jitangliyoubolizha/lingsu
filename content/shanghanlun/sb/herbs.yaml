@@ -1,12 +1,22 @@
 # 太阳病上篇相关药物
-# 状态：AI 初稿，待人工校对
+# 状态：本草卡内容分批补齐中（2026-08 起），待人工校对
 # 来源：宋本《伤寒论》药物组成
 herbs:
   - id: SHL.SB.H.001
     name: 桂枝
     aliases:
       - 桂
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛、甘，温
+    meridians:
+      - 心
+      - 肺
+      - 膀胱
+    effects: 发汗解肌，温通经脉，助阳化气，平冲降气
+    applications: 经方中应用最广的一味药。解肌和营，与芍药相配为桂枝汤调和营卫之本；配麻黄则发汗解表（麻黄汤）。温通心阳如桂枝甘草汤，温化水饮如苓桂术甘汤，平冲降逆如桂枝加桂汤治奔豚；又广泛用于温经散寒、活血通脉诸方。
+    dosage: 3~10g
+    cautions: 辛温助热，易伤阴动血。温热病及阴虚阳盛、血热妄行者忌用；孕妇及月经过多者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.002
     name: 芍药
     aliases: []
@@ -18,7 +28,17 @@ herbs:
   - id: SHL.SB.H.004
     name: 生姜
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛，微温
+    meridians:
+      - 肺
+      - 脾
+      - 胃
+    effects: 解表散寒，温中止呕，化痰止咳，解鱼蟹毒
+    applications: 辛温宣散，走而不守。桂枝汤类方必以生姜配大枣调和营卫；胃不和而呕逆者取其止呕（小半夏汤即半夏、生姜二味）；生姜泻心汤用之和胃散水。经方另以干姜专温中焦，生姜与干姜各有分工。
+    dosage: 3~10g
+    cautions: 助火伤阴，阴虚内热及热盛者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.005
     name: 大枣
     aliases: []
@@ -26,7 +46,17 @@ herbs:
   - id: SHL.SB.H.006
     name: 葛根
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 甘、辛，凉
+    meridians:
+      - 脾
+      - 胃
+      - 肺
+    effects: 解肌退热，生津止渴，透疹，升阳止泻，通经活络
+    applications: 主治项背强几几，取其升发津液、濡润筋脉（桂枝加葛根汤、葛根汤）；太阳与阳明合病自下利者用葛根汤发表和里；表证未解而挟热下利者用葛根黄芩黄连汤，取其升清止利。
+    dosage: 10~15g
+    cautions: 表虚多汗者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.007
     name: 厚朴
     aliases: []
@@ -42,15 +72,43 @@ herbs:
   - id: SHL.SB.H.010
     name: 麻黄
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛、微苦，温
+    meridians:
+      - 肺
+      - 膀胱
+    effects: 发汗解表，宣肺平喘，利水消肿
+    applications: 发汗解表、宣肺平喘之要药。表实无汗者与桂枝相须为用（麻黄汤）；肺闭喘咳者配杏仁、甘草；寒饮咳喘者配细辛、干姜、五味子（小青龙汤）；风水一身尽肿者配石膏、生姜（越婢汤）。生用发汗力峻，炙用偏于宣肺平喘。
+    dosage: 2~10g
+    cautions: 发汗力强，表虚自汗、阴虚盗汗及虚喘者慎用；高血压、心律不齐者慎用；不宜过量久服。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.011
     name: 石膏
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 甘、辛，大寒
+    meridians:
+      - 肺
+      - 胃
+    effects: 清热泻火，除烦止渴；煅用外用敛疮
+    applications: 清阳明气分大热之主药。白虎汤配知母治大热、大汗、大渴、脉洪大；麻杏石甘汤配麻黄清宣肺热，治汗出而喘；越婢汤治风水挟热。性虽大寒，配伍得宜则不碍透解。
+    dosage: 15~60g（打碎先煎）
+    cautions: 脾胃虚寒及血虚、阴虚发热者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.012
     name: 知母
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦、甘，寒
+    meridians:
+      - 肺
+      - 胃
+      - 肾
+    effects: 清热泻火，滋阴润燥
+    applications: 白虎汤中配石膏清热生津、除烦止渴；酸枣仁汤配酸枣仁治虚烦不眠；百合知母汤治百合病发汗后心烦。质润，清热之中兼能养阴。
+    dosage: 6~12g
+    cautions: 性寒质滑，脾胃虚寒、大便溏泄者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.013
     name: 人参
     aliases: []
@@ -74,11 +132,32 @@ herbs:
   - id: SHL.SB.H.018
     name: 大黄
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 苦，寒
+    meridians:
+      - 脾
+      - 胃
+      - 大肠
+      - 肝
+      - 心包
+    effects: 泻下攻积，清热泻火，凉血解毒，逐瘀通经
+    applications: 经方应用极广。攻下燥结有大小承气汤、调胃承气汤；泄热消痞有大黄黄连泻心汤；逐瘀有桃核承气汤、抵当汤、下瘀血汤；退黄有茵陈蒿汤；《金匮》大黄牡丹汤治肠痈。泻下宜后下、气锐，攻瘀可同煎、力缓，仲景各有法度。
+    dosage: 3~15g
+    cautions: 峻烈攻下，非里实之证不宜；孕妇、经期、哺乳期慎用或忌用；脾胃虚寒者慎用；不宜久服。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.019
     name: 芒硝
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 咸、苦，寒
+    meridians:
+      - 胃
+      - 大肠
+    effects: 泻下通便，润燥软坚，清火消肿
+    applications: 咸寒软坚。调胃承气汤、大承气汤以之润燥软坚、通导燥屎；大陷胸汤配甘遂、大黄治水热互结之结胸；桃核承气汤助大黄破瘀泄热。多不入煎，冲入药汁内溶化服。
+    dosage: 6~12g（冲服）
+    cautions: 孕妇忌用；不宜与硫黄、三棱同用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.020
     name: 半夏
     aliases: []
@@ -86,19 +165,64 @@ herbs:
   - id: SHL.SB.H.021
     name: 黄芩
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦，寒
+    meridians:
+      - 肺
+      - 胆
+      - 脾
+      - 大肠
+      - 小肠
+    effects: 清热燥湿，泻火解毒，止血，安胎
+    applications: 和解清里之品。小柴胡汤以之配柴胡清半里之热；黄芩汤治太阳与少阳合病自下利，为后世治热利之祖方；黄连阿胶汤用其清心火；《金匮》泻心汤三黄合用治吐衄。
+    dosage: 3~10g
+    cautions: 苦寒伤胃，脾胃虚寒、食少便溏者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.022
     name: 黄连
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦，寒
+    meridians:
+      - 心
+      - 脾
+      - 胃
+      - 肝
+      - 胆
+      - 大肠
+    effects: 清热燥湿，泻火解毒
+    applications: 主心下痞与热利。大黄黄连泻心汤治心下痞、按之濡、其脉关上浮；葛根黄芩黄连汤治挟热下利；黄连汤治腹中痛、欲呕吐；黄连阿胶汤治少阴心烦不得卧；乌梅丸用之苦寒清热安蛔。
+    dosage: 2~5g
+    cautions: 苦寒败胃，脾胃虚寒者忌用；阴虚津伤者慎用；不宜过量久服。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.023
     name: 柴胡
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛、苦，微寒
+    meridians:
+      - 肝
+      - 胆
+      - 肺
+    effects: 疏散退热，疏肝解郁，升举阳气
+    applications: 和解少阳主药。小柴胡汤以之配黄芩，治往来寒热、胸胁苦满、默默不欲饮食；四逆散用其透解郁热、疏畅气机；柴胡加龙骨牡蛎汤诸方亦以柴胡领衔。仲景柴胡类方中柴胡用量独重，为其用药特色。
+    dosage: 3~10g
+    cautions: 性升散，古人有「劫肝阴」之戒，肝阳上亢、阴虚火旺者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.024
     name: 细辛
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛，温
+    meridians:
+      - 心
+      - 肺
+      - 肾
+    effects: 解表散寒，祛风止痛，通窍，温肺化饮
+    applications: 温化寒饮、通达表里。小青龙汤以之配干姜、五味子治咳而微喘、痰多清稀；麻黄细辛附子汤助附子、麻黄温经发表，治少阴病初起反发热；大黄附子汤取其散寒止痛。
+    dosage: 1~3g
+    cautions: 有小毒，用量宜轻；不宜与藜芦同用；阴虚阳亢头痛、肺燥干咳者忌用；气虚多汗者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.025
     name: 五味子
     aliases: []
@@ -106,7 +230,17 @@ herbs:
   - id: SHL.SB.H.026
     name: 甘遂
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 苦，寒；有毒
+    meridians:
+      - 肺
+      - 肾
+      - 大肠
+    effects: 泻水逐饮，消肿散结
+    applications: 峻下逐水。大陷胸汤以之为君，为末冲服，治水热互结、从心下至少腹硬满而痛不可近者；十枣汤以甘遂、芫花、大戟等分为散，肥枣煎汤送服，治悬饮；甘遂半夏汤治留饮欲去。
+    dosage: 0.5~1g（入丸散，原方为末冲服）
+    cautions: 有毒，峻泻易伤正气，体虚者慎用；孕妇忌用；不宜与甘草同用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.027
     name: 葶苈子
     aliases: []
@@ -143,13 +277,31 @@ herbs:
   - id: SHL.SB.H.035
     name: 巴豆
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 辛，热；有大毒
+    meridians:
+      - 胃
+      - 大肠
+    effects: 峻下冷积，逐水退肿，豁痰利咽，蚀疮
+    applications: 大辛大热，攻逐寒积。三物白散以巴豆配桔梗、贝母治寒实结胸、无热证者，病在膈上者可吐、在膈下者可利。经方皆熬黑、去油用之，即后世所称巴豆霜。
+    dosage: 0.1~0.3g（制霜入丸散）
+    cautions: 有大毒，须去油制霜用；孕妇、体弱者忌用；畏牵牛子；古法服后泻利不止者以冷粥解之。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.036
     name: 栝楼根
     aliases:
       - 瓜蒌根
       - 天花粉
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 甘、微苦，微寒
+    meridians:
+      - 肺
+      - 胃
+    effects: 清热泻火，生津止渴，消肿排脓
+    applications: 生津止渴要药。小柴胡汤加减法「若渴，去半夏，加栝楼根四两」；柴胡去半夏加栝蒌汤治疟病发渴；栝蒌瞿麦丸治下焦虚寒而口渴；栝蒌桂枝汤治柔痉，取其滋养津液。
+    dosage: 10~15g
+    cautions: 不宜与乌头类同用；脾胃虚寒便溏者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.037
     name: 牡蛎
     aliases: []
@@ -157,12 +309,31 @@ herbs:
   - id: SHL.SB.H.038
     name: 栀子
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦，寒
+    meridians:
+      - 心
+      - 肺
+      - 三焦
+    effects: 泻火除烦，清热利湿，凉血解毒
+    applications: 清宣郁热。栀子豉汤治虚烦不得眠、心中懊憹；栀子厚朴汤治心烦腹满、卧起不安；茵陈蒿汤配茵陈、大黄治阳黄身热，取其清热利湿。
+    dosage: 6~10g
+    cautions: 苦寒伤胃，脾虚便溏者不宜；原书明言「病人旧微溏者，不可与服之」。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.039
     name: 淡豆豉
     aliases:
       - 香豉
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 苦、辛，凉
+    meridians:
+      - 肺
+      - 胃
+    effects: 解表，除烦，宣发郁热
+    applications: 与栀子相伍为栀子豉汤，清宣胸膈郁热，治虚烦不得眠、心中懊憹、反复颠倒；栀子甘草豉汤、栀子生姜豉汤皆由其化裁。
+    dosage: 6~12g
+    cautions: 制法不同则性味有偏；胃虚易泛恶者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.040
     name: 禹余粮
     aliases: []
@@ -199,11 +370,31 @@ herbs:
   - id: SHL.SB.H.048
     name: 芫花
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 苦、辛，温；有毒
+    meridians:
+      - 肺
+      - 脾
+      - 肾
+    effects: 泻水逐饮，祛痰止咳，杀虫疗疮
+    applications: 十枣汤组成之一，善逐胸胁之水，兼能祛痰止咳，故悬饮咳唾、胸胁引痛者用之。以肥枣十枚煎汤送服，意在顾护脾胃、缓诸药之毒。
+    dosage: 0.6~0.9g（醋制，入丸散）
+    cautions: 有毒，须醋制减毒；体虚及孕妇忌用；不宜与甘草同用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.049
     name: 大戟
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 苦，寒；有毒
+    meridians:
+      - 肺
+      - 脾
+      - 肾
+    effects: 泻水逐饮，消肿散结
+    applications: 十枣汤三峻药之一，逐脏腑胸胁之水饮。经方少单用，后世多外用消肿散结。
+    dosage: 1.5~3g；入丸散每次约 1g
+    cautions: 有毒，体虚及孕妇忌用；不宜与甘草同用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.050
     name: 旋覆花
     aliases: []
@@ -228,7 +419,17 @@ herbs:
   - id: SHL.SB.H.055
     name: 生地黄
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 甘、苦，寒
+    meridians:
+      - 心
+      - 肝
+      - 肾
+    effects: 清热凉血，养阴生津
+    applications: 炙甘草汤重用生地黄滋阴养血，治伤寒脉结代、心动悸；百合地黄汤以生地黄汁治百合病、不经吐下发汗者。原文所用地黄鲜干之别，历代注家有考辨。
+    dosage: 12~30g
+    cautions: 脾虚泄泻、胃虚食少者不宜；痰湿中阻者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.056
     name: 阿胶
     aliases: []
@@ -242,11 +443,32 @@ herbs:
     name: 麻仁
     aliases:
       - 火麻仁
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 甘，平
+    meridians:
+      - 脾
+      - 胃
+      - 大肠
+    effects: 润肠通便
+    applications: 麻子仁丸以麻仁配小承气汤加杏仁、芍药，炼蜜为丸，治脾约证——大便硬、小便数而津液不承，取润下缓攻之意。
+    dosage: 10~15g（打碎入煎）
+    cautions: 过量可致恶心、腹泻、四肢麻木等；脾虚便溏者不宜。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.059
     name: 商陆根
     aliases: []
-    notes: AI 初稿待校对。
+    category: 泻下药
+    nature: 苦，寒；有毒
+    meridians:
+      - 肺
+      - 脾
+      - 肾
+      - 大肠
+    effects: 逐水消肿，通利二便，外用解毒散结
+    applications: 牡蛎泽泻散以商陆与牡蛎、泽泻、葶苈子、蜀漆、海藻、栝楼根等分同用，治大病瘥后、腰以下有水气，取其逐水消肿，白饮和服，小便利则止后服。
+    dosage: 5~10g
+    cautions: 有毒，孕妇忌用；体虚水肿慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.060
     name: 蜀椒
     aliases:
@@ -259,7 +481,16 @@ herbs:
   - id: SHL.SB.H.062
     name: 葱白
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛，温
+    meridians:
+      - 肺
+      - 胃
+    effects: 发汗解表，散寒通阳，解毒散结
+    applications: 宣通阳气。白通汤以葱白配干姜、附子，治少阴病下利、脉微，取其通阳破阴；通脉四逆汤加减法中「面色赤者加葱」，亦是宣通格阳之意。
+    dosage: 9~15g（鲜品）
+    cautions: 表虚多汗者慎用；古有不宜与蜂蜜同服之说。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.063
     name: 猪胆汁
     aliases: []
@@ -272,7 +503,17 @@ herbs:
   - id: SHL.SB.H.065
     name: 竹叶
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 甘、淡，寒
+    meridians:
+      - 心
+      - 胃
+      - 小肠
+    effects: 清热泻火，除烦，生津，利尿
+    applications: 竹叶石膏汤以竹叶领衔，配石膏、人参、麦冬等清余热、益气阴，治伤寒解后虚羸少气、气逆欲吐，为热病后清补并施之法。
+    dosage: 6~15g
+    cautions: 无湿热者慎用；孕妇慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.066
     name: 海藻
     aliases: []
@@ -310,15 +551,45 @@ herbs:
   - id: SHL.SB.H.074
     name: 升麻
     aliases: []
-    notes: AI 初稿待校对。
+    category: 解表药
+    nature: 辛、微甘，微寒
+    meridians:
+      - 肺
+      - 脾
+      - 胃
+      - 大肠
+    effects: 发表透疹，清热解毒，升举阳气
+    applications: 经方见于升麻鳖甲汤，治阳毒之为病、面赤斑斑如锦纹、咽喉痛，取其清热解毒。后世多以升阳举陷用之（补中益气汤类），与仲景用法侧重不同。
+    dosage: 3~10g
+    cautions: 麻疹已透者忌用；阴虚火旺、上盛下虚者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.075
     name: 白头翁
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦，寒
+    meridians:
+      - 胃
+      - 大肠
+    effects: 清热解毒，凉血止痢
+    applications: 白头翁汤以之为君，配黄连、黄柏、秦皮，治下利欲饮水之热利下重，为厥阴热利代表方；产后血虚者加甘草、阿胶。
+    dosage: 9~15g
+    cautions: 虚寒下痢者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.076
     name: 秦皮
     aliases: []
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦、涩，寒
+    meridians:
+      - 肝
+      - 胆
+      - 大肠
+    effects: 清热燥湿，收涩止痢，止带，明目
+    applications: 白头翁汤四药之一，取其清热燥湿、涩肠止痢；白头翁加甘草阿胶汤沿用之，治产后热利。
+    dosage: 6~12g
+    cautions: 脾胃虚寒者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.077
     name: 茵陈蒿
     aliases:
@@ -328,7 +599,17 @@ herbs:
     name: 连轺
     aliases:
       - 连翘根
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦，寒
+    meridians:
+      - 肺
+      - 心
+      - 小肠
+    effects: 清热解毒，利水消肿（今多以连翘代：清热解毒，消肿散结，疏散风热）
+    applications: 麻黄连轺赤小豆汤用连轺（连翘之根），与麻黄、杏仁、赤小豆、梓白皮等同用，治伤寒瘀热在里、身必发黄。连翘根今罕用，通行以连翘代之。
+    dosage: 原方连轺去皮二两；今以连翘 6~15g 代用
+    cautions: 脾胃虚寒者不宜久服。
+    notes: 连轺为连翘之根，已少入药，本草卡按连翘通行数据编写，待核对。本草内容初稿待校对。
   - id: SHL.SB.H.079
     name: 生梓白皮
     aliases: []
@@ -337,7 +618,16 @@ herbs:
     name: 黄柏
     aliases:
       - 黄檗
-    notes: AI 初稿待校对。
+    category: 清热药
+    nature: 苦，寒
+    meridians:
+      - 肾
+      - 膀胱
+    effects: 清热燥湿，泻火除蒸，解毒疗疮
+    applications: 栀子柏皮汤治伤寒身黄发热；白头翁汤以黄柏配白头翁、黄连、秦皮治热利下重；乌梅丸取其苦寒，与黄连同清上热。
+    dosage: 3~12g
+    cautions: 苦寒，脾胃虚寒者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.081
     name: 滑石
     aliases: []
