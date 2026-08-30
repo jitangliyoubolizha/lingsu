@@ -36,12 +36,18 @@ const isBare = computed(() => Boolean(route.meta.bare))
         v-for="item in items"
         :key="item.name"
         :to="item.to"
-        class="flex min-h-14 flex-1 flex-col items-center justify-center gap-0.5 text-[11px] transition-colors"
+        class="nav-press relative flex min-h-14 flex-1 flex-col items-center justify-center gap-0.5 text-[11px]"
         :class="activeName === item.name ? 'font-semibold text-cinnabar' : 'text-ink-muted'"
       >
+        <span
+          v-if="activeName === item.name"
+          class="nav-indicator absolute inset-x-7 top-0 h-[3px] rounded-b-full bg-cinnabar"
+          aria-hidden="true"
+        />
         <component
           :is="item.icon"
           class="h-[22px] w-[22px]"
+          :class="{ 'nav-icon-pop': activeName === item.name }"
           :stroke-width="activeName === item.name ? 2 : 1.8"
           aria-hidden="true"
         />
@@ -76,7 +82,7 @@ const isBare = computed(() => Boolean(route.meta.bare))
         v-for="item in items"
         :key="item.name"
         :to="item.to"
-        class="flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium transition-colors"
+        class="nav-press flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium"
         :class="
           activeName === item.name
             ? 'bg-cinnabar-soft text-cinnabar'
@@ -86,6 +92,7 @@ const isBare = computed(() => Boolean(route.meta.bare))
         <component
           :is="item.icon"
           class="h-5 w-5"
+          :class="{ 'nav-icon-pop': activeName === item.name }"
           :stroke-width="activeName === item.name ? 2 : 1.8"
           aria-hidden="true"
         />

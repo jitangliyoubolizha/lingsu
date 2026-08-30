@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { hasAgreed } from '../store'
+import { pagerSettling } from './composables/useSwipeNavigate'
 import AgreementView from './views/AgreementView.vue'
 import ClauseDetailView from './views/ClauseDetailView.vue'
 import ClauseListView from './views/ClauseListView.vue'
@@ -22,6 +23,12 @@ import WrongBookView from './views/WrongBookView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
+  // 条文详情页（含条文间切换）回顶；其余路由交还浏览器默认（返回列表可还原滚动位置）。
+  // 整页滑动交接期间抑制回顶：落点保持拖动时的阅读位置
+  scrollBehavior(to) {
+    if (to.name !== 'clause-detail') return false
+    return pagerSettling.value ? false : { top: 0 }
+  },
   routes: [
     {
       path: '/agreement',

@@ -139,6 +139,88 @@ select {
   opacity: 0;
 }
 
+/* 条文横滑翻条方向性转场（E-15）：新旧两页并行——旧页跟手位移顺势飞出并淡出
+   （位移由 useSwipeNavigate 的 motion 动画接管，CSS 只管淡出；absolute 脱离文档流
+   防止把新页顶下去，top 由提交时按当前滚动位置钉住），新页自滑动方向侧滑入淡入，
+   全程内容连续无空档 */
+.page-next-enter-active,
+.page-prev-enter-active {
+  transition:
+    opacity 0.26s var(--ease-out-soft),
+    transform 0.26s var(--ease-out-soft);
+}
+
+.page-next-enter-from {
+  opacity: 0;
+  transform: translateX(56px);
+}
+
+.page-prev-enter-from {
+  opacity: 0;
+  transform: translateX(-56px);
+}
+
+.page-next-leave-active,
+.page-prev-leave-active {
+  position: absolute;
+  inset-inline: 0;
+  pointer-events: none;
+  transition: opacity 0.24s var(--ease-out-soft);
+  will-change: opacity, transform;
+}
+
+.page-next-leave-to,
+.page-prev-leave-to {
+  opacity: 0;
+}
+
+/* 整页翻页交接（E-15）：滑动已在组件轨道上完成，路由换页瞬时无第二次过渡 */
+.page-instant-enter-active,
+.page-instant-leave-active {
+  transition: none;
+}
+
+/* 底部/侧边导航切换反馈（§4.2 tab 切换）：按压缩放、激活图标弹跳、指示条渐现 */
+.nav-press {
+  transition:
+    transform 0.12s var(--ease-out-soft),
+    color 0.2s var(--ease-out-soft),
+    background-color 0.2s var(--ease-out-soft);
+}
+
+.nav-press:active {
+  transform: scale(0.94);
+}
+
+.nav-icon-pop {
+  animation: nav-pop 0.32s var(--ease-spring);
+}
+
+@keyframes nav-pop {
+  0% {
+    transform: scale(0.7);
+  }
+
+  55% {
+    transform: scale(1.18);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-indicator {
+  animation: nav-indicator 0.25s var(--ease-out-soft) both;
+}
+
+@keyframes nav-indicator {
+  from {
+    transform: scaleX(0.3);
+    opacity: 0;
+  }
+}
+
 /* 列表编舞：项目依次错峰入场（配 TransitionGroup appear；≤8 项封顶 280ms） */
 .stagger-enter-active {
   transition:
@@ -288,6 +370,71 @@ select {
     rgba(139, 0, 0, 0.08) 4px,
     transparent 4px
   );
+}
+
+/* 条文原文卡界框（E-15）：古籍双线——外线 + 3px 纸色留白 + 内细线，token 自动适配暗色 */
+.clause-frame {
+  border: 1px solid color-mix(in srgb, var(--color-cinnabar) 32%, transparent);
+  box-shadow:
+    inset 0 0 0 3px var(--color-paper-card),
+    inset 0 0 0 4px color-mix(in srgb, var(--color-cinnabar) 14%, transparent),
+    0 8px 24px rgba(34, 26, 16, 0.08);
+}
+
+/* 详情页节标题：前置小朱点 + 字距加宽，统一层次 */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-secondary);
+}
+
+.section-title::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--color-cinnabar);
+}
+
+/* 详情页入场编舞：区块自下错峰浮入（§4.1 页面入场 220ms，步进 40ms） */
+.choreo {
+  animation: choreo-in 0.22s var(--ease-out-soft) both;
+}
+
+.choreo-2 {
+  animation-delay: 40ms;
+}
+
+.choreo-3 {
+  animation-delay: 80ms;
+}
+
+.choreo-4 {
+  animation-delay: 120ms;
+}
+
+.choreo-5 {
+  animation-delay: 160ms;
+}
+
+.choreo-6 {
+  animation-delay: 200ms;
+}
+
+@keyframes choreo-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* 条文间翻页时整页滑入，跳过区块编舞（保持整片连贯感） */
+.no-choreo .choreo {
+  animation: none;
 }
 
 /* 减少动效：全局兜底——动画与过渡压至瞬时，等效直接切换（规范 §4.3） */
