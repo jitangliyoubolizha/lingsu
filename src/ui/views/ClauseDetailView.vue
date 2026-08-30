@@ -121,13 +121,18 @@ function onKeydown(event: KeyboardEvent) {
   else if (event.key === 'ArrowLeft') goTo('prev')
 }
 
+/** 条文同步缓存：整页翻页重挂载时立即渲染，消除异步加载间隙的闪烁 */
+const clauseCache = new Map<string, Clause>()
+
 /** 只加载条文所属篇章；方剂、术语等数据来自随主包加载的元数据。 */
 async function load() {
   loaded.value = false
+  clause.value = clauseCache.get(clauseId.value)
   const chapterCode = chapterCodeOfClause(clauseId.value)
   const chapter = chapterCode ? await loadChapter(chapterCode) : undefined
   clause.value = chapter?.clauses.find((item) => item.id === clauseId.value)
   if (clause.value) {
+    clauseCache.set(clause.value.id, clause.value)
     favorite.value = await isFavorite('clause', clause.value.id)
   }
   loaded.value = true

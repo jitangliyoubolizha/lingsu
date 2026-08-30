@@ -143,6 +143,18 @@ test.describe('条文横滑翻条（移动端视口）', () => {
     await expectH1(page, '第 2 条')
     await page.waitForTimeout(600)
     expect(await page.evaluate(() => window.scrollY)).toBe(0)
+
+    // 7) 返回逻辑：连续翻条为 replace 原地换页（不堆历史），返回应直达条文列表
+    await page.goto('/#/clauses')
+    await page.waitForURL('**/#/clauses')
+    await page.locator('a[href="#/clauses/SHL.SB.TYS.012"]').first().click()
+    await expectH1(page, '第 12 条')
+    await page.keyboard.press('ArrowRight')
+    await expectH1(page, '第 13 条')
+    await page.keyboard.press('ArrowRight')
+    await expectH1(page, '第 14 条')
+    await page.locator('[data-test="page-current"] button[aria-label="返回"]').click()
+    await page.waitForURL('**/#/clauses', { timeout: 8000 })
   })
 
   test('深色主题视觉验收', async ({ page }) => {
