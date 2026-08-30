@@ -56,7 +56,8 @@ const pagerNeighbors = ref<{ prev?: Clause; next?: Clause }>({})
 watch(
   clauseId,
   (id) => {
-    pagerNeighbors.value = {}
+    // 不先清空旧副本：换页瞬间同步卸载两整页 DOM 是交接落点顿挫的来源。
+    // 篇章加载走内存缓存（一个微任务），期间旧副本短暂驻留屏外槽位，几何不变
     for (const dir of ['prev', 'next'] as const) {
       const target = dir === 'next' ? nextClause.value : prevClause.value
       const targetId = target?.id

@@ -119,15 +119,17 @@ describe('useSwipeNavigate 整页横滑翻条', () => {
     wrapper.unmount()
   })
 
-  it('拖动中轨道跟手（含页宽基准位移）并带 3D 微倾', () => {
+  it('拖动中轨道纯位移跟手（合成器友好，无逐帧 3D 变换）', () => {
     const wrapper = mountHarness()
     const track = wrapper.get<HTMLElement>('[data-test="track"]').element
     fire(track, 'pointerdown', 500, 300)
     fire(track, 'pointermove', 480, 300, 10)
     fire(track, 'pointermove', 400, 300, 50) // dx = -100
-    expect(track.style.transform).toContain('translate3d(-1148px') // base(-1048) + dx(-100)
-    expect(track.style.transform).toContain('rotateY')
-    expect(track.style.transform).toContain('perspective')
+    expect(track.style.transform).toContain('translate3d(-1148.00px') // base(-1048) + dx(-100)
+    // 巨型轨道上逐帧变化的 3D/缩放变换会迫使每帧重新光栅化（卡顿主因），保持纯位移
+    expect(track.style.transform).not.toContain('rotateY')
+    expect(track.style.transform).not.toContain('perspective')
+    expect(track.style.transform).not.toContain('scale')
     fire(track, 'pointerup', 400, 300, 60)
     wrapper.unmount()
   })

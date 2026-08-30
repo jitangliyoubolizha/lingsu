@@ -11,7 +11,7 @@ export const clauseNavDirection = ref<'next' | 'prev' | 'pager' | null>(null)
 export const pagerSettling = ref(false)
 
 /** 水平意图判定：横移超过该像素且大于纵移才接管（之前交给纵向滚动） */
-const INTENT_PX = 8
+const INTENT_PX = 6
 /** 松手翻页距离阈值（页宽占比） */
 const COMMIT_RATIO = 0.25
 /** px/ms，快甩判定：距离不够但速度够也翻页 */
@@ -20,10 +20,6 @@ const FLICK_VELOCITY = 0.5
 const EDGE_DAMPING = 0.3
 /** 页间距（与轨道 gap-6 一致）：静止时相邻页被推出屏幕外，不侵入两侧边距带 */
 const SLOT_GAP = 24
-/** 拖动 3D 倾斜上限（deg）：整页微倾即可，过大会晕 */
-const MAX_TILT = 4
-/** 拖动时轻微缩小，营造「纸页被掀起」的抬手感 */
-const DRAG_SCALE = 0.012
 /** 松手回弹弹簧：整页比卡片堆更重，用比 CardStack（260/20）更软的参数 */
 const REBOUND_SPRING = { type: 'spring' as const, stiffness: 210, damping: 22 }
 /** 整页滑动交接：时长与新页就位衔接 */
@@ -37,6 +33,8 @@ interface SwipeState {
   pointerId: number
   startX: number
   startY: number
+  /** 按下时缓存的页宽：拖动中不读 clientWidth，避免逐帧强制样式计算 */
+  width: number
   lastX: number
   lastT: number
   /** px/ms，一阶低通平滑，供回弹/交接动画带入初速度 */
@@ -81,25 +79,26 @@ export function useSwipeNavigate(
     // 抓到进行中的回弹动画则停掉并归位，避免拖拽起点跳变
     flight?.stop()
     flight = null
-    const width = pageWidth()
     state = {
       pointerId: event.pointerId,
       startX: event.clientX,
       startY: event.clientY,
+      width: pageWidth(),
       lastX: event.clientX,
       lastT: event.timeStamp,
       vx: 0,
       active: false,
-      base: -(width + SLOT_GAP),
+      base: -(pageWidth() + SLOT_GAP),
     }
     try {
       el.value.setPointerCapture(event.pointerId)
     } catch {
       // 无实现环境（jsdom 等）仅影响隐式捕获，不影响显式监听
     }
-    el.value.addEventListener('pointermove', onPointerMove)
-    el.value.addEventListener('pointerup', onPointerUp)
-    el.value.addEventListener('pointercancel', onPointerCancel)
+    // 全程只写 transform、不读布局、不阻止默认行为，监听标 passive 让合成器自由调度
+    el.value.addEventListener('pointermove', onPointerMove, { passive: true })
+    el.value.addEventListener('pointerup', onPointerUp, { passive: true })
+    el.value.addEventListener('pointercancel', onPointerCancel, { passive: true })
   }
 
   function onPointerMove(event: PointerEvent) {
@@ -119,12 +118,10 @@ export function useSwipeNavigate(
       state.lastT = event.timeStamp
     }
 
-    const width = pageWidth()
+    // 纯 translate3d：逐帧只重组不重绘。整页轨道高逾数屏，任何逐帧变化的 3D/缩放
+    // 变换都会迫使浏览器每帧重新光栅化整块巨型图层（实测为横滑卡顿主因）
     const offset = dragOffset(dx)
-    const progress = Math.min(Math.abs(dx) / (width * COMMIT_RATIO), 1)
-    const tilt = Math.max(-1, Math.min(1, dx / width)) * MAX_TILT
-    const scale = 1 - DRAG_SCALE * progress
-    node.style.transform = `translate3d(${state.base + offset}px, 0, 0) perspective(1100px) rotateY(${tilt.toFixed(2)}deg) scale(${scale.toFixed(3)})`
+    node.style.transform = `translate3d(${(state.base + offset).toFixed(2)}px, 0, 0)`
   }
 
   function onPointerUp(event: PointerEvent) {
@@ -176,7 +173,7 @@ export function useSwipeNavigate(
       return
     }
 
-    const width = pageWidth()
+    const width = s.width
     const dir: 'next' | 'prev' | null = dx < 0 ? 'next' : dx > 0 ? 'prev' : null
     const committed =
       dir !== null &&
