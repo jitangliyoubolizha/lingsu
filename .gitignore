@@ -42,5 +42,10 @@ playwright-report/
 # 本机环境与推送方式记录（隐私，仅本地保留）
 docs/推送指南.md
 
+# 内部工作文档与设计稿（本地保留，不入库）：计划/规范/流程说明与原型，均为自用及 AI 协作材料
+docs/
+design/
+content/shanghanlun/校对记录.md
+
 # 现代版权资料仅本地查阅，不入库（超 GitHub 100MB 限制且违反版权红线）
 docs/注解参考资料/*.pdf
