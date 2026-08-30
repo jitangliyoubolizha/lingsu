@@ -17,11 +17,18 @@ class TestPointerEvent extends MouseEvent {
 
   constructor(
     type: string,
-    init: { clientX?: number; clientY?: number; pointerId?: number; pointerType?: string } = {}
+    init: {
+      clientX?: number
+      clientY?: number
+      pointerId?: number
+      pointerType?: string
+      bubbles?: boolean
+      cancelable?: boolean
+    } = {}
   ) {
     super(type, {
-      bubbles: true,
-      cancelable: true,
+      bubbles: init.bubbles ?? true,
+      cancelable: init.cancelable ?? true,
       clientX: init.clientX ?? 0,
       clientY: init.clientY ?? 0,
       button: 0,
@@ -35,7 +42,9 @@ if (typeof window.PointerEvent !== 'function') {
   ;(window as unknown as { PointerEvent: unknown }).PointerEvent = TestPointerEvent
 }
 
-/** 派发指针事件；可注入 timeStamp 以模拟快甩速度（px/ms） */
+/** 派发指针事件；可注入 timeStamp 以模拟快甩速度（px/ms）。
+ *  必须带 bubbles：手势可从子元素（按钮/链接）起滑、靠冒泡到达轨道监听，
+ *  jsdom 原生 PointerEvent 默认不冒泡，会静默丢失这类起滑。 */
 function fire(
   el: Element,
   type: 'pointerdown' | 'pointermove' | 'pointerup' | 'pointercancel',
@@ -46,6 +55,8 @@ function fire(
   const event = new (window.PointerEvent as unknown as typeof TestPointerEvent)(type, {
     clientX: x,
     clientY: y,
+    bubbles: true,
+    cancelable: true,
   })
   if (timeStamp !== undefined) {
     Object.defineProperty(event, 'timeStamp', { value: timeStamp })
@@ -158,18 +169,43 @@ describe('useSwipeNavigate 整页横滑翻条', () => {
     wrapper.unmount()
   })
 
-  it('起点落在按钮/输入框内时不启动手势', () => {
+  it('起点落在表单控件内不启动手势；落在按钮上可正常起滑翻页', async () => {
     const wrapper = mountHarness()
     const button = wrapper.get('[data-test="btn"]').element
     const textarea = wrapper.get('[data-test="ta"]').element
     const track = wrapper.get<HTMLElement>('[data-test="track"]').element
-    for (const start of [button, textarea]) {
-      fire(start, 'pointerdown', 500, 300)
-      fire(track, 'pointermove', 200, 300, 10)
-      fire(track, 'pointerup', 200, 300, 50)
-    }
-    expect(wrapper.emitted('navigate')).toBeUndefined()
-    expect(wrapper.get<HTMLElement>('[data-test="track"]').element.style.transform).toBe('')
+    // 按钮上起滑：横向拖动应翻页（小说翻页手感——组件上不挡手势）
+    fire(button, 'pointerdown', 500, 300)
+    fire(track, 'pointermove', 480, 300, 10)
+    fire(track, 'pointermove', 200, 300, 50)
+    fire(track, 'pointerup', 200, 300, 60)
+    await vi.waitFor(() => expect(wrapper.emitted('navigate')).toEqual([['next']]))
+    // 表单控件上起滑：不启动手势
+    fire(textarea, 'pointerdown', 500, 300)
+    fire(track, 'pointermove', 200, 300, 10)
+    fire(track, 'pointerup', 200, 300, 50)
+    expect(wrapper.emitted('navigate')).toEqual([['next']])
+    wrapper.unmount()
+  })
+
+  it('横滑起滑后拦截紧随的误触 click，不起滑的点按不受影响', async () => {
+    const wrapper = mountHarness()
+    const track = wrapper.get<HTMLElement>('[data-test="track"]').element
+    const button = wrapper.get('[data-test="btn"]').element
+    const onButtonClick = vi.fn()
+    button.addEventListener('click', onButtonClick)
+    // 横滑成立后，紧随的 click（落点在按钮上）应被吞掉
+    fire(track, 'pointerdown', 500, 300)
+    fire(track, 'pointermove', 480, 300, 10)
+    fire(track, 'pointermove', 300, 300, 50)
+    fire(track, 'pointerup', 300, 300, 60)
+    button.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    expect(onButtonClick).not.toHaveBeenCalled()
+    // 未起滑的普通点按：click 正常到达
+    fire(track, 'pointerdown', 500, 300)
+    fire(track, 'pointerup', 500, 300, 20)
+    button.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+    expect(onButtonClick).toHaveBeenCalledTimes(1)
     wrapper.unmount()
   })
 

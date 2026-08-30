@@ -74,21 +74,21 @@ watch(
   { immediate: true }
 )
 
-/** 键盘 ←/→ 与底部链接：方向性滑入转场 */
+/** 键盘 ←/→ 与底部链接：方向性滑入转场；replace 原地换页——连续翻条不堆历史，返回直达来源页 */
 function goTo(dir: 'next' | 'prev') {
   const target = dir === 'next' ? nextClause.value : prevClause.value
   if (!target) return
   clauseNavDirection.value = dir
-  void router.push(`/clauses/${target.id}`)
+  void router.replace(`/clauses/${target.id}`)
 }
 
-/** 整页滑动交接完成后换页：转场瞬时（page-instant），落点保持当前阅读位置 */
+/** 整页滑动交接完成后换页：转场瞬时（page-instant），落点保持当前阅读位置；replace 同上 */
 function goToPager(dir: 'next' | 'prev') {
   const target = dir === 'next' ? nextClause.value : prevClause.value
   if (!target) return
   clauseNavDirection.value = 'pager'
   void router
-    .push(`/clauses/${target.id}`)
+    .replace(`/clauses/${target.id}`)
     .finally(() => {
       pagerSettling.value = false
     })

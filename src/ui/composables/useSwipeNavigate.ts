@@ -10,24 +10,26 @@ export const clauseNavDirection = ref<'next' | 'prev' | 'pager' | null>(null)
 /** 整页翻页滑动交接期间为 true：scrollBehavior 据此抑制回顶（落点保持当前阅读位置） */
 export const pagerSettling = ref(false)
 
-/** 水平意图判定：横移超过该像素且大于纵移才接管（之前交给纵向滚动） */
-const INTENT_PX = 6
-/** 松手翻页距离阈值（页宽占比） */
-const COMMIT_RATIO = 0.25
-/** px/ms，快甩判定：距离不够但速度够也翻页 */
-const FLICK_VELOCITY = 0.5
+/** 水平意图判定：横移超过该像素且大于纵移才接管（起手要跟手，小说翻页手感） */
+const INTENT_PX = 4
+/** 松手翻页距离阈值（页宽占比）：手机上约一指轻拖即可翻页 */
+const COMMIT_RATIO = 0.13
+/** px/ms，快甩判定：距离不够但速度够也翻页（轻甩即翻） */
+const FLICK_VELOCITY = 0.24
 /** 无相邻条文方向的跟手阻尼（尽头 rubber-band） */
 const EDGE_DAMPING = 0.3
 /** 页间距（与轨道 gap-6 一致）：静止时相邻页被推出屏幕外，不侵入两侧边距带 */
 const SLOT_GAP = 24
-/** 松手回弹弹簧：整页比卡片堆更重，用比 CardStack（260/20）更软的参数 */
-const REBOUND_SPRING = { type: 'spring' as const, stiffness: 210, damping: 22 }
+/** 松手回弹：短促 ease-out 走 WAAPI 合成器（JS 弹簧逐帧跑主线程，与翻页抢帧） */
+const REBOUND_DURATION = 0.2
 /** 整页滑动交接：时长与新页就位衔接 */
-const SETTLE_DURATION = 0.26
+const SETTLE_DURATION = 0.22
 /** 动画落定兜底时长：无渲染帧环境（后台标签页等）finished 可能永不 resolve，超时直接就位 */
 const SETTLE_FALLBACK_MS = 700
 /** 与 --ease-out-soft 同曲线，供 motion 动画使用 */
 const EASE_OUT_SOFT = [0.22, 1, 0.36, 1] as const
+/** 松手后仍拦截随后的一次 click 的兜底时长（ms）：吞掉横滑结束时的误触点按 */
+const CLICK_SUPPRESS_MS = 250
 
 interface SwipeState {
   pointerId: number
@@ -45,18 +47,19 @@ interface SwipeState {
   base: number
 }
 
-/** 手势起点落在交互元素内时不启动，避免与点击、输入、文本选择冲突 */
-function inInteractive(target: EventTarget | null): boolean {
+/** 手势起点落在表单控件内时不启动，避免与输入、文本选择冲突 */
+function inFormField(target: EventTarget | null): boolean {
   return (
     target instanceof Element &&
-    target.closest('a, button, textarea, input, select, [contenteditable]') !== null
+    target.closest('textarea, input, select, [contenteditable]') !== null
   )
 }
 
 /**
  * 条文详情页整页横滑翻条（E-15）：拖动的是 [上一页｜当前页｜下一页] 轨道，
  * 相邻整页跟手跟入，松手过阈值整页滑动交接后瞬时换页（无第二次过渡）。
- * 仅响应触摸/笔——鼠标拖拽会与文本选择冲突，桌面走键盘 ←/→ 与底部链接；
+ * 手感对齐小说翻页：页面上任意位置（含按钮/链接）都能起滑，轻拖或轻甩即翻；
+ * 仅响应触摸/笔——鼠标拖拽与文本选择冲突，桌面走键盘 ←/→ 与底部链接。
  * 轨道需带 touch-pan-y，纵向滚动始终归浏览器（约定同 CardStack §4.2）。
  */
 export function useSwipeNavigate(
@@ -72,10 +75,29 @@ export function useSwipeNavigate(
   let flight: ReturnType<typeof animate> | null = null
   /** 交接动画进行中，忽略新的拖动 */
   let settling = false
+  /** 横滑结束后布防：拦截紧随其后的那次 click，防止起手在按钮/链接上时误触。
+   *  下一次 pointerdown（新交互开始）或第一个 click 到达即解除，250ms 仅作兜底 */
+  let suppressNextClick = false
+  let suppressTimer: ReturnType<typeof setTimeout> | undefined
+
+  function onClickCapture(event: MouseEvent) {
+    if (!suppressNextClick) return
+    suppressNextClick = false
+    clearTimeout(suppressTimer)
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
+  function disarmClickSuppression() {
+    suppressNextClick = false
+    clearTimeout(suppressTimer)
+  }
 
   function onPointerDown(event: PointerEvent) {
     if (event.pointerType === 'mouse' || event.button !== 0) return
-    if (state || settling || !el.value || inInteractive(event.target)) return
+    if (state || settling || !el.value || inFormField(event.target)) return
+    // 新交互开始：上一次横滑的 click 拦截立即解除，紧随的正当点按不受影响
+    disarmClickSuppression()
     // 抓到进行中的回弹动画则停掉并归位，避免拖拽起点跳变
     flight?.stop()
     flight = null
@@ -90,15 +112,12 @@ export function useSwipeNavigate(
       active: false,
       base: -(pageWidth() + SLOT_GAP),
     }
-    try {
-      el.value.setPointerCapture(event.pointerId)
-    } catch {
-      // 无实现环境（jsdom 等）仅影响隐式捕获，不影响显式监听
-    }
     // 全程只写 transform、不读布局、不阻止默认行为，监听标 passive 让合成器自由调度
-    el.value.addEventListener('pointermove', onPointerMove, { passive: true })
-    el.value.addEventListener('pointerup', onPointerUp, { passive: true })
-    el.value.addEventListener('pointercancel', onPointerCancel, { passive: true })
+    const node = el.value
+    node.addEventListener('pointermove', onPointerMove, { passive: true })
+    node.addEventListener('pointerup', onPointerUp, { passive: true })
+    node.addEventListener('pointercancel', onPointerCancel, { passive: true })
+    node.addEventListener('click', onClickCapture, true)
   }
 
   function onPointerMove(event: PointerEvent) {
@@ -109,7 +128,13 @@ export function useSwipeNavigate(
     if (!state.active) {
       if (Math.abs(dx) < INTENT_PX || Math.abs(dx) <= Math.abs(dy)) return
       state.active = true
+      // 意图成立才占用指针并提升图层：起手在按钮/链接上时，横向滑动改为翻页而非误触
       node.style.willChange = 'transform'
+      try {
+        node.setPointerCapture(state.pointerId)
+      } catch {
+        // 无实现环境仅影响隐式捕获，不影响显式监听
+      }
     }
     const dt = event.timeStamp - state.lastT
     if (dt > 0) {
@@ -143,31 +168,44 @@ export function useSwipeNavigate(
     return atEdge ? dx * EDGE_DAMPING : dx
   }
 
+  function detach(node: HTMLElement, pointerId?: number) {
+    node.removeEventListener('pointermove', onPointerMove)
+    node.removeEventListener('pointerup', onPointerUp)
+    node.removeEventListener('pointercancel', onPointerCancel)
+    if (pointerId !== undefined) {
+      try {
+        node.releasePointerCapture(pointerId)
+      } catch {
+        // 指针已隐式释放，无需处理
+      }
+    }
+  }
+
   function finishDrag(clientX: number, cancelled: boolean, pointerId: number) {
     const s = state
     if (!s || pointerId !== s.pointerId || !el.value) return
     state = null
     const node = el.value
-    node.removeEventListener('pointermove', onPointerMove)
-    node.removeEventListener('pointerup', onPointerUp)
-    node.removeEventListener('pointercancel', onPointerCancel)
-    try {
-      node.releasePointerCapture(pointerId)
-    } catch {
-      // 指针已隐式释放，无需处理
-    }
+    detach(node, s.active ? pointerId : undefined)
     node.style.willChange = ''
+    // 横滑成立：布防拦截紧随 pointerup 的那次 click（真实浏览器中必然派发，可能落在组件上）
+    if (s.active) {
+      suppressNextClick = true
+      clearTimeout(suppressTimer)
+      suppressTimer = setTimeout(() => {
+        suppressNextClick = false
+      }, CLICK_SUPPRESS_MS)
+    }
 
     const x = Number.isNaN(clientX) ? s.lastX : clientX
     const dx = dragOffset(x - s.startX)
     // 未通过意图判定（点按）或被系统打断（转为纵向滚动）：安静归位即可
     if (!s.active || cancelled) {
       if (node.style.transform) {
-        flight = animate(
-          node,
-          { x: [s.base + dx, s.base] },
-          { ...REBOUND_SPRING, velocity: s.vx * 1000 }
-        )
+        flight = animate(node, { x: [s.base + dx, s.base] }, {
+          duration: REBOUND_DURATION,
+          ease: [...EASE_OUT_SOFT],
+        })
         settleWithFallback(node, s.base, clearTransform)
       }
       return
@@ -196,11 +234,10 @@ export function useSwipeNavigate(
         options.onNavigate(dir)
       })
     } else {
-      flight = animate(
-        node,
-        { x: [s.base + dx, s.base] },
-        { ...REBOUND_SPRING, velocity: s.vx * 1000 }
-      )
+      flight = animate(node, { x: [s.base + dx, s.base] }, {
+        duration: REBOUND_DURATION,
+        ease: [...EASE_OUT_SOFT],
+      })
       settleWithFallback(node, s.base, clearTransform)
     }
   }
@@ -249,10 +286,10 @@ export function useSwipeNavigate(
     flight?.stop()
     flight = null
     state = null
+    disarmClickSuppression()
     if (el.value) {
-      el.value.removeEventListener('pointermove', onPointerMove)
-      el.value.removeEventListener('pointerup', onPointerUp)
-      el.value.removeEventListener('pointercancel', onPointerCancel)
+      detach(el.value)
+      el.value.removeEventListener('click', onClickCapture, true)
       el.value.style.transform = 'translate3d(calc(-100% - 24px), 0, 0)'
       el.value.style.willChange = ''
     }
