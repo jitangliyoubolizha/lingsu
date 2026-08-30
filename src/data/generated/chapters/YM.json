@@ -23,7 +23,9 @@
         }
       ],
       "formulas": [],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.208"
+      ],
       "studyTags": [
         "阳明病分类",
         "脾约",
@@ -54,7 +56,9 @@
         }
       ],
       "formulas": [],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.206"
+      ],
       "studyTags": [
         "阳明病提纲",
         "胃家实"
@@ -219,7 +223,9 @@
         }
       ],
       "formulas": [],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.209"
+      ],
       "studyTags": [
         "阳明脉大"
       ],
@@ -1774,7 +1780,10 @@
       "formulas": [
         "SHL.SB.F.056"
       ],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.213",
+        "SHL.SB.SYM.207"
+      ],
       "studyTags": [
         "阳明蓄血",
         "抵当汤",
@@ -2234,7 +2243,11 @@
       "formulas": [
         "SHL.SB.F.112"
       ],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.211",
+        "SHL.SB.SYM.212",
+        "SHL.SB.SYM.214"
+      ],
       "studyTags": [
         "阳明急下证",
         "大承气汤",

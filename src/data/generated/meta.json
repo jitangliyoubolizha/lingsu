@@ -3899,6 +3899,60 @@
       "name": "心中疼热",
       "category": "症状",
       "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.206",
+      "name": "胃家实",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.207",
+      "name": "蓄血",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.208",
+      "name": "脾约",
+      "category": "病机",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.209",
+      "name": "脉大",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.210",
+      "name": "脉沉",
+      "category": "脉象",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.211",
+      "name": "目中不了了",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.212",
+      "name": "睛不和",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.213",
+      "name": "喜忘",
+      "category": "症状",
+      "aliases": []
+    },
+    {
+      "id": "SHL.SB.SYM.214",
+      "name": "大便难",
+      "category": "症状",
+      "aliases": []
     }
   ],
   "questions": [
@@ -4222,6 +4276,239 @@
       ],
       "answerIndex": 0,
       "rationale": "太少合病下利用黄芩汤。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0022",
+      "type": "clause_chain",
+      "clause": "SHL.SB.TYZ.096",
+      "prompt": "伤寒五六日，中风，往来寒热，＿＿＿",
+      "options": [
+        "胸胁苦满，嘿嘿不欲饮食，心烦喜呕",
+        "心中懊憹，反复颠倒，不得眠",
+        "无大热，汗出而喘",
+        "腹满而吐，食不下，自利益甚"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“伤寒五六日中风，往来寒热，胸胁苦满，嘿嘿不欲饮食，心烦喜呕，小柴胡汤主之。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0023",
+      "type": "clause_chain",
+      "clause": "SHL.SB.TYS.020",
+      "prompt": "太阳病，发汗，遂漏不止，其人恶风，＿＿＿",
+      "options": [
+        "小便难，四肢微急，难以屈伸者",
+        "头痛发热，汗出恶风者",
+        "无汗而喘者",
+        "心下逆满，气上冲胸者"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“太阳病，发汗，遂漏不止，其人恶风，小便难，四肢微急，难以屈伸者，桂枝加附子汤主之。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0024",
+      "type": "clause_chain",
+      "clause": "SHL.SB.TYX.135",
+      "prompt": "伤寒六七日，结胸热实，脉沉而紧，＿＿＿",
+      "options": [
+        "心下痛，按之石硬者",
+        "心下痞，按之濡者",
+        "腹满而吐，时腹自痛者",
+        "少腹急结者"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“伤寒六七日，结胸热实，脉沉而紧，心下痛，按之石硬者，大陷胸汤主之。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0025",
+      "type": "clause_chain",
+      "clause": "SHL.SB.YM.208",
+      "prompt": "阳明病，脉迟，虽汗出不恶寒者，其身必重，短气，腹满而喘，＿＿＿",
+      "options": [
+        "有潮热者，此外欲解，可攻里也",
+        "心中懊憹，饥不能食也",
+        "手足厥冷，脉微欲绝也",
+        "口苦，咽干，目眩也"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“……短气，腹满而喘，有潮热者，此外欲解，可攻里也。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0026",
+      "type": "formula_composition",
+      "clause": "SHL.SB.SI.316",
+      "formula": "SHL.SB.F.047",
+      "prompt": "真武汤的组成是茯苓、芍药、生姜、白术与？",
+      "options": [
+        "附子",
+        "干姜",
+        "人参",
+        "桂枝"
+      ],
+      "answerIndex": 0,
+      "rationale": "真武汤：茯苓、芍药、生姜、白术、附子。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0027",
+      "type": "formula_composition",
+      "clause": "SHL.SB.TYZ.096",
+      "formula": "SHL.SB.F.020",
+      "prompt": "小柴胡汤中柴胡与哪一味药相配，和解少阳？",
+      "options": [
+        "黄芩",
+        "黄连",
+        "黄柏",
+        "栀子"
+      ],
+      "answerIndex": 0,
+      "rationale": "小柴胡汤以柴胡配黄芩，和解少阳枢机。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0028",
+      "type": "formula_composition",
+      "clause": "SHL.SB.TYZ.071",
+      "formula": "SHL.SB.F.028",
+      "prompt": "五苓散的组成不含下列哪一味药？",
+      "options": [
+        "甘草",
+        "猪苓",
+        "泽泻",
+        "白术"
+      ],
+      "answerIndex": 0,
+      "rationale": "五苓散为猪苓、泽泻、白术、茯苓、桂枝，不含甘草。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0029",
+      "type": "formula_composition",
+      "clause": "SHL.SB.TYX.177",
+      "formula": "SHL.SB.F.075",
+      "prompt": "炙甘草汤重用下列哪一味药以滋养阴血？",
+      "options": [
+        "生地黄",
+        "麦门冬",
+        "阿胶",
+        "人参"
+      ],
+      "answerIndex": 0,
+      "rationale": "炙甘草汤重用生地黄一斤，滋阴养血。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0030",
+      "type": "formula_composition",
+      "clause": "SHL.SB.TYZ.035",
+      "formula": "SHL.SB.F.019",
+      "prompt": "麻黄汤的组成不含下列哪一味药？",
+      "options": [
+        "芍药",
+        "杏仁",
+        "桂枝",
+        "甘草"
+      ],
+      "answerIndex": 0,
+      "rationale": "麻黄汤为麻黄、桂枝、杏仁、甘草，不含芍药。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0031",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.SI.316",
+      "formula": "SHL.SB.F.047",
+      "prompt": "少阴病，腹痛，小便不利，四肢沉重疼痛，自下利者，此为有水气，宜用？",
+      "options": [
+        "真武汤",
+        "附子汤",
+        "四逆汤",
+        "猪苓汤"
+      ],
+      "answerIndex": 0,
+      "rationale": "少阴阳虚水泛，真武汤主之（第 316 条）。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0032",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.JUE.351",
+      "formula": "SHL.SB.F.103",
+      "prompt": "手足厥寒，脉细欲绝者，宜用？",
+      "options": [
+        "当归四逆汤",
+        "四逆汤",
+        "通脉四逆汤",
+        "四逆散"
+      ],
+      "answerIndex": 0,
+      "rationale": "血虚寒厥，当归四逆汤主之（第 351 条）。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0033",
+      "type": "formula_syndrome_match",
+      "clause": "SHL.SB.YM.208",
+      "formula": "SHL.SB.F.112",
+      "prompt": "阳明病，手足濈然汗出，此大便已硬也，宜用？",
+      "options": [
+        "大承气汤",
+        "小承气汤",
+        "调胃承气汤",
+        "麻子仁丸"
+      ],
+      "answerIndex": 0,
+      "rationale": "燥屎已成，大承气汤主之（第 208 条）。",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0034",
+      "type": "fill_blank",
+      "clause": "SHL.SB.TYX.154",
+      "prompt": "心下痞，＿＿＿，其脉关上浮者，大黄黄连泻心汤主之。",
+      "options": [
+        "按之濡",
+        "按之硬",
+        "按之痛",
+        "按之石硬"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“心下痞，按之濡，其脉关上浮者，大黄黄连泻心汤主之。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0035",
+      "type": "fill_blank",
+      "clause": "SHL.SB.SY.263",
+      "prompt": "少阳之为病，＿＿＿、咽干、目眩也。",
+      "options": [
+        "口苦",
+        "耳聋",
+        "胸满",
+        "喜呕"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“少阳之为病，口苦、咽干、目眩也。”",
+      "status": "reviewed"
+    },
+    {
+      "id": "SHL.SB.Q.0036",
+      "type": "fill_blank",
+      "clause": "SHL.SB.JUE.326",
+      "prompt": "厥阴之为病，消渴，＿＿＿，心中疼热，饥而不欲食。",
+      "options": [
+        "气上撞心",
+        "气上冲胸",
+        "腹满而吐",
+        "时腹自痛"
+      ],
+      "answerIndex": 0,
+      "rationale": "原文“厥阴之为病，消渴，气上撞心，心中疼热，饥而不欲食。”",
       "status": "reviewed"
     }
   ]

@@ -21,7 +21,8 @@ clauses:
         author: 灵素内容组
         text: 阳明病有三种来路：太阳阳明为太阳病误治伤津，邪入阳明化燥；正阳阳明为外邪直犯阳明，胃肠实热；少阳阳明为少阳病误汗误利，津伤化燥。三者病机均为燥热实，但来路不同。
     formulas: []
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.208
     study_tags:
       - 阳明病分类
       - 脾约
@@ -42,7 +43,8 @@ clauses:
         author: 灵素内容组
         text: 胡希恕以八纲解六经，视阳明病为里阳证：胃家实即肠道结实、大便难之谓，阳明治法不出清、下二途，本提纲即阳明里实热之总括。
     formulas: []
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.206
     study_tags:
       - 阳明病提纲
       - 胃家实
@@ -155,7 +157,8 @@ clauses:
         author: 灵素内容组
         text: 伤寒三日邪入阳明，阳明为多气多血之经，邪热盛则脉大。脉大为阳明病的特征性脉象。
     formulas: []
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.209
     study_tags:
       - 阳明脉大
     notes: 第三批已补成无己公版注（2026-08-30）：引文待核对原书；项目自编注仍待校对。

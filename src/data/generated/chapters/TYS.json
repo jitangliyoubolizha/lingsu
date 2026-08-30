@@ -551,7 +551,9 @@
         }
       ],
       "formulas": [],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.133"
+      ],
       "studyTags": [
         "桂枝汤禁忌"
       ],

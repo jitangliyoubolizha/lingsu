@@ -249,7 +249,10 @@ clauses:
         text: 教材通行口径：阳明三急下之一——外证虽微而燥热灼耗真阴，目中不了了、睛不和为阴竭先兆，故不待痞满燥实俱全而急下存阴。
     formulas:
       - SHL.SB.F.112
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.211
+      - SHL.SB.SYM.212
+      - SHL.SB.SYM.214
     study_tags:
       - 阳明急下证
       - 大承气汤

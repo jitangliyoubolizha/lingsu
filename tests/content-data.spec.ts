@@ -19,8 +19,8 @@ describe('内容数据层', () => {
     expect(content.clauses).toHaveLength(398)
     expect(content.formulas).toHaveLength(112)
     expect(content.herbs).toHaveLength(81)
-    expect(content.symptomTerms).toHaveLength(204)
-    expect(content.questions).toHaveLength(21)
+    expect(content.symptomTerms).toHaveLength(213)
+    expect(content.questions).toHaveLength(36)
 
     const firstClause = content.clauses[0]
     expect(firstClause.id).toBe('SHL.SB.TYS.001')

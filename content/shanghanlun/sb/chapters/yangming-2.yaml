@@ -582,7 +582,9 @@ clauses:
         text: 喜忘为瘀血扰心。本有久瘀血与阳明热邪相合，瘀热互结。大便硬反易为瘀血润肠，色黑为瘀血下行之征。抵当汤破血逐瘀。
     formulas:
       - SHL.SB.F.056
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.213
+      - SHL.SB.SYM.207
     study_tags:
       - 阳明蓄血
       - 抵当汤

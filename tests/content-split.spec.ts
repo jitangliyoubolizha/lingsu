@@ -23,7 +23,7 @@ describe('内容按篇懒加载（T1-6）', () => {
     expect(meta.clauseOrder[0]).toBe('SHL.SB.TYS.001')
     expect(meta.formulas).toHaveLength(112)
     expect(meta.herbs).toHaveLength(81)
-    expect(meta.questions).toHaveLength(21)
+    expect(meta.questions).toHaveLength(36)
   })
 
   it('loadChapter 按篇加载条文，meta 不含条文正文', async () => {
@@ -94,6 +94,6 @@ describe('内容按篇懒加载（T1-6）', () => {
     expect(content.clauses[177]?.id).toBe('SHL.SB.TYX.178')
     expect(content.formulas).toHaveLength(112)
     expect(content.formulas[0]?.composition.length).toBeGreaterThan(0)
-    expect(content.questions).toHaveLength(21)
+    expect(content.questions).toHaveLength(36)
   })
 })

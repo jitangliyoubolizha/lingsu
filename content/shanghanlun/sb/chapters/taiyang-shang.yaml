@@ -376,7 +376,8 @@ clauses:
         author: 灵素内容组
         text: 提示里热或痈脓者不可用桂枝汤。
     formulas: []
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.133
     study_tags:
       - 桂枝汤禁忌
     notes: 第三批已补成无己公版注（2026-08-30）：引文待核对原书；项目自编注仍待校对。

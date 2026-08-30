@@ -391,7 +391,8 @@ clauses:
         text: 脉沉为阳气衰微、阴寒内盛，当急温回阳。四逆汤（附子、干姜、甘草）为回阳救逆之要方。
     formulas:
       - SHL.SB.F.015
-    symptom_tags: []
+    symptom_tags:
+      - SHL.SB.SYM.210
     study_tags:
       - 少阴急温
       - 四逆汤

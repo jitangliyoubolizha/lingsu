@@ -885,3 +885,38 @@ terms:
     name: 心中疼热
     category: 症状
     aliases: []
+  - id: SHL.SB.SYM.206
+    name: 胃家实
+    category: 病机
+
+  - id: SHL.SB.SYM.207
+    name: 蓄血
+    category: 病机
+
+  - id: SHL.SB.SYM.208
+    name: 脾约
+    category: 病机
+
+  - id: SHL.SB.SYM.209
+    name: 脉大
+    category: 脉象
+
+  - id: SHL.SB.SYM.210
+    name: 脉沉
+    category: 脉象
+
+  - id: SHL.SB.SYM.211
+    name: 目中不了了
+    category: 症状
+
+  - id: SHL.SB.SYM.212
+    name: 睛不和
+    category: 症状
+
+  - id: SHL.SB.SYM.213
+    name: 喜忘
+    category: 症状
+
+  - id: SHL.SB.SYM.214
+    name: 大便难
+    category: 症状

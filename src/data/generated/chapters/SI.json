@@ -1309,7 +1309,9 @@
       "formulas": [
         "SHL.SB.F.015"
       ],
-      "symptomTags": [],
+      "symptomTags": [
+        "SHL.SB.SYM.210"
+      ],
       "studyTags": [
         "少阴急温",
         "四逆汤"

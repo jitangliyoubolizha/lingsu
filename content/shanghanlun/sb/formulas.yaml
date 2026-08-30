@@ -1,5 +1,5 @@
 # 太阳病上篇相关方剂
-# 状态：AI 初稿，待人工校对
+# 状态：AI 初稿，待人工校对；病机与类方关系字段已于 2026-08-30 补齐
 # 来源：宋本《伤寒论》（明·赵开美复刻宋本系统）
 # 剂量换算：按中医药大学研究数据，具体出处上线前标注；古今剂量存在学术争议，非用药指导
 formulas:
@@ -59,7 +59,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒袭表，营卫不和，卫强营弱
   - id: SHL.SB.F.002
     name: 桂枝加葛根汤
     category: 桂枝汤类
@@ -94,7 +94,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风邪在表，太阳经气不利，项背强急
   - id: SHL.SB.F.003
     name: 桂枝加厚朴杏子汤
     category: 桂枝汤类
@@ -133,7 +133,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒在表，肺气上逆，营卫不和
   - id: SHL.SB.F.004
     name: 桂枝加附子汤
     category: 桂枝汤类
@@ -168,7 +168,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 过汗伤阳，卫表不固，阴阳两伤
   - id: SHL.SB.F.005
     name: 桂枝去芍药汤
     category: 桂枝汤类
@@ -200,7 +200,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下胸阳受挫，表邪未解，胸满脉促
   - id: SHL.SB.F.006
     name: 桂枝去芍药加附子汤
     category: 桂枝汤类
@@ -232,7 +232,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 胸阳不振兼表阳虚，胸满恶寒
   - id: SHL.SB.F.007
     name: 桂枝麻黄各半汤
     category: 麻黄汤类
@@ -270,7 +270,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 表邪郁遏不解，营卫俱弱，正邪相持
   - id: SHL.SB.F.008
     name: 桂枝二麻黄一汤
     category: 麻黄汤类
@@ -308,7 +308,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 汗出不彻，表邪微郁，营卫不足
   - id: SHL.SB.F.009
     name: 白虎加人参汤
     category: 白虎汤类
@@ -337,11 +337,13 @@ formulas:
       - SHL.SB.TYX.169
       - SHL.SB.TYX.170
       - SHL.SB.YM.222
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阳明里热炽盛，气津两伤
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.068
   - id: SHL.SB.F.010
     name: 桂枝二越婢一汤
     category: 桂枝汤类
@@ -379,7 +381,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 表邪未解，内热轻微，表郁热轻
   - id: SHL.SB.F.011
     name: 桂枝去桂加茯苓白术汤
     category: 桂枝汤类
@@ -414,7 +416,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 水气内停，太阳经气不利，表证兼水停
   - id: SHL.SB.F.012
     name: 甘草干姜汤
     category: 温阳方
@@ -438,7 +440,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 中阳不足，肺中虚冷，气不化津
   - id: SHL.SB.F.013
     name: 芍药甘草汤
     category: 养阴方
@@ -462,7 +464,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阴血不足，筋脉失养，挛急不舒
   - id: SHL.SB.F.014
     name: 调胃承气汤
     category: 承气汤类
@@ -490,11 +492,15 @@ formulas:
       - SHL.SB.YM.207
       - SHL.SB.YM.248
       - SHL.SB.YM.249
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 燥热初结阳明，津液受损，燥实不甚
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.112
+      - relation: 类方
+        target: SHL.SB.F.113
   - id: SHL.SB.F.015
     name: 四逆汤
     category: 温阳方
@@ -531,7 +537,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阳衰，阴寒内盛
   - id: SHL.SB.F.016
     name: 葛根汤
     category: 麻黄汤类
@@ -570,7 +576,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒束表，太阳经输不利
   - id: SHL.SB.F.017
     name: 葛根加半夏汤
     category: 麻黄汤类
@@ -611,7 +617,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒袭表兼阳明气逆，表里同病
   - id: SHL.SB.F.018
     name: 葛根黄芩黄连汤
     category: 清热方
@@ -633,11 +639,13 @@ formulas:
     decoction: 上四味，以水八升，先煮葛根，减二升，内诸药，煮取二升，去滓，分温再服。
     related_clauses:
       - SHL.SB.TYZ.034
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 表证未解，邪热内迫大肠，协热下利
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.016
   - id: SHL.SB.F.019
     name: 麻黄汤
     category: 麻黄汤类
@@ -672,7 +680,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒束表，卫闭营郁，肺气失宣
   - id: SHL.SB.F.020
     name: 小柴胡汤
     category: 柴胡汤类
@@ -720,11 +728,21 @@ formulas:
       - SHL.SB.YM.229
       - SHL.SB.YM.230
       - SHL.SB.YM.231
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 邪居少阳半表半里，枢机不利，正邪分争
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.025
+      - relation: 类方
+        target: SHL.SB.F.030
+      - relation: 类方
+        target: SHL.SB.F.031
+      - relation: 类方
+        target: SHL.SB.F.050
+      - relation: 类方
+        target: SHL.SB.F.052
   - id: SHL.SB.F.021
     name: 大青龙汤
     category: 麻黄汤类
@@ -763,7 +781,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒束表，卫闭营郁，兼内热烦躁
   - id: SHL.SB.F.022
     name: 小青龙汤
     category: 温化水饮方
@@ -798,11 +816,13 @@ formulas:
     related_clauses:
       - SHL.SB.TYZ.040
       - SHL.SB.TYZ.041
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 外寒里饮，寒饮射肺
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.021
   - id: SHL.SB.F.023
     name: 大陷胸丸
     category: 攻下方
@@ -834,7 +854,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 水热互结，邪结偏高，胸膈项强
   - id: SHL.SB.F.024
     name: 大陷胸汤
     category: 攻下方
@@ -864,7 +884,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 水热互结于胸腹，邪结已深
   - id: SHL.SB.F.025
     name: 大柴胡汤
     category: 柴胡汤类
@@ -907,7 +927,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阳未解，阳明里实，枢机不利兼腑实
   - id: SHL.SB.F.026
     name: 小陷胸汤
     category: 清热化痰方
@@ -926,11 +946,13 @@ formulas:
     decoction: 上三味，以水六升，先煮瓜蒌，取三升，去滓，内诸药，煮取二升，去滓，分温三服。
     related_clauses:
       - SHL.SB.TYX.138
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 痰热互结心下，病位浅而范围小
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.024
   - id: SHL.SB.F.027
     name: 文蛤散
     category: 清热方
@@ -947,7 +969,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 水寒外束，热郁于内，津液不布
   - id: SHL.SB.F.028
     name: 五苓散
     category: 化气利水方
@@ -979,11 +1001,13 @@ formulas:
       - SHL.SB.TYZ.073
       - SHL.SB.TYZ.074
       - SHL.SB.YM.244
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 太阳蓄水，膀胱气化不利，津不上承
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.114
   - id: SHL.SB.F.029
     name: 三物白散
     category: 温下散寒方
@@ -1002,11 +1026,13 @@ formulas:
     decoction: 上三味为散，内巴豆，更于臼中杵之，以白饮和服，强人半钱匕，羸者减之。
     related_clauses:
       - SHL.SB.TYX.141
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 寒实结胸，寒痰冷结胸膈
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.024
   - id: SHL.SB.F.030
     name: 柴胡桂枝汤
     category: 柴胡汤类
@@ -1053,7 +1079,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 邪入少阳而表证未罢，太少同病
   - id: SHL.SB.F.031
     name: 柴胡桂枝干姜汤
     category: 柴胡汤类
@@ -1084,11 +1110,13 @@ formulas:
     decoction: 上七味，以水一斗二升，煮取六升，去滓，再煎取三升，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYX.147
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阳枢机不利，水饮内结，胆热脾寒
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.020
   - id: SHL.SB.F.032
     name: 干姜附子汤
     category: 温阳方
@@ -1104,11 +1132,13 @@ formulas:
     decoction: 上二味，以水三升，煮取一升，去滓，顿服。
     related_clauses:
       - SHL.SB.TYZ.061
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 汗下后阳气大虚，阴寒用事，昼日阳复与邪争
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.015
   - id: SHL.SB.F.033
     name: 桂枝加芍药生姜各一两人参三两新加汤
     category: 桂枝汤类
@@ -1143,7 +1173,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 发汗后气阴两伤，营卫不足，经脉失养
   - id: SHL.SB.F.034
     name: 麻黄杏仁甘草石膏汤
     category: 麻黄汤类
@@ -1173,7 +1203,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 邪热壅肺，肺气闭郁
   - id: SHL.SB.F.035
     name: 桂枝甘草汤
     category: 温阳方
@@ -1189,11 +1219,13 @@ formulas:
     decoction: 上二味，以水三升，煮取一升，去滓，顿服。
     related_clauses:
       - SHL.SB.TYZ.064
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 发汗过多，心阳受损，心失所护
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.055
   - id: SHL.SB.F.036
     name: 茯苓桂枝甘草大枣汤
     category: 温阳利水方
@@ -1215,11 +1247,13 @@ formulas:
     decoction: 上四味，以甘澜水一斗，先煮茯苓，减二升，内诸药，煮取三升，去滓，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYZ.065
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 心阳不足，下焦水饮欲动上冲
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.038
   - id: SHL.SB.F.037
     name: 厚朴生姜半夏甘草人参汤
     category: 健脾理气方
@@ -1248,7 +1282,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 发汗后脾气虚弱，运化失职，气滞作满
   - id: SHL.SB.F.038
     name: 茯苓桂枝白术甘草汤
     category: 温阳化饮方
@@ -1270,11 +1304,17 @@ formulas:
     decoction: 上四味，以水六升，煮取三升，去滓，分温三服。
     related_clauses:
       - SHL.SB.TYZ.067
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 脾虚饮停，水气上冲
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.036
+      - relation: 类方
+        target: SHL.SB.F.041
+      - relation: 类方
+        target: SHL.SB.F.047
   - id: SHL.SB.F.039
     name: 芍药甘草附子汤
     category: 扶阳益阴方
@@ -1293,11 +1333,13 @@ formulas:
     decoction: 上三味，以水五升，煮取一升五合，去滓，分温三服。
     related_clauses:
       - SHL.SB.TYZ.068
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 汗后阴阳两虚，筋脉失养
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.013
   - id: SHL.SB.F.040
     name: 茯苓四逆汤
     category: 温阳方
@@ -1329,7 +1371,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 汗下后阴阳俱虚，虚阳扰动，水饮内停
   - id: SHL.SB.F.041
     name: 茯苓甘草汤
     category: 温阳利水方
@@ -1352,11 +1394,13 @@ formulas:
     related_clauses:
       - SHL.SB.JUE.356
       - SHL.SB.TYZ.073
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 胃阳不足，水停心下
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.038
   - id: SHL.SB.F.042
     name: 栀子豉汤
     category: 清热方
@@ -1389,7 +1433,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 汗吐下后，无形邪热郁于胸膈
   - id: SHL.SB.F.043
     name: 栀子甘草豉汤
     category: 清热方
@@ -1415,7 +1459,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 邪热郁膈兼中气不足
   - id: SHL.SB.F.044
     name: 栀子生姜豉汤
     category: 清热方
@@ -1441,7 +1485,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 邪热郁膈兼胃气上逆
   - id: SHL.SB.F.045
     name: 栀子厚朴汤
     category: 清热方
@@ -1460,11 +1504,13 @@ formulas:
     decoction: 上三味，以水三升半，煮取一升半，去滓，分二服。
     related_clauses:
       - SHL.SB.TYZ.079
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 下后邪热留滞胸腹，气机壅滞
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.042
   - id: SHL.SB.F.046
     name: 栀子干姜汤
     category: 清上温中方
@@ -1480,11 +1526,13 @@ formulas:
     decoction: 上二味，以水三升半，煮取一升半，去滓，分二服。
     related_clauses:
       - SHL.SB.TYZ.080
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下中阳受损，上热中寒
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.042
   - id: SHL.SB.F.047
     name: 真武汤
     category: 温阳利水方
@@ -1510,11 +1558,15 @@ formulas:
     related_clauses:
       - SHL.SB.SI.316
       - SHL.SB.TYZ.082
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阳虚，水气内停，阳虚水泛
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.038
+      - relation: 类方
+        target: SHL.SB.F.116
   - id: SHL.SB.F.048
     name: 禹余粮丸
     category: 固涩方
@@ -1527,11 +1579,13 @@ formulas:
     decoction: 原方煎服法待校勘。
     related_clauses:
       - SHL.SB.TYZ.088
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 重发汗阴阳俱损，心神失养，水道失约
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.064
   - id: SHL.SB.F.049
     name: 小建中汤
     category: 温中方
@@ -1567,7 +1621,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 中焦虚寒，气血不足，里虚邪扰
   - id: SHL.SB.F.050
     name: 柴胡加芒硝汤
     category: 柴胡汤类
@@ -1608,7 +1662,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阳未解兼阳明里实，潮热实结
   - id: SHL.SB.F.051
     name: 桃核承气汤
     category: 攻下方
@@ -1633,11 +1687,15 @@ formulas:
     decoction: 上五味，以水七升，煮取二升半，去滓，内芒硝，更上火微沸，先食温服五合，日三服，当微利。
     related_clauses:
       - SHL.SB.TYZ.106
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 瘀热初结下焦，蓄血轻证
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.056
+      - relation: 类方
+        target: SHL.SB.F.112
   - id: SHL.SB.F.052
     name: 柴胡加龙骨牡蛎汤
     category: 柴胡汤类
@@ -1683,11 +1741,13 @@ formulas:
     decoction: 上十二味，以水八升，煮取四升，内大黄，切如棋子，更煮一两沸，去滓，温服一升。
     related_clauses:
       - SHL.SB.TYZ.107
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下邪陷少阳，弥漫表里，心神被扰
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.020
   - id: SHL.SB.F.053
     name: 桂枝去芍药加蜀漆牡蛎龙骨救逆汤
     category: 温阳镇惊方
@@ -1725,7 +1785,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 火迫劫汗，心阳虚亡，痰气上扰
   - id: SHL.SB.F.054
     name: 桂枝加桂汤
     category: 桂枝汤类
@@ -1757,7 +1817,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 心阳虚衰，下焦阴寒之气上逆
   - id: SHL.SB.F.055
     name: 桂枝甘草龙骨牡蛎汤
     category: 温阳镇惊方
@@ -1779,11 +1839,13 @@ formulas:
     decoction: 上四味，以水五升，煮取二升半，去滓，温服八合，日三服。
     related_clauses:
       - SHL.SB.TYZ.118
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 火逆复下，心阳受损，心神浮动
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.053
   - id: SHL.SB.F.056
     name: 抵当汤
     category: 破血逐瘀方
@@ -1815,7 +1877,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 瘀热深结下焦，蓄血重证
   - id: SHL.SB.F.057
     name: 抵当丸
     category: 破血逐瘀方
@@ -1844,7 +1906,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 蓄血证势缓，瘀结未甚
   - id: SHL.SB.F.058
     name: 半夏泻心汤
     category: 和解消痞方
@@ -1875,11 +1937,19 @@ formulas:
     decoction: 上七味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYX.149
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下中虚，寒热错杂，气机痞塞
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.060
+      - relation: 类方
+        target: SHL.SB.F.061
+      - relation: 类方
+        target: SHL.SB.F.062
+      - relation: 类方
+        target: SHL.SB.F.063
   - id: SHL.SB.F.059
     name: 十枣汤
     category: 攻逐水饮方
@@ -1901,11 +1971,13 @@ formulas:
     decoction: 上三味等分，各别捣为散，以水一升半，先煮大枣肥者十枚，取八合，去滓，内药末，强人服一钱匕，羸人服半钱，平旦服。
     related_clauses:
       - SHL.SB.TYX.152
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 水饮停聚胸胁，悬饮内实
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.024
   - id: SHL.SB.F.060
     name: 大黄黄连泻心汤
     category: 清热消痞方
@@ -1922,11 +1994,15 @@ formulas:
     related_clauses:
       - SHL.SB.TYX.154
       - SHL.SB.TYX.164
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 无形邪热壅聚心下，气分之热
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.058
+      - relation: 加减方
+        target: SHL.SB.F.061
   - id: SHL.SB.F.061
     name: 附子泻心汤
     category: 清热消痞方
@@ -1948,11 +2024,13 @@ formulas:
     decoction: 上四味，切三味，以麻沸汤二升渍之，须臾绞去滓，内附子汁，分温再服。
     related_clauses:
       - SHL.SB.TYX.155
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 热痞兼表阳虚
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.060
   - id: SHL.SB.F.062
     name: 生姜泻心汤
     category: 和解消痞方
@@ -1986,11 +2064,13 @@ formulas:
     decoction: 上八味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYX.157
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 脾胃虚弱，水饮食滞内停
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.058
   - id: SHL.SB.F.063
     name: 甘草泻心汤
     category: 和解消痞方
@@ -2018,11 +2098,13 @@ formulas:
     decoction: 上六味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYX.158
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下胃气重虚，客气上逆，痞利俱甚
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.058
   - id: SHL.SB.F.064
     name: 赤石脂禹余粮汤
     category: 固涩方
@@ -2038,11 +2120,15 @@ formulas:
     decoction: 上二味，以水六升，煮取二升，去滓，分温三服。
     related_clauses:
       - SHL.SB.TYX.159
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 下利日久，下元滑脱不固
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.048
+      - relation: 类方
+        target: SHL.SB.F.088
   - id: SHL.SB.F.065
     name: 旋覆代赭汤
     category: 降逆化痰方
@@ -2073,11 +2159,13 @@ formulas:
     decoction: 上七味，以水一斗，煮取六升，去滓，再煎取三升，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYX.161
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 胃虚痰阻，虚气上逆
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.058
   - id: SHL.SB.F.066
     name: 桂枝人参汤
     category: 温中解表方
@@ -2102,11 +2190,13 @@ formulas:
     decoction: 上五味，以水九升，先煮四味，取五升，内桂，更煮取三升，去滓，温服一升，日再夜一服。
     related_clauses:
       - SHL.SB.TYX.163
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 表证未解兼太阴虚利，表里同病
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.079
   - id: SHL.SB.F.067
     name: 瓜蒂散
     category: 涌吐方
@@ -2127,7 +2217,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 痰食壅滞胸中，病位高而可因而越之
   - id: SHL.SB.F.068
     name: 白虎汤
     category: 清热方
@@ -2159,7 +2249,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阳明经热炽盛，热而不实
   - id: SHL.SB.F.069
     name: 黄芩汤
     category: 清热止利方
@@ -2188,7 +2278,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阳邪热内迫阳明，热利为主
   - id: SHL.SB.F.070
     name: 黄芩加半夏生姜汤
     category: 清热止利方
@@ -2223,7 +2313,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 邪热下利兼胃气上逆
   - id: SHL.SB.F.071
     name: 黄连汤
     category: 清上温中方
@@ -2254,11 +2344,13 @@ formulas:
     decoction: 上七味，以水一斗，煮取六升，去滓，温服，昼三夜二。
     related_clauses:
       - SHL.SB.TYX.173
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 上热下寒，寒热格拒，腹痛欲呕
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.058
   - id: SHL.SB.F.072
     name: 桂枝附子汤
     category: 温阳祛风方
@@ -2290,7 +2382,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风湿相搏，风偏胜，表阳虚
   - id: SHL.SB.F.073
     name: 去桂加白术汤
     category: 温阳除湿方
@@ -2322,7 +2414,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风湿相搏，湿偏胜，脾虚湿困
   - id: SHL.SB.F.074
     name: 甘草附子汤
     category: 温阳除湿方
@@ -2344,11 +2436,13 @@ formulas:
     decoction: 上四味，以水六升，煮取三升，去滓，温服一升，日三服。
     related_clauses:
       - SHL.SB.TYX.175
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风湿相搏，表里阳气俱虚
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.072
   - id: SHL.SB.F.075
     name: 炙甘草汤
     category: 滋阴复脉方
@@ -2389,7 +2483,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 心之阴阳气血俱虚，脉道失充
   - id: SHL.SB.F.076
     name: 烧裩散
     category: 差后调理方
@@ -2406,7 +2500,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 病后体虚，余热相染（阴阳易）
   - id: SHL.SB.F.077
     name: 枳实栀子豉汤
     category: 清热除烦方
@@ -2432,7 +2526,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 病差劳复，余热复聚，气机壅滞
   - id: SHL.SB.F.078
     name: 牡蛎泽泻散
     category: 利水消肿方
@@ -2467,7 +2561,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 大病差后，水气停蓄下焦
   - id: SHL.SB.F.079
     name: 理中丸
     category: 温中健脾方
@@ -2491,11 +2585,13 @@ formulas:
       - SHL.SB.HUO.387
       - SHL.SB.TAI.276
       - SHL.SB.YI.396
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 中焦虚寒，脾胃升降失常
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.015
   - id: SHL.SB.F.080
     name: 竹叶石膏汤
     category: 清热生津方
@@ -2533,7 +2629,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 余热未清，气津两伤，胃气上逆
   - id: SHL.SB.F.081
     name: 桂枝加芍药汤
     category: 桂枝汤类
@@ -2565,7 +2661,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下伤脾，脾络不和，腹满时痛
   - id: SHL.SB.F.082
     name: 桂枝加大黄汤
     category: 桂枝汤类
@@ -2600,7 +2696,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 误下伤脾兼里实，大实痛
   - id: SHL.SB.F.083
     name: 四逆加人参汤
     category: 回阳救逆方
@@ -2629,7 +2725,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阳亡液脱，回阳兼益阴
   - id: SHL.SB.F.084
     name: 通脉四逆加猪胆汁汤
     category: 回阳救逆方
@@ -2658,7 +2754,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阴盛格阳，吐下后阴液大伤，阳药拒格
   - id: SHL.SB.F.085
     name: 麻黄细辛附子汤
     category: 温阳解表方
@@ -2684,7 +2780,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阳虚兼太阳表寒，表里同治
   - id: SHL.SB.F.086
     name: 麻黄附子甘草汤
     category: 温阳解表方
@@ -2710,7 +2806,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阳虚兼表邪较轻，微汗缓图
   - id: SHL.SB.F.087
     name: 黄连阿胶汤
     category: 滋阴清热方
@@ -2735,11 +2831,13 @@ formulas:
     decoction: 上五味，以水六升，先煮三物，取二升，去滓，内胶烊尽，小冷，内鸡子黄，搅令相得，温服七合，日三服。
     related_clauses:
       - SHL.SB.SI.303
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴热化，心肾不交，阴虚火旺
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.114
   - id: SHL.SB.F.088
     name: 桃花汤
     category: 温涩固脱方
@@ -2759,11 +2857,13 @@ formulas:
     related_clauses:
       - SHL.SB.SI.306
       - SHL.SB.SI.307
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 下焦虚寒，滑脱不固，下利便脓血
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.064
   - id: SHL.SB.F.089
     name: 吴茱萸汤
     category: 温中散寒方
@@ -2791,7 +2891,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 胃中虚寒，浊阴上逆
   - id: SHL.SB.F.090
     name: 猪肤汤
     category: 滋阴润燥方
@@ -2804,11 +2904,13 @@ formulas:
     decoction: 上一味，以水一斗，煮取五升，去滓，加白蜜一升，白粉五合，熬香，和令相得，温分六服。
     related_clauses:
       - SHL.SB.SI.310
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阴虚，虚火上炎，咽喉失润
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.091
   - id: SHL.SB.F.091
     name: 甘草汤
     category: 清热利咽方
@@ -2828,7 +2930,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴客热上干咽喉，病轻热微
   - id: SHL.SB.F.092
     name: 桔梗汤
     category: 清热利咽方
@@ -2851,7 +2953,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 客热咽痛兼痰阻气滞
   - id: SHL.SB.F.093
     name: 苦酒汤
     category: 清热利咽方
@@ -2867,11 +2969,13 @@ formulas:
     decoction: 上二味，内半夏著苦酒中，以鸡子壳置刀环中，安火上，令三沸，去滓，少少含咽之。不差，更作三剂。
     related_clauses:
       - SHL.SB.SI.312
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 咽伤生疮，痰火郁结
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.091
   - id: SHL.SB.F.094
     name: 半夏散
     category: 温散利咽方
@@ -2890,11 +2994,13 @@ formulas:
     decoction: 上三味，捣筛，白饮和服方寸匕，日三服。若不能散服者，以水一升，煎七沸，内散两方寸匕，更煮三沸，下火令小冷，少少咽之。
     related_clauses:
       - SHL.SB.SI.313
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 风寒客于少阴，痰湿痹阻咽喉
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.092
   - id: SHL.SB.F.095
     name: 白通汤
     category: 回阳救逆方
@@ -2921,7 +3027,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阳衰，阴寒下利，格阳于上
   - id: SHL.SB.F.096
     name: 白通加猪胆汁汤
     category: 回阳救逆方
@@ -2953,7 +3059,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阴盛格阳，阳药拒格，格拒加重
   - id: SHL.SB.F.098
     name: 四逆散
     category: 疏肝解郁方
@@ -2975,11 +3081,13 @@ formulas:
     decoction: 上四味，捣筛，白饮和服方寸匕，日三服。
     related_clauses:
       - SHL.SB.SI.318
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阳郁气滞，气机不畅，阳不达四末
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.020
   - id: SHL.SB.F.102
     name: 乌梅丸
     category: 安蛔止痛方
@@ -3023,7 +3131,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 上热下寒，寒热错杂，蛔虫内扰
   - id: SHL.SB.F.103
     name: 当归四逆汤
     category: 温经散寒方
@@ -3061,7 +3169,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 营血不足，寒凝经脉
   - id: SHL.SB.F.104
     name: 当归四逆加吴茱萸生姜汤
     category: 温经散寒方
@@ -3105,7 +3213,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 血虚寒凝兼内有久寒
   - id: SHL.SB.F.105
     name: 麻黄升麻汤
     category: 发越郁阳方
@@ -3157,11 +3265,13 @@ formulas:
     decoction: 上十四味，以水一斗，先煮麻黄一两沸，去上沫，内诸药，煮取三升，去滓，分温三服，相去如炊三斗米顷，令尽。汗出愈。
     related_clauses:
       - SHL.SB.JUE.357
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 正虚邪陷，阳郁不伸，上热下寒
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.106
   - id: SHL.SB.F.106
     name: 干姜黄芩黄连人参汤
     category: 寒热并用方
@@ -3183,11 +3293,13 @@ formulas:
     decoction: 上四味，以水六升，煮取二升，去滓，分温再服。
     related_clauses:
       - SHL.SB.JUE.359
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 上热下寒，寒热相格，食入即吐
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.105
   - id: SHL.SB.F.107
     name: 白头翁汤
     category: 清热止痢方
@@ -3210,11 +3322,13 @@ formulas:
     related_clauses:
       - SHL.SB.JUE.371
       - SHL.SB.JUE.373
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 厥阴湿热下迫，热毒伤及血分
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.069
   - id: SHL.SB.F.108
     name: 茵陈蒿汤
     category: 清热利湿方
@@ -3234,11 +3348,15 @@ formulas:
     related_clauses:
       - SHL.SB.YM.236
       - SHL.SB.YM.260
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 湿热瘀滞于里，熏蒸肝胆，胆汁外溢
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.110
+      - relation: 类方
+        target: SHL.SB.F.111
   - id: SHL.SB.F.109
     name: 麻子仁丸
     category: 润肠通便方
@@ -3266,11 +3384,13 @@ formulas:
     decoction: 上六味，蜜和丸如梧桐子大，饮服十丸，日三服，渐加，以知为度。
     related_clauses:
       - SHL.SB.YM.247
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 胃强脾弱，脾津受约，肠燥便结
+    related_formulas:
+      - relation: 加减方
+        target: SHL.SB.F.113
   - id: SHL.SB.F.110
     name: 栀子柏皮汤
     category: 清热利湿方
@@ -3289,11 +3409,13 @@ formulas:
     decoction: 上三味，以水四升，煮取一升半，去滓，分温再服。
     related_clauses:
       - SHL.SB.YM.261
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 湿热郁蒸发黄，热重于湿
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.108
   - id: SHL.SB.F.111
     name: 麻黄连轺赤小豆汤
     category: 解表利湿方
@@ -3327,11 +3449,13 @@ formulas:
     decoction: 上八味，以潦水一斗，先煮麻黄再沸，去上沫，内诸药，煮取三升，去滓，分温三服，半日服尽。
     related_clauses:
       - SHL.SB.YM.262
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 湿热瘀里兼表邪未解，表里同病
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.108
   - id: SHL.SB.F.112
     name: 大承气汤
     category: 攻下方
@@ -3377,7 +3501,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阳明腑实，燥屎内结，痞满燥实俱备
   - id: SHL.SB.F.113
     name: 小承气汤
     category: 攻下方
@@ -3411,7 +3535,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阳明腑实初结，痞满为主，燥热未甚
   - id: SHL.SB.F.114
     name: 猪苓汤
     category: 滋阴利水方
@@ -3437,11 +3561,15 @@ formulas:
     related_clauses:
       - SHL.SB.SI.319
       - SHL.SB.YM.223
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 水热互结，津伤有热而水气不利
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.028
+      - relation: 类方
+        target: SHL.SB.F.087
   - id: SHL.SB.F.115
     name: 通脉四逆汤
     category: 回阳救逆方
@@ -3468,7 +3596,7 @@ formulas:
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 阴盛格阳，真阳欲脱，里真寒外假热
   - id: SHL.SB.F.116
     name: 附子汤
     category: 温阳散寒方
@@ -3494,8 +3622,10 @@ formulas:
     related_clauses:
       - SHL.SB.SI.304
       - SHL.SB.SI.305
-    related_formulas: []
     safety_notice: 仅供学习研究，不构成医疗建议，请勿自行用药。
     main_symptoms: []
     pulse: []
-    pathomechanism: ""
+    pathomechanism: 少阴阳虚，寒湿内盛，浸渍肌肉关节
+    related_formulas:
+      - relation: 类方
+        target: SHL.SB.F.047
