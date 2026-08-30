@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 
 import type { ContentData } from '../../data/types'
 import { loadContent } from '../../data'
-import { computeStreakDays } from '../../domain'
+import { computeStreakDays, pickDailyItems } from '../../domain'
 import type { DailyQueue } from '../../domain/memory'
 import { getTodayQueue } from '../../domain/memory'
 import {
@@ -21,8 +21,11 @@ import CardStack from '../components/CardStack.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import SearchBar from '../components/SearchBar.vue'
 
-/** 首页轮播的经典条文号：太阳/少阳提纲与桂枝汤、麻黄汤、小柴胡汤主证条 */
-const FEATURED_CLAUSE_NOS = [1, 12, 35, 96, 263]
+/**
+ * 首页卡片堆候选池：六经提纲（1/180/263/273/281/326）+ 经典主证与治则条。
+ * 每日从中确定性抽取 5 条展示（pickDailyItems），同一天全站一致，跨天自动轮换。
+ */
+const FEATURED_CLAUSE_POOL = [1, 12, 16, 35, 71, 96, 154, 177, 180, 263, 273, 281, 316, 326, 337]
 
 const { setMode } = useTheme()
 // currentEffectiveTheme 内部读取共享的 mode 状态，computed 可随模式切换联动
@@ -51,10 +54,12 @@ async function loadHome() {
     const data = await loadContent()
     content.value = data
     const clauseByNo = new Map(data.clauses.map((clause) => [clause.no, clause]))
-    featuredClauses.value = FEATURED_CLAUSE_NOS.flatMap((no) => {
+    const candidates = FEATURED_CLAUSE_POOL.flatMap((no) => {
       const clause = clauseByNo.get(no)
       return clause ? [{ no, text: clause.text }] : []
     })
+    // 与今日任务共用同一天口径（todayKey），当日固定同一批条文
+    featuredClauses.value = pickDailyItems(candidates, 5, todayKey)
     await ensureDefaultStudyPlan()
 
     const [plans, cards, states, dailyLogRecords, todayLog] = await Promise.all([
@@ -134,22 +139,23 @@ onMounted(loadHome)
 
     <div
       v-if="loading"
-      class="mt-5 h-64 animate-pulse rounded-2xl border border-border-paper bg-paper-card"
+      class="mb-12 mt-6 h-64 animate-pulse rounded-2xl border border-border-paper bg-paper-card"
       aria-hidden="true"
     />
     <CardStack
       v-else-if="featuredClauses.length > 1"
-      class="mt-5 h-64"
+      class="mb-12 mt-6 h-64"
       :items="featuredClauses"
       random-rotation
+      :random-amplitude="4"
       :sensitivity="290"
       send-to-back-on-click
       autoplay
       :autoplay-delay="5000"
       pause-on-hover
-      mobile-click-only
-      :rotation-step="2"
+      :rotation-step="1.5"
       :scale-step="0.05"
+      transform-origin="50% 92%"
       aria-label="经典条文轮播"
     >
       <template #card="{ item }">

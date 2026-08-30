@@ -1,4 +1,5 @@
 export * from './clauseLink'
+export * from './daily'
 export * from './formula'
 export * from './graph'
 export * from './memory'
