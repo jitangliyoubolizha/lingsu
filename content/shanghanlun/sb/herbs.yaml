@@ -60,15 +60,45 @@ herbs:
   - id: SHL.SB.H.007
     name: 厚朴
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化湿药
+    nature: 苦、辛，温
+    meridians:
+      - 脾
+      - 胃
+      - 肺
+      - 大肠
+    effects: 燥湿消痰，下气除满
+    applications: 行气消胀要药。经方主用于腹满：厚朴生姜半夏甘草人参汤治发汗后腹胀满；栀子厚朴汤治心烦腹满、卧起不安；小承气汤、大承气汤以之配枳实、大黄攻下除满；《金匮》厚朴麻黄汤、半夏厚朴汤治咳喘与梅核气。
+    dosage: 3~10g
+    cautions: 辛温行散，气虚津亏者慎用；孕妇慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.008
     name: 杏仁
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 苦，微温；有小毒
+    meridians:
+      - 肺
+      - 大肠
+    effects: 降气止咳平喘，润肠通便
+    applications: 宣降肺气要药。麻黄汤、桂枝加厚朴杏子汤以之配麻黄、桂枝发汗定喘；麻杏石甘汤配石膏清肺平喘；大陷胸丸、麻子仁丸取其质润下降。经方用量多以「五十个」「七十个」计数。
+    dosage: 5~10g（打碎入煎）
+    cautions: 有小毒，用量不宜过大；婴儿慎用；阴虚咳喘、大便溏泄者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.009
     name: 附子
     aliases: []
-    notes: AI 初稿待校对。
+    category: 温里药
+    nature: 辛、甘，大热；有毒
+    meridians:
+      - 心
+      - 肾
+      - 脾
+    effects: 回阳救逆，补火助阳，散寒止痛
+    applications: 回阳救逆第一要药。四逆汤配干姜、甘草治少阴病四肢厥逆、脉微细；真武汤配茯苓、白术、芍药温阳利水；桂枝附子汤、甘草附子汤散寒除湿止痛；麻黄细辛附子汤温经发表。经方回阳用生附子，止痛助阳用炮附子，煎法各有法度。
+    dosage: 3~15g（先煎，久煎）
+    cautions: 有毒，须炮制并先煎久煎；阴虚阳亢、真热假寒者忌用；孕妇忌用；不宜与半夏、瓜蒌、贝母、白蔹、白及同用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.010
     name: 麻黄
     aliases: []
@@ -120,7 +150,17 @@ herbs:
   - id: SHL.SB.H.015
     name: 茯苓
     aliases: []
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 甘、淡，平
+    meridians:
+      - 心
+      - 脾
+      - 肾
+    effects: 利水消肿，渗湿，健脾，宁心
+    applications: 经方利水第一要药。五苓散配猪苓、泽泻、白术、桂枝化气行水；苓桂术甘汤治痰饮头眩心悸；小柴胡汤加减「若心下悸、小便不利者，去黄芩加茯苓四两」；又见于苓桂枣甘汤、真武汤、酸枣仁汤（取其宁心安神）诸方。
+    dosage: 9~15g
+    cautions: 虚寒精滑者忌服。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.016
     name: 白术
     aliases: []
@@ -128,7 +168,19 @@ herbs:
   - id: SHL.SB.H.017
     name: 干姜
     aliases: []
-    notes: AI 初稿待校对。
+    category: 温里药
+    nature: 辛，热
+    meridians:
+      - 脾
+      - 胃
+      - 肾
+      - 心
+      - 肺
+    effects: 温中散寒，回阳通脉，温肺化饮
+    applications: 温中散寒主药。理中丸（汤）配人参、白术、甘草温中焦虚寒；四逆汤配附子回阳救逆；小青龙汤配细辛、五味子温肺化饮；甘草干姜汤治肺痿吐涎沫；诸泻心汤以之配黄连辛开苦降消痞。
+    dosage: 3~10g
+    cautions: 阴虚内热、血热妄行者忌用；孕妇慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.018
     name: 大黄
     aliases: []
@@ -161,7 +213,17 @@ herbs:
   - id: SHL.SB.H.020
     name: 半夏
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 辛，温；有毒
+    meridians:
+      - 脾
+      - 胃
+      - 肺
+    effects: 燥湿化痰，降逆止呕，消痞散结
+    applications: 仲景用半夏诸方最多，主呕逆与痞。小半夏汤（半夏、生姜）为诸呕吐基础方；半夏泻心汤、生姜泻心汤、甘草泻心汤以半夏辛开消痞；小柴胡汤加减「若渴，去半夏」可知不渴者主用；《金匮》半夏厚朴汤治梅核气。经方皆用洗去滑之制半夏。
+    dosage: 3~9g（内服须制用）
+    cautions: 有毒，内服须炮制；不宜与乌头类同用；阴虚燥咳、血证及热痰者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.021
     name: 黄芩
     aliases: []
@@ -244,36 +306,108 @@ herbs:
   - id: SHL.SB.H.027
     name: 葶苈子
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 辛、苦，大寒
+    meridians:
+      - 肺
+      - 膀胱
+    effects: 泻肺平喘，行水消肿
+    applications: 泻肺水峻药。葶苈大枣泻肺汤治肺痈喘不得卧及支饮不得息——葶苈熬令黄色、捣丸如弹子大，以大枣十二枚煎汤送服，峻药缓攻；己椒苈黄丸治肠间有水气；大陷胸丸亦用之。
+    dosage: 3~10g（包煎）
+    cautions: 泻肺力猛，肺虚喘咳、脾虚肿满者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.028
     name: 枳实
     aliases: []
-    notes: AI 初稿待校对。
+    category: 理气药
+    nature: 苦、辛、酸，微寒
+    meridians:
+      - 脾
+      - 胃
+    effects: 破气消积，化痰散痞
+    applications: 破气消痞。大承气汤、小承气汤以枳实配厚朴助大黄攻下燥结；枳实栀子豉汤治大病瘥后劳复、心烦懊憹；《金匮》枳实薤白桂枝汤治胸痹心中痞、气结在胸。
+    dosage: 3~10g
+    cautions: 孕妇慎用；脾胃虚弱而无积滞者不宜。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.029
     name: 瓜蒌实
     aliases:
       - 栝楼实
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 甘、微苦，寒
+    meridians:
+      - 肺
+      - 胃
+      - 大肠
+    effects: 清热涤痰，宽胸散结，润燥滑肠
+    applications: 小陷胸汤以栝蒌实配黄连、半夏治小结胸病——正在心下、按之则痛、脉浮滑，取其清热涤痰开结；《金匮》胸痹诸方（瓜蒌薤白白酒汤、瓜蒌薤白半夏汤）以之配薤白通阳宽胸。仲景用栝蒌实皆全果连皮仁。
+    dosage: 9~15g
+    cautions: 不宜与乌头类同用；脾虚便溏及寒痰者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.030
     name: 文蛤
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 咸，寒
+    meridians:
+      - 肺
+      - 胃
+    effects: 清热化痰，软坚散结，生津止渴
+    applications: 文蛤散单味为散，治渴欲饮水不止者，以沸汤和服方寸匕。文蛤所指（海蛤抑或五倍子）历代注家有争，今多从海蛤之说。
+    dosage: 6~15g（蛤粉包煎）
+    cautions: 脾胃虚寒者慎用。
+    notes: 文蛤所指历来有海蛤、五倍子之争，本草卡按海蛤壳通行口径编写，待核对。本草内容初稿待校对。
   - id: SHL.SB.H.031
     name: 猪苓
     aliases: []
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 甘、淡，平
+    meridians:
+      - 肾
+      - 膀胱
+    effects: 利水渗湿
+    applications: 专主利水，淡渗之力强于茯苓而无补性。五苓散与茯苓、泽泻、白术同用治小便不利、微热消渴；猪苓汤治水热互结伤阴——渴欲饮水、小便不利、心烦不得眠，配阿胶、滑石利水而不伤阴。
+    dosage: 6~12g
+    cautions: 利水伤阴，无水湿者及阴虚津亏者不宜。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.032
     name: 泽泻
     aliases: []
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 甘、淡，寒
+    meridians:
+      - 肾
+      - 膀胱
+    effects: 利水渗湿，泄热，化浊降脂
+    applications: 五苓散以泽泻为君，配茯苓、猪苓、白术、桂枝治水蓄下焦——渴欲饮水、小便不利；猪苓汤治水热伤阴；《金匮》泽泻汤治心下有支饮、其人苦冒眩；肾气丸用之泻水中之浊而护真阴。
+    dosage: 6~10g
+    cautions: 肾虚精滑无湿热者忌用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.033
     name: 桔梗
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 苦、辛，平
+    meridians:
+      - 肺
+    effects: 宣肺，利咽，祛痰，排脓
+    applications: 开宣肺气、载药上行。桔梗汤（桔梗一两、甘草二两）治少阴病二三日咽痛，取其清利咽喉；三物白散以桔梗配巴豆、贝母治寒实结胸，取其开肺散邪；《金匮》桔梗汤重用治肺痈咳而胸满、吐脓如米粥。后世誉为「诸药之舟楫」。
+    dosage: 3~10g
+    cautions: 性升散，呕吐、呛咳、眩晕及阴虚火旺咳血者不宜；用量过大易致恶心。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.034
     name: 贝母
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 苦、甘，微寒
+    meridians:
+      - 肺
+      - 心
+    effects: 清热润肺，化痰止咳，散结消痈
+    applications: 经方两见。三物白散以贝母配巴豆、桔梗治寒实结胸，取其涤痰散结；《金匮》当归贝母苦参丸治妊娠小便难。仲景所用贝母品种（川贝/浙贝之别）历来有考辨。
+    dosage: 3~10g（川贝研粉冲服每次 1~2g）
+    cautions: 不宜与乌头类同用；寒痰湿痰者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.035
     name: 巴豆
     aliases: []
@@ -398,7 +532,18 @@ herbs:
   - id: SHL.SB.H.050
     name: 旋覆花
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 苦、辛、咸，微温
+    meridians:
+      - 肺
+      - 脾
+      - 胃
+      - 大肠
+    effects: 降气，消痰，行水，止呕
+    applications: 旋覆代赭汤以旋覆花配代赭石、人参、生姜、半夏、甘草，治伤寒汗吐下解后心下痞硬、噫气不除，取其下气消痰；《金匮》旋覆花汤配葱、新绛治肝着。
+    dosage: 3~9g（包煎）
+    cautions: 阴虚劳嗽、津伤燥咳者忌用；绒毛刺激咽喉易致呕呛，须布包入煎。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.051
     name: 代赭
     aliases:
@@ -415,7 +560,16 @@ herbs:
   - id: SHL.SB.H.054
     name: 赤小豆
     aliases: []
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 甘、酸，平
+    meridians:
+      - 心
+      - 小肠
+    effects: 利水消肿，解毒排脓
+    applications: 经方两见。麻黄连轺赤小豆汤以之清利湿热，配麻黄、连轺、梓白皮治瘀热在里之发黄；瓜蒂散以赤小豆与瓜蒂等分为散，取其酸苦涌泄，助瓜蒂吐胸中实邪。
+    dosage: 9~30g
+    cautions: 阴津不足者不宜久服（古有久食令人枯瘦之说）。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.055
     name: 生地黄
     aliases: []
@@ -473,11 +627,32 @@ herbs:
     name: 蜀椒
     aliases:
       - 花椒
-    notes: AI 初稿待校对。
+    category: 温里药
+    nature: 辛，温；有小毒
+    meridians:
+      - 脾
+      - 胃
+      - 肾
+    effects: 温中止痛，杀虫止痒
+    applications: 大建中汤以蜀椒配干姜、人参、胶饴，治心胸中大寒痛、呕不能饮食、腹中寒上冲皮起，取其温中散寒、下气止痛；乌梅丸用之辛以伏蛔。
+    dosage: 3~6g；外用适量
+    cautions: 有小毒，阴虚火旺者忌用；孕妇慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.061
     name: 薤白
     aliases: []
-    notes: AI 初稿待校对。
+    category: 理气药
+    nature: 辛、苦，温
+    meridians:
+      - 心
+      - 肺
+      - 胃
+      - 大肠
+    effects: 通阳散结，行气导滞
+    applications: 治胸痹要药。《金匮》瓜蒌薤白白酒汤、瓜蒌薤白半夏汤、枳实薤白桂枝汤三方皆以薤白配瓜蒌通阳散结、豁痰下气，治胸痹喘息咳唾、胸背痛、短气。
+    dosage: 5~10g
+    cautions: 气虚无滞及胃弱纳呆者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.062
     name: 葱白
     aliases: []
@@ -517,7 +692,17 @@ herbs:
   - id: SHL.SB.H.066
     name: 海藻
     aliases: []
-    notes: AI 初稿待校对。
+    category: 化痰止咳平喘药
+    nature: 苦、咸，寒
+    meridians:
+      - 肝
+      - 胃
+      - 肾
+    effects: 消痰软坚散结，利水消肿
+    applications: 牡蛎泽泻散以海藻与牡蛎、泽泻、商陆、葶苈子等同用，治大病瘥后腰以下有水气，取其利水消肿；后世主以软坚散结用之（瘿瘤瘰疬）。
+    dosage: 6~12g
+    cautions: 不宜与甘草同用；牡蛎泽泻散「小便利，止后服」，正避久服之弊。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.067
     name: 乌梅
     aliases: []
@@ -525,7 +710,18 @@ herbs:
   - id: SHL.SB.H.068
     name: 吴茱萸
     aliases: []
-    notes: AI 初稿待校对。
+    category: 温里药
+    nature: 辛、苦，热；有小毒
+    meridians:
+      - 肝
+      - 脾
+      - 胃
+      - 肾
+    effects: 散寒止痛，降逆止呕，助阳止泻
+    applications: 吴茱萸汤三见于《伤寒论》——阳明「食谷欲呕」、少阴「吐利，烦躁欲死」、厥阴「干呕，吐涎沫，头痛者」，皆以吴茱萸配人参、生姜、大枣温肝暖胃、降逆止呕；当归四逆加吴茱萸生姜汤治内有久寒。
+    dosage: 2~5g
+    cautions: 有小毒，不宜多用久服；阴虚有热者忌用；孕妇慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.069
     name: 当归
     aliases: []
@@ -533,7 +729,16 @@ herbs:
   - id: SHL.SB.H.070
     name: 通草
     aliases: []
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 甘、淡，微寒
+    meridians:
+      - 肺
+      - 胃
+    effects: 清热利尿，通气下乳
+    applications: 当归四逆汤以通草配当归、桂枝、芍药、细辛、甘草、大枣，治血虚寒厥——手足厥寒、脉细欲绝，取其通行血脉、利水道。
+    dosage: 3~5g
+    cautions: 孕妇慎用；气阴两虚者不宜多服。
+    notes: 《伤寒论》通草经考多谓即木通，本条按今通草通行数据编写，待核对。本草内容初稿待校对。
   - id: SHL.SB.H.071
     name: 裩裆灰
     aliases:
@@ -594,7 +799,18 @@ herbs:
     name: 茵陈蒿
     aliases:
       - 茵陈
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 苦、辛，微寒
+    meridians:
+      - 脾
+      - 胃
+      - 肝
+      - 胆
+    effects: 清利湿热，利胆退黄
+    applications: 治黄疸要药。茵陈蒿汤以之为君，配栀子、大黄治阳明瘀热在里之阳黄——身黄如橘子色、小便不利、腹微满，取其清利湿热、导热下行。
+    dosage: 6~15g
+    cautions: 蓄血发黄及血虚萎黄者慎用。
+    notes: 本草内容初稿待校对。
   - id: SHL.SB.H.078
     name: 连轺
     aliases:
@@ -631,4 +847,14 @@ herbs:
   - id: SHL.SB.H.081
     name: 滑石
     aliases: []
-    notes: AI 初稿待校对。
+    category: 利水渗湿药
+    nature: 甘、淡，寒
+    meridians:
+      - 膀胱
+      - 肺
+      - 胃
+    effects: 利尿通淋，清热解暑；外用祛湿敛疮
+    applications: 猪苓汤以滑石配猪苓、茯苓、泽泻、阿胶，治水热互结伤阴之小便不利，取其清热利窍而不伤阴；《金匮》百合滑石散治百合病变发热者。
+    dosage: 10~20g（包煎）
+    cautions: 脾虚气弱、精滑者忌用；热病津伤者慎用；孕妇慎用。
+    notes: 本草内容初稿待校对。
