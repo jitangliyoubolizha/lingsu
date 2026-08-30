@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { computeChapterProgress, computeLearningStats, computeStreakDays } from './stats'
+import {
+  computeChapterProgress,
+  computeLearningStats,
+  computeRetentionTrend,
+  computeStreakDays,
+} from './stats'
 import type { MemoryCard } from './memory/types'
 
 describe('domain/stats', () => {
@@ -133,5 +138,51 @@ describe('domain/stats', () => {
     expect(stats.mastered).toBe(1)
     expect(stats.learning).toBe(2)
     expect(stats.dueReviews).toBe(2)
+  })
+
+  it('保持率趋势：本周按天分桶，标签周一起算，未来天置灰', () => {
+    const now = new Date('2026-08-19T10:00:00+08:00') // 周三
+    const trend = computeRetentionTrend(
+      [
+        { reviewedAt: new Date('2026-08-17T09:00:00+08:00'), rating: 3 }, // 周一
+        { reviewedAt: new Date('2026-08-19T08:00:00+08:00'), rating: 1 }, // 周三
+        { reviewedAt: new Date('2026-08-19T09:30:00+08:00'), rating: 3 }, // 周三
+      ],
+      now
+    )
+    expect(trend.map((day) => day.label)).toEqual([
+      '周一',
+      '周二',
+      '周三',
+      '周四',
+      '周五',
+      '周六',
+      '周日',
+    ])
+    expect(trend[0]).toMatchObject({ value: 100, isFuture: false })
+    expect(trend[1]).toMatchObject({ value: null, isFuture: false })
+    expect(trend[2]).toMatchObject({ value: 50, isFuture: false })
+    expect(trend[3]).toMatchObject({ value: null, isFuture: true })
+    expect(trend[6]).toMatchObject({ label: '周日', isFuture: true })
+  })
+
+  it('保持率趋势：复习了但全部遗忘是 0% 而非无数据', () => {
+    const now = new Date('2026-08-23T21:00:00+08:00') // 周日
+    const trend = computeRetentionTrend(
+      [{ reviewedAt: new Date('2026-08-23T08:00:00+08:00'), rating: 1 }], // 周日
+      now
+    )
+    expect(trend[6]).toMatchObject({ label: '周日', value: 0, isFuture: false })
+  })
+
+  it('保持率趋势：周一 00:00 起算，上周日深夜不计入本周', () => {
+    const now = new Date('2026-08-17T10:00:00+08:00') // 周一
+    const trend = computeRetentionTrend(
+      [{ reviewedAt: new Date('2026-08-16T23:59:00+08:00'), rating: 3 }], // 上周日
+      now
+    )
+    expect(trend.every((day) => day.value === null)).toBe(true)
+    expect(trend[0].isFuture).toBe(false)
+    expect(trend[1].isFuture).toBe(true)
   })
 })

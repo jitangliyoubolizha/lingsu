@@ -4,7 +4,7 @@
  */
 import type { ContentData } from '../data/types'
 import { getClauseStudyStatus, getDueCards } from './memory'
-import type { MemoryCard } from './memory/types'
+import type { MemoryCard, ReviewLog } from './memory/types'
 
 export interface DailyLogLike {
   date: string
@@ -96,4 +96,51 @@ export function computeLearningStats(
     learning,
     dueReviews: getDueCards(cards, now).length,
   }
+}
+
+export interface RetentionDay {
+  /** 当日记忆保持率（%）；当日无复习记录时为 null */
+  value: number | null
+  label: string
+  /** 是否尚未到来（本周剩余天数） */
+  isFuture: boolean
+}
+
+/**
+ * 计算本周（自然周，周一起算）每日的记忆保持率。
+ * rating ≥ 2（模糊/记得）记为「记得」；当日无复习记录时 value 为 null，
+ * 与「复习了但全部遗忘」的 0% 区分；尚未到来的天 isFuture 为 true。
+ */
+export function computeRetentionTrend(
+  reviewLogs: ReadonlyArray<Pick<ReviewLog, 'reviewedAt' | 'rating'>>,
+  now: Date = new Date()
+): RetentionDay[] {
+  const monday = new Date(now)
+  monday.setHours(0, 0, 0, 0)
+  // 周一起算：getDay() 周日=0，周日回退 6 天、其余回退 getDay()-1 天到本周一
+  monday.setDate(monday.getDate() + (monday.getDay() === 0 ? -6 : 1 - monday.getDay()))
+  const todayStart = new Date(now)
+  todayStart.setHours(0, 0, 0, 0)
+  const labels = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+  const days: RetentionDay[] = []
+  for (let i = 0; i < labels.length; i += 1) {
+    const dayStart = new Date(monday)
+    dayStart.setDate(monday.getDate() + i)
+    const dayEnd = new Date(dayStart)
+    dayEnd.setDate(dayStart.getDate() + 1)
+    const isFuture = dayStart.getTime() > todayStart.getTime()
+    const inDay = isFuture
+      ? []
+      : reviewLogs.filter((log) => {
+          const t = log.reviewedAt.getTime()
+          return t >= dayStart.getTime() && t < dayEnd.getTime()
+        })
+    const remembered = inDay.filter((log) => log.rating >= 2).length
+    days.push({
+      value: inDay.length === 0 ? null : Math.round((remembered / inDay.length) * 100),
+      label: labels[i],
+      isFuture,
+    })
+  }
+  return days
 }

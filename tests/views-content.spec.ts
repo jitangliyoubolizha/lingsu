@@ -107,7 +107,7 @@ describe('ui 统计页专项', () => {
       '正确率',
       '记忆保持率',
       '篇章进度',
-      '记忆保持率趋势',
+      '本周记忆保持率',
     ]
     for (const label of labels) {
       expect(wrapper.text()).toContain(label)

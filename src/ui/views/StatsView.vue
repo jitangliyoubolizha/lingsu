@@ -2,8 +2,13 @@
 import { onMounted, ref } from 'vue'
 
 import { loadContent } from '../../data'
-import { computeChapterProgress, computeLearningStats, computeStreakDays } from '../../domain'
-import type { ReviewLog } from '../../domain/memory'
+import {
+  computeChapterProgress,
+  computeLearningStats,
+  computeRetentionTrend,
+  computeStreakDays,
+  type RetentionDay,
+} from '../../domain'
 import {
   getAllCards,
   getAllDailyLogs,
@@ -28,8 +33,7 @@ const accuracy = ref(0)
 const retention = ref(0)
 const chapterProgress = ref<Array<{ code: string; name: string; done: number; total: number }>>([])
 const heatDays = ref<Array<{ label: string; value: number }>>([])
-const trend = ref<number[]>([])
-const weekLabels = ref(['', ''])
+const trend = ref<RetentionDay[]>([])
 
 function formatDay(date: Date): string {
   const year = date.getFullYear()
@@ -58,26 +62,6 @@ function computeHeatDays(
       value: completed.has(formatDay(date)) ? 1 : 0,
     }
   })
-}
-
-function computeTrend(reviewLogs: ReviewLog[]): { values: number[]; labels: string[] } {
-  const values: number[] = []
-  const labels: string[] = []
-  const now = new Date()
-  for (let week = 6; week >= 0; week -= 1) {
-    const start = new Date(now)
-    start.setDate(now.getDate() - week * 7 - 6)
-    const end = new Date(now)
-    end.setDate(now.getDate() - week * 7)
-    const logs = reviewLogs.filter((log) => {
-      const t = log.reviewedAt.getTime()
-      return t >= start.getTime() && t <= end.getTime()
-    })
-    const remembered = logs.filter((log) => log.rating >= 2).length
-    values.push(logs.length === 0 ? 0 : Math.round((remembered / logs.length) * 100))
-    labels.push(`周${week + 1}`)
-  }
-  return { values, labels }
 }
 
 async function load() {
@@ -112,12 +96,7 @@ async function load() {
       : Math.round((reviewLogs.filter((log) => log.rating >= 2).length / reviewLogs.length) * 100)
   chapterProgress.value = computeChapterProgress(data, learnedIds)
   heatDays.value = computeHeatDays(dailyLogs)
-  const trendData = computeTrend(reviewLogs)
-  trend.value = trendData.values
-  weekLabels.value = [
-    trendData.labels[0] ?? '',
-    trendData.labels[trendData.labels.length - 1] ?? '',
-  ]
+  trend.value = computeRetentionTrend(reviewLogs)
 
   loading.value = false
 }
@@ -238,25 +217,44 @@ onMounted(load)
         class="mt-4 rounded-2xl border border-border-paper bg-paper-card p-5 shadow-[0_4px_12px_rgba(34,26,16,.05)]"
       >
         <h2 class="mb-4 font-serif text-base font-bold">
-          记忆保持率趋势
+          本周记忆保持率
         </h2>
         <div
-          class="flex h-32 items-end gap-2"
-          aria-label="记忆保持率柱状图"
+          class="flex items-end gap-2"
+          aria-label="本周记忆保持率柱状图"
         >
           <div
-            v-for="(value, index) in trend"
-            :key="index"
-            class="flex-1 rounded-t-md"
-            :class="value > 0 ? 'bg-cinnabar/60' : 'bg-paper-deep'"
-            :style="{ height: `${value}%` }"
-            :aria-label="`第${index + 1}周 ${value}%`"
-          />
+            v-for="day in trend"
+            :key="day.label"
+            class="flex flex-1 flex-col items-center gap-1"
+            :class="day.isFuture ? 'opacity-40' : ''"
+          >
+            <span
+              class="text-[10px] leading-none"
+              :class="day.value === null ? 'text-ink-muted/50' : 'text-ink-muted'"
+            >
+              {{ day.value === null ? '—' : `${day.value}%` }}
+            </span>
+            <div class="flex h-24 w-full items-end">
+              <div
+                v-if="day.value === null"
+                class="h-1 w-full rounded-full border border-dashed border-border-paper"
+                :aria-label="`${day.label} 暂无复习记录`"
+              />
+              <div
+                v-else
+                class="w-full rounded-t-md"
+                :class="day.value > 0 ? 'bg-cinnabar/60' : 'bg-red/50'"
+                :style="{ height: day.value > 0 ? `${day.value}%` : '4px' }"
+                :aria-label="`${day.label} 保持率 ${day.value}%`"
+              />
+            </div>
+            <span class="text-[10px] text-ink-muted">{{ day.label }}</span>
+          </div>
         </div>
-        <div class="mt-2 flex justify-between text-xs text-ink-muted">
-          <span>{{ weekLabels[0] }}</span>
-          <span>{{ weekLabels[1] }}</span>
-        </div>
+        <p class="mt-3 text-xs text-ink-muted">
+          本周每天的记忆保持率（周一起算）；「—」为当日无复习，0% 表示复习过但全部遗忘。
+        </p>
       </section>
     </template>
   </div>
