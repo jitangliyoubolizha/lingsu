@@ -245,6 +245,7 @@ onBeforeUnmount(() => clearTimeout(noteStatusTimer))
       <RouterLink
         v-if="prevId"
         :to="`/clauses/${prevId}`"
+        replace
         class="text-sm text-indigo"
         @click="clauseNavDirection = 'prev'"
       >
@@ -254,6 +255,7 @@ onBeforeUnmount(() => clearTimeout(noteStatusTimer))
       <RouterLink
         v-if="nextId"
         :to="`/clauses/${nextId}`"
+        replace
         class="text-sm text-indigo"
         @click="clauseNavDirection = 'next'"
       >

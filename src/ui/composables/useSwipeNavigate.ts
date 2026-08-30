@@ -10,6 +10,9 @@ export const clauseNavDirection = ref<'next' | 'prev' | 'pager' | null>(null)
 /** 整页翻页滑动交接期间为 true：scrollBehavior 据此抑制回顶（落点保持当前阅读位置） */
 export const pagerSettling = ref(false)
 
+/** 进入当前条文时的来源页路径：返回键直达来源，不依赖可能被旧版翻条污染的历史栈 */
+export const clauseEntryFrom = ref('/clauses')
+
 /** 水平意图判定：横移超过该像素且大于纵移才接管（起手要跟手，小说翻页手感） */
 const INTENT_PX = 4
 /** 松手翻页距离阈值（页宽占比）：手机上约一指轻拖即可翻页 */

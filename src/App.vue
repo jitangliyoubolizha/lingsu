@@ -7,7 +7,7 @@ import ComplianceBanner from './ui/components/ComplianceBanner.vue'
 import GlobalNoticeBar from './ui/components/GlobalNoticeBar.vue'
 import { useFontSize } from './ui/composables/useFontSize'
 import { useTheme } from './ui/composables/useTheme'
-import { clauseNavDirection } from './ui/composables/useSwipeNavigate'
+import { clauseEntryFrom, clauseNavDirection } from './ui/composables/useSwipeNavigate'
 
 const route = useRoute()
 
@@ -16,10 +16,9 @@ const route = useRoute()
 // 方向只在导航起点写入、转场期间保持不变（转场结束后残留值对其他路由无影响），
 // 从非条文页进入详情时在导航起点清掉上一次翻页的残留方向
 const pageTransition = computed(() => {
-  if (route.name === 'clause-detail' && clauseNavDirection.value) {
-    if (clauseNavDirection.value === 'pager') return 'page-instant'
-    return clauseNavDirection.value === 'next' ? 'page-next' : 'page-prev'
-  }
+  if (clauseNavDirection.value === 'pager') return 'page-instant'
+  if (clauseNavDirection.value === 'next') return 'page-next'
+  if (clauseNavDirection.value === 'prev') return 'page-prev'
   if (tabDirection.value) {
     return tabDirection.value === 'next' ? 'page-next' : 'page-prev'
   }
@@ -30,12 +29,33 @@ const pageTransitionMode = computed(() =>
   pageTransition.value === 'page' ? 'out-in' : undefined
 )
 
+// 记录上一条路由：条文详情的进入/离开方向判定需要 from 的完整路径
+let prevName = '/'
+let prevFullPath = '/'
+
 watch(
-  () => route.name,
-  (to, from) => {
-    if (to === 'clause-detail' && from !== 'clause-detail') {
-      clauseNavDirection.value = null
+  () => route.fullPath,
+  () => {
+    const fromName = prevName
+    const fromFullPath = prevFullPath
+    prevName = String(route.name ?? '/')
+    prevFullPath = route.fullPath
+
+    if (route.name === 'clause-detail') {
+      if (fromName !== 'clause-detail') {
+        // 从来源页进入条文：自右滑入；记录来源供返回直达
+        clauseNavDirection.value = 'next'
+        clauseEntryFrom.value = fromFullPath
+      }
+      return
     }
+    if (route.name === 'clauses') {
+      // 浏览器返回离开条文回列表：同样滑回；底部翻条链接等来源不清方向
+      if (clauseNavDirection.value === 'pager') clauseNavDirection.value = 'prev'
+      return
+    }
+    // 去往其他页面：清除翻条方向，走默认/tab 转场
+    clauseNavDirection.value = null
   }
 )
 

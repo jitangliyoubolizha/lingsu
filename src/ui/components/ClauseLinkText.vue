@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 
 import { segmentClauseRefs } from '../../domain/clauseLink'
+import { clauseNavDirection } from '../composables/useSwipeNavigate'
 
 const props = defineProps<{
   text: string
@@ -26,6 +27,7 @@ function hrefOf(no: number | undefined): string {
       v-if="segment.type === 'clause'"
       :to="hrefOf(segment.no)"
       class="text-indigo underline decoration-indigo/30 underline-offset-2"
+      @click="clauseNavDirection = 'next'"
     >
       {{ segment.text }}
     </RouterLink>

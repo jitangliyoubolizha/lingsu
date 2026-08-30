@@ -9,7 +9,12 @@ import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AppHeader from '../components/AppHeader.vue'
 import ClausePageContent from '../components/ClausePageContent.vue'
 import EmptyState from '../components/EmptyState.vue'
-import { clauseNavDirection, pagerSettling, useSwipeNavigate } from '../composables/useSwipeNavigate'
+import {
+  clauseEntryFrom,
+  clauseNavDirection,
+  pagerSettling,
+  useSwipeNavigate,
+} from '../composables/useSwipeNavigate'
 
 const route = useRoute()
 const router = useRouter()
@@ -42,6 +47,20 @@ async function toggleFavorite() {
     await addFavorite('clause', clause.value.id)
     favorite.value = true
   }
+  favoriteCache.set(clause.value.id, favorite.value)
+}
+
+/** 顶栏返回：回进入条文时的来源页（列表/搜索），一步到位。
+ *  来源页不是条文时走 history.back（浏览器还原其滚动位置）；
+ *  历史栈被旧版逐条 push 翻条污染（上一步还是条文）时，直接回条文库。 */
+function goBackToEntry() {
+  const backPath = router.options.history.state?.back
+  clauseNavDirection.value = 'prev'
+  if (typeof backPath === 'string' && !backPath.startsWith('/clauses/')) {
+    router.back()
+  } else {
+    void router.push(clauseEntryFrom.value ?? '/clauses')
+  }
 }
 
 /* —— 整页横滑翻条（E-15）：轨道 [上一页｜当前页｜下一页]，拖动整页跟手 —— */
@@ -67,7 +86,9 @@ watch(
       void loadChapter(code).then((chapter) => {
         // 快速连续翻条时丢弃过期篇章的异步结果
         if (clauseId.value !== id) return
-        pagerNeighbors.value[dir] = chapter?.clauses.find((item) => item.id === targetId)
+        const neighbor = chapter?.clauses.find((item) => item.id === targetId)
+        if (neighbor) clauseCache.set(neighbor.id, neighbor)
+        pagerNeighbors.value[dir] = neighbor
       })
     }
   },
@@ -121,8 +142,10 @@ function onKeydown(event: KeyboardEvent) {
   else if (event.key === 'ArrowLeft') goTo('prev')
 }
 
-/** 条文同步缓存：整页翻页重挂载时立即渲染，消除异步加载间隙的闪烁 */
+/** 条文同步缓存：整页翻页重挂载时立即渲染，消除异步加载间隙的闪烁（相邻页一并入缓存） */
 const clauseCache = new Map<string, Clause>()
+/** 收藏状态缓存：重挂载时星标状态首帧即正确，不闪 */
+const favoriteCache = new Map<string, boolean>()
 
 /** 只加载条文所属篇章；方剂、术语等数据来自随主包加载的元数据。 */
 async function load() {
@@ -133,7 +156,9 @@ async function load() {
   clause.value = chapter?.clauses.find((item) => item.id === clauseId.value)
   if (clause.value) {
     clauseCache.set(clause.value.id, clause.value)
+    favorite.value = favoriteCache.get(clause.value.id) ?? false
     favorite.value = await isFavorite('clause', clause.value.id)
+    favoriteCache.set(clause.value.id, favorite.value)
   }
   loaded.value = true
 }
@@ -187,7 +212,8 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
         <AppHeader
           :title="clause ? clauseTitle(clause.no) : '条文详情'"
           show-back
-          back-to="/clauses"
+          emit-back
+          @back="goBackToEntry"
         >
           <template #actions>
             <RouterLink

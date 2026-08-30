@@ -9,16 +9,29 @@ const props = withDefaults(
     showBack?: boolean
     backTo?: string
     subtitle?: string
+    /** 为 true 时点击返回只触发 back 事件，由父组件决定返回方式 */
+    emitBack?: boolean
   }>(),
   {
     title: '',
     showBack: false,
     backTo: '/',
     subtitle: '',
+    emitBack: false,
   }
 )
 
+const emit = defineEmits<{ back: [] }>()
+
 const { goBack } = useRouterBack(props.backTo)
+
+function onBackClick() {
+  if (props.emitBack) {
+    emit('back')
+  } else {
+    goBack()
+  }
+}
 </script>
 
 <template>
@@ -30,7 +43,7 @@ const { goBack } = useRouterBack(props.backTo)
       type="button"
       class="flex h-9 w-9 items-center justify-center rounded-full text-ink transition-transform active:scale-95"
       aria-label="返回"
-      @click="goBack"
+      @click="onBackClick"
     >
       <ChevronLeft
         class="h-5 w-5"
