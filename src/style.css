@@ -174,10 +174,24 @@ select {
   opacity: 0;
 }
 
-/* 整页翻页交接（E-15）：滑动已在组件轨道上完成，路由换页瞬时无第二次过渡 */
+/* 整页翻页交接（E-15）：滑动已在组件轨道上完成，路由换页瞬时无第二次过渡。
+   离开页立即隐藏：换实例并行挂载期间，离开页仍占文档流前方，且路由变化触发它的
+   重渲染会把轨道 transform 归位（残影帧闪回上一条，真机可见闪烁）；
+   新页有模块级缓存首帧即新条文，离开页直接不渲染即无缝 */
 .page-instant-enter-active,
 .page-instant-leave-active {
   transition: none;
+}
+
+.page-instant-leave-active {
+  display: none;
+}
+
+/* 条文横滑跟手/交接期间：三页吸顶栏的 backdrop-blur 会随轨道位移逐帧重采样背景
+   （真机闪烁与掉帧来源），手势期间退化为不透明底色，动画落定移除类名后恢复 */
+.pager-swiping > div > header {
+  backdrop-filter: none;
+  background-color: var(--color-paper);
 }
 
 /* 底部/侧边导航切换反馈（§4.2 tab 切换）：按压缩放、激活图标弹跳、指示条渐现 */

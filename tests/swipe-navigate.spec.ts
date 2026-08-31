@@ -2,14 +2,10 @@
 import { mount } from '@vue/test-utils'
 import { defineComponent, h, ref, type Ref } from 'vue'
 
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { useSwipeNavigate } from '../src/ui/composables/useSwipeNavigate'
 import { fire } from './helpers/pointer'
-
-const animateMock = vi.hoisted(() => vi.fn(() => ({ stop: vi.fn(), finished: Promise.resolve() })))
-
-vi.mock('motion', () => ({ animate: animateMock }))
 
 interface HarnessProps {
   canPrev?: boolean
@@ -44,16 +40,14 @@ const Harness = defineComponent({
 })
 
 // jsdom 无布局：轨道 clientWidth 为 0，页宽取 window.innerWidth（默认 1024），
-// 拖动基准位移 base = -(1024 + 24 页间距) = -1048，翻页距离阈值 = 1024 × 13% = 133px
+// 拖动基准位移 base = -(1024 + 24 页间距) = -1048，翻页距离阈值 = 1024 × 13% = 133px。
+// jsdom 无 WAAPI：回弹/交接动画直接就位，落定后轨道归位到 calc(-100% - 24px)
 
 function mountHarness(props: HarnessProps = {}) {
   return mount(Harness, { props })
 }
 
 describe('useSwipeNavigate 整页横滑翻条', () => {
-  afterEach(() => {
-    animateMock.mockClear()
-  })
 
   it('横向拖动超过阈值，整页滑动交接后翻到下一条', async () => {
     const wrapper = mountHarness()
@@ -156,7 +150,7 @@ describe('useSwipeNavigate 整页横滑翻条', () => {
     wrapper.unmount()
   })
 
-  it('尽头方向加阻尼且不触发导航', () => {
+  it('尽头方向加阻尼且不触发导航', async () => {
     const wrapper = mountHarness({ canNext: false })
     const track = wrapper.get<HTMLElement>('[data-test="track"]').element
     fire(track, 'pointerdown', 500, 300)
@@ -164,8 +158,10 @@ describe('useSwipeNavigate 整页横滑翻条', () => {
     fire(track, 'pointermove', 100, 300, 50) // 原始 dx = -400，阻尼后 -120 < 256
     fire(track, 'pointerup', 100, 300, 60)
     expect(wrapper.emitted('navigate')).toBeUndefined()
-    // 跟手过则必有回弹动画
-    expect(animateMock).toHaveBeenCalled()
+    // 跟手过则必回弹归位（jsdom 无 WAAPI，落定直接就位）
+    await vi.waitFor(() =>
+      expect(track.style.transform).toContain('translate3d(calc(-100% - 24px)')
+    )
     wrapper.unmount()
   })
 
@@ -182,14 +178,17 @@ describe('useSwipeNavigate 整页横滑翻条', () => {
     wrapper.unmount()
   })
 
-  it('被系统打断（转为纵向滚动）时安静归位', () => {
+  it('被系统打断（转为纵向滚动）时安静归位', async () => {
     const wrapper = mountHarness()
     const track = wrapper.get<HTMLElement>('[data-test="track"]').element
     fire(track, 'pointerdown', 500, 300)
     fire(track, 'pointermove', 400, 300, 10)
     fire(track, 'pointercancel', 400, 300, 20)
     expect(wrapper.emitted('navigate')).toBeUndefined()
-    expect(animateMock).toHaveBeenCalled()
+    // 回弹归位（jsdom 无 WAAPI，落定直接就位）
+    await vi.waitFor(() =>
+      expect(track.style.transform).toContain('translate3d(calc(-100% - 24px)')
+    )
     wrapper.unmount()
   })
 })

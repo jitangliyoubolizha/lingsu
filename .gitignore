@@ -38,6 +38,7 @@ playwright-report/
 
 # AI 会话工作目录（本地保留，不入库）
 .zcode/
+.workbuddy/
 
 # 本机环境与推送方式记录（隐私，仅本地保留）
 docs/推送指南.md

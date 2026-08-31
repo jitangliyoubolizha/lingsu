@@ -1,4 +1,3 @@
-import { animate } from 'motion'
 import { onBeforeUnmount, ref, type Ref } from 'vue'
 
 /**
@@ -23,14 +22,14 @@ const FLICK_VELOCITY = 0.24
 const EDGE_DAMPING = 0.3
 /** 页间距（与轨道 gap-6 一致）：静止时相邻页被推出屏幕外，不侵入两侧边距带 */
 const SLOT_GAP = 24
-/** 松手回弹：短促 ease-out 走 WAAPI 合成器（JS 弹簧逐帧跑主线程，与翻页抢帧） */
-const REBOUND_DURATION = 0.2
-/** 整页滑动交接：时长与新页就位衔接 */
-const SETTLE_DURATION = 0.22
+/** 松手回弹时长（ms）：WAAPI 走合成器，不与翻页抢主线程 */
+const REBOUND_MS = 200
+/** 整页滑动交接时长（ms）：与新页就位衔接 */
+const SETTLE_MS = 220
+/** 与 --ease-out-soft 同曲线（cubic-bezier(0.22, 1, 0.36, 1)） */
+const EASE_OUT_SOFT = 'cubic-bezier(0.22, 1, 0.36, 1)'
 /** 动画落定兜底时长：无渲染帧环境（后台标签页等）finished 可能永不 resolve，超时直接就位 */
 const SETTLE_FALLBACK_MS = 700
-/** 与 --ease-out-soft 同曲线，供 motion 动画使用 */
-const EASE_OUT_SOFT = [0.22, 1, 0.36, 1] as const
 /** 松手后仍拦截随后的一次 click 的兜底时长（ms）：吞掉横滑结束时的误触点按 */
 const CLICK_SUPPRESS_MS = 250
 
@@ -64,6 +63,14 @@ function inFormField(target: EventTarget | null): boolean {
  * 手感对齐小说翻页：页面上任意位置（含按钮/链接）都能起滑，轻拖或轻甩即翻；
  * 仅响应触摸/笔——鼠标拖拽与文本选择冲突，桌面走键盘 ←/→ 与底部链接。
  * 轨道需带 touch-pan-y，纵向滚动始终归浏览器（约定同 CardStack §4.2）。
+ *
+ * 真机闪烁根修要点（勿回退）：
+ * 1. 回弹/交接动画用原生 WAAPI 且全程 translate3d——JS 动画库写 2D translateX 会在
+ *    交接中途把巨型轨道从合成层降级，逐帧重新光栅化（真机闪烁主因之一）；
+ * 2. 翻页提交后组件按路由 key 换实例，离开页残影帧必须保持落点画面（新条文就在屏上），
+ *    卸载时不得把轨道归位——归位会让残影帧显示上一条内容（闪烁主因之二）；
+ * 3. 按压期间拦截 selectstart/contextmenu——慢速横滑从文字起手时，长按文本选择/长按菜单
+ *    会抢走手势（pointer 被系统 cancel），表现为「只有空白区域能滑动」。
  */
 export function useSwipeNavigate(
   el: Ref<HTMLElement | null>,
@@ -75,8 +82,8 @@ export function useSwipeNavigate(
   }
 ) {
   let state: SwipeState | null = null
-  let flight: ReturnType<typeof animate> | null = null
-  /** 交接动画进行中，忽略新的拖动 */
+  let flight: Animation | null = null
+  /** 交接动画进行中，忽略新的拖动。提交后组件随路由换实例销毁，无需复位 */
   let settling = false
   /** 横滑结束后布防：拦截紧随其后的那次 click，防止起手在按钮/链接上时误触。
    *  下一次 pointerdown（新交互开始）或第一个 click 到达即解除，250ms 仅作兜底 */
@@ -96,13 +103,33 @@ export function useSwipeNavigate(
     clearTimeout(suppressTimer)
   }
 
+  /** 按压期间禁掉文本选择与长按菜单：慢滑从文字/链接起手时长按选择会抢走手势 */
+  function preventSelectionSteal(event: Event) {
+    event.preventDefault()
+  }
+
+  /**
+   * 回弹/交接动画：原生 WAAPI + 全程 translate3d（保持合成层不降级）。
+   * jsdom 等无 WAAPI 环境返回 null，由 settleWithFallback 直接就位。
+   */
+  function animateTrack(node: HTMLElement, from: number, to: number, durationMs: number): Animation | null {
+    if (typeof node.animate !== 'function') return null
+    return node.animate(
+      [
+        { transform: `translate3d(${from}px, 0, 0)` },
+        { transform: `translate3d(${to}px, 0, 0)` },
+      ],
+      { duration: durationMs, easing: EASE_OUT_SOFT, fill: 'forwards' }
+    )
+  }
+
   function onPointerDown(event: PointerEvent) {
     if (event.pointerType === 'mouse' || event.button !== 0) return
     if (state || settling || !el.value || inFormField(event.target)) return
     // 新交互开始：上一次横滑的 click 拦截立即解除，紧随的正当点按不受影响
     disarmClickSuppression()
     // 抓到进行中的回弹动画则停掉并归位，避免拖拽起点跳变
-    flight?.stop()
+    flight?.cancel()
     flight = null
     state = {
       pointerId: event.pointerId,
@@ -120,6 +147,9 @@ export function useSwipeNavigate(
     node.addEventListener('pointermove', onPointerMove, { passive: true })
     node.addEventListener('pointerup', onPointerUp, { passive: true })
     node.addEventListener('pointercancel', onPointerCancel, { passive: true })
+    // selectstart/contextmenu 可取消且非 passive：拦住长按选择/长按菜单抢手势
+    node.addEventListener('selectstart', preventSelectionSteal)
+    node.addEventListener('contextmenu', preventSelectionSteal)
     node.addEventListener('click', onClickCapture, true)
   }
 
@@ -133,6 +163,8 @@ export function useSwipeNavigate(
       state.active = true
       // 意图成立才占用指针并提升图层：起手在按钮/链接上时，横向滑动改为翻页而非误触
       node.style.willChange = 'transform'
+      // 手势期间关掉吸顶栏 backdrop-blur（随轨道位移逐帧重采样背景，真机闪烁/掉帧源）
+      node.classList.add('pager-swiping')
       try {
         node.setPointerCapture(state.pointerId)
       } catch {
@@ -175,6 +207,8 @@ export function useSwipeNavigate(
     node.removeEventListener('pointermove', onPointerMove)
     node.removeEventListener('pointerup', onPointerUp)
     node.removeEventListener('pointercancel', onPointerCancel)
+    node.removeEventListener('selectstart', preventSelectionSteal)
+    node.removeEventListener('contextmenu', preventSelectionSteal)
     if (pointerId !== undefined) {
       try {
         node.releasePointerCapture(pointerId)
@@ -190,7 +224,8 @@ export function useSwipeNavigate(
     state = null
     const node = el.value
     detach(node, s.active ? pointerId : undefined)
-    node.style.willChange = ''
+    // will-change 不在此时释放：交接动画期间图层降级会迫使整条三页轨道重新光栅化
+    // （真机上的闪烁源），改由 settleWithFallback 在动画落定后释放
     // 横滑成立：布防拦截紧随 pointerup 的那次 click（真实浏览器中必然派发，可能落在组件上）
     if (s.active) {
       suppressNextClick = true
@@ -205,11 +240,11 @@ export function useSwipeNavigate(
     // 未通过意图判定（点按）或被系统打断（转为纵向滚动）：安静归位即可
     if (!s.active || cancelled) {
       if (node.style.transform) {
-        flight = animate(node, { x: [s.base + dx, s.base] }, {
-          duration: REBOUND_DURATION,
-          ease: [...EASE_OUT_SOFT],
-        })
-        settleWithFallback(node, s.base, clearTransform)
+        flight = animateTrack(node, s.base + dx, s.base, REBOUND_MS)
+        settleWithFallback(node, s.base, flight, clearTransform)
+      } else {
+        // 未通过意图判定（点按）：无动画可等，图层当场释放
+        node.style.willChange = ''
       }
       return
     }
@@ -227,46 +262,45 @@ export function useSwipeNavigate(
       pagerSettling.value = true
       const pitch = width + SLOT_GAP
       const target = dir === 'next' ? s.base - pitch : s.base + pitch
-      flight = animate(
-        node,
-        { x: [s.base + dx, target] },
-        { duration: SETTLE_DURATION, ease: [...EASE_OUT_SOFT] }
-      )
-      settleWithFallback(node, target, () => {
+      flight = animateTrack(node, s.base + dx, target, SETTLE_MS)
+      settleWithFallback(node, target, flight, () => {
         vibrateTick()
         options.onNavigate(dir)
       })
     } else {
-      flight = animate(node, { x: [s.base + dx, s.base] }, {
-        duration: REBOUND_DURATION,
-        ease: [...EASE_OUT_SOFT],
-      })
-      settleWithFallback(node, s.base, clearTransform)
+      flight = animateTrack(node, s.base + dx, s.base, REBOUND_MS)
+      settleWithFallback(node, s.base, flight, clearTransform)
     }
   }
 
   /** 等动画落定后把轨道放到 target；无帧环境超时直接就位，不再等 finished */
-  function settleWithFallback(node: HTMLElement, target: number, onDone: () => void) {
+  function settleWithFallback(
+    node: HTMLElement,
+    target: number,
+    animation: Animation | null,
+    onDone: () => void
+  ) {
     let done = false
     const finish = () => {
       if (done) return
       done = true
-      if (el.value === node) {
-        node.style.transform = `translate3d(${target}px, 0, 0)`
+      clearTimeout(timer)
+      // 组件已随翻页换实例卸载：不写样式、不回调（防止重复触发导航）
+      if (el.value !== node) return
+      // 撤掉 forwards 填充：否则驻留动画会盖过内联样式，后续拖拽的逐帧位移全部失效
+      try {
+        animation?.cancel()
+      } catch {
+        // 动画已结束，cancel 为空操作
       }
+      node.style.transform = `translate3d(${target}px, 0, 0)`
+      // 动画落定后才释放图层：交接途中降级会让整条轨道重新光栅化
+      node.style.willChange = ''
+      node.classList.remove('pager-swiping')
       onDone()
     }
     const timer = setTimeout(finish, SETTLE_FALLBACK_MS)
-    void (flight?.finished ?? Promise.resolve()).then(
-      () => {
-        clearTimeout(timer)
-        finish()
-      },
-      () => {
-        clearTimeout(timer)
-        finish()
-      }
-    )
+    void (animation?.finished ?? Promise.resolve()).then(finish, finish)
   }
 
   function clearTransform() {
@@ -286,15 +320,16 @@ export function useSwipeNavigate(
   }
 
   onBeforeUnmount(() => {
-    flight?.stop()
+    flight?.cancel()
     flight = null
     state = null
     disarmClickSuppression()
     if (el.value) {
       detach(el.value)
       el.value.removeEventListener('click', onClickCapture, true)
-      el.value.style.transform = 'translate3d(calc(-100% - 24px), 0, 0)'
-      el.value.style.willChange = ''
+      // 不把轨道 transform 归位：翻页换实例时离开页还有残影帧，保持落点画面
+      // （新条文就在屏上）才能与新页无缝衔接；归位会让残影帧闪回上一条。
+      // 元素随卸载销毁，样式无需清理。
     }
   })
 

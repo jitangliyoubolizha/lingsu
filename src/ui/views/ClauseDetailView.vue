@@ -1,9 +1,20 @@
+<script lang="ts">
+import type { Clause } from '../../data/types'
+
+/**
+ * 条文/收藏缓存（模块级，非实例级）：App.vue 按 :key="route.fullPath" 渲染，
+ * 整页翻页每条都换实例重挂载——实例级缓存随卸载清空，新页首帧必空白（闪烁源）；
+ * 模块级缓存让新页首帧即有内容、星标状态首帧即正确。
+ */
+const clauseCache = new Map<string, Clause>()
+const favoriteCache = new Map<string, boolean>()
+</script>
+
 <script setup lang="ts">
 import { PenLine, Star } from 'lucide-vue-next'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import type { Clause } from '../../data/types'
 import { chapterCodeOfClause, loadChapter, loadMeta } from '../../data'
 import { addFavorite, isFavorite, removeFavorite } from '../../store'
 import AppHeader from '../components/AppHeader.vue'
@@ -142,11 +153,6 @@ function onKeydown(event: KeyboardEvent) {
   else if (event.key === 'ArrowLeft') goTo('prev')
 }
 
-/** 条文同步缓存：整页翻页重挂载时立即渲染，消除异步加载间隙的闪烁（相邻页一并入缓存） */
-const clauseCache = new Map<string, Clause>()
-/** 收藏状态缓存：重挂载时星标状态首帧即正确，不闪 */
-const favoriteCache = new Map<string, boolean>()
-
 /** 只加载条文所属篇章；方剂、术语等数据来自随主包加载的元数据。 */
 async function load() {
   loaded.value = false
@@ -164,7 +170,8 @@ async function load() {
 }
 
 onMounted(load)
-// 路由不带 key，上一条/下一条复用同一组件实例，需在条文变化时重新加载
+// App.vue 按 :key="route.fullPath" 渲染，翻条必换实例重挂载（onMounted 覆盖）；
+// watch 仅作兜底：若未来去掉路由 key 复用实例，条文变化时仍能重新加载
 watch(clauseId, load)
 
 onMounted(() => window.addEventListener('keydown', onKeydown))
