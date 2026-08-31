@@ -76,3 +76,27 @@ export function fire(
 export function stubClientWidth(el: HTMLElement, width: number): void {
   Object.defineProperty(el, 'clientWidth', { configurable: true, value: width })
 }
+
+export type TouchPhase = 'touchstart' | 'touchmove' | 'touchend' | 'touchcancel'
+
+/** 派发合成触摸事件。jsdom 没有 TouchEvent/Touch 实现，用普通 Event 注入触点列表；
+ *  手势可从子元素（按钮/链接）起手、靠冒泡到达轨道监听，因此必须 bubbles。
+ *  touchstart/touchmove 时触点同时在 touches 与 changedTouches；
+ *  touchend/touchcancel 时触点只在 changedTouches（与真实浏览器一致）。 */
+export function fireTouch(
+  el: Element,
+  type: TouchPhase,
+  x: number,
+  y: number,
+  timeStamp?: number
+): void {
+  const event = new Event(type, { bubbles: true, cancelable: true })
+  const touch = { identifier: 0, clientX: x, clientY: y, target: el } as unknown as Touch
+  const activeTouches = type === 'touchstart' || type === 'touchmove' ? [touch] : []
+  Object.defineProperty(event, 'touches', { value: activeTouches })
+  Object.defineProperty(event, 'changedTouches', { value: [touch] })
+  if (timeStamp !== undefined) {
+    Object.defineProperty(event, 'timeStamp', { value: timeStamp })
+  }
+  el.dispatchEvent(event)
+}
