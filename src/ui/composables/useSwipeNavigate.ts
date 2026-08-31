@@ -109,6 +109,18 @@ export function useSwipeNavigate(
   }
 
   /**
+   * iOS 兜底（关键，勿删）：WebKit 对 pointer 事件支持有缺陷——touch-action: pan-y
+   * 在非滚动容器上不可靠（轨道不是滚动容器），水平意图成立后若不在 touchmove 上
+   * preventDefault，Safari 仍会把横滑判给页面平移/橡皮筋并 pointercancel 掉 pointer
+   * 流，表现为 iPhone 真机完全滑不动（Chrome 模拟器正常，难以复现）。必须非 passive
+   * 才能 preventDefault；意图未成立前不拦截，纵向滚动不受影响。Chrome 上
+   * touch-action 已生效，此拦截无副作用。
+   */
+  function onTouchMoveGuard(event: TouchEvent) {
+    if (state?.active) event.preventDefault()
+  }
+
+  /**
    * 回弹/交接动画：原生 WAAPI + 全程 translate3d（保持合成层不降级）。
    * jsdom 等无 WAAPI 环境返回 null，由 settleWithFallback 直接就位。
    */
@@ -147,6 +159,8 @@ export function useSwipeNavigate(
     node.addEventListener('pointermove', onPointerMove, { passive: true })
     node.addEventListener('pointerup', onPointerUp, { passive: true })
     node.addEventListener('pointercancel', onPointerCancel, { passive: true })
+    // iOS Safari 手势接管兜底（见 onTouchMoveGuard）：必须非 passive 才能 preventDefault
+    node.addEventListener('touchmove', onTouchMoveGuard, { passive: false })
     // selectstart/contextmenu 可取消且非 passive：拦住长按选择/长按菜单抢手势
     node.addEventListener('selectstart', preventSelectionSteal)
     node.addEventListener('contextmenu', preventSelectionSteal)
@@ -209,6 +223,7 @@ export function useSwipeNavigate(
     node.removeEventListener('pointercancel', onPointerCancel)
     node.removeEventListener('selectstart', preventSelectionSteal)
     node.removeEventListener('contextmenu', preventSelectionSteal)
+    node.removeEventListener('touchmove', onTouchMoveGuard)
     if (pointerId !== undefined) {
       try {
         node.releasePointerCapture(pointerId)
