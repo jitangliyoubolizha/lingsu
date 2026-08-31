@@ -5,64 +5,11 @@ import { defineComponent, h, ref, type Ref } from 'vue'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { useSwipeNavigate } from '../src/ui/composables/useSwipeNavigate'
+import { fire } from './helpers/pointer'
 
 const animateMock = vi.hoisted(() => vi.fn(() => ({ stop: vi.fn(), finished: Promise.resolve() })))
 
 vi.mock('motion', () => ({ animate: animateMock }))
-
-/* jsdom 无 PointerEvent 时补一个仅含本测试所需字段的最小实现 */
-class TestPointerEvent extends MouseEvent {
-  pointerId: number
-  pointerType: string
-
-  constructor(
-    type: string,
-    init: {
-      clientX?: number
-      clientY?: number
-      pointerId?: number
-      pointerType?: string
-      bubbles?: boolean
-      cancelable?: boolean
-    } = {}
-  ) {
-    super(type, {
-      bubbles: init.bubbles ?? true,
-      cancelable: init.cancelable ?? true,
-      clientX: init.clientX ?? 0,
-      clientY: init.clientY ?? 0,
-      button: 0,
-    })
-    this.pointerId = init.pointerId ?? 1
-    this.pointerType = init.pointerType ?? 'touch'
-  }
-}
-
-if (typeof window.PointerEvent !== 'function') {
-  ;(window as unknown as { PointerEvent: unknown }).PointerEvent = TestPointerEvent
-}
-
-/** 派发指针事件；可注入 timeStamp 以模拟快甩速度（px/ms）。
- *  必须带 bubbles：手势可从子元素（按钮/链接）起滑、靠冒泡到达轨道监听，
- *  jsdom 原生 PointerEvent 默认不冒泡，会静默丢失这类起滑。 */
-function fire(
-  el: Element,
-  type: 'pointerdown' | 'pointermove' | 'pointerup' | 'pointercancel',
-  x: number,
-  y: number,
-  timeStamp?: number
-) {
-  const event = new (window.PointerEvent as unknown as typeof TestPointerEvent)(type, {
-    clientX: x,
-    clientY: y,
-    bubbles: true,
-    cancelable: true,
-  })
-  if (timeStamp !== undefined) {
-    Object.defineProperty(event, 'timeStamp', { value: timeStamp })
-  }
-  el.dispatchEvent(event)
-}
 
 interface HarnessProps {
   canPrev?: boolean
@@ -97,7 +44,7 @@ const Harness = defineComponent({
 })
 
 // jsdom 无布局：轨道 clientWidth 为 0，页宽取 window.innerWidth（默认 1024），
-// 拖动基准位移 base = -(1024 + 24 页间距) = -1048，翻页距离阈值 = 1024 × 25% = 256px
+// 拖动基准位移 base = -(1024 + 24 页间距) = -1048，翻页距离阈值 = 1024 × 13% = 133px
 
 function mountHarness(props: HarnessProps = {}) {
   return mount(Harness, { props })
@@ -151,7 +98,7 @@ describe('useSwipeNavigate 整页横滑翻条', () => {
     fire(track, 'pointerdown', 500, 300, 0)
     fire(track, 'pointermove', 450, 300, 50) // vx ≈ -0.2
     fire(track, 'pointermove', 380, 300, 100) // vx ≈ -0.44
-    fire(track, 'pointermove', 370, 300, 110) // vx ≈ -0.55，超过 0.5
+    fire(track, 'pointermove', 370, 300, 110) // vx ≈ -0.55，超过 0.24
     fire(track, 'pointerup', 370, 300, 120) // dx = -130，不足阈值
     await vi.waitFor(() => expect(wrapper.emitted('navigate')).toEqual([['next']]))
     wrapper.unmount()

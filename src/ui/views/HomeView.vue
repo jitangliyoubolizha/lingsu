@@ -148,7 +148,6 @@ onMounted(loadHome)
       :items="featuredClauses"
       random-rotation
       :random-amplitude="4"
-      :sensitivity="290"
       send-to-back-on-click
       autoplay
       :autoplay-delay="5000"
